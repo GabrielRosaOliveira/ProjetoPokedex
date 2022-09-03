@@ -1,30 +1,134 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17150" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ZzW-ST-WHu">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17122"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="s0d-6b-0kx">
+        <!--Pokemon Selecionado View Controller-->
+        <scene sceneID="few-Ry-sOt">
             <objects>
-                <viewController id="Y6W-OH-hqX" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                <viewController id="ZzW-ST-WHu" customClass="PokemonSelecionadoViewController" customModule="Pokedex" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="hhQ-Oh-MKl">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="COQ-yN-omh">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="600"/>
+                                <color key="backgroundColor" systemColor="systemGreenColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="600" id="7Bi-vc-sBd" customClass="NSLayoutHelper" customModule="LayoutHelper">
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="iPhone12ProMax">
+                                                <real key="value" value="600"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="iPhoneSE">
+                                                <real key="value" value="450"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="iPhoneSE2G">
+                                                <real key="value" value="450"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </constraint>
+                                </constraints>
+                            </view>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="156-1564653_pokeball-download-png-image-pokeball-png-removebg-preview 1" translatesAutoresizingMaskIntoConstraints="NO" id="jPL-R1-wdl">
+                                <rect key="frame" x="0.0" y="244" width="414" height="328"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="328" id="cEl-0h-2ii"/>
+                                </constraints>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vos-kw-FiI">
+                                <rect key="frame" x="0.0" y="496" width="414" height="400"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="400" id="jdf-mr-atQ" customClass="NSLayoutHelper" customModule="LayoutHelper">
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="iPhone12ProMax">
+                                                <real key="value" value="400"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="iPhoneSE">
+                                                <real key="value" value="300"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="iPhoneSE2G">
+                                                <real key="value" value="300"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </constraint>
+                                </constraints>
+                            </view>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bubasauro-removebg-preview" translatesAutoresizingMaskIntoConstraints="NO" id="DBZ-8r-eeG">
+                                <rect key="frame" x="60" y="344" width="294" height="235"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="235" id="oSO-ns-Sv9"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="bV7-EY-JTS"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="jPL-R1-wdl" firstAttribute="trailing" secondItem="bV7-EY-JTS" secondAttribute="trailing" id="07a-rR-feE"/>
+                            <constraint firstItem="DBZ-8r-eeG" firstAttribute="top" secondItem="bV7-EY-JTS" secondAttribute="top" constant="300" id="1hr-ju-Tse" customClass="NSLayoutHelper" customModule="LayoutHelper">
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="iPhoneSE">
+                                        <real key="value" value="170"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="iPhoneSE2G">
+                                        <real key="value" value="170"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="iPhone12ProMax">
+                                        <real key="value" value="300"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="iPhone11Pro">
+                                        <real key="value" value="175"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="iPhone12Mini">
+                                        <real key="value" value="175"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </constraint>
+                            <constraint firstItem="jPL-R1-wdl" firstAttribute="leading" secondItem="bV7-EY-JTS" secondAttribute="leading" id="78B-8m-N34"/>
+                            <constraint firstItem="COQ-yN-omh" firstAttribute="top" secondItem="hhQ-Oh-MKl" secondAttribute="top" id="Rtg-k2-GI9"/>
+                            <constraint firstAttribute="bottom" secondItem="vos-kw-FiI" secondAttribute="bottom" id="TzW-Qb-AVY"/>
+                            <constraint firstAttribute="trailing" secondItem="COQ-yN-omh" secondAttribute="trailing" id="aUe-j6-Ray"/>
+                            <constraint firstItem="jPL-R1-wdl" firstAttribute="top" secondItem="bV7-EY-JTS" secondAttribute="top" constant="200" id="b4E-6B-umT" customClass="NSLayoutHelper" customModule="LayoutHelper">
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="iPhoneSE">
+                                        <real key="value" value="100"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="iPhoneSE2G">
+                                        <real key="value" value="100"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </constraint>
+                            <constraint firstItem="bV7-EY-JTS" firstAttribute="trailing" secondItem="DBZ-8r-eeG" secondAttribute="trailing" constant="60" id="kE6-Na-frP"/>
+                            <constraint firstItem="DBZ-8r-eeG" firstAttribute="leading" secondItem="bV7-EY-JTS" secondAttribute="leading" constant="60" id="p1n-Pw-7fg"/>
+                            <constraint firstItem="vos-kw-FiI" firstAttribute="leading" secondItem="hhQ-Oh-MKl" secondAttribute="leading" id="sZ4-YO-nJI"/>
+                            <constraint firstAttribute="trailing" secondItem="vos-kw-FiI" secondAttribute="trailing" id="tVJ-ch-Cmx"/>
+                            <constraint firstItem="COQ-yN-omh" firstAttribute="leading" secondItem="hhQ-Oh-MKl" secondAttribute="leading" id="tqG-ek-Za5"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="TelaBottomView" destination="vos-kw-FiI" id="bcL-PQ-dVi"/>
+                        <outlet property="telaTopView" destination="COQ-yN-omh" id="D7m-i1-712"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eGq-hd-vj9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="19.626168224299064" y="79.049676025917933"/>
         </scene>
     </scenes>
     <resources>
+        <image name="156-1564653_pokeball-download-png-image-pokeball-png-removebg-preview 1" width="427" height="411"/>
+        <image name="bubasauro-removebg-preview" width="475" height="475"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
