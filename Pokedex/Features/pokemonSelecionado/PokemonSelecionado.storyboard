@@ -18,6 +18,15 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="COQ-yN-omh">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="600"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Bulbasaur" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kns-sv-lpa">
+                                        <rect key="frame" x="140" y="213" width="134" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="25"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
                                 <color key="backgroundColor" systemColor="systemGreenColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="600" id="7Bi-vc-sBd" customClass="NSLayoutHelper" customModule="LayoutHelper">
@@ -43,8 +52,49 @@
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vos-kw-FiI">
                                 <rect key="frame" x="0.0" y="496" width="414" height="400"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Planta" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ixx-gg-pio">
+                                        <rect key="frame" x="59" y="82" width="134" height="30"/>
+                                        <color key="backgroundColor" red="0.31764706970000001" green="0.61568629740000003" blue="0.32156863810000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="FPP-Jb-q6Y"/>
+                                            <constraint firstAttribute="width" constant="134" id="aoN-ZJ-Svj"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Cochin" family="Cochin" pointSize="18"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Venenoso" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lsV-z6-qbh">
+                                        <rect key="frame" x="222" y="82" width="134" height="30"/>
+                                        <color key="backgroundColor" red="0.70843691995235969" green="0.39449627839137336" blue="0.89350353224848489" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="8mO-lG-ztE"/>
+                                            <constraint firstAttribute="width" constant="134" id="WHK-AZ-fxP"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Cochin" family="Cochin" pointSize="18"/>
+                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="I9q-Jp-vO0">
+                                        <rect key="frame" x="10" y="122" width="394" height="213"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="fJe-n2-UtO">
+                                            <size key="itemSize" width="128" height="128"/>
+                                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        </collectionViewFlowLayout>
+                                        <cells/>
+                                    </collectionView>
+                                </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="I9q-Jp-vO0" secondAttribute="bottom" constant="65" id="05B-FR-kqh"/>
+                                    <constraint firstAttribute="trailing" secondItem="lsV-z6-qbh" secondAttribute="trailing" constant="58" id="2up-6m-rdQ"/>
+                                    <constraint firstItem="Ixx-gg-pio" firstAttribute="top" secondItem="vos-kw-FiI" secondAttribute="top" constant="82" id="GfC-ks-Kta"/>
+                                    <constraint firstItem="I9q-Jp-vO0" firstAttribute="top" secondItem="Ixx-gg-pio" secondAttribute="bottom" constant="10" id="L9k-c3-gfR"/>
+                                    <constraint firstItem="I9q-Jp-vO0" firstAttribute="leading" secondItem="vos-kw-FiI" secondAttribute="leading" constant="10" id="PtE-Ub-RXu"/>
+                                    <constraint firstAttribute="trailing" secondItem="I9q-Jp-vO0" secondAttribute="trailing" constant="10" id="ZOP-be-GWb"/>
                                     <constraint firstAttribute="height" constant="400" id="jdf-mr-atQ" customClass="NSLayoutHelper" customModule="LayoutHelper">
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="iPhone12ProMax">
@@ -58,6 +108,8 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </constraint>
+                                    <constraint firstItem="lsV-z6-qbh" firstAttribute="top" secondItem="vos-kw-FiI" secondAttribute="top" constant="82" id="q0a-SE-Qi6"/>
+                                    <constraint firstItem="Ixx-gg-pio" firstAttribute="leading" secondItem="vos-kw-FiI" secondAttribute="leading" constant="59" id="spc-67-3h5"/>
                                 </constraints>
                             </view>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bubasauro-removebg-preview" translatesAutoresizingMaskIntoConstraints="NO" id="DBZ-8r-eeG">
@@ -113,12 +165,15 @@
                     </view>
                     <connections>
                         <outlet property="TelaBottomView" destination="vos-kw-FiI" id="bcL-PQ-dVi"/>
+                        <outlet property="pokemonSelectedCollectionView" destination="I9q-Jp-vO0" id="jIK-mI-EB0"/>
                         <outlet property="telaTopView" destination="COQ-yN-omh" id="D7m-i1-712"/>
+                        <outlet property="typeSecondarySelectedLabel" destination="lsV-z6-qbh" id="M2D-yC-Idz"/>
+                        <outlet property="typeSelectedLabel" destination="Ixx-gg-pio" id="twC-Qg-g4x"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eGq-hd-vj9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="19.626168224299064" y="79.049676025917933"/>
+            <point key="canvasLocation" x="18.840579710144929" y="79.017857142857139"/>
         </scene>
     </scenes>
     <resources>
