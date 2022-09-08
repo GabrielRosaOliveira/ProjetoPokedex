@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		20649BCC28C95E430029B372 /* favoritesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20649BCA28C95E430029B372 /* favoritesCollectionViewCell.swift */; };
+		20649BCD28C95E430029B372 /* favoritesCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 20649BCB28C95E430029B372 /* favoritesCollectionViewCell.xib */; };
 		C08C722028C3D7E40007E7FE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C08C721F28C3D7E40007E7FE /* AppDelegate.swift */; };
 		C08C722228C3D7E40007E7FE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C08C722128C3D7E40007E7FE /* SceneDelegate.swift */; };
 		C08C722428C3D7E40007E7FE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C08C722328C3D7E40007E7FE /* ViewController.swift */; };
@@ -16,6 +18,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		20649BCA28C95E430029B372 /* favoritesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = favoritesCollectionViewCell.swift; sourceTree = "<group>"; };
+		20649BCB28C95E430029B372 /* favoritesCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = favoritesCollectionViewCell.xib; sourceTree = "<group>"; };
 		C08C721C28C3D7E40007E7FE /* Pokedex.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pokedex.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C08C721F28C3D7E40007E7FE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C08C722128C3D7E40007E7FE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -37,6 +41,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		20649BC928C95DE60029B372 /* favoritesCollectionViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				20649BCA28C95E430029B372 /* favoritesCollectionViewCell.swift */,
+				20649BCB28C95E430029B372 /* favoritesCollectionViewCell.xib */,
+			);
+			path = favoritesCollectionViewCell;
+			sourceTree = "<group>";
+		};
 		C08C721328C3D7E40007E7FE = {
 			isa = PBXGroup;
 			children = (
@@ -56,6 +69,7 @@
 		C08C721E28C3D7E40007E7FE /* Pokedex */ = {
 			isa = PBXGroup;
 			children = (
+				20649BC928C95DE60029B372 /* favoritesCollectionViewCell */,
 				C08C721F28C3D7E40007E7FE /* AppDelegate.swift */,
 				C08C722128C3D7E40007E7FE /* SceneDelegate.swift */,
 				C08C722328C3D7E40007E7FE /* ViewController.swift */,
@@ -127,6 +141,7 @@
 			files = (
 				C08C722C28C3D7E60007E7FE /* LaunchScreen.storyboard in Resources */,
 				C08C722928C3D7E60007E7FE /* Assets.xcassets in Resources */,
+				20649BCD28C95E430029B372 /* favoritesCollectionViewCell.xib in Resources */,
 				C08C722728C3D7E40007E7FE /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -140,6 +155,7 @@
 			files = (
 				C08C722428C3D7E40007E7FE /* ViewController.swift in Sources */,
 				C08C722028C3D7E40007E7FE /* AppDelegate.swift in Sources */,
+				20649BCC28C95E430029B372 /* favoritesCollectionViewCell.swift in Sources */,
 				C08C722228C3D7E40007E7FE /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
