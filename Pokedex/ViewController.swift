@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: UIViewController, UICollectionViewDataSource {
+class ViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     @IBOutlet weak var favoritesView: UIView!
     
@@ -26,9 +26,30 @@ class ViewController: UIViewController, UICollectionViewDataSource {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        favoritesCollectionView.register(favoritesCollectionViewCell.nib(), forCellWithReuseIdentifier: favoritesCollectionViewCell.identifier)
+        favoritesCollectionView.delegate = self
+        favoritesCollectionView.dataSource = self
         cornerRadiusView()
     }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+//        favoritesCollectionView.frame = view.bounds
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 30
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: favoritesCollectionViewCell.identifier, for: indexPath)
+        return cell
+    }
 
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: self.view.frame.size.width - 20, height: 120)
+    }
+    
     func cornerRadiusView() {
         favoritesView.layer.cornerRadius = 40
         favoritesView.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMinXMinYCorner]
@@ -41,15 +62,6 @@ class ViewController: UIViewController, UICollectionViewDataSource {
         favoritesLabel.layer.masksToBounds = false
         favoritesLabel.layer.shadowColor = UIColor.black.cgColor
         
-//        profileButton.layer.cornerRadius = 25
-//        profileButton.layer.borderWidth = 1.3
-//        profileButton.layer.borderColor = UIColor.black.cgColor
-//        profileButton.layer.shadowRadius = 6
-//        profileButton.layer.shadowOpacity = 1.0
-//        profileButton.layer.masksToBounds = false
-//        profileButton.layer.shadowColor = UIColor.black.cgColor
-//        profileButton.layer.shadowOffset = CGSize(width: 0.0, height: 2.0)
-        
         profileButton.backgroundColor = UIColor.white
         profileButton.layer.shadowColor = UIColor.black.cgColor
         profileButton.layer.shadowOffset = CGSize(width: 0.0, height: 2.0)
@@ -58,6 +70,5 @@ class ViewController: UIViewController, UICollectionViewDataSource {
         profileButton.layer.masksToBounds = false
         profileButton.layer.cornerRadius = 25
     }
-
 }
 

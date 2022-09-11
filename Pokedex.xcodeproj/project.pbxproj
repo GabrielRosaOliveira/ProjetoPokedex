@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		202A69A428CE6BCD00EE8E02 /* CALayer+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 202A69A328CE6BCD00EE8E02 /* CALayer+Extension.swift */; };
 		20649BCC28C95E430029B372 /* favoritesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20649BCA28C95E430029B372 /* favoritesCollectionViewCell.swift */; };
 		20649BCD28C95E430029B372 /* favoritesCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 20649BCB28C95E430029B372 /* favoritesCollectionViewCell.xib */; };
 		C08C722028C3D7E40007E7FE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C08C721F28C3D7E40007E7FE /* AppDelegate.swift */; };
@@ -18,6 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		202A69A328CE6BCD00EE8E02 /* CALayer+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CALayer+Extension.swift"; sourceTree = "<group>"; };
 		20649BCA28C95E430029B372 /* favoritesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = favoritesCollectionViewCell.swift; sourceTree = "<group>"; };
 		20649BCB28C95E430029B372 /* favoritesCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = favoritesCollectionViewCell.xib; sourceTree = "<group>"; };
 		C08C721C28C3D7E40007E7FE /* Pokedex.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pokedex.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -41,6 +43,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		202A69A228CE6BB100EE8E02 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				202A69A328CE6BCD00EE8E02 /* CALayer+Extension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		20649BC928C95DE60029B372 /* favoritesCollectionViewCell */ = {
 			isa = PBXGroup;
 			children = (
@@ -69,6 +79,7 @@
 		C08C721E28C3D7E40007E7FE /* Pokedex */ = {
 			isa = PBXGroup;
 			children = (
+				202A69A228CE6BB100EE8E02 /* Extensions */,
 				20649BC928C95DE60029B372 /* favoritesCollectionViewCell */,
 				C08C721F28C3D7E40007E7FE /* AppDelegate.swift */,
 				C08C722128C3D7E40007E7FE /* SceneDelegate.swift */,
@@ -156,6 +167,7 @@
 				C08C722428C3D7E40007E7FE /* ViewController.swift in Sources */,
 				C08C722028C3D7E40007E7FE /* AppDelegate.swift in Sources */,
 				20649BCC28C95E430029B372 /* favoritesCollectionViewCell.swift in Sources */,
+				202A69A428CE6BCD00EE8E02 /* CALayer+Extension.swift in Sources */,
 				C08C722228C3D7E40007E7FE /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
