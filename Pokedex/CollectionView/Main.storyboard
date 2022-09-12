@@ -17,11 +17,8 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="mKA-w6-wkt">
-                                <rect key="frame" x="0.0" y="113" width="414" height="700"/>
+                                <rect key="frame" x="0.0" y="113" width="414" height="664"/>
                                 <color key="backgroundColor" systemColor="systemCyanColor"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="700" id="RQV-YY-iWa"/>
-                                </constraints>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="g1O-xM-Hm8">
                                     <size key="itemSize" width="128" height="128"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -55,7 +52,8 @@
                             <constraint firstItem="NZ7-sh-fLG" firstAttribute="top" secondItem="AeB-yK-OJ7" secondAttribute="top" constant="15" id="D9n-qT-oX0"/>
                             <constraint firstItem="AeB-yK-OJ7" firstAttribute="trailing" secondItem="mKA-w6-wkt" secondAttribute="trailing" id="IWI-Zi-TIq"/>
                             <constraint firstItem="r1m-4W-TSM" firstAttribute="top" secondItem="AeB-yK-OJ7" secondAttribute="top" constant="7" id="aBp-gO-cha"/>
-                            <constraint firstItem="AeB-yK-OJ7" firstAttribute="bottom" secondItem="mKA-w6-wkt" secondAttribute="bottom" id="erz-xQ-G61"/>
+                            <constraint firstItem="mKA-w6-wkt" firstAttribute="top" secondItem="r1m-4W-TSM" secondAttribute="bottom" constant="12" id="eGO-2w-sFK"/>
+                            <constraint firstItem="AeB-yK-OJ7" firstAttribute="bottom" secondItem="mKA-w6-wkt" secondAttribute="bottom" constant="36" id="erz-xQ-G61"/>
                             <constraint firstItem="NZ7-sh-fLG" firstAttribute="leading" secondItem="AeB-yK-OJ7" secondAttribute="leading" constant="35" id="jig-oE-YdQ"/>
                             <constraint firstItem="mKA-w6-wkt" firstAttribute="leading" secondItem="AeB-yK-OJ7" secondAttribute="leading" id="weI-C4-j17"/>
                         </constraints>
@@ -78,7 +76,14 @@
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="tt2-m8-lMe">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="selectedImageTintColor" red="0.34901961679999999" green="0.67058825489999996" blue="0.88235294819999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <tabBarAppearance key="standardAppearance">
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </tabBarAppearance>
+                        <tabBarAppearance key="scrollEdgeAppearance">
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </tabBarAppearance>
                     </tabBar>
                     <connections>
                         <segue destination="vi9-Gx-fJY" kind="relationship" relationship="viewControllers" id="b5K-2c-qI6"/>

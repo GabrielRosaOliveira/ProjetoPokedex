@@ -16,8 +16,13 @@ class MyTabBarConstroller: UITabBarController {
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        tabBar.frame.size.height = 110
-        tabBar.frame.origin.y = view.frame.height - 110
+        if UIScreen.main.bounds.height < 812.0 {
+            tabBar.frame.size.height = 80
+            tabBar.frame.origin.y = view.frame.height - 80
+        } else {
+            tabBar.frame.size.height = 100
+            tabBar.frame.origin.y = view.frame.height - 100
+        }
     }
     
     func configTabBar() {
@@ -29,12 +34,4 @@ class MyTabBarConstroller: UITabBarController {
     }
 }
 
-class ViewController: UIViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-    }
-
-}
 

@@ -35,7 +35,6 @@ class HomeCollectionViewCell: UICollectionViewCell {
 }
 
 extension CALayer {
-
     func makeShadow(color: UIColor,
                     x: CGFloat = 0,
                     y: CGFloat = 0,
