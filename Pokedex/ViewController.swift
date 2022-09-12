@@ -8,6 +8,31 @@
 import UIKit
 
 class MyTabBarConstroller: UITabBarController {
+<<<<<<< HEAD
+=======
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        configTabBar()
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        tabBar.frame.size.height = 110
+        tabBar.frame.origin.y = view.frame.height - 110
+    }
+    
+    func configTabBar() {
+        tabBar.layer.cornerRadius = 40
+        tabBar.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMinXMinYCorner]
+        tabBar.layer.borderWidth = 2.5
+        tabBar.layer.borderColor = UIColor.black.cgColor
+        tabBar.clipsToBounds = true
+    }
+}
+
+class ViewController: UIViewController {
+>>>>>>> edec69f0a37f1a851ae1395da9857d8fca6f070c
 
     override func viewDidLoad() {
         super.viewDidLoad()
