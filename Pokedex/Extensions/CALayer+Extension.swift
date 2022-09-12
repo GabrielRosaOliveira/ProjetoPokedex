@@ -9,17 +9,17 @@ import Foundation
 import UIKit
 
 extension CALayer {
-    
+
     func makeShadow(color: UIColor,
-                    x: CGFloat = 0,
-                    y: CGFloat = 0,
-                    blur: CGFloat = 0,
+                    x: CGFloat      = 0,
+                    y: CGFloat      = 0,
+                    blur: CGFloat   = 0,
                     spread: CGFloat = 0) {
-        shadowColor = color.cgColor
-        shadowOpacity = 1
-        masksToBounds = false
-        shadowOffset = CGSize(width: x, height: y)
-        shadowRadius = blur / 2
+        shadowColor     = color.cgColor
+        shadowOpacity   = 1
+        masksToBounds   = false
+        shadowOffset    = CGSize(width: x, height: y)
+        shadowRadius    = blur / 2
         if spread == 0 {
             shadowPath = nil
         }

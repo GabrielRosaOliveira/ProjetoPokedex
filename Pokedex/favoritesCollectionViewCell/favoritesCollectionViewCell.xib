@@ -4,7 +4,6 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -17,56 +16,60 @@
                 <rect key="frame" x="0.0" y="0.0" width="357" height="119"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vXy-0U-wU8">
-                        <rect key="frame" x="0.0" y="0.0" width="357" height="119"/>
-                        <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="laprasfavo" translatesAutoresizingMaskIntoConstraints="NO" id="MOm-qk-cSu">
-                                <rect key="frame" x="24" y="4" width="110" height="110"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="110" id="RjL-PB-cUS"/>
-                                    <constraint firstAttribute="height" constant="110" id="wZa-RP-czW"/>
-                                </constraints>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lapras" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kSu-ZS-aE5">
-                                <rect key="frame" x="139" y="4" width="90.5" height="39"/>
-                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="30"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nº131" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bxl-Zd-RVM">
-                                <rect key="frame" x="139" y="46" width="59" height="26"/>
-                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="20"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="1024px-Pokémon_Water_Type_Icon 5" translatesAutoresizingMaskIntoConstraints="NO" id="SVH-vY-N4B">
-                                <rect key="frame" x="142" y="80" width="30" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="30" id="rMw-ZC-SRA"/>
-                                    <constraint firstAttribute="height" constant="30" id="ube-KD-gm5"/>
-                                </constraints>
-                            </imageView>
-                        </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="MOm-qk-cSu" firstAttribute="leading" secondItem="vXy-0U-wU8" secondAttribute="leading" constant="24" id="7pv-Is-Oq8"/>
-                            <constraint firstItem="kSu-ZS-aE5" firstAttribute="leading" secondItem="MOm-qk-cSu" secondAttribute="trailing" constant="5" id="BZk-AZ-4vF"/>
-                            <constraint firstItem="MOm-qk-cSu" firstAttribute="top" secondItem="vXy-0U-wU8" secondAttribute="top" constant="4" id="Qnx-tp-duj"/>
-                            <constraint firstItem="SVH-vY-N4B" firstAttribute="leading" secondItem="MOm-qk-cSu" secondAttribute="trailing" constant="8" symbolic="YES" id="TZ2-iB-hHW"/>
-                            <constraint firstItem="kSu-ZS-aE5" firstAttribute="top" secondItem="vXy-0U-wU8" secondAttribute="top" constant="4" id="mwS-DH-uva"/>
-                            <constraint firstItem="SVH-vY-N4B" firstAttribute="top" secondItem="Bxl-Zd-RVM" secondAttribute="bottom" constant="8" symbolic="YES" id="rHJ-YQ-VCI"/>
-                            <constraint firstItem="Bxl-Zd-RVM" firstAttribute="top" secondItem="kSu-ZS-aE5" secondAttribute="bottom" constant="3" id="wlk-11-cKc"/>
-                            <constraint firstItem="Bxl-Zd-RVM" firstAttribute="leading" secondItem="MOm-qk-cSu" secondAttribute="trailing" constant="5" id="zam-OJ-bbe"/>
-                        </constraints>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="quM-pS-RfC">
+                        <rect key="frame" x="5" y="5" width="347" height="109"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </view>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vXy-0U-wU8">
+                        <rect key="frame" x="5" y="5" width="347" height="109"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </view>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="laprasfavo" translatesAutoresizingMaskIntoConstraints="NO" id="MOm-qk-cSu">
+                        <rect key="frame" x="20" y="4.5" width="110" height="110"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="110" id="9ac-5v-Ugt"/>
+                            <constraint firstAttribute="height" constant="110" id="Xpr-gm-mm3"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lapras" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kSu-ZS-aE5">
+                        <rect key="frame" x="145" y="4.5" width="90.5" height="39"/>
+                        <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="30"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nº131" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bxl-Zd-RVM">
+                        <rect key="frame" x="145" y="46.5" width="59" height="26"/>
+                        <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="20"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="1024px-Pokémon_Water_Type_Icon 5" translatesAutoresizingMaskIntoConstraints="NO" id="SVH-vY-N4B">
+                        <rect key="frame" x="145" y="77.5" width="30" height="30"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="30" id="UfH-cr-Mte"/>
+                            <constraint firstAttribute="height" constant="30" id="dtr-Si-8yH"/>
+                        </constraints>
+                    </imageView>
                 </subviews>
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <constraints>
-                <constraint firstAttribute="trailing" secondItem="vXy-0U-wU8" secondAttribute="trailing" id="2hN-ar-0DZ"/>
-                <constraint firstItem="vXy-0U-wU8" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="FGp-GM-hoB"/>
-                <constraint firstItem="vXy-0U-wU8" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="TYE-5h-4Jd"/>
-                <constraint firstAttribute="bottom" secondItem="vXy-0U-wU8" secondAttribute="bottom" id="iqZ-j2-ASF"/>
+                <constraint firstItem="MOm-qk-cSu" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="20" id="D4e-Fb-uCz"/>
+                <constraint firstItem="SVH-vY-N4B" firstAttribute="leading" secondItem="MOm-qk-cSu" secondAttribute="trailing" constant="15" id="EeK-rq-Gpj"/>
+                <constraint firstItem="kSu-ZS-aE5" firstAttribute="leading" secondItem="MOm-qk-cSu" secondAttribute="trailing" constant="15" id="GQx-kn-6Sv"/>
+                <constraint firstItem="MOm-qk-cSu" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="HUf-dW-yfI"/>
+                <constraint firstAttribute="trailing" secondItem="quM-pS-RfC" secondAttribute="trailing" constant="5" id="IIR-pC-fZF"/>
+                <constraint firstItem="Bxl-Zd-RVM" firstAttribute="centerY" secondItem="MOm-qk-cSu" secondAttribute="centerY" id="MZS-l5-BR8"/>
+                <constraint firstItem="vXy-0U-wU8" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="5" id="Snz-bb-W7f"/>
+                <constraint firstAttribute="bottom" secondItem="quM-pS-RfC" secondAttribute="bottom" constant="5" id="WOc-Sb-HAl"/>
+                <constraint firstAttribute="trailing" secondItem="vXy-0U-wU8" secondAttribute="trailing" constant="5" id="dU4-mD-mfH"/>
+                <constraint firstItem="quM-pS-RfC" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="5" id="dVu-Za-6iY"/>
+                <constraint firstItem="vXy-0U-wU8" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="5" id="fi3-mL-c3y"/>
+                <constraint firstAttribute="bottom" secondItem="vXy-0U-wU8" secondAttribute="bottom" constant="5" id="iKt-ac-qNP"/>
+                <constraint firstItem="Bxl-Zd-RVM" firstAttribute="leading" secondItem="MOm-qk-cSu" secondAttribute="trailing" constant="15" id="tr9-EW-fzE"/>
+                <constraint firstItem="quM-pS-RfC" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="5" id="xNF-b1-Iyl"/>
+                <constraint firstItem="kSu-ZS-aE5" firstAttribute="top" secondItem="MOm-qk-cSu" secondAttribute="top" id="yFE-zd-7M8"/>
+                <constraint firstItem="SVH-vY-N4B" firstAttribute="bottom" secondItem="MOm-qk-cSu" secondAttribute="bottom" constant="-7" id="yHq-Iv-Csj"/>
             </constraints>
             <size key="customSize" width="357" height="119"/>
             <connections>
@@ -75,15 +78,13 @@
                 <outlet property="pokemonNameLabel" destination="kSu-ZS-aE5" id="hG9-pZ-OkC"/>
                 <outlet property="pokemonNumberLabel" destination="Bxl-Zd-RVM" id="BsA-P1-GYB"/>
                 <outlet property="pokemonTypeImageView" destination="SVH-vY-N4B" id="A5m-RM-6me"/>
+                <outlet property="shadowView" destination="quM-pS-RfC" id="OcP-eD-eOt"/>
             </connections>
-            <point key="canvasLocation" x="322" y="107"/>
+            <point key="canvasLocation" x="231" y="12"/>
         </collectionViewCell>
     </objects>
     <resources>
         <image name="1024px-Pokémon_Water_Type_Icon 5" width="28" height="27"/>
         <image name="laprasfavo" width="125" height="125"/>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
     </resources>
 </document>
