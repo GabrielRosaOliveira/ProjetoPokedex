@@ -7,7 +7,7 @@
 
 import UIKit
 
-class LoadingViewController: UIViewController {
+class LaunchScreenstoryboard: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
