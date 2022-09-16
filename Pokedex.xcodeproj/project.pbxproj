@@ -9,25 +9,37 @@
 /* Begin PBXBuildFile section */
 		C002E45628CE9F4700C44F2B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C002E45528CE9F4700C44F2B /* LoginViewController.swift */; };
 		C002E45828CE9F5C00C44F2B /* LogionStoryBoard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C002E45728CE9F5C00C44F2B /* LogionStoryBoard.storyboard */; };
+		C03B6FF128D3E56A00683717 /* PokemonSelectedVc.swift in Sources */ = {isa = PBXBuildFile; fileRef = C03B6FF028D3E56A00683717 /* PokemonSelectedVc.swift */; };
+		C03B6FF328D3E58500683717 /* pokemonSelected.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C03B6FF228D3E58500683717 /* pokemonSelected.storyboard */; };
 		C05654EB28CE6FA600230AB8 /* HomeCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C05654E828CE6FA600230AB8 /* HomeCollectionViewCell.xib */; };
 		C05654EC28CE6FA600230AB8 /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C05654E928CE6FA600230AB8 /* CollectionViewController.swift */; };
 		C05654ED28CE6FA600230AB8 /* HomeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C05654EA28CE6FA600230AB8 /* HomeCollectionViewCell.swift */; };
 		C05654EF28CE6FED00230AB8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C05654EE28CE6FED00230AB8 /* Main.storyboard */; };
+		C08AE85F28D3FD9100FCC976 /* HabilidadesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C08AE85D28D3FD9100FCC976 /* HabilidadesCollectionViewCell.swift */; };
+		C08AE86028D3FD9100FCC976 /* HabilidadesCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C08AE85E28D3FD9100FCC976 /* HabilidadesCollectionViewCell.xib */; };
 		C08C722028C3D7E40007E7FE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C08C721F28C3D7E40007E7FE /* AppDelegate.swift */; };
 		C08C722228C3D7E40007E7FE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C08C722128C3D7E40007E7FE /* SceneDelegate.swift */; };
 		C08C722428C3D7E40007E7FE /* MyTabBarConstroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = C08C722328C3D7E40007E7FE /* MyTabBarConstroller.swift */; };
 		C08C722928C3D7E60007E7FE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C08C722828C3D7E60007E7FE /* Assets.xcassets */; };
 		C08C722C28C3D7E60007E7FE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C08C722A28C3D7E60007E7FE /* LaunchScreen.storyboard */; };
 		C0C2D9EE28D28D1D00DE5CF9 /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0C2D9ED28D28D1D00DE5CF9 /* LoadingViewController.swift */; };
+		C0DBA85E28D3FFCA00C7548F /* SobreCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0DBA85C28D3FFCA00C7548F /* SobreCollectionViewCell.swift */; };
+		C0DBA85F28D3FFCA00C7548F /* SobreCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C0DBA85D28D3FFCA00C7548F /* SobreCollectionViewCell.xib */; };
+		C0DBA86328D4008300C7548F /* AtributosCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0DBA86128D4008300C7548F /* AtributosCollectionViewCell.swift */; };
+		C0DBA86428D4008300C7548F /* AtributosCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C0DBA86228D4008300C7548F /* AtributosCollectionViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		C002E45528CE9F4700C44F2B /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		C002E45728CE9F5C00C44F2B /* LogionStoryBoard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LogionStoryBoard.storyboard; sourceTree = "<group>"; };
+		C03B6FF028D3E56A00683717 /* PokemonSelectedVc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonSelectedVc.swift; sourceTree = "<group>"; };
+		C03B6FF228D3E58500683717 /* pokemonSelected.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = pokemonSelected.storyboard; sourceTree = "<group>"; };
 		C05654E828CE6FA600230AB8 /* HomeCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeCollectionViewCell.xib; sourceTree = "<group>"; };
 		C05654E928CE6FA600230AB8 /* CollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
 		C05654EA28CE6FA600230AB8 /* HomeCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeCollectionViewCell.swift; sourceTree = "<group>"; };
 		C05654EE28CE6FED00230AB8 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		C08AE85D28D3FD9100FCC976 /* HabilidadesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabilidadesCollectionViewCell.swift; sourceTree = "<group>"; };
+		C08AE85E28D3FD9100FCC976 /* HabilidadesCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HabilidadesCollectionViewCell.xib; sourceTree = "<group>"; };
 		C08C721C28C3D7E40007E7FE /* Pokedex.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pokedex.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C08C721F28C3D7E40007E7FE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C08C722128C3D7E40007E7FE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -36,6 +48,10 @@
 		C08C722B28C3D7E60007E7FE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C08C722D28C3D7E60007E7FE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C0C2D9ED28D28D1D00DE5CF9 /* LoadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewController.swift; sourceTree = "<group>"; };
+		C0DBA85C28D3FFCA00C7548F /* SobreCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SobreCollectionViewCell.swift; sourceTree = "<group>"; };
+		C0DBA85D28D3FFCA00C7548F /* SobreCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SobreCollectionViewCell.xib; sourceTree = "<group>"; };
+		C0DBA86128D4008300C7548F /* AtributosCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AtributosCollectionViewCell.swift; sourceTree = "<group>"; };
+		C0DBA86228D4008300C7548F /* AtributosCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AtributosCollectionViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +100,44 @@
 			path = Login;
 			sourceTree = "<group>";
 		};
+		C035444328D3FA1300AA86A4 /* Collection */ = {
+			isa = PBXGroup;
+			children = (
+				C08AE86128D3FF2E00FCC976 /* Sobre */,
+				C0DBA86028D4006B00C7548F /* Atributos */,
+				C08AE85C28D3FD6D00FCC976 /* Habilidades */,
+			);
+			path = Collection;
+			sourceTree = "<group>";
+		};
+		C03B6FEF28D3E50700683717 /* PokemonSelected */ = {
+			isa = PBXGroup;
+			children = (
+				C035444328D3FA1300AA86A4 /* Collection */,
+				C03B6FF028D3E56A00683717 /* PokemonSelectedVc.swift */,
+				C03B6FF228D3E58500683717 /* pokemonSelected.storyboard */,
+			);
+			path = PokemonSelected;
+			sourceTree = "<group>";
+		};
+		C08AE85C28D3FD6D00FCC976 /* Habilidades */ = {
+			isa = PBXGroup;
+			children = (
+				C08AE85D28D3FD9100FCC976 /* HabilidadesCollectionViewCell.swift */,
+				C08AE85E28D3FD9100FCC976 /* HabilidadesCollectionViewCell.xib */,
+			);
+			path = Habilidades;
+			sourceTree = "<group>";
+		};
+		C08AE86128D3FF2E00FCC976 /* Sobre */ = {
+			isa = PBXGroup;
+			children = (
+				C0DBA85C28D3FFCA00C7548F /* SobreCollectionViewCell.swift */,
+				C0DBA85D28D3FFCA00C7548F /* SobreCollectionViewCell.xib */,
+			);
+			path = Sobre;
+			sourceTree = "<group>";
+		};
 		C08C721328C3D7E40007E7FE = {
 			isa = PBXGroup;
 			children = (
@@ -103,6 +157,7 @@
 		C08C721E28C3D7E40007E7FE /* Pokedex */ = {
 			isa = PBXGroup;
 			children = (
+				C03B6FEF28D3E50700683717 /* PokemonSelected */,
 				C002E45128CE9DE800C44F2B /* TabBar */,
 				C002E45228CE9E4700C44F2B /* CollectionView */,
 				C002E45328CE9EAA00C44F2B /* HomeCollection */,
@@ -123,6 +178,15 @@
 				C0C2D9ED28D28D1D00DE5CF9 /* LoadingViewController.swift */,
 			);
 			path = Loading;
+			sourceTree = "<group>";
+		};
+		C0DBA86028D4006B00C7548F /* Atributos */ = {
+			isa = PBXGroup;
+			children = (
+				C0DBA86128D4008300C7548F /* AtributosCollectionViewCell.swift */,
+				C0DBA86228D4008300C7548F /* AtributosCollectionViewCell.xib */,
+			);
+			path = Atributos;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -184,9 +248,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				C08C722C28C3D7E60007E7FE /* LaunchScreen.storyboard in Resources */,
+				C08AE86028D3FD9100FCC976 /* HabilidadesCollectionViewCell.xib in Resources */,
 				C05654EF28CE6FED00230AB8 /* Main.storyboard in Resources */,
 				C002E45828CE9F5C00C44F2B /* LogionStoryBoard.storyboard in Resources */,
+				C03B6FF328D3E58500683717 /* pokemonSelected.storyboard in Resources */,
 				C08C722928C3D7E60007E7FE /* Assets.xcassets in Resources */,
+				C0DBA85F28D3FFCA00C7548F /* SobreCollectionViewCell.xib in Resources */,
+				C0DBA86428D4008300C7548F /* AtributosCollectionViewCell.xib in Resources */,
 				C05654EB28CE6FA600230AB8 /* HomeCollectionViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -201,8 +269,12 @@
 				C0C2D9EE28D28D1D00DE5CF9 /* LoadingViewController.swift in Sources */,
 				C002E45628CE9F4700C44F2B /* LoginViewController.swift in Sources */,
 				C05654ED28CE6FA600230AB8 /* HomeCollectionViewCell.swift in Sources */,
+				C08AE85F28D3FD9100FCC976 /* HabilidadesCollectionViewCell.swift in Sources */,
+				C0DBA85E28D3FFCA00C7548F /* SobreCollectionViewCell.swift in Sources */,
 				C05654EC28CE6FA600230AB8 /* CollectionViewController.swift in Sources */,
 				C08C722428C3D7E40007E7FE /* MyTabBarConstroller.swift in Sources */,
+				C03B6FF128D3E56A00683717 /* PokemonSelectedVc.swift in Sources */,
+				C0DBA86328D4008300C7548F /* AtributosCollectionViewCell.swift in Sources */,
 				C08C722028C3D7E40007E7FE /* AppDelegate.swift in Sources */,
 				C08C722228C3D7E40007E7FE /* SceneDelegate.swift in Sources */,
 			);
@@ -347,7 +419,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Pokedex/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UILaunchStoryboardName = "";
 				INFOPLIST_KEY_UIMainStoryboardFile = LogionStoryBoard;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -375,7 +447,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Pokedex/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UILaunchStoryboardName = "";
 				INFOPLIST_KEY_UIMainStoryboardFile = LogionStoryBoard;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
