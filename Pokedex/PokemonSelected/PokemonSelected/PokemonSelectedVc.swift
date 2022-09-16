@@ -14,13 +14,13 @@ class PokemonSelectedVc: UIViewController {
     
     @IBOutlet weak var infoCollectionView: UICollectionView!
     
-    
     let gradient = CAGradientLayer()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.inferiorBottoView()
         self.setGradient()
+       
     }
     
     override func viewDidLayoutSubviews() {
@@ -30,7 +30,6 @@ class PokemonSelectedVc: UIViewController {
     
     }
 
-    
     func setGradient() {
         gradient.colors = [ UIColor(red: 173/255, green: 236/255, blue: 150/255, alpha: 1.0).cgColor,
                             UIColor(red: 203/255, green: 144/255, blue: 197/255, alpha: 1.0).cgColor]
@@ -43,8 +42,7 @@ class PokemonSelectedVc: UIViewController {
     }
     
     func inferiorBottoView() {
-        
-        
+    
         TelaBottomView.layer.cornerRadius = 25
         TelaBottomView.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMinXMinYCorner]
         TelaBottomView.layer.borderWidth = 2.0
@@ -53,7 +51,7 @@ class PokemonSelectedVc: UIViewController {
         //        bulbasaurLabel.layer.borderColor = UIColor.black.cgColor
     }
     
-    
-    
-    
 }
+
+
+

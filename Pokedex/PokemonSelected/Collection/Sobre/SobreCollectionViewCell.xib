@@ -11,7 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="iYv-Vg-207" customClass="PokemonSelectedCollectionViewCell" customModule="Pokedex" customModuleProvider="target">
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="SobreCollectionViewCell" id="iYv-Vg-207" customClass="SobreCollectionViewCell" customModule="Pokedex" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="355" height="181"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -56,6 +56,10 @@ magna aliqua. </string>
                 <constraint firstAttribute="trailing" secondItem="Inc-dm-cJA" secondAttribute="trailing" id="riB-2i-ojO"/>
             </constraints>
             <size key="customSize" width="355" height="181"/>
+            <connections>
+                <outlet property="aboutLabel" destination="JFV-dt-iGm" id="veh-Vb-kXm"/>
+                <outlet property="titleLabel" destination="rFu-sw-0wy" id="Gvj-eI-GIA"/>
+            </connections>
             <point key="canvasLocation" x="319.23076923076923" y="67.180094786729853"/>
         </collectionViewCell>
     </objects>
