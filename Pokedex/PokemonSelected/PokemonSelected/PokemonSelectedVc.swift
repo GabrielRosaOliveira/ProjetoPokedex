@@ -14,13 +14,27 @@ class PokemonSelectedVc: UIViewController {
     
     @IBOutlet weak var infoCollectionView: UICollectionView!
     
+    @IBOutlet weak var aboutButton: UIButton!
+    @IBOutlet weak var attributesButton: UIButton!
+    @IBOutlet weak var abilitiesButton: UIButton!
+    
     let gradient = CAGradientLayer()
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.inferiorBottoView()
         self.setGradient()
-       
+        infoCollectionView.delegate = self
+        infoCollectionView.dataSource = self
+        
+        infoCollectionView.register(SobreCollectionViewCell.nib(), forCellWithReuseIdentifier: SobreCollectionViewCell.identifier)
+        
+        infoCollectionView.register(AtributosCollectionViewCell.nib(), forCellWithReuseIdentifier: AtributosCollectionViewCell.identifier)
+        
+        infoCollectionView.register(HabilidadesCollectionViewCell.nib(), forCellWithReuseIdentifier: HabilidadesCollectionViewCell.identifier)
+        
     }
     
     override func viewDidLayoutSubviews() {
@@ -47,11 +61,51 @@ class PokemonSelectedVc: UIViewController {
         TelaBottomView.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMinXMinYCorner]
         TelaBottomView.layer.borderWidth = 2.0
         TelaBottomView.layer.borderColor = UIColor.black.cgColor
-        //        bulbasaurLabel.layer.borderWidth = 2.0
-        //        bulbasaurLabel.layer.borderColor = UIColor.black.cgColor
+        
+        aboutButton.layer.cornerRadius = 18
+        aboutButton.layer.borderWidth = 1.0
+        aboutButton.layer.borderColor = UIColor.black.cgColor
+        
+        attributesButton.layer.cornerRadius = 18
+        attributesButton.layer.borderWidth = 1.0
+        attributesButton.layer.borderColor = UIColor.black.cgColor
+        
+        abilitiesButton.layer.cornerRadius = 18
+        abilitiesButton.layer.borderWidth = 1.0
+        abilitiesButton.layer.borderColor = UIColor.black.cgColor
     }
     
 }
 
+extension PokemonSelectedVc: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 3
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        if indexPath.item == 0 {
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: SobreCollectionViewCell.identifier, for: indexPath) as? SobreCollectionViewCell
+            return cell ?? UICollectionViewCell()
+        } else if indexPath.item == 1 {
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HabilidadesCollectionViewCell.identifier, for: indexPath) as? HabilidadesCollectionViewCell
+            return cell ?? UICollectionViewCell()
+        } else {
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: AtributosCollectionViewCell.identifier, for: indexPath) as? AtributosCollectionViewCell
+            return cell ?? UICollectionViewCell()
+        }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: view.frame.size.width , height: 300)
+        
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 5
+    }
+    
+    
+}
 
 
