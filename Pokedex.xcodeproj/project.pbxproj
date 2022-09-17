@@ -12,6 +12,8 @@
 		C002E45828CE9F5C00C44F2B /* LogionStoryBoard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C002E45728CE9F5C00C44F2B /* LogionStoryBoard.storyboard */; };
 		C03B6FF128D3E56A00683717 /* PokemonSelectedVc.swift in Sources */ = {isa = PBXBuildFile; fileRef = C03B6FF028D3E56A00683717 /* PokemonSelectedVc.swift */; };
 		C03B6FF328D3E58500683717 /* pokemonSelected.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C03B6FF228D3E58500683717 /* pokemonSelected.storyboard */; };
+		C0404F4F28D65577007CD6CA /* AbilitiesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0404F4D28D65577007CD6CA /* AbilitiesTableViewCell.swift */; };
+		C0404F5028D65577007CD6CA /* AbilitiesTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C0404F4E28D65577007CD6CA /* AbilitiesTableViewCell.xib */; };
 		C05654EB28CE6FA600230AB8 /* HomeCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C05654E828CE6FA600230AB8 /* HomeCollectionViewCell.xib */; };
 		C05654EC28CE6FA600230AB8 /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C05654E928CE6FA600230AB8 /* CollectionViewController.swift */; };
 		C05654ED28CE6FA600230AB8 /* HomeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C05654EA28CE6FA600230AB8 /* HomeCollectionViewCell.swift */; };
@@ -38,6 +40,8 @@
 		C002E45728CE9F5C00C44F2B /* LogionStoryBoard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LogionStoryBoard.storyboard; sourceTree = "<group>"; };
 		C03B6FF028D3E56A00683717 /* PokemonSelectedVc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonSelectedVc.swift; sourceTree = "<group>"; };
 		C03B6FF228D3E58500683717 /* pokemonSelected.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = pokemonSelected.storyboard; sourceTree = "<group>"; };
+		C0404F4D28D65577007CD6CA /* AbilitiesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AbilitiesTableViewCell.swift; sourceTree = "<group>"; };
+		C0404F4E28D65577007CD6CA /* AbilitiesTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AbilitiesTableViewCell.xib; sourceTree = "<group>"; };
 		C05654E828CE6FA600230AB8 /* HomeCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeCollectionViewCell.xib; sourceTree = "<group>"; };
 		C05654E928CE6FA600230AB8 /* CollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
 		C05654EA28CE6FA600230AB8 /* HomeCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -76,7 +80,6 @@
 				BD41CED1E2A5A458278E849D /* Pods-Pokedex.debug.xcconfig */,
 				3F923EC079D0872720E9FA68 /* Pods-Pokedex.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -143,9 +146,19 @@
 			path = PokemonSelected;
 			sourceTree = "<group>";
 		};
+		C0404F4C28D65546007CD6CA /* tableView */ = {
+			isa = PBXGroup;
+			children = (
+				C0404F4D28D65577007CD6CA /* AbilitiesTableViewCell.swift */,
+				C0404F4E28D65577007CD6CA /* AbilitiesTableViewCell.xib */,
+			);
+			path = tableView;
+			sourceTree = "<group>";
+		};
 		C08AE85C28D3FD6D00FCC976 /* Habilidades */ = {
 			isa = PBXGroup;
 			children = (
+				C0404F4C28D65546007CD6CA /* tableView */,
 				C08AE85D28D3FD9100FCC976 /* HabilidadesCollectionViewCell.swift */,
 				C08AE85E28D3FD9100FCC976 /* HabilidadesCollectionViewCell.xib */,
 			);
@@ -288,6 +301,7 @@
 				C002E45828CE9F5C00C44F2B /* LogionStoryBoard.storyboard in Resources */,
 				C03B6FF328D3E58500683717 /* pokemonSelected.storyboard in Resources */,
 				C08C722928C3D7E60007E7FE /* Assets.xcassets in Resources */,
+				C0404F5028D65577007CD6CA /* AbilitiesTableViewCell.xib in Resources */,
 				C0DBA85F28D3FFCA00C7548F /* SobreCollectionViewCell.xib in Resources */,
 				C0DBA86428D4008300C7548F /* AtributosCollectionViewCell.xib in Resources */,
 				C05654EB28CE6FA600230AB8 /* HomeCollectionViewCell.xib in Resources */,
@@ -343,6 +357,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C0404F4F28D65577007CD6CA /* AbilitiesTableViewCell.swift in Sources */,
 				C0C2D9EE28D28D1D00DE5CF9 /* LoadingViewController.swift in Sources */,
 				C002E45628CE9F4700C44F2B /* LoginViewController.swift in Sources */,
 				C05654ED28CE6FA600230AB8 /* HomeCollectionViewCell.swift in Sources */,

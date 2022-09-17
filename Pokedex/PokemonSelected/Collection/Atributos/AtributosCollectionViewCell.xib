@@ -12,14 +12,14 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="AtributosCollectionViewCell" id="1EK-kX-AyP" customClass="AtributosCollectionViewCell" customModule="Pokedex" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="355" height="181"/>
+            <rect key="frame" x="0.0" y="0.0" width="355" height="145"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="355" height="181"/>
+                <rect key="frame" x="0.0" y="0.0" width="355" height="145"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tjP-xf-Qbm">
-                        <rect key="frame" x="0.0" y="0.0" width="355" height="181"/>
+                        <rect key="frame" x="0.0" y="0.0" width="355" height="145"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Atributos" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W6e-kS-Nms">
                                 <rect key="frame" x="18" y="13" width="81" height="22"/>
@@ -45,20 +45,22 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="PNo-lZ-7Ul">
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.69999999999999996" translatesAutoresizingMaskIntoConstraints="NO" id="PNo-lZ-7Ul">
                                 <rect key="frame" x="133" y="57" width="150" height="4"/>
+                                <color key="tintColor" systemColor="systemRedColor"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="150" id="cNv-Wo-7qe"/>
                                 </constraints>
                             </progressView>
-                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="XP3-1m-Y0T">
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.80000000000000004" translatesAutoresizingMaskIntoConstraints="NO" id="XP3-1m-Y0T">
                                 <rect key="frame" x="133" y="88" width="150" height="4"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="150" id="Ubi-YA-Bqu"/>
                                 </constraints>
                             </progressView>
-                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="jT9-la-2xD">
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.69999999999999996" translatesAutoresizingMaskIntoConstraints="NO" id="jT9-la-2xD">
                                 <rect key="frame" x="133" y="119" width="150" height="4"/>
+                                <color key="tintColor" systemColor="systemYellowColor"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="150" id="tQf-Wj-o2Z"/>
                                 </constraints>
@@ -115,13 +117,24 @@
                 <constraint firstItem="tjP-xf-Qbm" firstAttribute="top" secondItem="1EK-kX-AyP" secondAttribute="top" id="mJX-W4-XHc"/>
                 <constraint firstAttribute="trailing" secondItem="tjP-xf-Qbm" secondAttribute="trailing" id="zYs-V8-AyH"/>
             </constraints>
-            <size key="customSize" width="355" height="181"/>
-            <point key="canvasLocation" x="319.23076923076923" y="67.180094786729853"/>
+            <size key="customSize" width="355" height="145"/>
+            <connections>
+                <outlet property="attacklabel" destination="xrq-5e-2TP" id="Ura-rE-zur"/>
+                <outlet property="defenseLabel" destination="ryA-FQ-J1I" id="qSV-mu-iF0"/>
+                <outlet property="speedLabel" destination="mfN-47-ZUz" id="tNZ-N7-sDU"/>
+            </connections>
+            <point key="canvasLocation" x="319.23076923076923" y="54.383886255924168"/>
         </collectionViewCell>
     </objects>
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemYellowColor">
+            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

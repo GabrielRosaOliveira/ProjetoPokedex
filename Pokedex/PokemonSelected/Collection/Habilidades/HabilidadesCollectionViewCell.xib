@@ -12,14 +12,14 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="HabilidadesCollectionViewCell" id="cgp-c7-fK4" customClass="HabilidadesCollectionViewCell" customModule="Pokedex" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="355" height="181"/>
+            <rect key="frame" x="0.0" y="0.0" width="355" height="157"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="355" height="181"/>
+                <rect key="frame" x="0.0" y="0.0" width="355" height="157"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xt5-kf-o46">
-                        <rect key="frame" x="0.0" y="0.0" width="355" height="181"/>
+                        <rect key="frame" x="0.0" y="0.0" width="355" height="157"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Habilidades" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PhX-V4-fPA">
                                 <rect key="frame" x="18" y="13" width="102" height="22"/>
@@ -27,43 +27,19 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Chicote de vinha" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rRF-bp-NZc">
-                                <rect key="frame" x="18" y="49" width="128" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dança de pétalas" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VX9-MD-tjY">
-                                <rect key="frame" x="18" y="72" width="132" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bomba de semente" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zYT-G2-Tpx">
-                                <rect key="frame" x="18" y="95" width="148" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Folha navalha" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OJr-nG-Bv3">
-                                <rect key="frame" x="18" y="118" width="104" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="RNI-51-4Dc">
+                                <rect key="frame" x="0.0" y="45" width="355" height="112"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="VX9-MD-tjY" firstAttribute="leading" secondItem="xt5-kf-o46" secondAttribute="leading" constant="18" id="7K4-XJ-RHS"/>
-                            <constraint firstItem="OJr-nG-Bv3" firstAttribute="top" secondItem="zYT-G2-Tpx" secondAttribute="bottom" constant="2" id="9gP-A5-aeN"/>
-                            <constraint firstItem="rRF-bp-NZc" firstAttribute="leading" secondItem="xt5-kf-o46" secondAttribute="leading" constant="18" id="GVH-Bb-I5n"/>
-                            <constraint firstItem="zYT-G2-Tpx" firstAttribute="leading" secondItem="xt5-kf-o46" secondAttribute="leading" constant="18" id="NYg-md-7QA"/>
+                            <constraint firstItem="RNI-51-4Dc" firstAttribute="leading" secondItem="xt5-kf-o46" secondAttribute="leading" id="GUb-NN-bPL"/>
+                            <constraint firstAttribute="bottom" secondItem="RNI-51-4Dc" secondAttribute="bottom" id="LYY-lS-Mn0"/>
                             <constraint firstItem="PhX-V4-fPA" firstAttribute="leading" secondItem="xt5-kf-o46" secondAttribute="leading" constant="18" id="PRx-Ww-cVd"/>
-                            <constraint firstItem="zYT-G2-Tpx" firstAttribute="top" secondItem="VX9-MD-tjY" secondAttribute="bottom" constant="2" id="PZn-ze-pjO"/>
-                            <constraint firstItem="VX9-MD-tjY" firstAttribute="top" secondItem="rRF-bp-NZc" secondAttribute="bottom" constant="2" id="fZ1-U6-oQh"/>
+                            <constraint firstAttribute="trailing" secondItem="RNI-51-4Dc" secondAttribute="trailing" id="RUo-ZQ-SZj"/>
+                            <constraint firstItem="RNI-51-4Dc" firstAttribute="top" secondItem="PhX-V4-fPA" secondAttribute="bottom" constant="10" id="YeX-GD-Bdw"/>
                             <constraint firstItem="PhX-V4-fPA" firstAttribute="top" secondItem="xt5-kf-o46" secondAttribute="top" constant="13" id="lsJ-L1-UmX"/>
-                            <constraint firstItem="rRF-bp-NZc" firstAttribute="top" secondItem="PhX-V4-fPA" secondAttribute="bottom" constant="14" id="reF-4O-R9s"/>
-                            <constraint firstItem="OJr-nG-Bv3" firstAttribute="leading" secondItem="xt5-kf-o46" secondAttribute="leading" constant="18" id="vQ2-mQ-S1Y"/>
                         </constraints>
                     </view>
                 </subviews>
@@ -75,8 +51,11 @@
                 <constraint firstItem="xt5-kf-o46" firstAttribute="top" secondItem="cgp-c7-fK4" secondAttribute="top" id="gbh-bl-F4X"/>
                 <constraint firstItem="xt5-kf-o46" firstAttribute="leading" secondItem="cgp-c7-fK4" secondAttribute="leading" id="tlX-VG-Yzl"/>
             </constraints>
-            <size key="customSize" width="355" height="181"/>
-            <point key="canvasLocation" x="319.23076923076923" y="67.180094786729853"/>
+            <size key="customSize" width="355" height="157"/>
+            <connections>
+                <outlet property="abilitiesTableView" destination="RNI-51-4Dc" id="wcc-hE-n5O"/>
+            </connections>
+            <point key="canvasLocation" x="319.23076923076923" y="58.649289099526065"/>
         </collectionViewCell>
     </objects>
     <resources>

@@ -7,8 +7,9 @@
 
 import UIKit
 
-class HabilidadesCollectionViewCell: UICollectionViewCell {
-
+class HabilidadesCollectionViewCell: UICollectionViewCell, UITableViewDelegate, UITableViewDataSource {
+    
+    @IBOutlet weak var abilitiesTableView: UITableView!
     
     static let identifier: String = "HabilidadesCollectionViewCell"
     
@@ -18,7 +19,19 @@ class HabilidadesCollectionViewCell: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        abilitiesTableView.delegate = self
+        abilitiesTableView.dataSource = self
+        abilitiesTableView.register(AbilitiesTableViewCell.nib(), forCellReuseIdentifier: AbilitiesTableViewCell.identifier)
+        
     }
-
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 10
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: AbilitiesTableViewCell.identifier, for: indexPath) as? AbilitiesTableViewCell
+        return cell ?? UITableViewCell()
+    }
+    
 }

@@ -14,10 +14,6 @@ class PokemonSelectedVc: UIViewController {
     
     @IBOutlet weak var infoCollectionView: UICollectionView!
     
-    @IBOutlet weak var aboutButton: UIButton!
-    @IBOutlet weak var attributesButton: UIButton!
-    @IBOutlet weak var abilitiesButton: UIButton!
-    
     let gradient = CAGradientLayer()
     
     
@@ -61,18 +57,6 @@ class PokemonSelectedVc: UIViewController {
         TelaBottomView.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMinXMinYCorner]
         TelaBottomView.layer.borderWidth = 2.0
         TelaBottomView.layer.borderColor = UIColor.black.cgColor
-        
-        aboutButton.layer.cornerRadius = 18
-        aboutButton.layer.borderWidth = 1.0
-        aboutButton.layer.borderColor = UIColor.black.cgColor
-        
-        attributesButton.layer.cornerRadius = 18
-        attributesButton.layer.borderWidth = 1.0
-        attributesButton.layer.borderColor = UIColor.black.cgColor
-        
-        abilitiesButton.layer.cornerRadius = 18
-        abilitiesButton.layer.borderWidth = 1.0
-        abilitiesButton.layer.borderColor = UIColor.black.cgColor
     }
     
 }
@@ -97,12 +81,19 @@ extension PokemonSelectedVc: UICollectionViewDelegate, UICollectionViewDataSourc
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: view.frame.size.width , height: 300)
+        
+        if indexPath.item == 0 {
+            return CGSize(width: view.frame.size.width , height: 182)
+        } else if indexPath.item == 1 {
+            return CGSize(width: view.frame.size.width , height: 161)
+        } else {
+            return CGSize(width: view.frame.size.width , height: 150)
+        }
         
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return 5
+        return 0
     }
     
     
