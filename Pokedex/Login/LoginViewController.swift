@@ -62,6 +62,5 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         entrarButton.layer.cornerRadius = 19
         cadastrarButton.layer.cornerRadius = 19
     }
-
 }
 
