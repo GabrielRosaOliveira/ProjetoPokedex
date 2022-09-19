@@ -7,16 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-<<<<<<< HEAD
 		202A69A428CE6BCD00EE8E02 /* CALayer+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 202A69A328CE6BCD00EE8E02 /* CALayer+Extension.swift */; };
 		20649BCC28C95E430029B372 /* favoritesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20649BCA28C95E430029B372 /* favoritesCollectionViewCell.swift */; };
 		20649BCD28C95E430029B372 /* favoritesCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 20649BCB28C95E430029B372 /* favoritesCollectionViewCell.xib */; };
-=======
 		C05654EB28CE6FA600230AB8 /* HomeCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C05654E828CE6FA600230AB8 /* HomeCollectionViewCell.xib */; };
 		C05654EC28CE6FA600230AB8 /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C05654E928CE6FA600230AB8 /* CollectionViewController.swift */; };
 		C05654ED28CE6FA600230AB8 /* HomeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C05654EA28CE6FA600230AB8 /* HomeCollectionViewCell.swift */; };
 		C05654EF28CE6FED00230AB8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C05654EE28CE6FED00230AB8 /* Main.storyboard */; };
->>>>>>> edec69f0a37f1a851ae1395da9857d8fca6f070c
 		C08C722028C3D7E40007E7FE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C08C721F28C3D7E40007E7FE /* AppDelegate.swift */; };
 		C08C722228C3D7E40007E7FE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C08C722128C3D7E40007E7FE /* SceneDelegate.swift */; };
 		C08C722428C3D7E40007E7FE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C08C722328C3D7E40007E7FE /* ViewController.swift */; };
@@ -25,16 +22,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-<<<<<<< HEAD
 		202A69A328CE6BCD00EE8E02 /* CALayer+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CALayer+Extension.swift"; sourceTree = "<group>"; };
 		20649BCA28C95E430029B372 /* favoritesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = favoritesCollectionViewCell.swift; sourceTree = "<group>"; };
 		20649BCB28C95E430029B372 /* favoritesCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = favoritesCollectionViewCell.xib; sourceTree = "<group>"; };
-=======
 		C05654E828CE6FA600230AB8 /* HomeCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeCollectionViewCell.xib; sourceTree = "<group>"; };
 		C05654E928CE6FA600230AB8 /* CollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
 		C05654EA28CE6FA600230AB8 /* HomeCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeCollectionViewCell.swift; sourceTree = "<group>"; };
 		C05654EE28CE6FED00230AB8 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
->>>>>>> edec69f0a37f1a851ae1395da9857d8fca6f070c
 		C08C721C28C3D7E40007E7FE /* Pokedex.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pokedex.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C08C721F28C3D7E40007E7FE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C08C722128C3D7E40007E7FE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -168,12 +162,9 @@
 				C08C722C28C3D7E60007E7FE /* LaunchScreen.storyboard in Resources */,
 				C05654EF28CE6FED00230AB8 /* Main.storyboard in Resources */,
 				C08C722928C3D7E60007E7FE /* Assets.xcassets in Resources */,
-<<<<<<< HEAD
 				20649BCD28C95E430029B372 /* favoritesCollectionViewCell.xib in Resources */,
 				C08C722728C3D7E40007E7FE /* Main.storyboard in Resources */,
-=======
 				C05654EB28CE6FA600230AB8 /* HomeCollectionViewCell.xib in Resources */,
->>>>>>> edec69f0a37f1a851ae1395da9857d8fca6f070c
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
