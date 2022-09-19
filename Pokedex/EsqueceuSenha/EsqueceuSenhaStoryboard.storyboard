@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="nqP-MZ-b6f">
+    <device id="retina6_0" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Esqueceu Senha View Controller-->
+        <scene sceneID="lip-Jk-TnT">
+            <objects>
+                <viewController modalPresentationStyle="fullScreen" id="nqP-MZ-b6f" customClass="EsqueceuSenhaViewController" customModule="Pokedex" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="gh8-Yy-Nbi">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Qual seu e-mail?" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ptf-Ik-Wbu">
+                                <rect key="frame" x="30" y="278" width="332" height="20"/>
+                                <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nDf-dy-uyw">
+                                <rect key="frame" x="88" y="398" width="214" height="30"/>
+                                <color key="backgroundColor" red="0.11586117" green="0.18957322839999999" blue="0.35998600720000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
+                                <state key="normal" title="ENVIAR">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="15"/>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LogoPokemon" translatesAutoresizingMaskIntoConstraints="NO" id="auu-y1-lIj">
+                                <rect key="frame" x="22" y="97" width="346" height="131"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="131" id="6Zt-dv-0UG"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MhM-TA-xcx">
+                                <rect key="frame" x="30" y="47" width="40" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="JJe-Tx-WLy"/>
+                                </constraints>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="chevron.backward" catalog="system"/>
+                                <connections>
+                                    <action selector="tappedBackButton:" destination="nqP-MZ-b6f" eventType="touchUpInside" id="X0j-hI-jre"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Digite seu email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4Qp-30-jCv">
+                                <rect key="frame" x="30" y="303" width="330" height="18.666666666666686"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imgPlanoDeFundo" translatesAutoresizingMaskIntoConstraints="NO" id="q1U-4D-wQf">
+                                <rect key="frame" x="0.0" y="716" width="390" height="128"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="128" id="90d-F0-keU"/>
+                                </constraints>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gNb-ue-Hmz">
+                                <rect key="frame" x="30" y="326.66666666666669" width="330" height="1"/>
+                                <color key="backgroundColor" systemColor="labelColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="mDI-p4-FFL"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="jNo-Sp-eq5"/>
+                        <color key="backgroundColor" red="0.53825342659999997" green="0.79721874000000004" blue="0.89067339899999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="4Qp-30-jCv" firstAttribute="top" secondItem="ptf-Ik-Wbu" secondAttribute="bottom" constant="5" id="14Q-SJ-qfj"/>
+                            <constraint firstItem="jNo-Sp-eq5" firstAttribute="trailing" secondItem="auu-y1-lIj" secondAttribute="trailing" constant="22" id="4ki-A4-eHN"/>
+                            <constraint firstItem="jNo-Sp-eq5" firstAttribute="trailing" secondItem="ptf-Ik-Wbu" secondAttribute="trailing" constant="28" id="62f-SZ-NGB"/>
+                            <constraint firstItem="q1U-4D-wQf" firstAttribute="leading" secondItem="jNo-Sp-eq5" secondAttribute="leading" id="9vU-Yx-8Bg"/>
+                            <constraint firstItem="gNb-ue-Hmz" firstAttribute="leading" secondItem="gh8-Yy-Nbi" secondAttribute="leading" constant="30" id="B5a-0q-uf1"/>
+                            <constraint firstItem="auu-y1-lIj" firstAttribute="leading" secondItem="jNo-Sp-eq5" secondAttribute="leading" constant="22" id="IQP-RW-aX2"/>
+                            <constraint firstItem="MhM-TA-xcx" firstAttribute="top" secondItem="jNo-Sp-eq5" secondAttribute="top" id="QL1-VH-3c5"/>
+                            <constraint firstItem="gNb-ue-Hmz" firstAttribute="top" secondItem="4Qp-30-jCv" secondAttribute="bottom" constant="5" id="SDF-v1-xz6"/>
+                            <constraint firstItem="ptf-Ik-Wbu" firstAttribute="leading" secondItem="jNo-Sp-eq5" secondAttribute="leading" constant="30" id="USK-Gm-zbY"/>
+                            <constraint firstItem="jNo-Sp-eq5" firstAttribute="trailing" secondItem="q1U-4D-wQf" secondAttribute="trailing" id="Wc5-Pr-VhH"/>
+                            <constraint firstItem="jNo-Sp-eq5" firstAttribute="trailing" secondItem="4Qp-30-jCv" secondAttribute="trailing" constant="30" id="gga-x6-Srv"/>
+                            <constraint firstItem="ptf-Ik-Wbu" firstAttribute="top" secondItem="auu-y1-lIj" secondAttribute="bottom" constant="50" id="gjY-hU-Tvb"/>
+                            <constraint firstItem="nDf-dy-uyw" firstAttribute="top" secondItem="gNb-ue-Hmz" secondAttribute="bottom" constant="70.329999999999998" id="id5-Z6-JTl"/>
+                            <constraint firstItem="jNo-Sp-eq5" firstAttribute="trailing" secondItem="nDf-dy-uyw" secondAttribute="trailing" constant="88" id="jJL-uP-FcE"/>
+                            <constraint firstAttribute="bottom" secondItem="q1U-4D-wQf" secondAttribute="bottom" id="lTR-tp-QF5"/>
+                            <constraint firstAttribute="trailing" secondItem="gNb-ue-Hmz" secondAttribute="trailing" constant="30" id="lc6-Wh-Hfg"/>
+                            <constraint firstItem="4Qp-30-jCv" firstAttribute="leading" secondItem="jNo-Sp-eq5" secondAttribute="leading" constant="30" id="mfF-Ro-nA7"/>
+                            <constraint firstItem="MhM-TA-xcx" firstAttribute="leading" secondItem="jNo-Sp-eq5" secondAttribute="leading" constant="30" id="urQ-3N-UqL"/>
+                            <constraint firstItem="nDf-dy-uyw" firstAttribute="leading" secondItem="jNo-Sp-eq5" secondAttribute="leading" constant="88" id="xEL-Sj-dW6"/>
+                            <constraint firstItem="auu-y1-lIj" firstAttribute="top" secondItem="jNo-Sp-eq5" secondAttribute="top" constant="50" id="xeW-Kd-c2R"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="IC7-8L-7Ne"/>
+                    <connections>
+                        <outlet property="emailTextField" destination="4Qp-30-jCv" id="eI6-E9-VY1"/>
+                        <outlet property="sentEmailButton" destination="nDf-dy-uyw" id="QLr-hs-aUk"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bF7-R2-H98" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="909.23076923076917" y="88.151658767772503"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="LogoPokemon" width="365" height="134"/>
+        <image name="chevron.backward" catalog="system" width="97" height="128"/>
+        <image name="imgPlanoDeFundo" width="427" height="220"/>
+        <systemColor name="labelColor">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
