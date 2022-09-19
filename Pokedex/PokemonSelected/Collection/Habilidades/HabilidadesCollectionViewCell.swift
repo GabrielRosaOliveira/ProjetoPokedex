@@ -22,11 +22,11 @@ class HabilidadesCollectionViewCell: UICollectionViewCell, UITableViewDelegate, 
         abilitiesTableView.delegate = self
         abilitiesTableView.dataSource = self
         abilitiesTableView.register(AbilitiesTableViewCell.nib(), forCellReuseIdentifier: AbilitiesTableViewCell.identifier)
-        
+        initialConfig()
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return 4
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -34,4 +34,21 @@ class HabilidadesCollectionViewCell: UICollectionViewCell, UITableViewDelegate, 
         return cell ?? UITableViewCell()
     }
     
+    
+    func initialConfig() {
+        abilitiesTableView.layer.cornerRadius = 55
+        abilitiesTableView.layer.borderWidth = 1.5
+        abilitiesTableView.layer.borderColor = UIColor.black.cgColor
+        
+        contentView.backgroundColor = .clear
+        layer.masksToBounds = false
+        abilitiesTableView.layer.borderColor = UIColor.black.cgColor
+        abilitiesTableView.clipsToBounds = true
+
+           
+        }
+    
+    
 }
+
+

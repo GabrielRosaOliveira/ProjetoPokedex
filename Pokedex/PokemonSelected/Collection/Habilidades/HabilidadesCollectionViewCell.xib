@@ -53,7 +53,7 @@
             </constraints>
             <size key="customSize" width="355" height="157"/>
             <connections>
-                <outlet property="abilitiesTableView" destination="RNI-51-4Dc" id="wcc-hE-n5O"/>
+                <outlet property="abilitiesTableView" destination="RNI-51-4Dc" id="gcf-pY-7Y4"/>
             </connections>
             <point key="canvasLocation" x="319.23076923076923" y="58.649289099526065"/>
         </collectionViewCell>

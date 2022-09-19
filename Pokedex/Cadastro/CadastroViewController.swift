@@ -20,10 +20,8 @@ class CadastroViewController: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = UIColor(red: 20/255, green: 178/255, blue: 226/255, alpha: 1.0)
         inferiorBottoView()
-        cadastroLabel.textColor = UIColor(red: 253/255, green: 244/255, blue: 20/255, alpha: 1.0)
-        camadaView.backgroundColor = UIColor(red: 118/255, green: 204/255, blue: 232/255, alpha: 1.0)
+        configButton()
         emailTxtField.delegate = self
         dataNascimentoTxtField.delegate = self
         passWordTxtField.delegate = self
@@ -32,6 +30,18 @@ class CadastroViewController: UIViewController, UITextFieldDelegate {
         botaoDesativado()
         cornerRadius()
     }
+    
+    func configButton() {
+        view.backgroundColor = UIColor(red: 20/255, green: 178/255, blue: 226/255, alpha: 1.0)
+        cadastroLabel.textColor = UIColor(red: 253/255, green: 244/255, blue: 20/255, alpha: 1.0)
+        camadaView.backgroundColor = UIColor(red: 118/255, green: 204/255, blue: 232/255, alpha: 1.0)
+    }
+    
+    
+    @IBAction func tappedBackButton(_ sender: UIButton) {
+        navigationController?.popViewController(animated: true)
+    }
+    
 
     func inferiorBottoView() {
         camadaView.layer.cornerRadius = 50
@@ -73,6 +83,6 @@ class CadastroViewController: UIViewController, UITextFieldDelegate {
     }
     
     func cornerRadius() {
-        cadastrarButton.layer.cornerRadius = 19
+        cadastrarButton.layer.cornerRadius = 17
     }
 }

@@ -12,7 +12,7 @@
         <!--Cadastro View Controller-->
         <scene sceneID="BSR-Ff-HUw">
             <objects>
-                <viewController id="vNf-Ps-xlp" customClass="CadastroViewController" customModule="Pokedex" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Cadastro" id="vNf-Ps-xlp" customClass="CadastroViewController" customModule="Pokedex" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="dMX-AB-KYF">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -138,6 +138,9 @@
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="chevron.backward" catalog="system"/>
+                                <connections>
+                                    <action selector="tappedBackButton:" destination="vNf-Ps-xlp" eventType="touchUpInside" id="CsT-VF-JPN"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="bYN-8I-O8a"/>
