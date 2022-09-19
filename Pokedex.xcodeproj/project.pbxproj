@@ -10,6 +10,8 @@
 		52B77539E4FEAA84BB2103DE /* Pods_Pokedex.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C69070747C61F4DC02A9EC3 /* Pods_Pokedex.framework */; };
 		C002E45628CE9F4700C44F2B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C002E45528CE9F4700C44F2B /* LoginViewController.swift */; };
 		C002E45828CE9F5C00C44F2B /* LogionStoryBoard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C002E45728CE9F5C00C44F2B /* LogionStoryBoard.storyboard */; };
+		C00FF5C028D7E712004F4151 /* CadastroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C00FF5BF28D7E712004F4151 /* CadastroViewController.swift */; };
+		C00FF5C228D7E71D004F4151 /* CadastroStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C00FF5C128D7E71D004F4151 /* CadastroStoryboard.storyboard */; };
 		C03B6FF128D3E56A00683717 /* PokemonSelectedVc.swift in Sources */ = {isa = PBXBuildFile; fileRef = C03B6FF028D3E56A00683717 /* PokemonSelectedVc.swift */; };
 		C03B6FF328D3E58500683717 /* pokemonSelected.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C03B6FF228D3E58500683717 /* pokemonSelected.storyboard */; };
 		C0404F4F28D65577007CD6CA /* AbilitiesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0404F4D28D65577007CD6CA /* AbilitiesTableViewCell.swift */; };
@@ -38,6 +40,8 @@
 		BD41CED1E2A5A458278E849D /* Pods-Pokedex.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pokedex.debug.xcconfig"; path = "Target Support Files/Pods-Pokedex/Pods-Pokedex.debug.xcconfig"; sourceTree = "<group>"; };
 		C002E45528CE9F4700C44F2B /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		C002E45728CE9F5C00C44F2B /* LogionStoryBoard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LogionStoryBoard.storyboard; sourceTree = "<group>"; };
+		C00FF5BF28D7E712004F4151 /* CadastroViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CadastroViewController.swift; sourceTree = "<group>"; };
+		C00FF5C128D7E71D004F4151 /* CadastroStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CadastroStoryboard.storyboard; sourceTree = "<group>"; };
 		C03B6FF028D3E56A00683717 /* PokemonSelectedVc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonSelectedVc.swift; sourceTree = "<group>"; };
 		C03B6FF228D3E58500683717 /* pokemonSelected.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = pokemonSelected.storyboard; sourceTree = "<group>"; };
 		C0404F4D28D65577007CD6CA /* AbilitiesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AbilitiesTableViewCell.swift; sourceTree = "<group>"; };
@@ -118,6 +122,15 @@
 			path = Login;
 			sourceTree = "<group>";
 		};
+		C00FF5BE28D7E6FC004F4151 /* Cadastro */ = {
+			isa = PBXGroup;
+			children = (
+				C00FF5BF28D7E712004F4151 /* CadastroViewController.swift */,
+				C00FF5C128D7E71D004F4151 /* CadastroStoryboard.storyboard */,
+			);
+			path = Cadastro;
+			sourceTree = "<group>";
+		};
 		C022F97428D49B60003CD636 /* PokemonSelected */ = {
 			isa = PBXGroup;
 			children = (
@@ -195,6 +208,7 @@
 		C08C721E28C3D7E40007E7FE /* Pokedex */ = {
 			isa = PBXGroup;
 			children = (
+				C00FF5BE28D7E6FC004F4151 /* Cadastro */,
 				C03B6FEF28D3E50700683717 /* PokemonSelected */,
 				C002E45128CE9DE800C44F2B /* TabBar */,
 				C002E45228CE9E4700C44F2B /* CollectionView */,
@@ -296,6 +310,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C08C722C28C3D7E60007E7FE /* LaunchScreen.storyboard in Resources */,
+				C00FF5C228D7E71D004F4151 /* CadastroStoryboard.storyboard in Resources */,
 				C08AE86028D3FD9100FCC976 /* HabilidadesCollectionViewCell.xib in Resources */,
 				C05654EF28CE6FED00230AB8 /* Main.storyboard in Resources */,
 				C002E45828CE9F5C00C44F2B /* LogionStoryBoard.storyboard in Resources */,
@@ -367,6 +382,7 @@
 				C08C722428C3D7E40007E7FE /* MyTabBarConstroller.swift in Sources */,
 				C03B6FF128D3E56A00683717 /* PokemonSelectedVc.swift in Sources */,
 				C0DBA86328D4008300C7548F /* AtributosCollectionViewCell.swift in Sources */,
+				C00FF5C028D7E712004F4151 /* CadastroViewController.swift in Sources */,
 				C08C722028C3D7E40007E7FE /* AppDelegate.swift in Sources */,
 				C08C722228C3D7E40007E7FE /* SceneDelegate.swift in Sources */,
 			);
@@ -513,7 +529,7 @@
 				INFOPLIST_FILE = Pokedex/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = "";
-				INFOPLIST_KEY_UIMainStoryboardFile = LogionStoryBoard;
+				INFOPLIST_KEY_UIMainStoryboardFile = CadastroStoryboard;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -542,7 +558,7 @@
 				INFOPLIST_FILE = Pokedex/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = "";
-				INFOPLIST_KEY_UIMainStoryboardFile = LogionStoryBoard;
+				INFOPLIST_KEY_UIMainStoryboardFile = CadastroStoryboard;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
