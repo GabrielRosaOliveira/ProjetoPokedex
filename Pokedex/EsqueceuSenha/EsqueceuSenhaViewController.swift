@@ -22,7 +22,7 @@ class EsqueceuSenhaViewController: UIViewController, UITextFieldDelegate {
     }
 
     @IBAction func tappedBackButton(_ sender: UIButton) {
-        dismiss(animated: true)
+        navigationController?.popViewController(animated: true)
         
     }
     

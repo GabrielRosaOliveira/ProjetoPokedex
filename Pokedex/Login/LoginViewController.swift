@@ -27,6 +27,13 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     override func viewWillAppear(_ animated: Bool) {
         navigationController?.isNavigationBarHidden = true
     }
+    
+    @IBAction func didtapForgotPasswordButton(_ sender: UIButton) {
+        let storyboard = UIStoryboard(name: "EsqueceuSenhaStoryboard", bundle: nil)
+        let viewcontroler = storyboard.instantiateViewController(withIdentifier: "esqueceuSenha")
+        navigationController?.pushViewController(viewcontroler, animated: true)
+    }
+    
 
     @IBAction func didTapLoginButton(_ sender: UIButton) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)

@@ -12,7 +12,7 @@
         <!--Esqueceu Senha View Controller-->
         <scene sceneID="lip-Jk-TnT">
             <objects>
-                <viewController modalPresentationStyle="fullScreen" id="nqP-MZ-b6f" customClass="EsqueceuSenhaViewController" customModule="Pokedex" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="esqueceuSenha" modalPresentationStyle="fullScreen" id="nqP-MZ-b6f" customClass="EsqueceuSenhaViewController" customModule="Pokedex" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="gh8-Yy-Nbi">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -41,7 +41,7 @@
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MhM-TA-xcx">
-                                <rect key="frame" x="30" y="47" width="40" height="35"/>
+                                <rect key="frame" x="30" y="67" width="40" height="35"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="35" id="JJe-Tx-WLy"/>
                                 </constraints>
@@ -80,7 +80,7 @@
                             <constraint firstItem="q1U-4D-wQf" firstAttribute="leading" secondItem="jNo-Sp-eq5" secondAttribute="leading" id="9vU-Yx-8Bg"/>
                             <constraint firstItem="gNb-ue-Hmz" firstAttribute="leading" secondItem="gh8-Yy-Nbi" secondAttribute="leading" constant="30" id="B5a-0q-uf1"/>
                             <constraint firstItem="auu-y1-lIj" firstAttribute="leading" secondItem="jNo-Sp-eq5" secondAttribute="leading" constant="22" id="IQP-RW-aX2"/>
-                            <constraint firstItem="MhM-TA-xcx" firstAttribute="top" secondItem="jNo-Sp-eq5" secondAttribute="top" id="QL1-VH-3c5"/>
+                            <constraint firstItem="MhM-TA-xcx" firstAttribute="top" secondItem="jNo-Sp-eq5" secondAttribute="top" constant="20" id="QL1-VH-3c5"/>
                             <constraint firstItem="gNb-ue-Hmz" firstAttribute="top" secondItem="4Qp-30-jCv" secondAttribute="bottom" constant="5" id="SDF-v1-xz6"/>
                             <constraint firstItem="ptf-Ik-Wbu" firstAttribute="leading" secondItem="jNo-Sp-eq5" secondAttribute="leading" constant="30" id="USK-Gm-zbY"/>
                             <constraint firstItem="jNo-Sp-eq5" firstAttribute="trailing" secondItem="q1U-4D-wQf" secondAttribute="trailing" id="Wc5-Pr-VhH"/>

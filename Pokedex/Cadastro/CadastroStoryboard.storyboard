@@ -133,6 +133,12 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ewp-jR-2Xe">
+                                <rect key="frame" x="30" y="68" width="40" height="34"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="chevron.backward" catalog="system"/>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="bYN-8I-O8a"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -141,6 +147,8 @@
                             <constraint firstItem="bYN-8I-O8a" firstAttribute="trailing" secondItem="sZL-Dd-E1z" secondAttribute="trailing" constant="117" id="2AB-dW-2Hp"/>
                             <constraint firstAttribute="bottom" secondItem="9K8-6U-dRh" secondAttribute="bottom" id="3GX-js-R16"/>
                             <constraint firstItem="9K8-6U-dRh" firstAttribute="leading" secondItem="bYN-8I-O8a" secondAttribute="leading" id="Mlg-WJ-D7I"/>
+                            <constraint firstItem="ewp-jR-2Xe" firstAttribute="leading" secondItem="bYN-8I-O8a" secondAttribute="leading" constant="30" id="iDl-tq-e1w"/>
+                            <constraint firstItem="ewp-jR-2Xe" firstAttribute="top" secondItem="bYN-8I-O8a" secondAttribute="top" constant="20" id="iQY-qW-3D2"/>
                             <constraint firstItem="9K8-6U-dRh" firstAttribute="trailing" secondItem="bYN-8I-O8a" secondAttribute="trailing" id="mOo-Z2-m69"/>
                             <constraint firstItem="9K8-6U-dRh" firstAttribute="top" secondItem="bYN-8I-O8a" secondAttribute="top" constant="70" id="pib-nT-N2y"/>
                             <constraint firstItem="sZL-Dd-E1z" firstAttribute="top" secondItem="bYN-8I-O8a" secondAttribute="top" constant="20" id="xTP-0w-Fkl"/>
@@ -164,6 +172,7 @@
     </scenes>
     <resources>
         <image name="4pokemons-removebg-preview" width="707" height="353"/>
+        <image name="chevron.backward" catalog="system" width="97" height="128"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

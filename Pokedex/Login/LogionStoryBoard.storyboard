@@ -17,7 +17,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pokemon-png-logo 1" translatesAutoresizingMaskIntoConstraints="NO" id="04c-Za-v5H">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LogoPokemon" translatesAutoresizingMaskIntoConstraints="NO" id="04c-Za-v5H">
                                 <rect key="frame" x="30" y="105" width="354" height="128"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="128" id="QiV-gv-BfQ"/>
@@ -47,6 +47,9 @@
                                 <color key="tintColor" red="0.12549020350000001" green="0.1725490093" blue="0.35686278339999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Esqueceu a senha?"/>
+                                <connections>
+                                    <action selector="didtapForgotPasswordButton:" destination="OXh-s1-MyS" eventType="touchUpInside" id="QMj-mc-wz6"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ief-p8-zpA">
                                 <rect key="frame" x="69" y="463.5" width="276" height="37"/>
@@ -139,8 +142,8 @@
     </scenes>
     <resources>
         <image name="LOGIN" width="176" height="31"/>
+        <image name="LogoPokemon" width="365" height="134"/>
         <image name="imgPlanoDeFundo" width="427" height="220"/>
-        <image name="pokemon-png-logo 1" width="365" height="134"/>
         <systemColor name="systemCyanColor">
             <color red="0.19607843137254902" green="0.67843137254901964" blue="0.90196078431372551" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
