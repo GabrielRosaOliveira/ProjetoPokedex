@@ -1,0 +1,16 @@
+PODS:
+  - LayoutHelper (1.0.0)
+
+DEPENDENCIES:
+  - LayoutHelper
+
+SPEC REPOS:
+  trunk:
+    - LayoutHelper
+
+SPEC CHECKSUMS:
+  LayoutHelper: fd809f52e0ae583f7576bf5d2af8248b5c3ec4d0
+
+PODFILE CHECKSUM: 590041c9e00715cce432035d2825a1d40d971578
+
+COCOAPODS: 1.11.3
