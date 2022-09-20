@@ -11,6 +11,9 @@ class HabilidadesCollectionViewCell: UICollectionViewCell, UITableViewDelegate, 
     
     @IBOutlet weak var abilitiesTableView: UITableView!
     
+    @IBOutlet weak var abilitiesLabel: UILabel!
+    
+    
     static let identifier: String = "HabilidadesCollectionViewCell"
     
     static func nib() -> UINib {
@@ -23,6 +26,11 @@ class HabilidadesCollectionViewCell: UICollectionViewCell, UITableViewDelegate, 
         abilitiesTableView.dataSource = self
         abilitiesTableView.register(AbilitiesTableViewCell.nib(), forCellReuseIdentifier: AbilitiesTableViewCell.identifier)
         initialConfig()
+        abilitiesLabel.layer.shadowColor = UIColor.gray.cgColor
+        abilitiesLabel.layer.shadowRadius = 1.5
+        abilitiesLabel.layer.shadowOpacity = 1.0
+        abilitiesLabel.layer.shadowOffset = CGSize(width: 0, height: 6.0)
+        
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -35,8 +43,9 @@ class HabilidadesCollectionViewCell: UICollectionViewCell, UITableViewDelegate, 
         cell?.contentView.layer.borderWidth = 1.5
         cell?.contentView.layer.borderColor = UIColor.black.cgColor
         return cell ?? UITableViewCell()
-        
     }
+    
+
     
     func initialConfig() {
         

@@ -29,6 +29,8 @@
 		C08C722428C3D7E40007E7FE /* MyTabBarConstroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = C08C722328C3D7E40007E7FE /* MyTabBarConstroller.swift */; };
 		C08C722928C3D7E60007E7FE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C08C722828C3D7E60007E7FE /* Assets.xcassets */; };
 		C08C722C28C3D7E60007E7FE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C08C722A28C3D7E60007E7FE /* LaunchScreen.storyboard */; };
+		C09807BC28D95814005DB2E2 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C09807BB28D95814005DB2E2 /* ProfileViewController.swift */; };
+		C09807BE28D9582C005DB2E2 /* profileStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C09807BD28D9582C005DB2E2 /* profileStoryboard.storyboard */; };
 		C0C2D9EE28D28D1D00DE5CF9 /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0C2D9ED28D28D1D00DE5CF9 /* LoadingViewController.swift */; };
 		C0DBA85E28D3FFCA00C7548F /* SobreCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0DBA85C28D3FFCA00C7548F /* SobreCollectionViewCell.swift */; };
 		C0DBA85F28D3FFCA00C7548F /* SobreCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C0DBA85D28D3FFCA00C7548F /* SobreCollectionViewCell.xib */; };
@@ -63,6 +65,8 @@
 		C08C722828C3D7E60007E7FE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C08C722B28C3D7E60007E7FE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C08C722D28C3D7E60007E7FE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C09807BB28D95814005DB2E2 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		C09807BD28D9582C005DB2E2 /* profileStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = profileStoryboard.storyboard; sourceTree = "<group>"; };
 		C0C2D9ED28D28D1D00DE5CF9 /* LoadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewController.swift; sourceTree = "<group>"; };
 		C0DBA85C28D3FFCA00C7548F /* SobreCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SobreCollectionViewCell.swift; sourceTree = "<group>"; };
 		C0DBA85D28D3FFCA00C7548F /* SobreCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SobreCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -221,6 +225,7 @@
 		C08C721E28C3D7E40007E7FE /* Pokedex */ = {
 			isa = PBXGroup;
 			children = (
+				C09807BA28D95801005DB2E2 /* Profile */,
 				C00FF5C328D7ECBB004F4151 /* EsqueceuSenha */,
 				C00FF5BE28D7E6FC004F4151 /* Cadastro */,
 				C03B6FEF28D3E50700683717 /* PokemonSelected */,
@@ -235,6 +240,15 @@
 				C08C722D28C3D7E60007E7FE /* Info.plist */,
 			);
 			path = Pokedex;
+			sourceTree = "<group>";
+		};
+		C09807BA28D95801005DB2E2 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				C09807BB28D95814005DB2E2 /* ProfileViewController.swift */,
+				C09807BD28D9582C005DB2E2 /* profileStoryboard.storyboard */,
+			);
+			path = Profile;
 			sourceTree = "<group>";
 		};
 		C0C2D9EA28D288C800DE5CF9 /* Loading */ = {
@@ -326,6 +340,7 @@
 				C08C722C28C3D7E60007E7FE /* LaunchScreen.storyboard in Resources */,
 				C00FF5C228D7E71D004F4151 /* CadastroStoryboard.storyboard in Resources */,
 				C08AE86028D3FD9100FCC976 /* HabilidadesCollectionViewCell.xib in Resources */,
+				C09807BE28D9582C005DB2E2 /* profileStoryboard.storyboard in Resources */,
 				C05654EF28CE6FED00230AB8 /* Main.storyboard in Resources */,
 				C002E45828CE9F5C00C44F2B /* LoginStoryboard.storyboard in Resources */,
 				C03B6FF328D3E58500683717 /* pokemonSelected.storyboard in Resources */,
@@ -399,6 +414,7 @@
 				C0DBA86328D4008300C7548F /* AtributosCollectionViewCell.swift in Sources */,
 				C00FF5C028D7E712004F4151 /* CadastroViewController.swift in Sources */,
 				C08C722028C3D7E40007E7FE /* AppDelegate.swift in Sources */,
+				C09807BC28D95814005DB2E2 /* ProfileViewController.swift in Sources */,
 				C00FF5C528D7ECD5004F4151 /* EsqueceuSenhaViewController.swift in Sources */,
 				C08C722228C3D7E40007E7FE /* SceneDelegate.swift in Sources */,
 			);

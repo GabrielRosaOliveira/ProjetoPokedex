@@ -13,6 +13,7 @@ class AtributosCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var defenseLabel: UILabel!
     @IBOutlet weak var speedLabel: UILabel!
     
+    @IBOutlet weak var attributeTitleLabel: UILabel!
     static let identifier: String = "AtributosCollectionViewCell"
     
     static func nib() -> UINib {
@@ -22,6 +23,11 @@ class AtributosCollectionViewCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         configAttributes()
+        attributeTitleLabel.layer.shadowColor = UIColor.gray.cgColor
+        attributeTitleLabel.layer.shadowRadius = 1.5
+        attributeTitleLabel.layer.shadowOpacity = 1.0
+        attributeTitleLabel.layer.shadowOffset = CGSize(width: 0, height: 6.0)
+        
     }
 
     func configAttributes() {

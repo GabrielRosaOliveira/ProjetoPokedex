@@ -120,6 +120,7 @@
             <size key="customSize" width="355" height="145"/>
             <connections>
                 <outlet property="attacklabel" destination="xrq-5e-2TP" id="Ura-rE-zur"/>
+                <outlet property="attributeTitleLabel" destination="W6e-kS-Nms" id="imP-Ze-eS5"/>
                 <outlet property="defenseLabel" destination="ryA-FQ-J1I" id="qSV-mu-iF0"/>
                 <outlet property="speedLabel" destination="mfN-47-ZUz" id="tNZ-N7-sDU"/>
             </connections>
