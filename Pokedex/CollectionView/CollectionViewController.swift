@@ -72,7 +72,15 @@ extension CollectionViewController: UICollectionViewDelegate, UICollectionViewDa
         return 5
     }
     
+//    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+//        print(data[indexPath.item].nome)
+//    }
+    
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print(data[indexPath.item].nome)
-    }
+        let storyboard = UIStoryboard(name: "pokemonSelected", bundle: nil)
+        let viewcontroler = storyboard.instantiateViewController(withIdentifier: "pokemon")
+        navigationController?.pushViewController(viewcontroler, animated: true)
+        }
+    
+    
 }

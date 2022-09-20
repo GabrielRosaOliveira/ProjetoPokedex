@@ -46,7 +46,7 @@ class CadastroViewController: UIViewController, UITextFieldDelegate {
     func inferiorBottoView() {
         camadaView.layer.cornerRadius = 50
         camadaView.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMinXMinYCorner]
-        camadaView.layer.borderWidth = 2.8
+        camadaView.layer.borderWidth = 1.5
         camadaView.layer.borderColor = UIColor.black.cgColor
 }
     

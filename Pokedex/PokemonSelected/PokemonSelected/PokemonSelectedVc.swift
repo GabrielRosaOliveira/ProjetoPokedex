@@ -14,6 +14,8 @@ class PokemonSelectedVc: UIViewController {
     
     @IBOutlet weak var infoCollectionView: UICollectionView!
     
+    
+    
     let gradient = CAGradientLayer()
     
     
@@ -57,6 +59,11 @@ class PokemonSelectedVc: UIViewController {
         TelaBottomView.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMinXMinYCorner]
         TelaBottomView.layer.borderWidth = 2.0
         TelaBottomView.layer.borderColor = UIColor.black.cgColor
+    }
+    
+    
+    @IBAction func backButton(_ sender: UIButton) {
+        navigationController?.popViewController(animated: true)
     }
     
 }

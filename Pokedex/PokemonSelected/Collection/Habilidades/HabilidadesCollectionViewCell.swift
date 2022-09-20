@@ -31,24 +31,20 @@ class HabilidadesCollectionViewCell: UICollectionViewCell, UITableViewDelegate, 
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: AbilitiesTableViewCell.identifier, for: indexPath) as? AbilitiesTableViewCell
+        cell?.contentView.layer.cornerRadius = 20
+        cell?.contentView.layer.borderWidth = 1.5
+        cell?.contentView.layer.borderColor = UIColor.black.cgColor
         return cell ?? UITableViewCell()
+        
     }
     
-    
     func initialConfig() {
-        abilitiesTableView.layer.cornerRadius = 55
-        abilitiesTableView.layer.borderWidth = 1.5
-        abilitiesTableView.layer.borderColor = UIColor.black.cgColor
         
         contentView.backgroundColor = .clear
         layer.masksToBounds = false
         abilitiesTableView.layer.borderColor = UIColor.black.cgColor
         abilitiesTableView.clipsToBounds = true
-
-           
         }
-    
-    
 }
 
 
