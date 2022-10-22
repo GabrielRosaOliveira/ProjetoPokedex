@@ -36,6 +36,7 @@ class FavoritesCollectionViewCell: UICollectionViewCell {
         shadowName()
         shadowNumber()
         setGradient()
+        
     }
     
     override func layoutSublayers(of layer: CALayer) {
