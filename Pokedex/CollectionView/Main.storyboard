@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="522-uD-CXd">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="522-uD-CXd">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -17,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="mKA-w6-wkt">
-                                <rect key="frame" x="0.0" y="113" width="414" height="664"/>
+                                <rect key="frame" x="0.0" y="117" width="414" height="660"/>
                                 <color key="backgroundColor" systemColor="systemCyanColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="g1O-xM-Hm8">
                                     <size key="itemSize" width="128" height="128"/>
@@ -28,15 +29,15 @@
                                 <cells/>
                             </collectionView>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Pesquisar" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NZ7-sh-fLG">
-                                <rect key="frame" x="35" y="59" width="256" height="34"/>
+                                <rect key="frame" x="35" y="63" width="256" height="34"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="34" id="vPj-5i-uId"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pokemon-trainer__1_-removebg-preview 1" translatesAutoresizingMaskIntoConstraints="NO" id="r1m-4W-TSM">
-                                <rect key="frame" x="321" y="51" width="50" height="50"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Perfil" translatesAutoresizingMaskIntoConstraints="NO" id="r1m-4W-TSM">
+                                <rect key="frame" x="321" y="55" width="50" height="50"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="50" id="2tB-Xr-gcb"/>
@@ -58,7 +59,7 @@
                             <constraint firstItem="mKA-w6-wkt" firstAttribute="leading" secondItem="AeB-yK-OJ7" secondAttribute="leading" id="weI-C4-j17"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Home" image="home-removebg-preview 4 (1)" id="Y6U-m5-y0a"/>
+                    <tabBarItem key="tabBarItem" title="Home" image="BotaoHome" id="Y6U-m5-y0a"/>
                     <connections>
                         <outlet property="collectionView" destination="mKA-w6-wkt" id="eFW-RG-L4h"/>
                         <outlet property="imageProfile" destination="r1m-4W-TSM" id="t7b-Hr-pZP"/>
@@ -71,12 +72,13 @@
         <!--My Tab Bar Constroller-->
         <scene sceneID="C0z-UK-s5Q">
             <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="522-uD-CXd" customClass="MyTabBarConstroller" customModule="Pokedex" customModuleProvider="target" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="TabBar" automaticallyAdjustsScrollViewInsets="NO" id="522-uD-CXd" customClass="MyTabBarConstroller" customModule="Pokedex" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="tt2-m8-lMe">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="tintColor" systemColor="systemGreenColor"/>
                         <color key="selectedImageTintColor" red="0.34901961679999999" green="0.67058825489999996" blue="0.88235294819999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <tabBarAppearance key="standardAppearance">
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -104,7 +106,7 @@
                         <viewLayoutGuide key="safeArea" id="mJq-4f-ocp"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Favoritos" image="favotiros-removebg-preview 4" id="71f-qa-daM"/>
+                    <tabBarItem key="tabBarItem" title="Favoritos" image="BotaoFavoritos" id="71f-qa-daM"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8Hm-Oc-HkW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -112,14 +114,17 @@
         </scene>
     </scenes>
     <resources>
-        <image name="favotiros-removebg-preview 4" width="53" height="50"/>
-        <image name="home-removebg-preview 4 (1)" width="48" height="45"/>
-        <image name="pokemon-trainer__1_-removebg-preview 1" width="26" height="27"/>
+        <image name="BotaoFavoritos" width="53" height="50"/>
+        <image name="BotaoHome" width="48" height="45"/>
+        <image name="Perfil" width="26" height="27"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemCyanColor">
             <color red="0.19607843137254902" green="0.67843137254901964" blue="0.90196078431372551" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
