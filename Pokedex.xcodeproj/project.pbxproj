@@ -30,6 +30,9 @@
 		C08C722928C3D7E60007E7FE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C08C722828C3D7E60007E7FE /* Assets.xcassets */; };
 		C08C722C28C3D7E60007E7FE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C08C722A28C3D7E60007E7FE /* LaunchScreen.storyboard */; };
 		C0C2D9EE28D28D1D00DE5CF9 /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0C2D9ED28D28D1D00DE5CF9 /* LoadingViewController.swift */; };
+		C0D0862429047190007DE53E /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D0862329047190007DE53E /* FavoritesViewController.swift */; };
+		C0D086262904719C007DE53E /* Favorites.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C0D086252904719C007DE53E /* Favorites.storyboard */; };
+		C0D0862B29047227007DE53E /* favoritesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D0862A29047227007DE53E /* favoritesCollectionViewCell.swift */; };
 		C0DBA85E28D3FFCA00C7548F /* SobreCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0DBA85C28D3FFCA00C7548F /* SobreCollectionViewCell.swift */; };
 		C0DBA85F28D3FFCA00C7548F /* SobreCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C0DBA85D28D3FFCA00C7548F /* SobreCollectionViewCell.xib */; };
 		C0DBA86328D4008300C7548F /* AtributosCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0DBA86128D4008300C7548F /* AtributosCollectionViewCell.swift */; };
@@ -64,6 +67,10 @@
 		C08C722B28C3D7E60007E7FE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C08C722D28C3D7E60007E7FE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C0C2D9ED28D28D1D00DE5CF9 /* LoadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewController.swift; sourceTree = "<group>"; };
+		C0D0862329047190007DE53E /* FavoritesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
+		C0D086252904719C007DE53E /* Favorites.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Favorites.storyboard; sourceTree = "<group>"; };
+		C0D0862929047227007DE53E /* favoritesCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = favoritesCollectionViewCell.xib; sourceTree = "<group>"; };
+		C0D0862A29047227007DE53E /* favoritesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = favoritesCollectionViewCell.swift; sourceTree = "<group>"; };
 		C0DBA85C28D3FFCA00C7548F /* SobreCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SobreCollectionViewCell.swift; sourceTree = "<group>"; };
 		C0DBA85D28D3FFCA00C7548F /* SobreCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SobreCollectionViewCell.xib; sourceTree = "<group>"; };
 		C0DBA86128D4008300C7548F /* AtributosCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AtributosCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -221,6 +228,7 @@
 		C08C721E28C3D7E40007E7FE /* Pokedex */ = {
 			isa = PBXGroup;
 			children = (
+				C0D086222904709E007DE53E /* Favorites */,
 				C00FF5C328D7ECBB004F4151 /* EsqueceuSenha */,
 				C00FF5BE28D7E6FC004F4151 /* Cadastro */,
 				C03B6FEF28D3E50700683717 /* PokemonSelected */,
@@ -244,6 +252,25 @@
 				C0C2D9ED28D28D1D00DE5CF9 /* LoadingViewController.swift */,
 			);
 			path = Loading;
+			sourceTree = "<group>";
+		};
+		C0D086222904709E007DE53E /* Favorites */ = {
+			isa = PBXGroup;
+			children = (
+				C0D0862C29047244007DE53E /* Cell */,
+				C0D0862329047190007DE53E /* FavoritesViewController.swift */,
+				C0D086252904719C007DE53E /* Favorites.storyboard */,
+			);
+			path = Favorites;
+			sourceTree = "<group>";
+		};
+		C0D0862C29047244007DE53E /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				C0D0862A29047227007DE53E /* favoritesCollectionViewCell.swift */,
+				C0D0862929047227007DE53E /* favoritesCollectionViewCell.xib */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		C0DBA86028D4006B00C7548F /* Atributos */ = {
@@ -325,6 +352,7 @@
 			files = (
 				C08C722C28C3D7E60007E7FE /* LaunchScreen.storyboard in Resources */,
 				C00FF5C228D7E71D004F4151 /* CadastroStoryboard.storyboard in Resources */,
+				C0D086262904719C007DE53E /* Favorites.storyboard in Resources */,
 				C08AE86028D3FD9100FCC976 /* HabilidadesCollectionViewCell.xib in Resources */,
 				C05654EF28CE6FED00230AB8 /* Main.storyboard in Resources */,
 				C002E45828CE9F5C00C44F2B /* LoginStoryboard.storyboard in Resources */,
@@ -389,6 +417,7 @@
 			files = (
 				C0404F4F28D65577007CD6CA /* AbilitiesTableViewCell.swift in Sources */,
 				C0C2D9EE28D28D1D00DE5CF9 /* LoadingViewController.swift in Sources */,
+				C0D0862B29047227007DE53E /* favoritesCollectionViewCell.swift in Sources */,
 				C002E45628CE9F4700C44F2B /* LoginViewController.swift in Sources */,
 				C05654ED28CE6FA600230AB8 /* HomeCollectionViewCell.swift in Sources */,
 				C08AE85F28D3FD9100FCC976 /* HabilidadesCollectionViewCell.swift in Sources */,
@@ -400,6 +429,7 @@
 				C00FF5C028D7E712004F4151 /* CadastroViewController.swift in Sources */,
 				C08C722028C3D7E40007E7FE /* AppDelegate.swift in Sources */,
 				C00FF5C528D7ECD5004F4151 /* EsqueceuSenhaViewController.swift in Sources */,
+				C0D0862429047190007DE53E /* FavoritesViewController.swift in Sources */,
 				C08C722228C3D7E40007E7FE /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
