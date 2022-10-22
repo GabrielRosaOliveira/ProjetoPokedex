@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="mKA-w6-wkt">
-                                <rect key="frame" x="0.0" y="117" width="414" height="660"/>
+                                <rect key="frame" x="0.0" y="161" width="414" height="616"/>
                                 <color key="backgroundColor" systemColor="systemCyanColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="g1O-xM-Hm8">
                                     <size key="itemSize" width="128" height="128"/>
@@ -29,7 +29,7 @@
                                 <cells/>
                             </collectionView>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Pesquisar" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NZ7-sh-fLG">
-                                <rect key="frame" x="35" y="63" width="256" height="34"/>
+                                <rect key="frame" x="35" y="107" width="256" height="34"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="34" id="vPj-5i-uId"/>
                                 </constraints>
@@ -37,7 +37,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Perfil" translatesAutoresizingMaskIntoConstraints="NO" id="r1m-4W-TSM">
-                                <rect key="frame" x="321" y="55" width="50" height="50"/>
+                                <rect key="frame" x="321" y="99" width="50" height="50"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="50" id="2tB-Xr-gcb"/>
@@ -60,6 +60,7 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Home" image="BotaoHome" id="Y6U-m5-y0a"/>
+                    <navigationItem key="navigationItem" id="1I1-8D-4XL"/>
                     <connections>
                         <outlet property="collectionView" destination="mKA-w6-wkt" id="eFW-RG-L4h"/>
                         <outlet property="imageProfile" destination="r1m-4W-TSM" id="t7b-Hr-pZP"/>
@@ -68,6 +69,51 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="K9l-no-dmF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1766.6666666666667" y="79.6875"/>
+        </scene>
+        <!--FavoritesViewController-->
+        <scene sceneID="u8F-eC-gXp">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Favorites" referencedIdentifier="FavoritesViewController" id="Gvd-cf-4mu" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="q68-u3-C9L"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xgh-QR-0YN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="857" y="804"/>
+        </scene>
+        <!--Item-->
+        <scene sceneID="QC4-RZ-Tbd">
+            <objects>
+                <navigationController id="EPd-5D-NnF" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="su4-od-Udd"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="v2Y-4V-csh">
+                        <rect key="frame" x="0.0" y="48" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="Gvd-cf-4mu" kind="relationship" relationship="rootViewController" id="dmE-ps-2tC"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2Sp-0m-zUQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="35" y="804"/>
+        </scene>
+        <!--Item-->
+        <scene sceneID="uXa-nT-64k">
+            <objects>
+                <navigationController id="Kwc-UG-jwB" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="Rld-V1-cAE"/>
+                    <navigationItem key="navigationItem" id="W7t-YY-M8C"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="jRb-Rh-pfW">
+                        <rect key="frame" x="0.0" y="48" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="vi9-Gx-fJY" kind="relationship" relationship="rootViewController" id="3wm-ur-qkl"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="D4J-8q-BPP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="857" y="80"/>
         </scene>
         <!--My Tab Bar Constroller-->
         <scene sceneID="C0z-UK-s5Q">
@@ -88,38 +134,18 @@
                         </tabBarAppearance>
                     </tabBar>
                     <connections>
-                        <segue destination="vi9-Gx-fJY" kind="relationship" relationship="viewControllers" id="b5K-2c-qI6"/>
-                        <segue destination="MA5-HU-hML" kind="relationship" relationship="viewControllers" id="ddT-tk-DHu"/>
+                        <segue destination="Kwc-UG-jwB" kind="relationship" relationship="viewControllers" id="eXA-Zc-Rec"/>
+                        <segue destination="EPd-5D-NnF" kind="relationship" relationship="viewControllers" id="PxP-SY-zuF"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YWn-ce-98u" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="856.52173913043487" y="79.6875"/>
-        </scene>
-        <!--Favoritos-->
-        <scene sceneID="rDL-of-mMs">
-            <objects>
-                <viewController id="MA5-HU-hML" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="CTw-zu-es9">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="mJq-4f-ocp"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Favoritos" image="BotaoFavoritos" id="71f-qa-daM"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="8Hm-Oc-HkW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1767" y="801"/>
+            <point key="canvasLocation" x="36" y="80"/>
         </scene>
     </scenes>
     <resources>
-        <image name="BotaoFavoritos" width="53" height="50"/>
         <image name="BotaoHome" width="48" height="45"/>
         <image name="Perfil" width="26" height="27"/>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
         <systemColor name="systemCyanColor">
             <color red="0.19607843137254902" green="0.67843137254901964" blue="0.90196078431372551" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

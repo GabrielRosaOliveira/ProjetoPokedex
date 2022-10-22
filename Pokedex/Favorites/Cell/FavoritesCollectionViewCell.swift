@@ -1,5 +1,5 @@
 //
-//  favoritesCollectionViewCell.swift
+//  FavoritesCollectionViewCell.swift
 //  Pokedex
 //
 //  Created by Felipe Almeida on 07/09/22.
@@ -7,12 +7,13 @@
 
 import UIKit
 
-class favoritesCollectionViewCell: UICollectionViewCell {
+class FavoritesCollectionViewCell: UICollectionViewCell {
     
     static let identifier = "favoritesCollectionViewCell"
     
     static func nib() -> UINib {
         return UINib(nibName: self.identifier, bundle: nil)
+
     }
     
     @IBOutlet var pokemonImageView: UIImageView!

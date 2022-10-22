@@ -9,6 +9,7 @@ import UIKit
 
 class FavoritesViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
+    
     @IBOutlet weak var favoritesView: UIView!
     
     @IBOutlet weak var favoritesLabel: UILabel!
@@ -24,10 +25,14 @@ class FavoritesViewController: UIViewController, UICollectionViewDelegate, UICol
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        favoritesCollectionView.register(favoritesCollectionViewCell.nib(), forCellWithReuseIdentifier: favoritesCollectionViewCell.identifier)
+        favoritesCollectionView.register(FavoritesCollectionViewCell.nib(), forCellWithReuseIdentifier: FavoritesCollectionViewCell.identifier)
         favoritesCollectionView.delegate = self
         favoritesCollectionView.dataSource = self
         cornerRadiusView()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        navigationController?.isNavigationBarHidden = true
     }
     
     override func viewDidLayoutSubviews() {
@@ -39,7 +44,7 @@ class FavoritesViewController: UIViewController, UICollectionViewDelegate, UICol
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: favoritesCollectionViewCell.identifier, for: indexPath)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: FavoritesCollectionViewCell.identifier, for: indexPath)
         cell.backgroundColor = .clear
         return cell
     }
