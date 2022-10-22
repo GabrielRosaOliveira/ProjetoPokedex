@@ -15,9 +15,11 @@
 		C00FF5C528D7ECD5004F4151 /* EsqueceuSenhaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C00FF5C428D7ECD5004F4151 /* EsqueceuSenhaViewController.swift */; };
 		C00FF5C728D7ECEE004F4151 /* EsqueceuSenhaStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C00FF5C628D7ECEE004F4151 /* EsqueceuSenhaStoryboard.storyboard */; };
 		C03B6FF128D3E56A00683717 /* PokemonSelectedVc.swift in Sources */ = {isa = PBXBuildFile; fileRef = C03B6FF028D3E56A00683717 /* PokemonSelectedVc.swift */; };
-		C03B6FF328D3E58500683717 /* pokemonSelected.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C03B6FF228D3E58500683717 /* pokemonSelected.storyboard */; };
+		C03B6FF328D3E58500683717 /* PokemonSelectedVc.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C03B6FF228D3E58500683717 /* PokemonSelectedVc.storyboard */; };
 		C0404F4F28D65577007CD6CA /* AbilitiesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0404F4D28D65577007CD6CA /* AbilitiesTableViewCell.swift */; };
 		C0404F5028D65577007CD6CA /* AbilitiesTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C0404F4E28D65577007CD6CA /* AbilitiesTableViewCell.xib */; };
+		C04BDCB42904937200961F27 /* profileStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C04BDCB32904937200961F27 /* profileStoryboard.storyboard */; };
+		C04BDCB62904937D00961F27 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C04BDCB52904937D00961F27 /* ProfileViewController.swift */; };
 		C05654EB28CE6FA600230AB8 /* HomeCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C05654E828CE6FA600230AB8 /* HomeCollectionViewCell.xib */; };
 		C05654EC28CE6FA600230AB8 /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C05654E928CE6FA600230AB8 /* CollectionViewController.swift */; };
 		C05654ED28CE6FA600230AB8 /* HomeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C05654EA28CE6FA600230AB8 /* HomeCollectionViewCell.swift */; };
@@ -51,9 +53,11 @@
 		C00FF5C428D7ECD5004F4151 /* EsqueceuSenhaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EsqueceuSenhaViewController.swift; sourceTree = "<group>"; };
 		C00FF5C628D7ECEE004F4151 /* EsqueceuSenhaStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EsqueceuSenhaStoryboard.storyboard; sourceTree = "<group>"; };
 		C03B6FF028D3E56A00683717 /* PokemonSelectedVc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonSelectedVc.swift; sourceTree = "<group>"; };
-		C03B6FF228D3E58500683717 /* pokemonSelected.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = pokemonSelected.storyboard; sourceTree = "<group>"; };
+		C03B6FF228D3E58500683717 /* PokemonSelectedVc.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PokemonSelectedVc.storyboard; sourceTree = "<group>"; };
 		C0404F4D28D65577007CD6CA /* AbilitiesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AbilitiesTableViewCell.swift; sourceTree = "<group>"; };
 		C0404F4E28D65577007CD6CA /* AbilitiesTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AbilitiesTableViewCell.xib; sourceTree = "<group>"; };
+		C04BDCB32904937200961F27 /* profileStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = profileStoryboard.storyboard; sourceTree = "<group>"; };
+		C04BDCB52904937D00961F27 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		C05654E828CE6FA600230AB8 /* HomeCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeCollectionViewCell.xib; sourceTree = "<group>"; };
 		C05654E928CE6FA600230AB8 /* CollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
 		C05654EA28CE6FA600230AB8 /* HomeCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -156,7 +160,7 @@
 			isa = PBXGroup;
 			children = (
 				C03B6FF028D3E56A00683717 /* PokemonSelectedVc.swift */,
-				C03B6FF228D3E58500683717 /* pokemonSelected.storyboard */,
+				C03B6FF228D3E58500683717 /* PokemonSelectedVc.storyboard */,
 			);
 			path = PokemonSelected;
 			sourceTree = "<group>";
@@ -187,6 +191,15 @@
 				C0404F4E28D65577007CD6CA /* AbilitiesTableViewCell.xib */,
 			);
 			path = tableView;
+			sourceTree = "<group>";
+		};
+		C04BDCB72904939200961F27 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				C04BDCB32904937200961F27 /* profileStoryboard.storyboard */,
+				C04BDCB52904937D00961F27 /* ProfileViewController.swift */,
+			);
+			path = Profile;
 			sourceTree = "<group>";
 		};
 		C08AE85C28D3FD6D00FCC976 /* Habilidades */ = {
@@ -229,6 +242,7 @@
 		C08C721E28C3D7E40007E7FE /* Pokedex */ = {
 			isa = PBXGroup;
 			children = (
+				C04BDCB72904939200961F27 /* Profile */,
 				C0D086222904709E007DE53E /* Favorites */,
 				C00FF5C328D7ECBB004F4151 /* EsqueceuSenha */,
 				C00FF5BE28D7E6FC004F4151 /* Cadastro */,
@@ -357,8 +371,9 @@
 				C0D086262904719C007DE53E /* Favorites.storyboard in Resources */,
 				C08AE86028D3FD9100FCC976 /* HabilidadesCollectionViewCell.xib in Resources */,
 				C05654EF28CE6FED00230AB8 /* Main.storyboard in Resources */,
+				C04BDCB42904937200961F27 /* profileStoryboard.storyboard in Resources */,
 				C002E45828CE9F5C00C44F2B /* LoginStoryboard.storyboard in Resources */,
-				C03B6FF328D3E58500683717 /* pokemonSelected.storyboard in Resources */,
+				C03B6FF328D3E58500683717 /* PokemonSelectedVc.storyboard in Resources */,
 				C08C722928C3D7E60007E7FE /* Assets.xcassets in Resources */,
 				C0404F5028D65577007CD6CA /* AbilitiesTableViewCell.xib in Resources */,
 				C0DBA85F28D3FFCA00C7548F /* SobreCollectionViewCell.xib in Resources */,
@@ -424,6 +439,7 @@
 				C05654ED28CE6FA600230AB8 /* HomeCollectionViewCell.swift in Sources */,
 				C08AE85F28D3FD9100FCC976 /* HabilidadesCollectionViewCell.swift in Sources */,
 				C0DBA85E28D3FFCA00C7548F /* SobreCollectionViewCell.swift in Sources */,
+				C04BDCB62904937D00961F27 /* ProfileViewController.swift in Sources */,
 				C05654EC28CE6FA600230AB8 /* CollectionViewController.swift in Sources */,
 				C08C722428C3D7E40007E7FE /* MyTabBarConstroller.swift in Sources */,
 				C03B6FF128D3E56A00683717 /* PokemonSelectedVc.swift in Sources */,

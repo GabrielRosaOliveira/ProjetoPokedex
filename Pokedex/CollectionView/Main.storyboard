@@ -29,33 +29,36 @@
                                 <cells/>
                             </collectionView>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Pesquisar" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NZ7-sh-fLG">
-                                <rect key="frame" x="35" y="107" width="256" height="34"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="34" id="vPj-5i-uId"/>
-                                </constraints>
+                                <rect key="frame" x="35" y="107" width="271" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Perfil" translatesAutoresizingMaskIntoConstraints="NO" id="r1m-4W-TSM">
-                                <rect key="frame" x="321" y="99" width="50" height="50"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jyN-v1-pto">
+                                <rect key="frame" x="328" y="99" width="50" height="50"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="50" id="2tB-Xr-gcb"/>
-                                    <constraint firstAttribute="height" constant="50" id="iGm-nG-S7W"/>
+                                    <constraint firstAttribute="width" constant="50" id="1fQ-5Q-wYc"/>
+                                    <constraint firstAttribute="height" constant="50" id="LZp-ZU-6Sg"/>
                                 </constraints>
-                            </imageView>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="Perfil"/>
+                                <connections>
+                                    <action selector="goProfileButton:" destination="vi9-Gx-fJY" eventType="touchUpInside" id="zf5-pq-dRf"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="AeB-yK-OJ7"/>
                         <color key="backgroundColor" systemColor="systemCyanColor"/>
                         <constraints>
-                            <constraint firstItem="AeB-yK-OJ7" firstAttribute="trailing" secondItem="r1m-4W-TSM" secondAttribute="trailing" constant="43" id="0cM-Sw-RJm"/>
-                            <constraint firstItem="r1m-4W-TSM" firstAttribute="leading" secondItem="NZ7-sh-fLG" secondAttribute="trailing" constant="30" id="53S-jQ-hY9"/>
-                            <constraint firstItem="NZ7-sh-fLG" firstAttribute="top" secondItem="AeB-yK-OJ7" secondAttribute="top" constant="15" id="D9n-qT-oX0"/>
+                            <constraint firstItem="NZ7-sh-fLG" firstAttribute="leading" secondItem="AeB-yK-OJ7" secondAttribute="leading" constant="35" id="2oX-Lh-UQn"/>
                             <constraint firstItem="AeB-yK-OJ7" firstAttribute="trailing" secondItem="mKA-w6-wkt" secondAttribute="trailing" id="IWI-Zi-TIq"/>
-                            <constraint firstItem="r1m-4W-TSM" firstAttribute="top" secondItem="AeB-yK-OJ7" secondAttribute="top" constant="7" id="aBp-gO-cha"/>
-                            <constraint firstItem="mKA-w6-wkt" firstAttribute="top" secondItem="r1m-4W-TSM" secondAttribute="bottom" constant="12" id="eGO-2w-sFK"/>
+                            <constraint firstItem="jyN-v1-pto" firstAttribute="centerY" secondItem="NZ7-sh-fLG" secondAttribute="centerY" id="eoO-YS-NK9"/>
                             <constraint firstItem="AeB-yK-OJ7" firstAttribute="bottom" secondItem="mKA-w6-wkt" secondAttribute="bottom" constant="36" id="erz-xQ-G61"/>
-                            <constraint firstItem="NZ7-sh-fLG" firstAttribute="leading" secondItem="AeB-yK-OJ7" secondAttribute="leading" constant="35" id="jig-oE-YdQ"/>
+                            <constraint firstItem="AeB-yK-OJ7" firstAttribute="trailing" secondItem="jyN-v1-pto" secondAttribute="trailing" constant="36" id="hGr-Hw-qLP"/>
+                            <constraint firstItem="jyN-v1-pto" firstAttribute="leading" secondItem="NZ7-sh-fLG" secondAttribute="trailing" constant="22" id="lQX-WE-gDG"/>
+                            <constraint firstItem="NZ7-sh-fLG" firstAttribute="top" secondItem="AeB-yK-OJ7" secondAttribute="top" constant="15" id="pKo-do-2G6"/>
+                            <constraint firstItem="mKA-w6-wkt" firstAttribute="top" secondItem="jyN-v1-pto" secondAttribute="bottom" constant="12" id="qkE-M7-A7g"/>
                             <constraint firstItem="mKA-w6-wkt" firstAttribute="leading" secondItem="AeB-yK-OJ7" secondAttribute="leading" id="weI-C4-j17"/>
                         </constraints>
                     </view>
@@ -63,7 +66,7 @@
                     <navigationItem key="navigationItem" id="1I1-8D-4XL"/>
                     <connections>
                         <outlet property="collectionView" destination="mKA-w6-wkt" id="eFW-RG-L4h"/>
-                        <outlet property="imageProfile" destination="r1m-4W-TSM" id="t7b-Hr-pZP"/>
+                        <outlet property="profileButton" destination="jyN-v1-pto" id="srH-k3-SmR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="K9l-no-dmF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

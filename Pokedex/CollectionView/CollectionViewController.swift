@@ -11,7 +11,8 @@ class CollectionViewController: UIViewController {
 
     @IBOutlet weak var collectionView: UICollectionView!
     
-    @IBOutlet weak var imageProfile: UIImageView!
+    @IBOutlet weak var profileButton: UIButton!
+    
     
     struct Pokedex {
         let nome: String
@@ -44,12 +45,22 @@ class CollectionViewController: UIViewController {
         collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.register(HomeCollectionViewCell.nib(), forCellWithReuseIdentifier: HomeCollectionViewCell.identifier)
-        imageProfile.layer.cornerRadius = 25
+        
+        profileButton.layer.cornerRadius = 25
     }
     
     override func viewWillAppear(_ animated: Bool) {
         navigationController?.isNavigationBarHidden = true
     }
+    
+    @IBAction func goProfileButton(_ sender: UIButton) {
+        
+        let vc = UIStoryboard(name: "profileStoryboard", bundle: nil).instantiateViewController(withIdentifier: "ProfileViewController") as? ProfileViewController
+                navigationController?.pushViewController(vc ?? UIViewController(), animated: true)
+        
+    }
+    
+    
 }
 
 
@@ -80,8 +91,8 @@ extension CollectionViewController: UICollectionViewDelegate, UICollectionViewDa
 //    }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let storyboard = UIStoryboard(name: "pokemonSelected", bundle: nil)
-        let viewcontroler = storyboard.instantiateViewController(withIdentifier: "pokemon")
+        let storyboard = UIStoryboard(name: "PokemonSelectedVc", bundle: nil)
+        let viewcontroler = storyboard.instantiateViewController(withIdentifier: "PokemonSelectedVc")
         navigationController?.pushViewController(viewcontroler, animated: true)
         }
     

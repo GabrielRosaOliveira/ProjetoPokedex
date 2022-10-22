@@ -48,9 +48,15 @@ class FavoritesViewController: UIViewController, UICollectionViewDelegate, UICol
         cell.backgroundColor = .clear
         return cell
     }
-
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: self.view.frame.size.width - 20, height: 120)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let storyboard = UIStoryboard(name: "PokemonSelectedVc", bundle: nil)
+        let viewcontroler = storyboard.instantiateViewController(withIdentifier: "PokemonSelectedVc")
+        navigationController?.pushViewController(viewcontroler, animated: true)
     }
     
     func cornerRadiusView() {
