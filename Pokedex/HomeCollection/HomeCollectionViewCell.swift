@@ -44,9 +44,7 @@ class HomeCollectionViewCell: UICollectionViewCell {
     
 }
 
-<<<<<<< HEAD
-
-=======
+ 
 extension CALayer {
     func makeShadow(color: UIColor,
                     x: CGFloat = 0,
@@ -67,4 +65,4 @@ extension CALayer {
         }
     }
 }
->>>>>>> feature/esqueceuSenha
+
