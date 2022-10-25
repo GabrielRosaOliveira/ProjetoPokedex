@@ -7,7 +7,7 @@
 
 import UIKit
 
-class CollectionViewController: UIViewController {
+class HomeViewController: UIViewController {
 
     @IBOutlet weak var collectionView: UICollectionView!
     
@@ -64,7 +64,7 @@ class CollectionViewController: UIViewController {
 }
 
 
-extension CollectionViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return data.count
