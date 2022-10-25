@@ -32,9 +32,14 @@ class PokemonSelectedVc: UIViewController {
         infoCollectionView.register(AtributosCollectionViewCell.nib(), forCellWithReuseIdentifier: AtributosCollectionViewCell.identifier)
         
         infoCollectionView.register(HabilidadesCollectionViewCell.nib(), forCellWithReuseIdentifier: HabilidadesCollectionViewCell.identifier)
-        
+        self.tabBarController?.tabBar.isHidden = true
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        self.tabBarController?.tabBar.isHidden = false
+    }
+    
+        
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         

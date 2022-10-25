@@ -111,13 +111,13 @@
 			path = TabBar;
 			sourceTree = "<group>";
 		};
-		C002E45228CE9E4700C44F2B /* CollectionView */ = {
+		C002E45228CE9E4700C44F2B /* Home */ = {
 			isa = PBXGroup;
 			children = (
 				C05654E928CE6FA600230AB8 /* HomeViewController.swift */,
 				C05654EE28CE6FED00230AB8 /* Main.storyboard */,
 			);
-			path = CollectionView;
+			path = Home;
 			sourceTree = "<group>";
 		};
 		C002E45328CE9EAA00C44F2B /* HomeCollection */ = {
@@ -248,7 +248,7 @@
 				C00FF5BE28D7E6FC004F4151 /* Cadastro */,
 				C03B6FEF28D3E50700683717 /* PokemonSelected */,
 				C002E45128CE9DE800C44F2B /* TabBar */,
-				C002E45228CE9E4700C44F2B /* CollectionView */,
+				C002E45228CE9E4700C44F2B /* Home */,
 				C002E45328CE9EAA00C44F2B /* HomeCollection */,
 				C0C2D9EA28D288C800DE5CF9 /* Loading */,
 				C002E45428CE9F0600C44F2B /* Login */,

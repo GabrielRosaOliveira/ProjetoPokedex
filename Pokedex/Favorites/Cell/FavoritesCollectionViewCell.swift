@@ -36,8 +36,9 @@ class FavoritesCollectionViewCell: UICollectionViewCell {
         shadowName()
         shadowNumber()
         setGradient()
-        
     }
+    
+    
     
     override func layoutSublayers(of layer: CALayer) {
         gradient.frame = cellBackgroundView.bounds
