@@ -48,6 +48,10 @@ class CollectionViewController: UIViewController {
         profileButton.layer.cornerRadius = 25
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        navigationController?.isNavigationBarHidden = true
+    }
+    
     @IBAction func tappedProfileButton(_ sender: UIButton) {
         let storyboard = UIStoryboard(name: "profileStoryboard", bundle: nil)
         let viewcontroler = storyboard.instantiateViewController(withIdentifier: "profile")

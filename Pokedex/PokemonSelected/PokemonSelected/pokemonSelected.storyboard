@@ -19,15 +19,6 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="K7y-wS-Z1d">
                                 <rect key="frame" x="0.0" y="0.0" width="390" height="600"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Bulbasaur" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qxD-ml-ytI">
-                                        <rect key="frame" x="10" y="134" width="370" height="49"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" name="KohinoorDevanagari-Semibold" family="Kohinoor Devanagari" pointSize="35"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
                                 <color key="backgroundColor" systemColor="systemGreenColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="600" id="Ins-fi-N1W" customClass="NSLayoutHelper" customModule="LayoutHelper">
@@ -153,6 +144,15 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="evaluation-empty-star-evaluation-infographic-icon-with-png-355165-removebg-preview 1"/>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bulbasaur" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qxD-ml-ytI">
+                                <rect key="frame" x="10" y="120" width="370" height="49"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="49" id="AyG-kC-Si3"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="KohinoorDevanagari-Semibold" family="Kohinoor Devanagari" pointSize="35"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nº 001" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GiE-bE-6Q3">
                                 <rect key="frame" x="165.66666666666666" y="178" width="58.666666666666657" height="28"/>
                                 <fontDescription key="fontDescription" name="KohinoorDevanagari-Regular" family="Kohinoor Devanagari" pointSize="20"/>
@@ -183,28 +183,29 @@
                             <constraint firstItem="GiE-bE-6Q3" firstAttribute="top" secondItem="Q1J-hB-kOf" secondAttribute="top" constant="131" id="EfL-uK-jiY" customClass="NSLayoutHelper" customModule="LayoutHelper">
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="iPhone12ProMax">
-                                        <real key="value" value="232"/>
+                                        <real key="value" value="150"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="number" keyPath="iPhoneSE">
-                                        <real key="value" value="113"/>
+                                        <real key="value" value="105"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="number" keyPath="iPhoneSE2G">
-                                        <real key="value" value="113"/>
+                                        <real key="value" value="105"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </constraint>
+                            <constraint firstItem="Q1J-hB-kOf" firstAttribute="trailing" secondItem="qxD-ml-ytI" secondAttribute="trailing" constant="10" id="Ely-BR-QLF"/>
                             <constraint firstItem="K7y-wS-Z1d" firstAttribute="leading" secondItem="xZc-em-SYW" secondAttribute="leading" id="F0d-ON-Id9"/>
                             <constraint firstItem="K7y-wS-Z1d" firstAttribute="top" secondItem="xZc-em-SYW" secondAttribute="top" id="H1r-MM-5US"/>
                             <constraint firstItem="IC3-T9-cyx" firstAttribute="top" secondItem="Q1J-hB-kOf" secondAttribute="top" constant="215" id="N8I-Io-lgn" customClass="NSLayoutHelper" customModule="LayoutHelper">
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="iPhoneSE">
-                                        <real key="value" value="170"/>
+                                        <real key="value" value="150"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="number" keyPath="iPhoneSE2G">
-                                        <real key="value" value="170"/>
+                                        <real key="value" value="150"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="number" keyPath="iPhone12ProMax">
-                                        <real key="value" value="300"/>
+                                        <real key="value" value="250"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="number" keyPath="iPhone11Pro">
                                         <real key="value" value="175"/>
@@ -218,7 +219,21 @@
                             <constraint firstItem="WgH-X6-wHS" firstAttribute="trailing" secondItem="Q1J-hB-kOf" secondAttribute="trailing" id="TXd-2J-d0L"/>
                             <constraint firstAttribute="trailing" secondItem="CJ4-9Y-qVh" secondAttribute="trailing" id="WMy-qE-e7E"/>
                             <constraint firstItem="bWG-dW-4Xd" firstAttribute="top" secondItem="Q1J-hB-kOf" secondAttribute="top" constant="20" id="Wwd-Wh-Rir"/>
+                            <constraint firstItem="qxD-ml-ytI" firstAttribute="leading" secondItem="Q1J-hB-kOf" secondAttribute="leading" constant="10" id="cnf-3S-7PO"/>
                             <constraint firstItem="GiE-bE-6Q3" firstAttribute="centerX" secondItem="xZc-em-SYW" secondAttribute="centerX" id="dDp-a0-0jn"/>
+                            <constraint firstItem="qxD-ml-ytI" firstAttribute="top" secondItem="xZc-em-SYW" secondAttribute="top" constant="120" id="flS-Lp-c2h" customClass="NSLayoutHelper" customModule="LayoutHelper">
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="iPhone12ProMax">
+                                        <real key="value" value="170"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="iPhoneSE">
+                                        <real key="value" value="80"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="iPhoneSE2G">
+                                        <real key="value" value="80"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </constraint>
                             <constraint firstItem="Q1J-hB-kOf" firstAttribute="trailing" secondItem="50x-p5-15w" secondAttribute="trailing" constant="20" id="mvQ-UV-9ak"/>
                             <constraint firstItem="50x-p5-15w" firstAttribute="top" secondItem="Q1J-hB-kOf" secondAttribute="top" constant="10" id="nyy-4G-VIc"/>
                             <constraint firstAttribute="bottom" secondItem="CJ4-9Y-qVh" secondAttribute="bottom" id="tin-pz-f6J"/>

@@ -54,8 +54,8 @@ class FavoritesViewController: UIViewController, UICollectionViewDelegate, UICol
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let storyboard = UIStoryboard(name: "PokemonSelectedVc", bundle: nil)
-        let viewcontroler = storyboard.instantiateViewController(withIdentifier: "PokemonSelectedVc")
+        let storyboard = UIStoryboard(name: "pokemonSelected", bundle: nil)
+        let viewcontroler = storyboard.instantiateViewController(withIdentifier: "pokemon")
         navigationController?.pushViewController(viewcontroler, animated: true)
     }
     

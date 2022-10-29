@@ -41,6 +41,11 @@ class PokemonSelectedVc: UIViewController {
         gradient.frame = telaTopView.bounds
     
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        navigationController?.isNavigationBarHidden = true
+    }
+    
 
     func setGradient() {
         gradient.colors = [ UIColor(red: 173/255, green: 236/255, blue: 150/255, alpha: 1.0).cgColor,

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
@@ -10,20 +10,20 @@
     </dependencies>
     <scenes>
         <!--Favoritos-->
-        <scene sceneID="tne-QT-ifu">
+        <scene sceneID="hEh-Hl-P9Y">
             <objects>
-                <viewController storyboardIdentifier="FavoritesViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="FavoritesViewController" customModule="Pokedex" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                <viewController storyboardIdentifier="FavoritesViewController" id="nCr-J5-Vqz" customClass="FavoritesViewController" customModule="Pokedex" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="axv-Sf-WwV">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QeL-7X-GbG">
-                                <rect key="frame" x="0.0" y="118" width="414" height="768"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="foa-MM-MaP">
+                                <rect key="frame" x="0.0" y="117" width="390" height="717"/>
                                 <subviews>
-                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="oLV-g2-M2A">
-                                        <rect key="frame" x="0.0" y="15" width="414" height="663"/>
+                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="JeD-aU-e5Q">
+                                        <rect key="frame" x="0.0" y="15" width="390" height="612"/>
                                         <color key="backgroundColor" red="0.54901963470000004" green="0.83137255909999996" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                        <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="8Yg-bf-5nG">
+                                        <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Xrj-3i-dEA">
                                             <size key="itemSize" width="128" height="128"/>
                                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -32,16 +32,16 @@
                                         <cells/>
                                     </collectionView>
                                 </subviews>
-                                <color key="backgroundColor" red="0.54745191749211353" green="0.83142414238200291" blue="0.95929333116068982" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="backgroundColor" red="0.5474519175" green="0.83142414239999995" blue="0.95929333120000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
-                                    <constraint firstItem="oLV-g2-M2A" firstAttribute="leading" secondItem="QeL-7X-GbG" secondAttribute="leading" id="QSE-uo-8A4"/>
-                                    <constraint firstItem="oLV-g2-M2A" firstAttribute="top" secondItem="QeL-7X-GbG" secondAttribute="top" constant="15" id="b3q-v3-Hgj"/>
-                                    <constraint firstAttribute="trailing" secondItem="oLV-g2-M2A" secondAttribute="trailing" id="h90-S2-xT3"/>
-                                    <constraint firstAttribute="bottom" secondItem="oLV-g2-M2A" secondAttribute="bottom" constant="90" id="nao-UZ-z0V"/>
+                                    <constraint firstItem="JeD-aU-e5Q" firstAttribute="leading" secondItem="foa-MM-MaP" secondAttribute="leading" id="1uY-aM-rPZ"/>
+                                    <constraint firstAttribute="trailing" secondItem="JeD-aU-e5Q" secondAttribute="trailing" id="LhF-vP-BY6"/>
+                                    <constraint firstAttribute="bottom" secondItem="JeD-aU-e5Q" secondAttribute="bottom" constant="90" id="cAQ-DY-Ien"/>
+                                    <constraint firstItem="JeD-aU-e5Q" firstAttribute="top" secondItem="foa-MM-MaP" secondAttribute="top" constant="15" id="iAC-FT-8GA"/>
                                 </constraints>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Favoritos" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zpg-8n-6IZ">
-                                <rect key="frame" x="115" y="68" width="184" height="45.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Favoritos" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5cc-A7-f4c">
+                                <rect key="frame" x="115" y="67" width="160" height="45.666666666666657"/>
                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="35"/>
                                 <color key="textColor" systemColor="systemYellowColor"/>
                                 <nil key="highlightedColor"/>
@@ -49,26 +49,26 @@
                                 <size key="shadowOffset" width="2" height="0.0"/>
                             </label>
                         </subviews>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <viewLayoutGuide key="safeArea" id="te4-3d-yPy"/>
                         <color key="backgroundColor" systemColor="systemCyanColor"/>
                         <constraints>
-                            <constraint firstAttribute="bottom" secondItem="QeL-7X-GbG" secondAttribute="bottom" constant="10" id="4Hy-HR-cxz"/>
-                            <constraint firstItem="QeL-7X-GbG" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Ulr-lV-KsG"/>
-                            <constraint firstItem="zpg-8n-6IZ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="115" id="dZG-oi-JDl"/>
-                            <constraint firstItem="zpg-8n-6IZ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="itc-dF-ye6"/>
-                            <constraint firstItem="QeL-7X-GbG" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="lud-YE-4i7"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="zpg-8n-6IZ" secondAttribute="trailing" constant="115" id="ni5-gN-uJp"/>
-                            <constraint firstItem="QeL-7X-GbG" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="70" id="pli-7z-7jG"/>
+                            <constraint firstItem="5cc-A7-f4c" firstAttribute="top" secondItem="te4-3d-yPy" secondAttribute="top" constant="20" id="EZW-df-JQy"/>
+                            <constraint firstItem="5cc-A7-f4c" firstAttribute="leading" secondItem="te4-3d-yPy" secondAttribute="leading" constant="115" id="Okm-4k-3xz"/>
+                            <constraint firstItem="foa-MM-MaP" firstAttribute="top" secondItem="te4-3d-yPy" secondAttribute="top" constant="70" id="Ujm-ZL-WIv"/>
+                            <constraint firstItem="te4-3d-yPy" firstAttribute="trailing" secondItem="5cc-A7-f4c" secondAttribute="trailing" constant="115" id="bLw-YI-14M"/>
+                            <constraint firstItem="foa-MM-MaP" firstAttribute="leading" secondItem="te4-3d-yPy" secondAttribute="leading" id="nmB-yi-ZGG"/>
+                            <constraint firstAttribute="bottom" secondItem="foa-MM-MaP" secondAttribute="bottom" constant="10" id="oel-5f-Ejx"/>
+                            <constraint firstItem="foa-MM-MaP" firstAttribute="trailing" secondItem="te4-3d-yPy" secondAttribute="trailing" id="r6g-ag-uix"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Favoritos" image="favoritos" id="LZq-lk-xGF"/>
+                    <tabBarItem key="tabBarItem" title="Favoritos" image="favoritos" id="rD2-uy-gp4"/>
                     <connections>
-                        <outlet property="favoritesCollectionView" destination="oLV-g2-M2A" id="yLC-nA-5TO"/>
-                        <outlet property="favoritesLabel" destination="zpg-8n-6IZ" id="XSE-xk-fKF"/>
-                        <outlet property="favoritesView" destination="QeL-7X-GbG" id="Rar-BS-s3t"/>
+                        <outlet property="favoritesCollectionView" destination="JeD-aU-e5Q" id="9qo-f2-9nG"/>
+                        <outlet property="favoritesLabel" destination="5cc-A7-f4c" id="Nt5-62-Ysp"/>
+                        <outlet property="favoritesView" destination="foa-MM-MaP" id="v3q-6r-TGk"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rHd-6Q-yT1" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="391" y="60"/>
         </scene>
