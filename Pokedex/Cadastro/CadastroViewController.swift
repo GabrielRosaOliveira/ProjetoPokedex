@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Firebase
 
 class CadastroViewController: UIViewController, UITextFieldDelegate {
 
@@ -18,6 +19,8 @@ class CadastroViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var apelidoTxtField: UITextField!
     @IBOutlet weak var cadastrarButton: UIButton!
     
+    var auth: Auth?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         inferiorBottoView()
@@ -29,6 +32,7 @@ class CadastroViewController: UIViewController, UITextFieldDelegate {
         apelidoTxtField.delegate = self
         botaoDesativado()
         cornerRadius()
+        self.auth = Auth.auth()
     }
     
     func configButton() {
@@ -43,6 +47,24 @@ class CadastroViewController: UIViewController, UITextFieldDelegate {
     }
     
 
+    
+    @IBAction func tappedRegisterButton(_ sender: UIButton) {
+        
+        let email: String = emailTxtField.text ?? ""
+        let password: String = passWordTxtField.text ?? ""
+        
+        self.auth?.createUser(withEmail: email, password: password, completion: { (result, error)  in
+            
+            if error != nil {
+                print("deu falaha")
+            } else {
+                print("sucesso")
+            }
+            
+        })
+        
+    }
+    
     func inferiorBottoView() {
         camadaView.layer.cornerRadius = 50
         camadaView.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMinXMinYCorner]

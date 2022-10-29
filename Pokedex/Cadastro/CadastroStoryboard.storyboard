@@ -77,6 +77,9 @@
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="CADASTRAR"/>
+                                        <connections>
+                                            <action selector="tappedRegisterButton:" destination="vNf-Ps-xlp" eventType="touchUpInside" id="R8o-K2-RY7"/>
+                                        </connections>
                                     </button>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="4pokemons-removebg-preview" translatesAutoresizingMaskIntoConstraints="NO" id="Bxq-2B-8p4">
                                         <rect key="frame" x="0.0" y="650" width="414" height="128"/>
