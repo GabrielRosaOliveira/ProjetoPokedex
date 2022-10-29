@@ -42,11 +42,14 @@ class PokemonSelectedVc: UIViewController {
     
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        navigationController?.isNavigationBarHidden = true
+    override func viewWillDisappear(_ animated: Bool) {
+        self.tabBarController?.tabBar.isHidden = false
     }
     
-
+    override func viewWillAppear(_ animated: Bool) {
+        self.tabBarController?.tabBar.isHidden = true
+    }
+    
     func setGradient() {
         gradient.colors = [ UIColor(red: 173/255, green: 236/255, blue: 150/255, alpha: 1.0).cgColor,
                             UIColor(red: 203/255, green: 144/255, blue: 197/255, alpha: 1.0).cgColor]

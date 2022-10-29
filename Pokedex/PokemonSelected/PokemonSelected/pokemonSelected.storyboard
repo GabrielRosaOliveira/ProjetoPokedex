@@ -183,7 +183,7 @@
                             <constraint firstItem="GiE-bE-6Q3" firstAttribute="top" secondItem="Q1J-hB-kOf" secondAttribute="top" constant="131" id="EfL-uK-jiY" customClass="NSLayoutHelper" customModule="LayoutHelper">
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="iPhone12ProMax">
-                                        <real key="value" value="150"/>
+                                        <real key="value" value="180"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="number" keyPath="iPhoneSE">
                                         <real key="value" value="105"/>
@@ -205,7 +205,7 @@
                                         <real key="value" value="150"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="number" keyPath="iPhone12ProMax">
-                                        <real key="value" value="250"/>
+                                        <real key="value" value="300"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="number" keyPath="iPhone11Pro">
                                         <real key="value" value="175"/>
