@@ -8,10 +8,11 @@
 import UIKit
 
 class CollectionViewController: UIViewController {
-
+    
     @IBOutlet weak var collectionView: UICollectionView!
     
-    @IBOutlet weak var imageProfile: UIImageView!
+    @IBOutlet weak var profileButton: UIButton!
+    
     
     struct Pokedex {
         let nome: String
@@ -44,8 +45,17 @@ class CollectionViewController: UIViewController {
         collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.register(HomeCollectionViewCell.nib(), forCellWithReuseIdentifier: HomeCollectionViewCell.identifier)
-        imageProfile.layer.cornerRadius = 25
+        profileButton.layer.cornerRadius = 25
     }
+    
+    @IBAction func tappedProfileButton(_ sender: UIButton) {
+        let storyboard = UIStoryboard(name: "profileStoryboard", bundle: nil)
+        let viewcontroler = storyboard.instantiateViewController(withIdentifier: "profile")
+        navigationController?.pushViewController(viewcontroler, animated: true)
+        
+    }
+    
+    
 }
 
 
@@ -72,15 +82,15 @@ extension CollectionViewController: UICollectionViewDelegate, UICollectionViewDa
         return 5
     }
     
-//    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-//        print(data[indexPath.item].nome)
-//    }
+    //    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+    //        print(data[indexPath.item].nome)
+    //    }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let storyboard = UIStoryboard(name: "pokemonSelected", bundle: nil)
         let viewcontroler = storyboard.instantiateViewController(withIdentifier: "pokemon")
         navigationController?.pushViewController(viewcontroler, animated: true)
-        }
+    }
     
     
 }
