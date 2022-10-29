@@ -14,6 +14,8 @@
 		C00FF5C228D7E71D004F4151 /* CadastroStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C00FF5C128D7E71D004F4151 /* CadastroStoryboard.storyboard */; };
 		C00FF5C528D7ECD5004F4151 /* EsqueceuSenhaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C00FF5C428D7ECD5004F4151 /* EsqueceuSenhaViewController.swift */; };
 		C00FF5C728D7ECEE004F4151 /* EsqueceuSenhaStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C00FF5C628D7ECEE004F4151 /* EsqueceuSenhaStoryboard.storyboard */; };
+		C0386AC3290DAA25000DC945 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C0386AC1290DAA25000DC945 /* Main.storyboard */; };
+		C0386AC4290DAA25000DC945 /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0386AC2290DAA25000DC945 /* CollectionViewController.swift */; };
 		C03B6FF128D3E56A00683717 /* PokemonSelectedVc.swift in Sources */ = {isa = PBXBuildFile; fileRef = C03B6FF028D3E56A00683717 /* PokemonSelectedVc.swift */; };
 		C03B6FF328D3E58500683717 /* pokemonSelected.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C03B6FF228D3E58500683717 /* pokemonSelected.storyboard */; };
 		C0404F4F28D65577007CD6CA /* AbilitiesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0404F4D28D65577007CD6CA /* AbilitiesTableViewCell.swift */; };
@@ -49,6 +51,8 @@
 		C00FF5C128D7E71D004F4151 /* CadastroStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CadastroStoryboard.storyboard; sourceTree = "<group>"; };
 		C00FF5C428D7ECD5004F4151 /* EsqueceuSenhaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EsqueceuSenhaViewController.swift; sourceTree = "<group>"; };
 		C00FF5C628D7ECEE004F4151 /* EsqueceuSenhaStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EsqueceuSenhaStoryboard.storyboard; sourceTree = "<group>"; };
+		C0386AC1290DAA25000DC945 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		C0386AC2290DAA25000DC945 /* CollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
 		C03B6FF028D3E56A00683717 /* PokemonSelectedVc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonSelectedVc.swift; sourceTree = "<group>"; };
 		C03B6FF228D3E58500683717 /* pokemonSelected.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = pokemonSelected.storyboard; sourceTree = "<group>"; };
 		C0404F4D28D65577007CD6CA /* AbilitiesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AbilitiesTableViewCell.swift; sourceTree = "<group>"; };
@@ -161,6 +165,15 @@
 			path = Collection;
 			sourceTree = "<group>";
 		};
+		C0386AC5290DAA4A000DC945 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				C0386AC2290DAA25000DC945 /* CollectionViewController.swift */,
+				C0386AC1290DAA25000DC945 /* Main.storyboard */,
+			);
+			name = Home;
+			sourceTree = "<group>";
+		};
 		C03B6FEF28D3E50700683717 /* PokemonSelected */ = {
 			isa = PBXGroup;
 			children = (
@@ -238,6 +251,7 @@
 		C08C721E28C3D7E40007E7FE /* Pokedex */ = {
 			isa = PBXGroup;
 			children = (
+				C0386AC5290DAA4A000DC945 /* Home */,
 				C052C0C5290DA33100AF7526 /* Favorites */,
 				C09807BA28D95801005DB2E2 /* Profile */,
 				C00FF5C328D7ECBB004F4151 /* EsqueceuSenha */,
@@ -355,6 +369,7 @@
 				C08AE86028D3FD9100FCC976 /* HabilidadesCollectionViewCell.xib in Resources */,
 				C09807BE28D9582C005DB2E2 /* profileStoryboard.storyboard in Resources */,
 				C0530E15290DA3FB002B8536 /* favoritesCollectionViewCell.xib in Resources */,
+				C0386AC3290DAA25000DC945 /* Main.storyboard in Resources */,
 				C002E45828CE9F5C00C44F2B /* LoginStoryboard.storyboard in Resources */,
 				C03B6FF328D3E58500683717 /* pokemonSelected.storyboard in Resources */,
 				C08C722928C3D7E60007E7FE /* Assets.xcassets in Resources */,
@@ -424,6 +439,7 @@
 				C08C722428C3D7E40007E7FE /* MyTabBarConstroller.swift in Sources */,
 				C03B6FF128D3E56A00683717 /* PokemonSelectedVc.swift in Sources */,
 				C052C0C3290DA31C00AF7526 /* FavoritesCollectionViewCell.swift in Sources */,
+				C0386AC4290DAA25000DC945 /* CollectionViewController.swift in Sources */,
 				C0DBA86328D4008300C7548F /* AtributosCollectionViewCell.swift in Sources */,
 				C052C0C4290DA31C00AF7526 /* FavoritesViewController.swift in Sources */,
 				C00FF5C028D7E712004F4151 /* CadastroViewController.swift in Sources */,
