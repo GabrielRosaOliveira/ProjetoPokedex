@@ -18,6 +18,7 @@
 		C03B6FF328D3E58500683717 /* pokemonSelected.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C03B6FF228D3E58500683717 /* pokemonSelected.storyboard */; };
 		C0404F4F28D65577007CD6CA /* AbilitiesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0404F4D28D65577007CD6CA /* AbilitiesTableViewCell.swift */; };
 		C0404F5028D65577007CD6CA /* AbilitiesTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C0404F4E28D65577007CD6CA /* AbilitiesTableViewCell.xib */; };
+		C052C0BC290DA1A300AF7526 /* Favorites.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C052C0BB290DA1A300AF7526 /* Favorites.storyboard */; };
 		C05654EB28CE6FA600230AB8 /* HomeCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C05654E828CE6FA600230AB8 /* HomeCollectionViewCell.xib */; };
 		C05654ED28CE6FA600230AB8 /* HomeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C05654EA28CE6FA600230AB8 /* HomeCollectionViewCell.swift */; };
 		C08AE85F28D3FD9100FCC976 /* HabilidadesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C08AE85D28D3FD9100FCC976 /* HabilidadesCollectionViewCell.swift */; };
@@ -50,6 +51,7 @@
 		C03B6FF228D3E58500683717 /* pokemonSelected.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = pokemonSelected.storyboard; sourceTree = "<group>"; };
 		C0404F4D28D65577007CD6CA /* AbilitiesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AbilitiesTableViewCell.swift; sourceTree = "<group>"; };
 		C0404F4E28D65577007CD6CA /* AbilitiesTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AbilitiesTableViewCell.xib; sourceTree = "<group>"; };
+		C052C0BB290DA1A300AF7526 /* Favorites.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Favorites.storyboard; sourceTree = "<group>"; };
 		C05654E828CE6FA600230AB8 /* HomeCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeCollectionViewCell.xib; sourceTree = "<group>"; };
 		C05654EA28CE6FA600230AB8 /* HomeCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeCollectionViewCell.swift; sourceTree = "<group>"; };
 		C08AE85D28D3FD9100FCC976 /* HabilidadesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabilidadesCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -172,6 +174,14 @@
 			path = tableView;
 			sourceTree = "<group>";
 		};
+		C052C0BA290DA16700AF7526 /* Favorites */ = {
+			isa = PBXGroup;
+			children = (
+				C052C0BB290DA1A300AF7526 /* Favorites.storyboard */,
+			);
+			path = Favorites;
+			sourceTree = "<group>";
+		};
 		C08AE85C28D3FD6D00FCC976 /* Habilidades */ = {
 			isa = PBXGroup;
 			children = (
@@ -212,6 +222,7 @@
 		C08C721E28C3D7E40007E7FE /* Pokedex */ = {
 			isa = PBXGroup;
 			children = (
+				C052C0BA290DA16700AF7526 /* Favorites */,
 				C09807BA28D95801005DB2E2 /* Profile */,
 				C00FF5C328D7ECBB004F4151 /* EsqueceuSenha */,
 				C00FF5BE28D7E6FC004F4151 /* Cadastro */,
@@ -325,6 +336,7 @@
 			files = (
 				C08C722C28C3D7E60007E7FE /* LaunchScreen.storyboard in Resources */,
 				C00FF5C228D7E71D004F4151 /* CadastroStoryboard.storyboard in Resources */,
+				C052C0BC290DA1A300AF7526 /* Favorites.storyboard in Resources */,
 				C08AE86028D3FD9100FCC976 /* HabilidadesCollectionViewCell.xib in Resources */,
 				C09807BE28D9582C005DB2E2 /* profileStoryboard.storyboard in Resources */,
 				C002E45828CE9F5C00C44F2B /* LoginStoryboard.storyboard in Resources */,
