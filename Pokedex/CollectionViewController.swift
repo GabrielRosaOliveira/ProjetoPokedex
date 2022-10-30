@@ -9,6 +9,9 @@ import UIKit
 
 class CollectionViewController: UIViewController {
     
+    
+    @IBOutlet weak var searchBar: UISearchBar!
+    
     @IBOutlet weak var collectionView: UICollectionView!
     
     @IBOutlet weak var profileButton: UIButton!
@@ -40,12 +43,20 @@ class CollectionViewController: UIViewController {
                             Pokedex(nome: "Bulbasaur", imageName: "imagem4"),
                             Pokedex(nome: "Pikachu", imageName: "imagem5")]
     
+    var filterPokemon: [Pokedex] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.filterPokemon = data
+        configCollectionView()
+        profileButton.layer.cornerRadius = 25
+    }
+    
+    func configCollectionView() {
         collectionView.delegate = self
         collectionView.dataSource = self
+        searchBar.delegate = self
         collectionView.register(HomeCollectionViewCell.nib(), forCellWithReuseIdentifier: HomeCollectionViewCell.identifier)
-        profileButton.layer.cornerRadius = 25
     }
     
     @IBAction func tappedProfileButton(_ sender: UIButton) {
@@ -58,21 +69,28 @@ class CollectionViewController: UIViewController {
     
 }
 
-
-
 extension CollectionViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return data.count
+        return data.count + 1
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HomeCollectionViewCell.identifier, for: indexPath) as? HomeCollectionViewCell
-        cell?.label.text = data[indexPath.item].nome
-        cell?.iconImageView.image = UIImage(named: data[indexPath.item].imageName)
-        cell?.backgroundColor = .clear
-        return cell ?? UICollectionViewCell()
+        
+        if filterPokemon[indexPath.row].nome != "" {
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "HomeCollectionViewCell", for: indexPath) as? HomeCollectionViewCell
+            cell?.label?.text = self.filterPokemon[indexPath.row].nome
+            
+            return cell ?? UICollectionViewCell()
+        } else {
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HomeCollectionViewCell.identifier, for: indexPath) as? HomeCollectionViewCell
+            cell?.label.text = data[indexPath.row - 1].nome
+            cell?.iconImageView.image = UIImage(named: data[indexPath.row].imageName)
+            cell?.backgroundColor = .clear
+            return cell ?? UICollectionViewCell()
+        }
     }
+    
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: view.frame.size.width - 40, height: 60)
@@ -82,15 +100,33 @@ extension CollectionViewController: UICollectionViewDelegate, UICollectionViewDa
         return 5
     }
     
-    //    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-    //        print(data[indexPath.item].nome)
-    //    }
-    
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let storyboard = UIStoryboard(name: "pokemonSelected", bundle: nil)
         let viewcontroler = storyboard.instantiateViewController(withIdentifier: "pokemon")
         navigationController?.pushViewController(viewcontroler, animated: true)
     }
+}
+
+extension CollectionViewController: UISearchBarDelegate {
     
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        
+        self.filterPokemon = []
+        if searchText.isEmpty {
+            self.filterPokemon = self.data
+        } else {
+            for value in data {
+                if value.nome.uppercased().contains(searchText.uppercased()) {
+                    self.filterPokemon.append(value)
+                }
+            }
+        }
+        collectionView.reloadData()
+        
+    }
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.resignFirstResponder()
+    }
     
 }
