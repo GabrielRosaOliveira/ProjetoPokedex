@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Firebase
 
 class LoginViewController: UIViewController, UITextFieldDelegate {
     
@@ -14,6 +15,8 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var entrarButton: UIButton!
     @IBOutlet weak var cadastrarButton: UIButton!
     
+    var auth: Auth?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         emailTxtField.delegate = self
@@ -21,7 +24,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         corneBotoes()
         botaoDesativado()
         view.backgroundColor = UIColor(red: 118/255, green: 204/255, blue: 232/255, alpha: 1.0)
-        
+        self.auth = Auth.auth()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -41,11 +44,41 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         navigationController?.pushViewController(viewcontroler, animated: true)
     }
     
+    func alert(title: String, message: String) {
+        let alertController: UIAlertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let ok: UIAlertAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+        alertController.addAction(ok)
+        self.present(alertController, animated: true, completion: nil)
+    }
 
-    @IBAction func didTapLoginButton(_ sender: UIButton) {
+    fileprivate func doLogin() {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let viewcontroler = storyboard.instantiateViewController(withIdentifier: "TabBar")
-        navigationController?.pushViewController(viewcontroler, animated: true)
+        self.navigationController?.pushViewController(viewcontroler, animated: true)
+        print("login feito com sucesso")
+    }
+    
+    @IBAction func didTapLoginButton(_ sender: UIButton) {
+        
+        let email: String = emailTxtField.text ?? ""
+        let password: String = passWordTxtField.text ?? ""
+        
+        self.auth?.signIn(withEmail: email, password: password, completion: { (usuario, error) in
+            
+            if error != nil {
+                self.alert(title: "Atenção", message: "Dados incorretos, tente novamente")
+                print("dados incorretos")
+            } else {
+                if usuario == nil {
+                    self.alert(title: "Atenção", message: "Tivemos um problema inesperado")
+                    print("problema")
+                } else {
+                    self.doLogin()
+                }
+            }
+        })
+        
+        
     }
     
     func botaoDesativado() {
