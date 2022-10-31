@@ -73,13 +73,7 @@ class CollectionViewController: UIViewController {
         collectionView.register(HomeCollectionViewCell.nib(), forCellWithReuseIdentifier: HomeCollectionViewCell.identifier)
         collectionView.register(SearchCollectionViewCell.nib(), forCellWithReuseIdentifier: SearchCollectionViewCell.identifier)
     }
-    
-    
-    @IBAction func tappedSearchButton(_ sender: UIButton) {
-        setSearchTextField(text: searchTextField.text ?? "")
-    }
-    
-    
+        
     @IBAction func tappedProfileButton(_ sender: UIButton) {
         let storyboard = UIStoryboard(name: "profileStoryboard", bundle: nil)
         let viewcontroler = storyboard.instantiateViewController(withIdentifier: "profile")
@@ -87,14 +81,13 @@ class CollectionViewController: UIViewController {
         
     }
     
-    
 }
 
 extension CollectionViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if isempty {
-            return 1
+            return data.count
         } else {
             return filterPokemon.count
         }
@@ -102,12 +95,15 @@ extension CollectionViewController: UICollectionViewDelegate, UICollectionViewDa
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
+//        if filterPokemon != data[indexPath.row].nome {
+//
+//        }
+        
         
         if isempty {
-            print("Pokemon nao encontrado")
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HomeCollectionViewCell.identifier, for: indexPath) as? HomeCollectionViewCell
-            cell?.label.text = filterPokemon[indexPath.row].nome
-            cell?.iconImageView.image = UIImage(named: filterPokemon[indexPath.row].imageName)
+            cell?.label.text = data[indexPath.row].nome
+            cell?.iconImageView.image = UIImage(named: data[indexPath.row].imageName)
             cell?.backgroundColor = .clear
             return cell ?? UICollectionViewCell()
         } else {
