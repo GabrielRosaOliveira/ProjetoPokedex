@@ -41,23 +41,37 @@
                                     <action selector="tappedProfileButton:" destination="vi9-Gx-fJY" eventType="touchUpInside" id="7Ko-9c-xHK"/>
                                 </connections>
                             </button>
-                            <searchBar contentMode="redraw" fixedFrame="YES" searchBarStyle="minimal" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZFd-fg-h91">
-                                <rect key="frame" x="46" y="63" width="264" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oda-Tb-W1q">
+                                <rect key="frame" x="30" y="68" width="272" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dTf-hO-Un9">
+                                <rect key="frame" x="269" y="75" width="20" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="GZp-SQ-z4E"/>
+                                    <constraint firstAttribute="width" constant="20" id="dKM-qQ-AKc"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="magnifyingglass" catalog="system"/>
                                 <connections>
-                                    <outlet property="delegate" destination="vi9-Gx-fJY" id="lRb-c5-8kJ"/>
+                                    <action selector="tappedSearchButton:" destination="vi9-Gx-fJY" eventType="touchUpInside" id="7VO-vd-SPm"/>
                                 </connections>
-                            </searchBar>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="AeB-yK-OJ7"/>
                         <color key="backgroundColor" systemColor="systemCyanColor"/>
                         <constraints>
                             <constraint firstItem="mKA-w6-wkt" firstAttribute="top" secondItem="tuC-u2-fYU" secondAttribute="bottom" constant="7" id="0kV-LR-LGV"/>
+                            <constraint firstItem="oda-Tb-W1q" firstAttribute="leading" secondItem="AeB-yK-OJ7" secondAttribute="leading" constant="30" id="7gb-OD-Kip"/>
                             <constraint firstItem="tuC-u2-fYU" firstAttribute="top" secondItem="AeB-yK-OJ7" secondAttribute="top" constant="12" id="HKb-KW-Is0"/>
+                            <constraint firstItem="tuC-u2-fYU" firstAttribute="leading" secondItem="oda-Tb-W1q" secondAttribute="trailing" constant="30" id="IMj-hM-oE6"/>
                             <constraint firstItem="AeB-yK-OJ7" firstAttribute="trailing" secondItem="mKA-w6-wkt" secondAttribute="trailing" id="IWI-Zi-TIq"/>
+                            <constraint firstItem="dTf-hO-Un9" firstAttribute="leading" secondItem="AeB-yK-OJ7" secondAttribute="leading" constant="269" id="YTZ-T0-hjc"/>
                             <constraint firstItem="AeB-yK-OJ7" firstAttribute="bottom" secondItem="mKA-w6-wkt" secondAttribute="bottom" constant="36" id="erz-xQ-G61"/>
                             <constraint firstItem="AeB-yK-OJ7" firstAttribute="trailing" secondItem="tuC-u2-fYU" secondAttribute="trailing" constant="32" id="oCo-jd-kGX"/>
+                            <constraint firstItem="oda-Tb-W1q" firstAttribute="top" secondItem="AeB-yK-OJ7" secondAttribute="top" constant="20" id="r04-vB-YHk"/>
+                            <constraint firstItem="dTf-hO-Un9" firstAttribute="centerY" secondItem="oda-Tb-W1q" secondAttribute="centerY" id="svK-zP-79X"/>
                             <constraint firstItem="mKA-w6-wkt" firstAttribute="leading" secondItem="AeB-yK-OJ7" secondAttribute="leading" id="weI-C4-j17"/>
                         </constraints>
                     </view>
@@ -65,7 +79,7 @@
                     <connections>
                         <outlet property="collectionView" destination="mKA-w6-wkt" id="eFW-RG-L4h"/>
                         <outlet property="profileButton" destination="tuC-u2-fYU" id="ytr-sJ-syp"/>
-                        <outlet property="searchBar" destination="ZFd-fg-h91" id="QBZ-qX-pCl"/>
+                        <outlet property="searchTextField" destination="oda-Tb-W1q" id="SUQ-Xn-XOw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="K9l-no-dmF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -120,6 +134,7 @@
         <image name="BotaoFavoritos" width="53" height="50"/>
         <image name="BotaoHome" width="48" height="45"/>
         <image name="Perfil" width="26" height="27"/>
+        <image name="magnifyingglass" catalog="system" width="128" height="117"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
