@@ -18,11 +18,13 @@ class ProfileViewController: UIViewController {
     
     @IBOutlet weak var exitButton: UIButton!
     
+    var alert: Alert?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         configBackgroundView()
-
+        alert = Alert(controller: self)
+        
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -47,20 +49,29 @@ class ProfileViewController: UIViewController {
     
     @IBAction func exitButton(_ sender: UIButton) {
         
-        let alertExit = UIAlertController(title: "Atenção", message: "Você quer mesmo sair?", preferredStyle: UIAlertController.Style.alert)
-        alertExit.addAction(UIAlertAction(title: "Sim", style: UIAlertAction.Style.destructive, handler: nil))
-        alertExit.addAction(UIAlertAction(title: "Cancelar", style: UIAlertAction.Style.cancel, handler: nil))
-        self.present(alertExit,animated: true,completion: nil)
+        alert?.configAlert(title: "Atenção", message: "Você quer mesmo sair?", completion: {
+            let storyboard = UIStoryboard(name: "LoginStoryboard", bundle: nil)
+            let viewcontroler = storyboard.instantiateViewController(withIdentifier: "LoginViewController")
+            self.navigationController?.pushViewController(viewcontroler, animated: true)
+        })
+        
+//        let alertExit = UIAlertController(title: "Atenção", message: "Você quer mesmo sair?", preferredStyle: UIAlertController.Style.alert)
+//
+//        alertExit.addAction(UIAlertAction(title: "Sim", style: UIAlertAction.Style.destructive, handler:
+//
+//                                         ))
+//        alertExit.addAction(UIAlertAction(title: "Cancelar", style: UIAlertAction.Style.cancel, handler: nil))
+//        self.present(alertExit,animated: true,completion: nil)
     }
     
     @IBAction func editingNickname(_ sender: UITextField) {
-    
-                if nicknameTextField.isEnabled{
-                    let alertEditing = UIAlertController(title: "Atenção", message: "Você quer mesmo alterar seu apelido?", preferredStyle: UIAlertController.Style.alert)
-                    alertEditing.addAction(UIAlertAction(title: "Sim", style: UIAlertAction.Style.destructive, handler: nil))
-                    alertEditing.addAction(UIAlertAction(title: "Cancelar", style: UIAlertAction.Style.cancel, handler: nil))
-                    self.present(alertEditing,animated: true,completion: nil)
-                }
+        
+        if nicknameTextField.isEnabled{
+            let alertEditing = UIAlertController(title: "Atenção", message: "Você quer mesmo alterar seu apelido?", preferredStyle: UIAlertController.Style.alert)
+            alertEditing.addAction(UIAlertAction(title: "Sim", style: UIAlertAction.Style.destructive, handler: nil))
+            alertEditing.addAction(UIAlertAction(title: "Cancelar", style: UIAlertAction.Style.cancel, handler: nil))
+            self.present(alertEditing,animated: true,completion: nil)
+        }
     }
     
     @IBAction func editBirthday(_ sender: UITextField) {
@@ -76,7 +87,7 @@ class ProfileViewController: UIViewController {
     }
     
     @IBAction func editEmailAddress(_ sender: UITextField) {
-    
+        
         if emailTextField.isEnabled{
             let alertEditing = UIAlertController(title: "Atenção", message: "Você quer mesmo alterar seu endereço de e-mail?", preferredStyle: UIAlertController.Style.alert)
             alertEditing.addAction(UIAlertAction(title: "Sim", style: UIAlertAction.Style.destructive, handler: nil))
@@ -94,7 +105,7 @@ class ProfileViewController: UIViewController {
             self.present(alertEditing,animated: true,completion: nil)
         }
     }
-
+    
     func configBackgroundView(){
         
         backgroundView.layer.cornerRadius = 50
@@ -125,9 +136,9 @@ class ProfileViewController: UIViewController {
         editPasswordTextField.layer.borderColor = UIColor.black.cgColor
         editPasswordTextField.borderStyle = .roundedRect
         editPasswordTextField.backgroundColor = .clear
-    
+        
         exitButton.layer.cornerRadius = 10
-    
+        
     }
-
+    
 }

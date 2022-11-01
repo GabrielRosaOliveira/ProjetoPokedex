@@ -25,10 +25,12 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         botaoDesativado()
         view.backgroundColor = UIColor(red: 118/255, green: 204/255, blue: 232/255, alpha: 1.0)
         self.auth = Auth.auth()
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
         navigationController?.isNavigationBarHidden = true
+        self.tabBarController?.tabBar.isHidden = true
     }
     
     

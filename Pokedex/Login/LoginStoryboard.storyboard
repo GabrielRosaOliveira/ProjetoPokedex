@@ -12,7 +12,7 @@
         <!--Login View Controller-->
         <scene sceneID="flx-PM-sSR">
             <objects>
-                <viewController id="OXh-s1-MyS" customClass="LoginViewController" customModule="Pokedex" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginViewController" id="OXh-s1-MyS" customClass="LoginViewController" customModule="Pokedex" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Eew-G8-2sn">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
