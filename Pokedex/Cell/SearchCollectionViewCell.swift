@@ -23,6 +23,7 @@ class SearchCollectionViewCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         configoBackGroundView()
+        backGroundView.backgroundColor = .systemCyan
     }
     
     func setupCell(nameFalied: String) {
@@ -30,15 +31,11 @@ class SearchCollectionViewCell: UICollectionViewCell {
     }
 
     func configoBackGroundView() {
-        pokemonFaliedLabel.layer.makeShadow(color: .black, x: 0, y: 2, blur: 4, spread: 0)
         contentView.backgroundColor = .clear
         backGroundView?.layer.cornerRadius = 25
         layer.masksToBounds = true
         backGroundView?.backgroundColor = .white
-        backGroundView?.layer.borderWidth = 0.5
         backGroundView?.layer.borderColor = UIColor.black.cgColor
-//        backGroundView?.layer.makeShadow(color: .black, x: 0, y: 3, blur: 4, spread: 0)
-        
     }
 }
 
