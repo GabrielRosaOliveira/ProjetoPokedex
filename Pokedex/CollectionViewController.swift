@@ -46,6 +46,10 @@ class CollectionViewController: UIViewController {
     
     var filterPokemon: [Pokedex] = []
     
+    var teste: Bool {
+        return self.filterPokemon.count == 0
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.filterPokemon = data
@@ -86,33 +90,39 @@ class CollectionViewController: UIViewController {
 extension CollectionViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        if isempty {
-            return data.count
+        if teste {
+            return 1
         } else {
             return filterPokemon.count
         }
     }
     
+    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-//        if filterPokemon != data[indexPath.row].nome {
-//
-//        }
-        
-        
-        if isempty {
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HomeCollectionViewCell.identifier, for: indexPath) as? HomeCollectionViewCell
-            cell?.label.text = data[indexPath.row].nome
-            cell?.iconImageView.image = UIImage(named: data[indexPath.row].imageName)
-            cell?.backgroundColor = .clear
-            return cell ?? UICollectionViewCell()
-        } else {
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HomeCollectionViewCell.identifier, for: indexPath) as? HomeCollectionViewCell
-            cell?.label.text = filterPokemon[indexPath.row].nome
-            cell?.iconImageView.image = UIImage(named: filterPokemon[indexPath.row].imageName)
+        if teste {
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: SearchCollectionViewCell.identifier, for: indexPath) as? SearchCollectionViewCell
             cell?.backgroundColor = .clear
             return cell ?? UICollectionViewCell()
         }
+        
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HomeCollectionViewCell.identifier, for: indexPath) as? HomeCollectionViewCell
+        cell?.label.text = filterPokemon[indexPath.row].nome
+        cell?.iconImageView.image = UIImage(named: filterPokemon[indexPath.row].imageName)
+        cell?.backgroundColor = .clear
+        return cell ?? UICollectionViewCell()
+        
+//        if isempty {
+//            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: SearchCollectionViewCell.identifier, for: indexPath) as? SearchCollectionViewCell
+//            cell?.backgroundColor = .clear
+//            return cell ?? UICollectionViewCell()
+//        } else {
+//            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HomeCollectionViewCell.identifier, for: indexPath) as? HomeCollectionViewCell
+//            cell?.label.text = filterPokemon[indexPath.row].nome
+//            cell?.iconImageView.image = UIImage(named: filterPokemon[indexPath.row].imageName)
+//            cell?.backgroundColor = .clear
+//            return cell ?? UICollectionViewCell()
+//        }
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {

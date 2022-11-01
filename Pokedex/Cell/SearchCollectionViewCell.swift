@@ -37,7 +37,7 @@ class SearchCollectionViewCell: UICollectionViewCell {
         backGroundView?.backgroundColor = .white
         backGroundView?.layer.borderWidth = 0.5
         backGroundView?.layer.borderColor = UIColor.black.cgColor
-        backGroundView?.layer.makeShadow(color: .black, x: 0, y: 3, blur: 4, spread: 0)
+//        backGroundView?.layer.makeShadow(color: .black, x: 0, y: 3, blur: 4, spread: 0)
         
     }
 }
