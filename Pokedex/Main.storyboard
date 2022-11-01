@@ -67,6 +67,7 @@
                     <connections>
                         <outlet property="collectionView" destination="iEh-2R-FaO" id="aGe-1c-tVM"/>
                         <outlet property="profileButton" destination="ZAr-zg-R2B" id="Iys-2Q-GiB"/>
+                        <outlet property="searchTextField" destination="8pd-RD-IIF" id="Ux5-yg-JJG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BCm-sS-cgN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
