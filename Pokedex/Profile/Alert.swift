@@ -15,7 +15,6 @@ class Alert: NSObject {
     
     init(controller: UIViewController) {
         self.controller = controller
-        
     }
     
     func configAlert(title: String, message: String, completion:(() -> Void)? = nil) {
@@ -31,5 +30,4 @@ class Alert: NSObject {
         self.controller.present(alertController, animated: true, completion: nil)
         
     }
-    
 }

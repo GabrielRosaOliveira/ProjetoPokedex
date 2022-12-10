@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -31,7 +31,7 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <textInputTraits key="textInputTraits"/>
                                         <connections>
-                                            <action selector="editingNickname:" destination="X0A-1L-eLe" eventType="editingDidBegin" id="LWs-Ur-itl"/>
+                                            <action selector="tappedEditingNicknameTextField:" destination="X0A-1L-eLe" eventType="editingDidEnd" id="7dj-a3-bIX"/>
                                         </connections>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="pokebola@hotmail.com" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VHn-6X-Mcj">
@@ -39,7 +39,7 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <textInputTraits key="textInputTraits"/>
                                         <connections>
-                                            <action selector="editEmailAddress:" destination="X0A-1L-eLe" eventType="editingDidBegin" id="KCY-eP-O9K"/>
+                                            <action selector="tappedEditEmailAddressTextField:" destination="X0A-1L-eLe" eventType="editingDidEnd" id="sQi-h1-ruc"/>
                                         </connections>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="12/01/2001" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0j8-oi-dtB">
@@ -47,7 +47,7 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <textInputTraits key="textInputTraits"/>
                                         <connections>
-                                            <action selector="editBirthday:" destination="X0A-1L-eLe" eventType="editingDidBegin" id="SVA-ql-YJo"/>
+                                            <action selector="tappedEditBirthdayTextField:" destination="X0A-1L-eLe" eventType="editingDidEnd" id="bhX-mr-Uup"/>
                                         </connections>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Senha:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cBG-2A-Sf5">
@@ -61,7 +61,7 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                         <connections>
-                                            <action selector="changePassword:" destination="X0A-1L-eLe" eventType="editingDidBegin" id="O6m-09-gqF"/>
+                                            <action selector="tappedChangePasswordTextField:" destination="X0A-1L-eLe" eventType="editingDidEnd" id="LA2-IF-d7o"/>
                                         </connections>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Data de nascimento:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SAd-9W-qac">
@@ -88,7 +88,7 @@
                                             <fontDescription key="titleFontDescription" type="system" pointSize="20"/>
                                         </buttonConfiguration>
                                         <connections>
-                                            <action selector="delete2:" destination="X0A-1L-eLe" eventType="touchUpInside" id="oPH-0B-txK"/>
+                                            <action selector="tappedDeleteAccountButton:" destination="X0A-1L-eLe" eventType="touchUpInside" id="9c7-cp-aGK"/>
                                         </connections>
                                     </button>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imgPlanoDeFundo" translatesAutoresizingMaskIntoConstraints="NO" id="WRC-6R-eLX">
@@ -106,7 +106,7 @@
                                             <fontDescription key="titleFontDescription" type="boldSystem" pointSize="20"/>
                                         </buttonConfiguration>
                                         <connections>
-                                            <action selector="exitButton:" destination="X0A-1L-eLe" eventType="touchUpInside" id="dLQ-Mk-OIh"/>
+                                            <action selector="tappedExitAccountButton:" destination="X0A-1L-eLe" eventType="touchUpInside" id="D4H-9Z-YLP"/>
                                         </connections>
                                     </button>
                                 </subviews>

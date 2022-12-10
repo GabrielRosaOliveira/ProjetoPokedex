@@ -10,12 +10,10 @@ import UIKit
 class ProfileViewController: UIViewController {
     
     @IBOutlet weak var backgroundView: UIView!
-    
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var birthdayTextField: UITextField!
     @IBOutlet weak var nicknameTextField: UITextField!
     @IBOutlet weak var editPasswordTextField: UITextField!
-    
     @IBOutlet weak var exitButton: UIButton!
     
     var alert: Alert?
@@ -24,7 +22,6 @@ class ProfileViewController: UIViewController {
         super.viewDidLoad()
         configBackgroundView()
         alert = Alert(controller: self)
-        
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -39,33 +36,22 @@ class ProfileViewController: UIViewController {
         navigationController?.popViewController(animated: true)
     }
     
-    
-    @IBAction func delete2(_ sender: UIButton) {
+    @IBAction func tappedDeleteAccountButton(_ sender: UIButton) {
         let alertDelete = UIAlertController(title: "Atenção", message: "Tem certeza que gostaria de excluir seu cadastro?", preferredStyle: UIAlertController.Style.alert)
         alertDelete.addAction(UIAlertAction(title: "Excluir", style: UIAlertAction.Style.destructive, handler: nil))
         alertDelete.addAction(UIAlertAction(title: "Cancelar", style: UIAlertAction.Style.cancel, handler: nil))
         self.present(alertDelete,animated: true,completion: nil)
     }
     
-    @IBAction func exitButton(_ sender: UIButton) {
-        
+    @IBAction func tappedExitAccountButton(_ sender: UIButton) {
         alert?.configAlert(title: "Atenção", message: "Você quer mesmo sair?", completion: {
             let storyboard = UIStoryboard(name: "LoginStoryboard", bundle: nil)
             let viewcontroler = storyboard.instantiateViewController(withIdentifier: "LoginViewController")
             self.navigationController?.pushViewController(viewcontroler, animated: true)
         })
-        
-//        let alertExit = UIAlertController(title: "Atenção", message: "Você quer mesmo sair?", preferredStyle: UIAlertController.Style.alert)
-//
-//        alertExit.addAction(UIAlertAction(title: "Sim", style: UIAlertAction.Style.destructive, handler:
-//
-//                                         ))
-//        alertExit.addAction(UIAlertAction(title: "Cancelar", style: UIAlertAction.Style.cancel, handler: nil))
-//        self.present(alertExit,animated: true,completion: nil)
     }
     
-    @IBAction func editingNickname(_ sender: UITextField) {
-        
+    @IBAction func tappedEditingNicknameTextField(_ sender: UITextField) {
         if nicknameTextField.isEnabled{
             let alertEditing = UIAlertController(title: "Atenção", message: "Você quer mesmo alterar seu apelido?", preferredStyle: UIAlertController.Style.alert)
             alertEditing.addAction(UIAlertAction(title: "Sim", style: UIAlertAction.Style.destructive, handler: nil))
@@ -74,10 +60,7 @@ class ProfileViewController: UIViewController {
         }
     }
     
-    @IBAction func editBirthday(_ sender: UITextField) {
-        
-        
-        
+    @IBAction func tappedEditBirthdayTextField(_ sender: UITextField) {
         if birthdayTextField.isEnabled{
             let alertEditing = UIAlertController(title: "Atenção", message: "Você quer mesmo alterar sua data de nascimento?", preferredStyle: UIAlertController.Style.alert)
             alertEditing.addAction(UIAlertAction(title: "Sim", style: UIAlertAction.Style.destructive, handler: nil))
@@ -86,8 +69,7 @@ class ProfileViewController: UIViewController {
         }
     }
     
-    @IBAction func editEmailAddress(_ sender: UITextField) {
-        
+    @IBAction func tappedEditEmailAddressTextField(_ sender: UITextField) {
         if emailTextField.isEnabled{
             let alertEditing = UIAlertController(title: "Atenção", message: "Você quer mesmo alterar seu endereço de e-mail?", preferredStyle: UIAlertController.Style.alert)
             alertEditing.addAction(UIAlertAction(title: "Sim", style: UIAlertAction.Style.destructive, handler: nil))
@@ -96,8 +78,7 @@ class ProfileViewController: UIViewController {
         }
     }
     
-    @IBAction func changePassword(_ sender: UITextField) {
-        
+    @IBAction func tappedChangePasswordTextField(_ sender: UITextField) {
         if editPasswordTextField.isEnabled{
             let alertEditing = UIAlertController(title: "Atenção", message: "Você quer mesmo alterar sua senha?", preferredStyle: UIAlertController.Style.alert)
             alertEditing.addAction(UIAlertAction(title: "Sim", style: UIAlertAction.Style.destructive, handler: nil))
@@ -107,7 +88,6 @@ class ProfileViewController: UIViewController {
     }
     
     func configBackgroundView(){
-        
         backgroundView.layer.cornerRadius = 50
         backgroundView.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMinXMinYCorner]
         backgroundView.layer.borderWidth = 1.5
