@@ -7,14 +7,12 @@
 
 import UIKit
 
-class HabilidadesCollectionViewCell: UICollectionViewCell, UITableViewDelegate, UITableViewDataSource {
+class AbilitiesCollectionViewCell: UICollectionViewCell, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var abilitiesTableView: UITableView!
-    
     @IBOutlet weak var abilitiesLabel: UILabel!
     
-    
-    static let identifier: String = "HabilidadesCollectionViewCell"
+    static let identifier: String = "AbilitiesCollectionViewCell"
     
     static func nib() -> UINib {
         return UINib(nibName: self.identifier, bundle: nil)
@@ -26,11 +24,7 @@ class HabilidadesCollectionViewCell: UICollectionViewCell, UITableViewDelegate, 
         abilitiesTableView.dataSource = self
         abilitiesTableView.register(AbilitiesTableViewCell.nib(), forCellReuseIdentifier: AbilitiesTableViewCell.identifier)
         initialConfig()
-        abilitiesLabel.layer.shadowColor = UIColor.gray.cgColor
-        abilitiesLabel.layer.shadowRadius = 1.5
-        abilitiesLabel.layer.shadowOpacity = 1.0
-        abilitiesLabel.layer.shadowOffset = CGSize(width: 0, height: 6.0)
-        
+        configLabel()
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -45,15 +39,20 @@ class HabilidadesCollectionViewCell: UICollectionViewCell, UITableViewDelegate, 
         return cell ?? UITableViewCell()
     }
     
-
-    
     func initialConfig() {
-        
         contentView.backgroundColor = .clear
         layer.masksToBounds = false
         abilitiesTableView.layer.borderColor = UIColor.black.cgColor
         abilitiesTableView.clipsToBounds = true
-        }
+    }
+    
+    func configLabel() {
+        abilitiesLabel.layer.shadowColor = UIColor.gray.cgColor
+        abilitiesLabel.layer.shadowRadius = 1.5
+        abilitiesLabel.layer.shadowOpacity = 1.0
+        abilitiesLabel.layer.shadowOffset = CGSize(width: 0, height: 6.0)
+    }
+    
 }
 
 

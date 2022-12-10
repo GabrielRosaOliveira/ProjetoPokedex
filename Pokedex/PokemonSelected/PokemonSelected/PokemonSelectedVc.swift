@@ -9,37 +9,28 @@ import UIKit
 
 class PokemonSelectedVc: UIViewController {
     
-    @IBOutlet weak var telaTopView: UIView!
-    @IBOutlet weak var TelaBottomView: UIView!
-    
+    @IBOutlet weak var topView: UIView!
+    @IBOutlet weak var bottomView: UIView!
     @IBOutlet weak var infoCollectionView: UICollectionView!
-    
-    
     
     let gradient = CAGradientLayer()
     
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.inferiorBottoView()
+        self.configBottomView()
         self.setGradient()
         infoCollectionView.delegate = self
         infoCollectionView.dataSource = self
         
-        infoCollectionView.register(SobreCollectionViewCell.nib(), forCellWithReuseIdentifier: SobreCollectionViewCell.identifier)
-        
-        infoCollectionView.register(AtributosCollectionViewCell.nib(), forCellWithReuseIdentifier: AtributosCollectionViewCell.identifier)
-        
-        infoCollectionView.register(HabilidadesCollectionViewCell.nib(), forCellWithReuseIdentifier: HabilidadesCollectionViewCell.identifier)
-        
+        infoCollectionView.register(AboutCollectionViewCell.nib(), forCellWithReuseIdentifier: AboutCollectionViewCell.identifier)
+        infoCollectionView.register(AttributesCollectionViewCell.nib(), forCellWithReuseIdentifier: AttributesCollectionViewCell.identifier)
+        infoCollectionView.register(AbilitiesCollectionViewCell.nib(), forCellWithReuseIdentifier: AbilitiesCollectionViewCell.identifier)
     }
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
+        gradient.frame = topView.bounds
         
-        gradient.frame = telaTopView.bounds
-    
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -57,23 +48,20 @@ class PokemonSelectedVc: UIViewController {
         gradient.endPoint = CGPoint(x: 0.5, y: 1.0)
         gradient.locations = [NSNumber(floatLiteral: 0.0), NSNumber(floatLiteral: 1.0)]
         gradient.shouldRasterize = true
-       
-        telaTopView.layer.addSublayer(gradient)
+        
+        topView.layer.addSublayer(gradient)
     }
     
-    func inferiorBottoView() {
-    
-        TelaBottomView.layer.cornerRadius = 25
-        TelaBottomView.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMinXMinYCorner]
-        TelaBottomView.layer.borderWidth = 2.0
-        TelaBottomView.layer.borderColor = UIColor.black.cgColor
+    func configBottomView() {
+        bottomView.layer.cornerRadius = 25
+        bottomView.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMinXMinYCorner]
+        bottomView.layer.borderWidth = 2.0
+        bottomView.layer.borderColor = UIColor.black.cgColor
     }
-    
     
     @IBAction func backButton(_ sender: UIButton) {
         navigationController?.popViewController(animated: true)
     }
-    
 }
 
 extension PokemonSelectedVc: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
@@ -84,13 +72,13 @@ extension PokemonSelectedVc: UICollectionViewDelegate, UICollectionViewDataSourc
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if indexPath.item == 0 {
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: SobreCollectionViewCell.identifier, for: indexPath) as? SobreCollectionViewCell
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: AboutCollectionViewCell.identifier, for: indexPath) as? AboutCollectionViewCell
             return cell ?? UICollectionViewCell()
         } else if indexPath.item == 1 {
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HabilidadesCollectionViewCell.identifier, for: indexPath) as? HabilidadesCollectionViewCell
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: AbilitiesCollectionViewCell.identifier, for: indexPath) as? AbilitiesCollectionViewCell
             return cell ?? UICollectionViewCell()
         } else {
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: AtributosCollectionViewCell.identifier, for: indexPath) as? AtributosCollectionViewCell
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: AttributesCollectionViewCell.identifier, for: indexPath) as? AttributesCollectionViewCell
             return cell ?? UICollectionViewCell()
         }
     }
@@ -104,14 +92,9 @@ extension PokemonSelectedVc: UICollectionViewDelegate, UICollectionViewDataSourc
         } else {
             return CGSize(width: view.frame.size.width , height: 150)
         }
-        
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 5
     }
-    
-    
 }
-
-
