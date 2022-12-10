@@ -8,12 +8,11 @@
 import UIKit
 
 class HomeCollectionViewCell: UICollectionViewCell {
-
-    @IBOutlet weak var backGroundView: UIView!
     
+    @IBOutlet weak var backGroundView: UIView!
     @IBOutlet weak var iconImageView: UIImageView!
-    @IBOutlet weak var label: UILabel!
-
+    @IBOutlet weak var namePokemonLabel: UILabel!
+    
     static let identifier: String = "HomeCollectionViewCell"
     
     static func nib() -> UINib {
@@ -22,13 +21,11 @@ class HomeCollectionViewCell: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        configoBackGroundView()
+        configBackgroundView()
     }
     
-
-    
-    func configoBackGroundView() {
-        label.layer.makeShadow(color: .black, x: 0, y: 2, blur: 4, spread: 0)
+    func configBackgroundView() {
+        namePokemonLabel.layer.makeShadow(color: .black, x: 0, y: 2, blur: 4, spread: 0)
         iconImageView.layer.makeShadow(color: .black, x: 0, y: 2, blur: 4, spread: 0)
         contentView.backgroundColor = .clear
         backGroundView?.layer.cornerRadius = 25
@@ -37,14 +34,9 @@ class HomeCollectionViewCell: UICollectionViewCell {
         backGroundView?.layer.borderWidth = 0.5
         backGroundView?.layer.borderColor = UIColor.black.cgColor
         backGroundView?.layer.makeShadow(color: .black, x: 0, y: 3, blur: 4, spread: 0)
-        
     }
-    
-    
-    
 }
 
- 
 extension CALayer {
     func makeShadow(color: UIColor,
                     x: CGFloat = 0,

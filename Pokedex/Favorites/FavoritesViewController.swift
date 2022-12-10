@@ -9,11 +9,8 @@ import UIKit
 
 class FavoritesViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
-    
     @IBOutlet weak var favoritesView: UIView!
-    
     @IBOutlet weak var favoritesLabel: UILabel!
-    
     @IBOutlet weak var favoritesCollectionView: UICollectionView!
     
     struct PokedexFavorites {

@@ -14,7 +14,7 @@
 		C00FF5C228D7E71D004F4151 /* CadastroStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C00FF5C128D7E71D004F4151 /* CadastroStoryboard.storyboard */; };
 		C00FF5C528D7ECD5004F4151 /* EsqueceuSenhaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C00FF5C428D7ECD5004F4151 /* EsqueceuSenhaViewController.swift */; };
 		C00FF5C728D7ECEE004F4151 /* EsqueceuSenhaStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C00FF5C628D7ECEE004F4151 /* EsqueceuSenhaStoryboard.storyboard */; };
-		C0386AC4290DAA25000DC945 /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0386AC2290DAA25000DC945 /* CollectionViewController.swift */; };
+		C0386AC4290DAA25000DC945 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0386AC2290DAA25000DC945 /* HomeViewController.swift */; };
 		C03B6FF128D3E56A00683717 /* PokemonSelectedVc.swift in Sources */ = {isa = PBXBuildFile; fileRef = C03B6FF028D3E56A00683717 /* PokemonSelectedVc.swift */; };
 		C03B6FF328D3E58500683717 /* pokemonSelected.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C03B6FF228D3E58500683717 /* pokemonSelected.storyboard */; };
 		C0404F4F28D65577007CD6CA /* AbilitiesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0404F4D28D65577007CD6CA /* AbilitiesTableViewCell.swift */; };
@@ -59,7 +59,7 @@
 		C00FF5C428D7ECD5004F4151 /* EsqueceuSenhaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EsqueceuSenhaViewController.swift; sourceTree = "<group>"; };
 		C00FF5C628D7ECEE004F4151 /* EsqueceuSenhaStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EsqueceuSenhaStoryboard.storyboard; sourceTree = "<group>"; };
 		C0386AC1290DAA25000DC945 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
-		C0386AC2290DAA25000DC945 /* CollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
+		C0386AC2290DAA25000DC945 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		C03B6FF028D3E56A00683717 /* PokemonSelectedVc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonSelectedVc.swift; sourceTree = "<group>"; };
 		C03B6FF228D3E58500683717 /* pokemonSelected.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = pokemonSelected.storyboard; sourceTree = "<group>"; };
 		C0404F4D28D65577007CD6CA /* AbilitiesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AbilitiesTableViewCell.swift; sourceTree = "<group>"; };
@@ -183,8 +183,7 @@
 			isa = PBXGroup;
 			children = (
 				C0BFBB51290F551F0096A993 /* Cell */,
-				C002E45328CE9EAA00C44F2B /* HomeCollection */,
-				C0386AC2290DAA25000DC945 /* CollectionViewController.swift */,
+				C0386AC2290DAA25000DC945 /* HomeViewController.swift */,
 				C0386AC1290DAA25000DC945 /* Main.storyboard */,
 			);
 			name = Home;
@@ -308,6 +307,7 @@
 			children = (
 				C0BFBB52290F55940096A993 /* SearchCollectionViewCell.swift */,
 				C0BFBB53290F55940096A993 /* SearchCollectionViewCell.xib */,
+				C002E45328CE9EAA00C44F2B /* HomeCollection */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -482,7 +482,7 @@
 				C08C722428C3D7E40007E7FE /* MyTabBarConstroller.swift in Sources */,
 				C03B6FF128D3E56A00683717 /* PokemonSelectedVc.swift in Sources */,
 				C0BFBB54290F55940096A993 /* SearchCollectionViewCell.swift in Sources */,
-				C0386AC4290DAA25000DC945 /* CollectionViewController.swift in Sources */,
+				C0386AC4290DAA25000DC945 /* HomeViewController.swift in Sources */,
 				C0DBA86328D4008300C7548F /* AtributosCollectionViewCell.swift in Sources */,
 				C052C0C4290DA31C00AF7526 /* FavoritesViewController.swift in Sources */,
 				C076A37A290DE8020012746E /* Register.swift in Sources */,

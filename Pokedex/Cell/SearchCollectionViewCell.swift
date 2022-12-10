@@ -8,7 +8,7 @@
 import UIKit
 
 class SearchCollectionViewCell: UICollectionViewCell {
-
+    
     @IBOutlet weak var pokemonFaliedLabel: UILabel!
     
     @IBOutlet weak var backGroundView: UIView!
@@ -29,7 +29,7 @@ class SearchCollectionViewCell: UICollectionViewCell {
     func setupCell(nameFalied: String) {
         pokemonFaliedLabel.text = nameFalied
     }
-
+    
     func configoBackGroundView() {
         contentView.backgroundColor = .clear
         backGroundView?.layer.cornerRadius = 25
@@ -39,4 +39,4 @@ class SearchCollectionViewCell: UICollectionViewCell {
     }
 }
 
- 
+

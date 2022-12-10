@@ -7,7 +7,7 @@
 
 import UIKit
 
-class CollectionViewController: UIViewController {
+class HomeViewController: UIViewController {
     
     @IBOutlet weak var searchTextField: UITextField!
     @IBOutlet weak var collectionView: UICollectionView!
@@ -86,7 +86,7 @@ class CollectionViewController: UIViewController {
     }
 }
 
-extension CollectionViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if pokemonList {
@@ -105,7 +105,7 @@ extension CollectionViewController: UICollectionViewDelegate, UICollectionViewDa
         }
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HomeCollectionViewCell.identifier, for: indexPath) as? HomeCollectionViewCell
-        cell?.label.text = filterPokemon[indexPath.row].name
+        cell?.namePokemonLabel.text = filterPokemon[indexPath.row].name
         cell?.iconImageView.image = UIImage(named: filterPokemon[indexPath.row].imageName)
         cell?.backgroundColor = .clear
         return cell ?? UICollectionViewCell()
@@ -126,7 +126,7 @@ extension CollectionViewController: UICollectionViewDelegate, UICollectionViewDa
     }
 }
 
-extension CollectionViewController: UITextFieldDelegate {
+extension HomeViewController: UITextFieldDelegate {
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         if let text = textField.text as NSString? {
