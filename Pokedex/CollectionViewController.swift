@@ -10,43 +10,40 @@ import UIKit
 class CollectionViewController: UIViewController {
     
     @IBOutlet weak var searchTextField: UITextField!
-    
     @IBOutlet weak var collectionView: UICollectionView!
-    
     @IBOutlet weak var profileButton: UIButton!
     
-    
     struct Pokedex {
-        let nome: String
+        let name: String
         let imageName: String
     }
     
     var isempty: Bool = false
     
-    let data: [Pokedex] = [ Pokedex(nome: "Charmander", imageName: "imagem1"),
-                            Pokedex(nome: "Lapras", imageName: "imagem2"),
-                            Pokedex(nome: "Morcego", imageName: "imagem3"),
-                            Pokedex(nome: "Bulbasaur", imageName: "imagem4"),
-                            Pokedex(nome: "Pikachu", imageName: "imagem5"),
-                            Pokedex(nome: "Charmander", imageName: "imagem1"),
-                            Pokedex(nome: "Lapras", imageName: "imagem2"),
-                            Pokedex(nome: "Morcego", imageName: "imagem3"),
-                            Pokedex(nome: "Bulbasaur", imageName: "imagem4"),
-                            Pokedex(nome: "Pikachu", imageName: "imagem5"),
-                            Pokedex(nome: "Charmander", imageName: "imagem1"),
-                            Pokedex(nome: "Lapras", imageName: "imagem2"),
-                            Pokedex(nome: "Morcego", imageName: "imagem3"),
-                            Pokedex(nome: "Bulbasaur", imageName: "imagem4"),
-                            Pokedex(nome: "Pikachu", imageName: "imagem5"),
-                            Pokedex(nome: "Charmander", imageName: "imagem1"),
-                            Pokedex(nome: "Lapras", imageName: "imagem2"),
-                            Pokedex(nome: "Morcego", imageName: "imagem3"),
-                            Pokedex(nome: "Bulbasaur", imageName: "imagem4"),
-                            Pokedex(nome: "Pikachu", imageName: "imagem5")]
+    let data: [Pokedex] = [ Pokedex(name: "Charmander", imageName: "imagem1"),
+                            Pokedex(name: "Lapras", imageName: "imagem2"),
+                            Pokedex(name: "Morcego", imageName: "imagem3"),
+                            Pokedex(name: "Bulbasaur", imageName: "imagem4"),
+                            Pokedex(name: "Pikachu", imageName: "imagem5"),
+                            Pokedex(name: "Charmander", imageName: "imagem1"),
+                            Pokedex(name: "Lapras", imageName: "imagem2"),
+                            Pokedex(name: "Morcego", imageName: "imagem3"),
+                            Pokedex(name: "Bulbasaur", imageName: "imagem4"),
+                            Pokedex(name: "Pikachu", imageName: "imagem5"),
+                            Pokedex(name: "Charmander", imageName: "imagem1"),
+                            Pokedex(name: "Lapras", imageName: "imagem2"),
+                            Pokedex(name: "Morcego", imageName: "imagem3"),
+                            Pokedex(name: "Bulbasaur", imageName: "imagem4"),
+                            Pokedex(name: "Pikachu", imageName: "imagem5"),
+                            Pokedex(name: "Charmander", imageName: "imagem1"),
+                            Pokedex(name: "Lapras", imageName: "imagem2"),
+                            Pokedex(name: "Morcego", imageName: "imagem3"),
+                            Pokedex(name: "Bulbasaur", imageName: "imagem4"),
+                            Pokedex(name: "Pikachu", imageName: "imagem5")]
     
     var filterPokemon: [Pokedex] = []
     
-    var teste: Bool {
+    var pokemonList: Bool {
         return self.filterPokemon.count == 0
     }
     
@@ -64,7 +61,7 @@ class CollectionViewController: UIViewController {
             isempty = true
         } else {
             self.filterPokemon = self.data.filter({
-                return ($0.nome).lowercased().contains(text.lowercased())
+                return ($0.name).lowercased().contains(text.lowercased())
             })
             isempty = false
         }
@@ -73,7 +70,6 @@ class CollectionViewController: UIViewController {
     func configCollectionView() {
         collectionView.delegate = self
         collectionView.dataSource = self
-        //        searchTextField.delegate = self
         collectionView.register(HomeCollectionViewCell.nib(), forCellWithReuseIdentifier: HomeCollectionViewCell.identifier)
         collectionView.register(SearchCollectionViewCell.nib(), forCellWithReuseIdentifier: SearchCollectionViewCell.identifier)
     }
@@ -88,45 +84,31 @@ class CollectionViewController: UIViewController {
         navigationController?.pushViewController(viewcontroler, animated: true)
         
     }
-    
 }
 
 extension CollectionViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        if teste {
+        if pokemonList {
             return 1
         } else {
             return filterPokemon.count
         }
     }
     
-    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        if teste {
+        if pokemonList {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: SearchCollectionViewCell.identifier, for: indexPath) as? SearchCollectionViewCell
             cell?.backgroundColor = .clear
             return cell ?? UICollectionViewCell()
         }
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HomeCollectionViewCell.identifier, for: indexPath) as? HomeCollectionViewCell
-        cell?.label.text = filterPokemon[indexPath.row].nome
+        cell?.label.text = filterPokemon[indexPath.row].name
         cell?.iconImageView.image = UIImage(named: filterPokemon[indexPath.row].imageName)
         cell?.backgroundColor = .clear
         return cell ?? UICollectionViewCell()
-        
-//        if isempty {
-//            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: SearchCollectionViewCell.identifier, for: indexPath) as? SearchCollectionViewCell
-//            cell?.backgroundColor = .clear
-//            return cell ?? UICollectionViewCell()
-//        } else {
-//            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HomeCollectionViewCell.identifier, for: indexPath) as? HomeCollectionViewCell
-//            cell?.label.text = filterPokemon[indexPath.row].nome
-//            cell?.iconImageView.image = UIImage(named: filterPokemon[indexPath.row].imageName)
-//            cell?.backgroundColor = .clear
-//            return cell ?? UICollectionViewCell()
-//        }
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
@@ -154,5 +136,4 @@ extension CollectionViewController: UITextFieldDelegate {
         }
         return true
     }
-    
 }

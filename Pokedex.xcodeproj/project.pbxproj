@@ -289,7 +289,6 @@
 				C076A376290DE5F60012746E /* GoogleService-Info.plist */,
 				C08C722828C3D7E60007E7FE /* Assets.xcassets */,
 				C08C722D28C3D7E60007E7FE /* Info.plist */,
-				C0D6AA872911C9A300D810C6 /* Alert.swift */,
 			);
 			path = Pokedex;
 			sourceTree = "<group>";
@@ -299,6 +298,7 @@
 			children = (
 				C09807BB28D95814005DB2E2 /* ProfileViewController.swift */,
 				C09807BD28D9582C005DB2E2 /* profileStoryboard.storyboard */,
+				C0D6AA872911C9A300D810C6 /* Alert.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
