@@ -8,7 +8,6 @@
 import Foundation
 import UIKit
 
-
 struct Register {
     
     var email: String
@@ -16,5 +15,4 @@ struct Register {
     var password: String
     var confirmPassword: String
     var nickname: String
-
 }

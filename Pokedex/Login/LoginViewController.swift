@@ -35,13 +35,13 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     
     
     @IBAction func didtapRegisterButton(_ sender: UIButton) {
-        let storyboard = UIStoryboard(name: "CadastroStoryboard", bundle: nil)
+        let storyboard = UIStoryboard(name: "RegisterStoryboard", bundle: nil)
         let viewcontroler = storyboard.instantiateViewController(withIdentifier: "Cadastro")
         navigationController?.pushViewController(viewcontroler, animated: true)
     }
     
     @IBAction func didtapForgotPasswordButton(_ sender: UIButton) {
-        let storyboard = UIStoryboard(name: "EsqueceuSenhaStoryboard", bundle: nil)
+        let storyboard = UIStoryboard(name: "ForgotPasswordStoryboard", bundle: nil)
         let viewcontroler = storyboard.instantiateViewController(withIdentifier: "esqueceuSenha")
         navigationController?.pushViewController(viewcontroler, animated: true)
     }

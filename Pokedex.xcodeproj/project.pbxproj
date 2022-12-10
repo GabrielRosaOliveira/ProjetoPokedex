@@ -10,8 +10,8 @@
 		52B77539E4FEAA84BB2103DE /* Pods_Pokedex.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C69070747C61F4DC02A9EC3 /* Pods_Pokedex.framework */; };
 		C002E45628CE9F4700C44F2B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C002E45528CE9F4700C44F2B /* LoginViewController.swift */; };
 		C002E45828CE9F5C00C44F2B /* LoginStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C002E45728CE9F5C00C44F2B /* LoginStoryboard.storyboard */; };
-		C00FF5C028D7E712004F4151 /* CadastroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C00FF5BF28D7E712004F4151 /* CadastroViewController.swift */; };
-		C00FF5C228D7E71D004F4151 /* CadastroStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C00FF5C128D7E71D004F4151 /* CadastroStoryboard.storyboard */; };
+		C00FF5C028D7E712004F4151 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C00FF5BF28D7E712004F4151 /* RegisterViewController.swift */; };
+		C00FF5C228D7E71D004F4151 /* RegisterStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C00FF5C128D7E71D004F4151 /* RegisterStoryboard.storyboard */; };
 		C00FF5C528D7ECD5004F4151 /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C00FF5C428D7ECD5004F4151 /* ForgotPasswordViewController.swift */; };
 		C00FF5C728D7ECEE004F4151 /* ForgotPasswordStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C00FF5C628D7ECEE004F4151 /* ForgotPasswordStoryboard.storyboard */; };
 		C0386AC4290DAA25000DC945 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0386AC2290DAA25000DC945 /* HomeViewController.swift */; };
@@ -54,8 +54,8 @@
 		BD41CED1E2A5A458278E849D /* Pods-Pokedex.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pokedex.debug.xcconfig"; path = "Target Support Files/Pods-Pokedex/Pods-Pokedex.debug.xcconfig"; sourceTree = "<group>"; };
 		C002E45528CE9F4700C44F2B /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		C002E45728CE9F5C00C44F2B /* LoginStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LoginStoryboard.storyboard; sourceTree = "<group>"; };
-		C00FF5BF28D7E712004F4151 /* CadastroViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CadastroViewController.swift; sourceTree = "<group>"; };
-		C00FF5C128D7E71D004F4151 /* CadastroStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CadastroStoryboard.storyboard; sourceTree = "<group>"; };
+		C00FF5BF28D7E712004F4151 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		C00FF5C128D7E71D004F4151 /* RegisterStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RegisterStoryboard.storyboard; sourceTree = "<group>"; };
 		C00FF5C428D7ECD5004F4151 /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
 		C00FF5C628D7ECEE004F4151 /* ForgotPasswordStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ForgotPasswordStoryboard.storyboard; sourceTree = "<group>"; };
 		C0386AC1290DAA25000DC945 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
@@ -141,14 +141,14 @@
 			path = Login;
 			sourceTree = "<group>";
 		};
-		C00FF5BE28D7E6FC004F4151 /* Cadastro */ = {
+		C00FF5BE28D7E6FC004F4151 /* Register */ = {
 			isa = PBXGroup;
 			children = (
 				C076A378290DE7E00012746E /* Model */,
-				C00FF5BF28D7E712004F4151 /* CadastroViewController.swift */,
-				C00FF5C128D7E71D004F4151 /* CadastroStoryboard.storyboard */,
+				C00FF5BF28D7E712004F4151 /* RegisterViewController.swift */,
+				C00FF5C128D7E71D004F4151 /* RegisterStoryboard.storyboard */,
 			);
-			path = Cadastro;
+			path = Register;
 			sourceTree = "<group>";
 		};
 		C00FF5C328D7ECBB004F4151 /* ForgotPassword */ = {
@@ -278,7 +278,7 @@
 				C052C0C5290DA33100AF7526 /* Favorites */,
 				C09807BA28D95801005DB2E2 /* Profile */,
 				C00FF5C328D7ECBB004F4151 /* ForgotPassword */,
-				C00FF5BE28D7E6FC004F4151 /* Cadastro */,
+				C00FF5BE28D7E6FC004F4151 /* Register */,
 				C03B6FEF28D3E50700683717 /* PokemonSelected */,
 				C002E45128CE9DE800C44F2B /* TabBar */,
 				C0C2D9EA28D288C800DE5CF9 /* Loading */,
@@ -407,7 +407,7 @@
 				C076A377290DE5F60012746E /* GoogleService-Info.plist in Resources */,
 				C08C722C28C3D7E60007E7FE /* LaunchScreen.storyboard in Resources */,
 				C05FC7002944FE2400187AF9 /* favoritesCollectionViewCell.xib in Resources */,
-				C00FF5C228D7E71D004F4151 /* CadastroStoryboard.storyboard in Resources */,
+				C00FF5C228D7E71D004F4151 /* RegisterStoryboard.storyboard in Resources */,
 				C08AE86028D3FD9100FCC976 /* HabilidadesCollectionViewCell.xib in Resources */,
 				C09807BE28D9582C005DB2E2 /* profileStoryboard.storyboard in Resources */,
 				C002E45828CE9F5C00C44F2B /* LoginStoryboard.storyboard in Resources */,
@@ -486,7 +486,7 @@
 				C0DBA86328D4008300C7548F /* AtributosCollectionViewCell.swift in Sources */,
 				C052C0C4290DA31C00AF7526 /* FavoritesViewController.swift in Sources */,
 				C076A37A290DE8020012746E /* Register.swift in Sources */,
-				C00FF5C028D7E712004F4151 /* CadastroViewController.swift in Sources */,
+				C00FF5C028D7E712004F4151 /* RegisterViewController.swift in Sources */,
 				C08C722028C3D7E40007E7FE /* AppDelegate.swift in Sources */,
 				C09807BC28D95814005DB2E2 /* ProfileViewController.swift in Sources */,
 				C00FF5C528D7ECD5004F4151 /* ForgotPasswordViewController.swift in Sources */,

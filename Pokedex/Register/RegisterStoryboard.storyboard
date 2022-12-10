@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="vNf-Ps-xlp">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="vNf-Ps-xlp">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Cadastro View Controller-->
+        <!--Register View Controller-->
         <scene sceneID="BSR-Ff-HUw">
             <objects>
-                <viewController storyboardIdentifier="Cadastro" id="vNf-Ps-xlp" customClass="CadastroViewController" customModule="Pokedex" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Cadastro" id="vNf-Ps-xlp" customClass="RegisterViewController" customModule="Pokedex" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="dMX-AB-KYF">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -161,14 +161,14 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="apelidoTxtField" destination="eOn-Ke-D7G" id="Frl-zg-k9H"/>
-                        <outlet property="cadastrarButton" destination="Nh7-LN-HzS" id="IRq-XN-Goj"/>
-                        <outlet property="cadastroLabel" destination="sZL-Dd-E1z" id="HOf-Vv-KEM"/>
-                        <outlet property="camadaView" destination="9K8-6U-dRh" id="xG9-vP-wJA"/>
-                        <outlet property="dataNascimentoTxtField" destination="sQY-AK-Tel" id="WQc-ho-mpF"/>
-                        <outlet property="emailTxtField" destination="S0p-Aq-uvg" id="eOo-3d-x44"/>
-                        <outlet property="passWordNovamenteTxtField" destination="ZnX-1Z-qqs" id="wgL-ES-3tM"/>
-                        <outlet property="passWordTxtField" destination="aiY-z5-pRu" id="2xb-TM-Vkw"/>
+                        <outlet property="backGroundView" destination="9K8-6U-dRh" id="xG9-vP-wJA"/>
+                        <outlet property="birthdayTextField" destination="sQY-AK-Tel" id="WQc-ho-mpF"/>
+                        <outlet property="confirmPasswordTextField" destination="ZnX-1Z-qqs" id="wgL-ES-3tM"/>
+                        <outlet property="emailTextField" destination="S0p-Aq-uvg" id="eOo-3d-x44"/>
+                        <outlet property="nicknameTextField" destination="eOn-Ke-D7G" id="Frl-zg-k9H"/>
+                        <outlet property="passWordTextField" destination="aiY-z5-pRu" id="2xb-TM-Vkw"/>
+                        <outlet property="registerButton" destination="Nh7-LN-HzS" id="IRq-XN-Goj"/>
+                        <outlet property="registerLabel" destination="sZL-Dd-E1z" id="HOf-Vv-KEM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kda-Yl-18U" sceneMemberID="firstResponder"/>
