@@ -12,8 +12,6 @@ class LaunchScreenstoryboard: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        
     }
     
-
 }

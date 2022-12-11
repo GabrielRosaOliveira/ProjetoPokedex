@@ -315,8 +315,8 @@
 		C0C2D9EA28D288C800DE5CF9 /* Loading */ = {
 			isa = PBXGroup;
 			children = (
-				C08C722A28C3D7E60007E7FE /* LaunchScreen.storyboard */,
 				C0C2D9ED28D28D1D00DE5CF9 /* LoadingViewController.swift */,
+				C08C722A28C3D7E60007E7FE /* LaunchScreen.storyboard */,
 			);
 			path = Loading;
 			sourceTree = "<group>";

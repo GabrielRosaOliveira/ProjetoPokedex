@@ -10,19 +10,19 @@ import Firebase
 
 class LoginViewController: UIViewController, UITextFieldDelegate {
     
-    @IBOutlet weak var emailTxtField: UITextField!
-    @IBOutlet weak var passWordTxtField: UITextField!
-    @IBOutlet weak var entrarButton: UIButton!
-    @IBOutlet weak var cadastrarButton: UIButton!
+    @IBOutlet weak var emailTextField: UITextField!
+    @IBOutlet weak var passwordTextField: UITextField!
+    @IBOutlet weak var goButton: UIButton!
+    @IBOutlet weak var registerButton: UIButton!
     
     var auth: Auth?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        emailTxtField.delegate = self
-        passWordTxtField.delegate = self
+        emailTextField.delegate = self
+        passwordTextField.delegate = self
         corneBotoes()
-        botaoDesativado()
+        disabledButton()
         view.backgroundColor = UIColor(red: 118/255, green: 204/255, blue: 232/255, alpha: 1.0)
         self.auth = Auth.auth()
         
@@ -32,7 +32,6 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         navigationController?.isNavigationBarHidden = true
         self.tabBarController?.tabBar.isHidden = true
     }
-    
     
     @IBAction func didtapRegisterButton(_ sender: UIButton) {
         let storyboard = UIStoryboard(name: "RegisterStoryboard", bundle: nil)
@@ -62,8 +61,8 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction func didTapLoginButton(_ sender: UIButton) {
         
-        let email: String = emailTxtField.text ?? ""
-        let password: String = passWordTxtField.text ?? ""
+        let email: String = emailTextField.text ?? ""
+        let password: String = passwordTextField.text ?? ""
         
         self.auth?.signIn(withEmail: email, password: password, completion: { (usuario, error) in
             
@@ -79,37 +78,35 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                 }
             }
         })
-        
-        
     }
     
-    func botaoDesativado() {
-        if emailTxtField.text == "" || passWordTxtField.text == "" {
-            entrarButton.isEnabled = false
-            entrarButton.backgroundColor = UIColor(red: 92/255, green: 94/255, blue: 100/255, alpha: 1.0)
+    func disabledButton() {
+        if emailTextField.text == "" || passwordTextField.text == "" {
+            goButton.isEnabled = false
+            goButton.backgroundColor = UIColor(red: 92/255, green: 94/255, blue: 100/255, alpha: 1.0)
         } else {
-            entrarButton.isEnabled = true
-            entrarButton.backgroundColor = UIColor(red: 29/255, green: 44/255, blue: 94/255, alpha: 1.0)
+            goButton.isEnabled = true
+            goButton.backgroundColor = UIColor(red: 29/255, green: 44/255, blue: 94/255, alpha: 1.0)
         }
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        if textField.isEqual(self.emailTxtField) {
-            self.emailTxtField.becomeFirstResponder()
-            self.passWordTxtField.becomeFirstResponder()
+        if textField.isEqual(self.emailTextField) {
+            self.emailTextField.becomeFirstResponder()
+            self.passwordTextField.becomeFirstResponder()
         } else {
-            self.passWordTxtField.resignFirstResponder()
+            self.passwordTextField.resignFirstResponder()
         }
         return true
     }
     
     func textFieldDidEndEditing(_ textField: UITextField) {
-        botaoDesativado()
+        disabledButton()
     }
     
     func corneBotoes() {
-        entrarButton.layer.cornerRadius = 19
-        cadastrarButton.layer.cornerRadius = 19
+        goButton.layer.cornerRadius = 19
+        registerButton.layer.cornerRadius = 19
     }
 }
 

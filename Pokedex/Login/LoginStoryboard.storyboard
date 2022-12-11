@@ -114,10 +114,10 @@
                     </view>
                     <navigationItem key="navigationItem" id="roy-zW-dE5"/>
                     <connections>
-                        <outlet property="cadastrarButton" destination="jLg-C8-0wC" id="fym-Pi-2I7"/>
-                        <outlet property="emailTxtField" destination="yJe-iX-iqp" id="OfP-a7-e9F"/>
-                        <outlet property="entrarButton" destination="Ief-p8-zpA" id="TBx-B7-Ewq"/>
-                        <outlet property="passWordTxtField" destination="DTa-pa-gz3" id="moW-ze-RX9"/>
+                        <outlet property="emailTextField" destination="yJe-iX-iqp" id="OfP-a7-e9F"/>
+                        <outlet property="goButton" destination="Ief-p8-zpA" id="TBx-B7-Ewq"/>
+                        <outlet property="passwordTextField" destination="DTa-pa-gz3" id="moW-ze-RX9"/>
+                        <outlet property="registerButton" destination="jLg-C8-0wC" id="fym-Pi-2I7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JfQ-2l-2z3" sceneMemberID="firstResponder"/>
