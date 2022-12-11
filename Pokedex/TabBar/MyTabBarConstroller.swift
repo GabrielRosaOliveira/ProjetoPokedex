@@ -9,8 +9,6 @@ import UIKit
 
 class MyTabBarConstroller: UITabBarController {
 
-
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         configTabBar()
@@ -35,7 +33,3 @@ class MyTabBarConstroller: UITabBarController {
         tabBar.clipsToBounds = true
     }
 }
-
-
-
-
