@@ -17,6 +17,9 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     
     var auth: Auth?
     
+    var eyeClicked = false
+    let imageEye = UIImageView()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         emailTextField.delegate = self
@@ -25,7 +28,42 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         disabledButton()
         view.backgroundColor = UIColor(red: 118/255, green: 204/255, blue: 232/255, alpha: 1.0)
         self.auth = Auth.auth()
+        eyeMagic()
+    }
+    
+    func eyeMagic() {
+        imageEye.image = UIImage(systemName: "eye.slash")
         
+        let contentView = UIView()
+        contentView.addSubview(imageEye)
+        
+        contentView.frame = CGRect(x: 0, y: 0, width: UIImage(systemName: "eye.slash")!.size.width, height: UIImage(systemName: "eye.slash")!.size.height)
+        
+        imageEye.frame = CGRect(x: -10, y: 0, width: UIImage(systemName: "eye.slash")!.size.width, height: UIImage(systemName: "eye.slash")!.size.height)
+        
+        passwordTextField.rightView = contentView
+        passwordTextField.rightViewMode = .always
+        
+        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(imageTapped(tapGestureRecognizer:)))
+        imageEye.isUserInteractionEnabled = true
+        imageEye.addGestureRecognizer(tapGestureRecognizer)
+        
+        passwordTextField.isSecureTextEntry = true
+    }
+    
+    @objc func imageTapped(tapGestureRecognizer:UITapGestureRecognizer) {
+        
+        let tappedImage = tapGestureRecognizer.view as! UIImageView
+        
+        if eyeClicked {
+            eyeClicked = false
+            tappedImage.image = UIImage(systemName: "eye.fill")
+            passwordTextField.isSecureTextEntry = false
+        } else {
+            eyeClicked = true
+            tappedImage.image = UIImage(systemName: "eye.slash")
+            passwordTextField.isSecureTextEntry = true
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
