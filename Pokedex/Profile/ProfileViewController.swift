@@ -36,12 +36,7 @@ class ProfileViewController: UIViewController {
         navigationController?.popViewController(animated: true)
     }
     
-    @IBAction func tappedDeleteAccountButton(_ sender: UIButton) {
-        let alertDelete = UIAlertController(title: "Atenção", message: "Tem certeza que gostaria de excluir seu cadastro?", preferredStyle: UIAlertController.Style.alert)
-        alertDelete.addAction(UIAlertAction(title: "Excluir", style: UIAlertAction.Style.destructive, handler: nil))
-        alertDelete.addAction(UIAlertAction(title: "Cancelar", style: UIAlertAction.Style.cancel, handler: nil))
-        self.present(alertDelete,animated: true,completion: nil)
-    }
+    
     
     @IBAction func tappedExitAccountButton(_ sender: UIButton) {
         alert?.configAlert(title: "Atenção", message: "Você quer mesmo sair?", completion: {
@@ -85,6 +80,7 @@ class ProfileViewController: UIViewController {
             alertEditing.addAction(UIAlertAction(title: "Cancelar", style: UIAlertAction.Style.cancel, handler: nil))
             self.present(alertEditing,animated: true,completion: nil)
         }
+        
     }
     
     func configBackgroundView(){

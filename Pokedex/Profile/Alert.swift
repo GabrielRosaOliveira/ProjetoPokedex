@@ -10,7 +10,7 @@
 import Foundation
 import UIKit
 
-class Alert: NSObject {
+class Alert {
     var controller: UIViewController
     
     init(controller: UIViewController) {
