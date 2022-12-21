@@ -30,6 +30,8 @@ class RegisterViewController: UIViewController, UITextFieldDelegate, UIPickerVie
     
     var datePicker = UIDatePicker()
     
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         bottomView()
@@ -39,7 +41,8 @@ class RegisterViewController: UIViewController, UITextFieldDelegate, UIPickerVie
         passwordTextField.delegate = self
         confirmPasswordTextField.delegate = self
         nicknameTextField.delegate = self
-        disabledButton()
+        registerButton.isEnabled = false
+        
         cornerRadius()
         self.auth = Auth.auth()
         eyeMagic()
@@ -62,6 +65,7 @@ class RegisterViewController: UIViewController, UITextFieldDelegate, UIPickerVie
             toolbar.setItems([cancelButton, spaceButton, okButton], animated: false)
             toolbar.isUserInteractionEnabled = true
             birthdayTextField.inputAccessoryView = toolbar
+            
         }
     }
     
@@ -186,15 +190,8 @@ class RegisterViewController: UIViewController, UITextFieldDelegate, UIPickerVie
         backGroundView.layer.borderColor = UIColor.black.cgColor
     }
     
-    func disabledButton() {
-        if emailTextField.text == "" || birthdayTextField.text == "" || passwordTextField.text == "" || confirmPasswordTextField.text == "" || nicknameTextField.text == "" {
-            registerButton.isEnabled = false
-            registerButton.backgroundColor = UIColor(red: 92/255, green: 94/255, blue: 100/255, alpha: 1.0)
-        } else {
-            registerButton.isEnabled = true
-            registerButton.backgroundColor = UIColor(red: 29/255, green: 44/255, blue: 94/255, alpha: 1.0)
-        }
-    }
+
+    
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         
         textField.resignFirstResponder()
@@ -214,11 +211,41 @@ class RegisterViewController: UIViewController, UITextFieldDelegate, UIPickerVie
         return true
     }
     
+    
+    
     func textFieldDidEndEditing(_ textField: UITextField) {
-        disabledButton()
+        if textField.hasText {
+            textField.layer.borderColor = UIColor.lightGray.cgColor
+        }else {
+            textField.layer.borderColor = UIColor.red.cgColor
+        }
+        
+        if emailTextField.text == "" || birthdayTextField.text == "" || passwordTextField.text == "" || confirmPasswordTextField.text == "" || nicknameTextField.text == "" {
+            registerButton.isEnabled = false
+            
+        } else {
+            
+            if passwordTextField.text == confirmPasswordTextField.text {
+                passwordTextField.layer.borderColor = UIColor.green.cgColor
+                passwordTextField.layer.borderWidth = 1
+                confirmPasswordTextField.layer.borderWidth = 1
+                confirmPasswordTextField.layer.borderColor = UIColor.green.cgColor
+                registerButton.backgroundColor = UIColor(red: 29/255, green: 44/255, blue: 94/255, alpha: 1.0)
+                registerButton.isEnabled = true
+            } else {
+                passwordTextField.layer.borderColor = UIColor.red.cgColor
+                passwordTextField.layer.borderWidth = 1
+                confirmPasswordTextField.layer.borderWidth = 1
+                confirmPasswordTextField.layer.borderColor = UIColor.red.cgColor
+                registerButton.isEnabled = false
+            }
+            
+        }
     }
     
     func cornerRadius() {
         registerButton.layer.cornerRadius = 17
     }
+    
+
 }
