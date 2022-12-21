@@ -8,7 +8,8 @@
 import UIKit
 import Firebase
 
-class RegisterViewController: UIViewController, UITextFieldDelegate {
+
+class RegisterViewController: UIViewController, UITextFieldDelegate, UIPickerViewDelegate {
     
     @IBOutlet weak var backGroundView: UIView!
     @IBOutlet weak var registerLabel: UILabel!
@@ -27,6 +28,8 @@ class RegisterViewController: UIViewController, UITextFieldDelegate {
     var eyeClicked2 = false
     let imageEye2 = UIImageView()
     
+    var datePicker = UIDatePicker()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         bottomView()
@@ -41,6 +44,44 @@ class RegisterViewController: UIViewController, UITextFieldDelegate {
         self.auth = Auth.auth()
         eyeMagic()
         eyeMagic2()
+    }
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        if birthdayTextField == textField {
+            datePicker = UIDatePicker(frame: CGRect(x: 0, y: 0, width: self.view.frame.width, height: 220))
+            datePicker.datePickerMode = .date
+            birthdayTextField.inputView = datePicker
+            let toolbar = UIToolbar()
+            toolbar.barStyle = .default
+            toolbar.isTranslucent = true
+            toolbar.sizeToFit()
+            datePicker.preferredDatePickerStyle = .wheels
+            let okButton = UIBarButtonItem(title: "OK", style: .plain, target: self, action: #selector(self.buttonOK))
+            let cancelButton = UIBarButtonItem(title: "Cancel", style: .plain, target: self, action: #selector(self.buttonCancel))
+            let spaceButton = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
+            toolbar.setItems([cancelButton, spaceButton, okButton], animated: false)
+            toolbar.isUserInteractionEnabled = true
+            birthdayTextField.inputAccessoryView = toolbar
+        }
+    }
+    
+    @objc func buttonCancel() {
+        birthdayTextField.resignFirstResponder()
+    }
+    
+    @objc func buttonOK() {
+        let dateFormatted = DateFormatter()
+        dateFormatted.dateFormat = "dd/MM/yyyy"
+        birthdayTextField.text = dateFormatted.string(from: datePicker.date as Date)
+        buttonCancel()
+    }
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        if (textField == birthdayTextField) {
+            return false
+        } else {
+            return true
+        }
     }
     
     func eyeMagic() {
