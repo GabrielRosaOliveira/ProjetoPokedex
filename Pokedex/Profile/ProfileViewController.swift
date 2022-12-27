@@ -18,18 +18,36 @@ class ProfileViewController: UIViewController {
     
     var alert: Alert?
     
+    var register: Register?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         configBackgroundView()
         alert = Alert(controller: self)
+        
+        emailTextField.text = register?.email
+        birthdayTextField.text = register?.birthday
+        nicknameTextField.text = register?.nickname
+        editPasswordTextField.text = register?.password
+        
+        
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         self.tabBarController?.tabBar.isHidden = false
+        
+        
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
         self.tabBarController?.tabBar.isHidden = true
+        
+        emailTextField.text = register?.email
+        birthdayTextField.text = register?.birthday
+        nicknameTextField.text = register?.nickname
+        editPasswordTextField.text = register?.password
+        
     }
     
     @IBAction func backButton(_ sender: UIButton) {

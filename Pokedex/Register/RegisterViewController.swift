@@ -8,7 +8,6 @@
 import UIKit
 import Firebase
 
-
 class RegisterViewController: UIViewController, UITextFieldDelegate, UIPickerViewDelegate {
     
     @IBOutlet weak var backGroundView: UIView!
@@ -29,8 +28,6 @@ class RegisterViewController: UIViewController, UITextFieldDelegate, UIPickerVie
     let imageEye2 = UIImageView()
     
     var datePicker = UIDatePicker()
-    
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -171,6 +168,16 @@ class RegisterViewController: UIViewController, UITextFieldDelegate, UIPickerVie
     }
     
     @IBAction func tappedRegisterButton(_ sender: UIButton) {
+        
+       
+        let login = UIStoryboard(name: "LoginStoryboard", bundle: nil).instantiateViewController(withIdentifier: "LoginViewController")
+        let vc = UIStoryboard(name: "profileStoryboard", bundle: nil).instantiateViewController(withIdentifier: "profile") as? ProfileViewController
+        let gabriel = Register(email: emailTextField.text ?? "", birthday: birthdayTextField.text ?? "", password: passwordTextField.text ?? "", confirmPassword: confirmPasswordTextField.text ?? "", nickname: nicknameTextField.text ?? "")
+        vc?.register = gabriel
+        navigationController?.pushViewController(login, animated: true)
+        
+        
+        
         let email: String = emailTextField.text ?? ""
         let password: String = passwordTextField.text ?? ""
         
@@ -178,9 +185,13 @@ class RegisterViewController: UIViewController, UITextFieldDelegate, UIPickerVie
             if error != nil {
                 print("deu falaha")
             } else {
-                print("sucesso")
+                let alertEditing = UIAlertController(title: "Parabéns!!!", message: "Cadastro realizado com sucesso !!!", preferredStyle: UIAlertController.Style.alert)
+                alertEditing.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.destructive, handler: nil))
+                self.present(alertEditing,animated: true,completion: nil)
             }
         })
+        
+        
     }
     
     func bottomView() {
@@ -189,8 +200,6 @@ class RegisterViewController: UIViewController, UITextFieldDelegate, UIPickerVie
         backGroundView.layer.borderWidth = 1.5
         backGroundView.layer.borderColor = UIColor.black.cgColor
     }
-    
-
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         
@@ -210,8 +219,6 @@ class RegisterViewController: UIViewController, UITextFieldDelegate, UIPickerVie
         
         return true
     }
-    
-    
     
     func textFieldDidEndEditing(_ textField: UITextField) {
         if textField.hasText {
