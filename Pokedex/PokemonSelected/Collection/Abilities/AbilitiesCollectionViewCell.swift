@@ -7,7 +7,7 @@
 
 import UIKit
 
-class AbilitiesCollectionViewCell: UICollectionViewCell, UITableViewDelegate, UITableViewDataSource {
+class AbilitiesCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var abilitiesTableView: UITableView!
     @IBOutlet weak var abilitiesLabel: UILabel!
@@ -20,23 +20,15 @@ class AbilitiesCollectionViewCell: UICollectionViewCell, UITableViewDelegate, UI
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        abilitiesTableView.delegate = self
-        abilitiesTableView.dataSource = self
+        configAbilitiesTableView()
         abilitiesTableView.register(AbilitiesTableViewCell.nib(), forCellReuseIdentifier: AbilitiesTableViewCell.identifier)
         initialConfig()
         configLabel()
     }
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 4
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: AbilitiesTableViewCell.identifier, for: indexPath) as? AbilitiesTableViewCell
-        cell?.contentView.layer.cornerRadius = 20
-        cell?.contentView.layer.borderWidth = 1.5
-        cell?.contentView.layer.borderColor = UIColor.black.cgColor
-        return cell ?? UITableViewCell()
+    func configAbilitiesTableView() {
+        abilitiesTableView.delegate = self
+        abilitiesTableView.dataSource = self
     }
     
     func initialConfig() {
@@ -52,7 +44,24 @@ class AbilitiesCollectionViewCell: UICollectionViewCell, UITableViewDelegate, UI
         abilitiesLabel.layer.shadowOpacity = 1.0
         abilitiesLabel.layer.shadowOffset = CGSize(width: 0, height: 6.0)
     }
+}
+
+extension AbilitiesCollectionViewCell: UITableViewDelegate {
     
 }
 
+extension AbilitiesCollectionViewCell: UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 4
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: AbilitiesTableViewCell.identifier, for: indexPath) as? AbilitiesTableViewCell
+        cell?.contentView.layer.cornerRadius = 20
+        cell?.contentView.layer.borderWidth = 1.5
+        cell?.contentView.layer.borderColor = UIColor.black.cgColor
+        return cell ?? UITableViewCell()
+    }
+}
 

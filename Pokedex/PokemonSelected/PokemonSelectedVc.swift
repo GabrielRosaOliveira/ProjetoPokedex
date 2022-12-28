@@ -19,9 +19,7 @@ class PokemonSelectedVc: UIViewController {
         super.viewDidLoad()
         self.configBottomView()
         self.setGradient()
-        infoCollectionView.delegate = self
-        infoCollectionView.dataSource = self
-        
+       configInfoCollectionView()
         infoCollectionView.register(AboutCollectionViewCell.nib(), forCellWithReuseIdentifier: AboutCollectionViewCell.identifier)
         infoCollectionView.register(AttributesCollectionViewCell.nib(), forCellWithReuseIdentifier: AttributesCollectionViewCell.identifier)
         infoCollectionView.register(AbilitiesCollectionViewCell.nib(), forCellWithReuseIdentifier: AbilitiesCollectionViewCell.identifier)
@@ -39,6 +37,11 @@ class PokemonSelectedVc: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         self.tabBarController?.tabBar.isHidden = true
+    }
+    
+    func configInfoCollectionView() {
+        infoCollectionView.delegate = self
+        infoCollectionView.dataSource = self
     }
     
     func setGradient() {
@@ -64,7 +67,11 @@ class PokemonSelectedVc: UIViewController {
     }
 }
 
-extension PokemonSelectedVc: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+extension PokemonSelectedVc: UICollectionViewDelegate {
+    
+}
+
+extension PokemonSelectedVc: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 3
@@ -82,6 +89,9 @@ extension PokemonSelectedVc: UICollectionViewDelegate, UICollectionViewDataSourc
             return cell ?? UICollectionViewCell()
         }
     }
+}
+
+extension PokemonSelectedVc: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         

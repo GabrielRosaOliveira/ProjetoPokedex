@@ -17,7 +17,6 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var exitButton: UIButton!
     
     var alert: Alert?
-    
     var register: Register?
     
     override func viewDidLoad() {
@@ -29,32 +28,19 @@ class ProfileViewController: UIViewController {
         birthdayTextField.text = register?.birthday
         nicknameTextField.text = register?.nickname
         editPasswordTextField.text = register?.password
-        
-        
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         self.tabBarController?.tabBar.isHidden = false
-        
-        
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
         self.tabBarController?.tabBar.isHidden = true
-        
-        emailTextField.text = register?.email
-        birthdayTextField.text = register?.birthday
-        nicknameTextField.text = register?.nickname
-        editPasswordTextField.text = register?.password
-        
     }
     
     @IBAction func backButton(_ sender: UIButton) {
         navigationController?.popViewController(animated: true)
     }
-    
-    
     
     @IBAction func tappedExitAccountButton(_ sender: UIButton) {
         alert?.configAlert(title: "Atenção", message: "Você quer mesmo sair?", completion: {
@@ -98,7 +84,6 @@ class ProfileViewController: UIViewController {
             alertEditing.addAction(UIAlertAction(title: "Cancelar", style: UIAlertAction.Style.cancel, handler: nil))
             self.present(alertEditing,animated: true,completion: nil)
         }
-        
     }
     
     func configBackgroundView(){
@@ -134,5 +119,4 @@ class ProfileViewController: UIViewController {
         exitButton.layer.cornerRadius = 10
         
     }
-    
 }

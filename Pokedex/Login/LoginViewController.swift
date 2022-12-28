@@ -8,7 +8,7 @@
 import UIKit
 import Firebase
 
-class LoginViewController: UIViewController, UITextFieldDelegate {
+class LoginViewController: UIViewController {
     
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
@@ -89,7 +89,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         alertController.addAction(ok)
         self.present(alertController, animated: true, completion: nil)
     }
-
+    
     fileprivate func doLogin() {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let viewcontroler = storyboard.instantiateViewController(withIdentifier: "TabBar")
@@ -127,6 +127,9 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
             goButton.backgroundColor = UIColor(red: 29/255, green: 44/255, blue: 94/255, alpha: 1.0)
         }
     }
+}
+
+extension LoginViewController: UITextFieldDelegate {
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         if textField.isEqual(self.emailTextField) {
@@ -147,4 +150,3 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         registerButton.layer.cornerRadius = 19
     }
 }
-

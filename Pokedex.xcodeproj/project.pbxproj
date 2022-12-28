@@ -160,15 +160,6 @@
 			path = ForgotPassword;
 			sourceTree = "<group>";
 		};
-		C022F97428D49B60003CD636 /* PokemonSelected */ = {
-			isa = PBXGroup;
-			children = (
-				C03B6FF028D3E56A00683717 /* PokemonSelectedVc.swift */,
-				C03B6FF228D3E58500683717 /* pokemonSelected.storyboard */,
-			);
-			path = PokemonSelected;
-			sourceTree = "<group>";
-		};
 		C035444328D3FA1300AA86A4 /* Collection */ = {
 			isa = PBXGroup;
 			children = (
@@ -192,7 +183,8 @@
 		C03B6FEF28D3E50700683717 /* PokemonSelected */ = {
 			isa = PBXGroup;
 			children = (
-				C022F97428D49B60003CD636 /* PokemonSelected */,
+				C03B6FF028D3E56A00683717 /* PokemonSelectedVc.swift */,
+				C03B6FF228D3E58500683717 /* pokemonSelected.storyboard */,
 				C035444328D3FA1300AA86A4 /* Collection */,
 			);
 			path = PokemonSelected;

@@ -7,7 +7,7 @@
 
 import UIKit
 
-class FavoritesViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+class FavoritesViewController: UIViewController {
     
     @IBOutlet weak var favoritesView: UIView!
     @IBOutlet weak var favoritesLabel: UILabel!
@@ -23,8 +23,7 @@ class FavoritesViewController: UIViewController, UICollectionViewDelegate, UICol
     override func viewDidLoad() {
         super.viewDidLoad()
         favoritesCollectionView.register(FavoritesCollectionViewCell.nib(), forCellWithReuseIdentifier: FavoritesCollectionViewCell.identifier)
-        favoritesCollectionView.delegate = self
-        favoritesCollectionView.dataSource = self
+        ConfigFavoritesCollectionView()
         cornerRadiusView()
     }
     
@@ -36,24 +35,9 @@ class FavoritesViewController: UIViewController, UICollectionViewDelegate, UICol
         super.viewDidLayoutSubviews()
     }
     
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 30
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: FavoritesCollectionViewCell.identifier, for: indexPath)
-        cell.backgroundColor = .clear
-        return cell
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: self.view.frame.size.width - 20, height: 120)
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let storyboard = UIStoryboard(name: "pokemonSelected", bundle: nil)
-        let viewcontroler = storyboard.instantiateViewController(withIdentifier: "pokemon")
-        navigationController?.pushViewController(viewcontroler, animated: true)
+    func ConfigFavoritesCollectionView() {
+        favoritesCollectionView.delegate = self
+        favoritesCollectionView.dataSource = self
     }
     
     func cornerRadiusView() {
@@ -71,3 +55,31 @@ class FavoritesViewController: UIViewController, UICollectionViewDelegate, UICol
     }
 }
 
+extension FavoritesViewController: UICollectionViewDelegate {
+    
+}
+
+extension FavoritesViewController: UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 30
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: FavoritesCollectionViewCell.identifier, for: indexPath)
+        cell.backgroundColor = .clear
+        return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let storyboard = UIStoryboard(name: "pokemonSelected", bundle: nil)
+        let viewcontroler = storyboard.instantiateViewController(withIdentifier: "pokemon")
+        navigationController?.pushViewController(viewcontroler, animated: true)
+    }
+}
+
+extension FavoritesViewController: UICollectionViewDelegateFlowLayout {
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: self.view.frame.size.width - 20, height: 120)
+    }
+}

@@ -14,7 +14,7 @@ class AboutCollectionViewCell: UICollectionViewCell {
     
     static let identifier: String = "AboutCollectionViewCell"
     
-    static func nib()-> UINib{
+    static func nib()-> UINib {
         return UINib(nibName: self.identifier, bundle: nil)
     }
     

@@ -8,7 +8,7 @@
 import UIKit
 import Firebase
 
-class RegisterViewController: UIViewController, UITextFieldDelegate, UIPickerViewDelegate {
+class RegisterViewController: UIViewController {
     
     @IBOutlet weak var backGroundView: UIView!
     @IBOutlet weak var registerLabel: UILabel!
@@ -46,26 +46,6 @@ class RegisterViewController: UIViewController, UITextFieldDelegate, UIPickerVie
         eyeMagic2()
     }
     
-    func textFieldDidBeginEditing(_ textField: UITextField) {
-        if birthdayTextField == textField {
-            datePicker = UIDatePicker(frame: CGRect(x: 0, y: 0, width: self.view.frame.width, height: 220))
-            datePicker.datePickerMode = .date
-            birthdayTextField.inputView = datePicker
-            let toolbar = UIToolbar()
-            toolbar.barStyle = .default
-            toolbar.isTranslucent = true
-            toolbar.sizeToFit()
-            datePicker.preferredDatePickerStyle = .wheels
-            let okButton = UIBarButtonItem(title: "OK", style: .plain, target: self, action: #selector(self.buttonOK))
-            let cancelButton = UIBarButtonItem(title: "Cancel", style: .plain, target: self, action: #selector(self.buttonCancel))
-            let spaceButton = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
-            toolbar.setItems([cancelButton, spaceButton, okButton], animated: false)
-            toolbar.isUserInteractionEnabled = true
-            birthdayTextField.inputAccessoryView = toolbar
-            
-        }
-    }
-    
     @objc func buttonCancel() {
         birthdayTextField.resignFirstResponder()
     }
@@ -75,14 +55,6 @@ class RegisterViewController: UIViewController, UITextFieldDelegate, UIPickerVie
         dateFormatted.dateFormat = "dd/MM/yyyy"
         birthdayTextField.text = dateFormatted.string(from: datePicker.date as Date)
         buttonCancel()
-    }
-    
-    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        if (textField == birthdayTextField) {
-            return false
-        } else {
-            return true
-        }
     }
     
     func eyeMagic() {
@@ -97,7 +69,6 @@ class RegisterViewController: UIViewController, UITextFieldDelegate, UIPickerVie
         
         passwordTextField.rightView = contentView
         passwordTextField.rightViewMode = .always
-        
         
         let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(imageTapped(tapGestureRecognizer:)))
         imageEye.isUserInteractionEnabled = true
@@ -169,14 +140,11 @@ class RegisterViewController: UIViewController, UITextFieldDelegate, UIPickerVie
     
     @IBAction func tappedRegisterButton(_ sender: UIButton) {
         
-       
         let login = UIStoryboard(name: "LoginStoryboard", bundle: nil).instantiateViewController(withIdentifier: "LoginViewController")
         let vc = UIStoryboard(name: "profileStoryboard", bundle: nil).instantiateViewController(withIdentifier: "profile") as? ProfileViewController
         let gabriel = Register(email: emailTextField.text ?? "", birthday: birthdayTextField.text ?? "", password: passwordTextField.text ?? "", confirmPassword: confirmPasswordTextField.text ?? "", nickname: nicknameTextField.text ?? "")
         vc?.register = gabriel
         navigationController?.pushViewController(login, animated: true)
-        
-        
         
         let email: String = emailTextField.text ?? ""
         let password: String = passwordTextField.text ?? ""
@@ -190,8 +158,6 @@ class RegisterViewController: UIViewController, UITextFieldDelegate, UIPickerVie
                 self.present(alertEditing,animated: true,completion: nil)
             }
         })
-        
-        
     }
     
     func bottomView() {
@@ -201,24 +167,12 @@ class RegisterViewController: UIViewController, UITextFieldDelegate, UIPickerVie
         backGroundView.layer.borderColor = UIColor.black.cgColor
     }
     
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        
-        textField.resignFirstResponder()
-        if (textField == self.emailTextField) {
-            self.birthdayTextField.becomeFirstResponder()
-        }
-        else if (textField == self.birthdayTextField) {
-            self.passwordTextField.becomeFirstResponder()
-            
-        } else if (textField == self.passwordTextField) {
-            self.confirmPasswordTextField.becomeFirstResponder()
-        }
-        else if (textField == self.confirmPasswordTextField) {
-            self.nicknameTextField.becomeFirstResponder()
-        }
-        
-        return true
+    func cornerRadius() {
+        registerButton.layer.cornerRadius = 17
     }
+}
+
+extension RegisterViewController: UITextFieldDelegate {
     
     func textFieldDidEndEditing(_ textField: UITextField) {
         if textField.hasText {
@@ -250,9 +204,53 @@ class RegisterViewController: UIViewController, UITextFieldDelegate, UIPickerVie
         }
     }
     
-    func cornerRadius() {
-        registerButton.layer.cornerRadius = 17
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        
+        textField.resignFirstResponder()
+        if (textField == self.emailTextField) {
+            self.birthdayTextField.becomeFirstResponder()
+        }
+        else if (textField == self.birthdayTextField) {
+            self.passwordTextField.becomeFirstResponder()
+            
+        } else if (textField == self.passwordTextField) {
+            self.confirmPasswordTextField.becomeFirstResponder()
+        }
+        else if (textField == self.confirmPasswordTextField) {
+            self.nicknameTextField.becomeFirstResponder()
+        }
+        
+        return true
     }
     
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        if (textField == birthdayTextField) {
+            return false
+        } else {
+            return true
+        }
+    }
+}
 
+extension RegisterViewController: UIPickerViewDelegate {
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        if birthdayTextField == textField {
+            datePicker = UIDatePicker(frame: CGRect(x: 0, y: 0, width: self.view.frame.width, height: 220))
+            datePicker.datePickerMode = .date
+            birthdayTextField.inputView = datePicker
+            let toolbar = UIToolbar()
+            toolbar.barStyle = .default
+            toolbar.isTranslucent = true
+            toolbar.sizeToFit()
+            datePicker.preferredDatePickerStyle = .wheels
+            let okButton = UIBarButtonItem(title: "OK", style: .plain, target: self, action: #selector(self.buttonOK))
+            let cancelButton = UIBarButtonItem(title: "Cancel", style: .plain, target: self, action: #selector(self.buttonCancel))
+            let spaceButton = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
+            toolbar.setItems([cancelButton, spaceButton, okButton], animated: false)
+            toolbar.isUserInteractionEnabled = true
+            birthdayTextField.inputAccessoryView = toolbar
+            
+        }
+    }
 }
