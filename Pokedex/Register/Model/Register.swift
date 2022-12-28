@@ -9,10 +9,9 @@ import Foundation
 import UIKit
 
 struct Register {
-    
+    var id: String
     var email: String
     var birthday: String
     var password: String
-    var confirmPassword: String
     var nickname: String
 }

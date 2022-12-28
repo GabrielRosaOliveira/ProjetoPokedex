@@ -7,6 +7,8 @@
 
 import UIKit
 import Firebase
+import FirebaseFirestore
+import FirebaseStorage
 
 class RegisterViewController: UIViewController {
     
@@ -20,6 +22,10 @@ class RegisterViewController: UIViewController {
     @IBOutlet weak var registerButton: UIButton!
     
     var auth: Auth?
+    
+    let fireStore = Firestore.firestore()
+    let storage = Storage.storage().reference()
+    
     
     var eyeClicked = false
     let imageEye = UIImageView()
@@ -141,13 +147,12 @@ class RegisterViewController: UIViewController {
     @IBAction func tappedRegisterButton(_ sender: UIButton) {
         
         let login = UIStoryboard(name: "LoginStoryboard", bundle: nil).instantiateViewController(withIdentifier: "LoginViewController")
-        let vc = UIStoryboard(name: "profileStoryboard", bundle: nil).instantiateViewController(withIdentifier: "profile") as? ProfileViewController
-        let gabriel = Register(email: emailTextField.text ?? "", birthday: birthdayTextField.text ?? "", password: passwordTextField.text ?? "", confirmPassword: confirmPasswordTextField.text ?? "", nickname: nicknameTextField.text ?? "")
-        vc?.register = gabriel
         navigationController?.pushViewController(login, animated: true)
-        
+        let user = Auth.auth().currentUser
         let email: String = emailTextField.text ?? ""
         let password: String = passwordTextField.text ?? ""
+        let birthday: String = birthdayTextField.text ?? ""
+        let nickname: String = nicknameTextField.text ?? ""
         
         self.auth?.createUser(withEmail: email, password: password, completion: { (result, error)  in
             if error != nil {
@@ -156,8 +161,23 @@ class RegisterViewController: UIViewController {
                 let alertEditing = UIAlertController(title: "Parabéns!!!", message: "Cadastro realizado com sucesso !!!", preferredStyle: UIAlertController.Style.alert)
                 alertEditing.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.destructive, handler: nil))
                 self.present(alertEditing,animated: true,completion: nil)
+                self.saveUserData(email: email, birthday: birthday, password: password, nickname: nickname)
             }
         })
+        
+        
+    }
+    
+    func saveUserData(email: String, birthday: String, password: String, nickname: String) {
+        
+        let dataPath = "user/\(UUID().uuidString)"
+        let docRef = fireStore.document(dataPath)
+        docRef.setData([
+            "email": email,
+            "birthday": birthday,
+            "password": password,
+            "nickname": nickname
+        ])
     }
     
     func bottomView() {

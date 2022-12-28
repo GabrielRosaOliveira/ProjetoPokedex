@@ -184,6 +184,7 @@
                         <outlet property="editPasswordTextField" destination="ra0-x8-Dz5" id="tJb-Xt-QyB"/>
                         <outlet property="emailTextField" destination="VHn-6X-Mcj" id="105-th-ALO"/>
                         <outlet property="exitButton" destination="vxI-QS-2fK" id="mh8-17-te5"/>
+                        <outlet property="hellLabel" destination="eKC-FF-wHb" id="rBg-8r-V01"/>
                         <outlet property="nicknameTextField" destination="fE3-FS-1dq" id="xaz-vu-2rG"/>
                     </connections>
                 </viewController>

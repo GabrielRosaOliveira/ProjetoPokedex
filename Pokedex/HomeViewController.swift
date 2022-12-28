@@ -13,6 +13,12 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var profileButton: UIButton!
     
+    let service = PokemonService()
+    var pokemon: Pokemon?
+    var index: Int = 0
+    let imageService = PokemonImageService()
+    var pokemonDetail: Result?
+    
     struct Pokedex {
         let name: String
         let imageName: String
@@ -53,6 +59,8 @@ class HomeViewController: UIViewController {
         configCollectionView()
         profileButton.layer.cornerRadius = 25
         searchTextField.delegate = self
+        getPokemonResquest()
+        getImagePokemon()
     }
     
     func setSearchTextField(text: String) {
@@ -64,6 +72,28 @@ class HomeViewController: UIViewController {
                 return ($0.name).lowercased().contains(text.lowercased())
             })
             isempty = false
+        }
+    }
+    
+    func getImagePokemon() {
+        imageService.getPokemons(pokemon: pokemon?.results?[0].name ?? "") { result, failure in
+            if let result {
+                self.pokemonDetail = result
+                print(self.pokemonDetail)
+            } else {
+                print("deu ruim")
+            }
+        }
+    }
+    
+    func getPokemonResquest() {
+        service.getPokemons() { result, failure in
+            if let result {
+                self.pokemon = result
+//                print(self.pokemon)
+            } else {
+                print("deu ruim")
+            }
         }
     }
     
@@ -92,7 +122,7 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
         if pokemonList {
             return 1
         } else {
-            return filterPokemon.count
+            return pokemon?.results?.count ?? 0
         }
     }
     
@@ -105,9 +135,10 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
         }
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HomeCollectionViewCell.identifier, for: indexPath) as? HomeCollectionViewCell
-        cell?.namePokemonLabel.text = filterPokemon[indexPath.row].name
-        cell?.iconImageView.image = UIImage(named: filterPokemon[indexPath.row].imageName)
+        cell?.namePokemonLabel.text = pokemon?.results?[indexPath.row].name
+//        cell?.iconImageView.image = UIImage(named: filterPokemon[indexPath.row].imageName)
         cell?.backgroundColor = .clear
+        index = indexPath.row
         return cell ?? UICollectionViewCell()
     }
     

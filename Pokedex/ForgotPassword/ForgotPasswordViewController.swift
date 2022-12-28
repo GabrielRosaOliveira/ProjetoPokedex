@@ -25,7 +25,7 @@ class ForgotPasswordViewController: UIViewController{
     @IBAction func tappedSendButton(_ sender: UIButton) {
         if emailTextField.isEnabled{
             let alertEditing = UIAlertController(title: "Atenção", message: "Enviamos um e-mail para \( emailTextField.text ?? ""), com instruções de como redefinir sua senha", preferredStyle: UIAlertController.Style.alert)
-            alertEditing.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.destructive, handler: nil))
+            alertEditing.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
             self.present(alertEditing,animated: true,completion: nil)
         }
     }

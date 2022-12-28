@@ -6,9 +6,12 @@
 //
 
 import UIKit
+import FirebaseFirestore
+import FirebaseAuth
 
 class ProfileViewController: UIViewController {
     
+    @IBOutlet weak var hellLabel: UILabel!
     @IBOutlet weak var backgroundView: UIView!
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var birthdayTextField: UITextField!
@@ -18,6 +21,11 @@ class ProfileViewController: UIViewController {
     
     var alert: Alert?
     var register: Register?
+    let fireStore = Firestore.firestore()
+    var userData: [Register] = []
+    var userId: String = ""
+    let user = Auth.auth().currentUser
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,6 +36,8 @@ class ProfileViewController: UIViewController {
         birthdayTextField.text = register?.birthday
         nicknameTextField.text = register?.nickname
         editPasswordTextField.text = register?.password
+        
+        
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -36,10 +46,53 @@ class ProfileViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         self.tabBarController?.tabBar.isHidden = true
+        getUserData()
     }
     
     @IBAction func backButton(_ sender: UIButton) {
         navigationController?.popViewController(animated: true)
+    }
+    
+    func getIndex(email: String) -> Int {
+        let index = userData.firstIndex { $0.email == email } ?? 0
+        print(index)
+        return index
+    }
+    
+//    buscando dados do usuario no fireBase
+    func getUserData() {
+        fireStore.collection("user").getDocuments { snapshot, error in
+            if error == nil {
+                if let snapshot {
+                    DispatchQueue.main.async {
+                        self.userData = snapshot.documents.map({ document in
+                            print(self.user?.email)
+                            return Register(id: document.documentID,
+                                            email: document["email"] as? String ?? "",
+                                            birthday: document["birthday"] as? String ?? "",
+                                            password: document["password"] as? String ?? "",
+                                            nickname: document["nickname"] as? String ?? "")
+                           
+                        })
+                        self.populateUserData(index: self.getIndex(email: self.user?.email ?? ""))
+                    }
+                }
+            } else {
+                let alertEditing = UIAlertController(title: "Atenção", message: "Tivemos um problema no servidor, tente novamente.", preferredStyle: UIAlertController.Style.alert)
+                alertEditing.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.destructive, handler: nil))
+                self.present(alertEditing,animated: true,completion: nil)
+            }
+            
+        }
+    }
+    
+    func populateUserData(index: Int) {
+        
+        emailTextField.text = userData[index].email
+        birthdayTextField.text = userData[index].birthday
+        editPasswordTextField.text = userData[index].password
+        nicknameTextField.text = userData[index].nickname
+        hellLabel.text = "Olá,\(userData[index].nickname)"
     }
     
     @IBAction func tappedExitAccountButton(_ sender: UIButton) {

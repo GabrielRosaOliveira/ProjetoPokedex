@@ -8,6 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		52B77539E4FEAA84BB2103DE /* Pods_Pokedex.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C69070747C61F4DC02A9EC3 /* Pods_Pokedex.framework */; };
+		C00035A4295C8AAB00437B34 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = C00035A3295C8AAB00437B34 /* FirebaseAuth */; };
+		C00035A6295C8AAB00437B34 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = C00035A5295C8AAB00437B34 /* FirebaseDatabase */; };
+		C00035A8295C8AAB00437B34 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = C00035A7295C8AAB00437B34 /* FirebaseFirestore */; };
+		C00035AA295C8AAB00437B34 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = C00035A9295C8AAB00437B34 /* FirebaseStorage */; };
+		C00035AC295CBB5A00437B34 /* Pokemon.swift in Sources */ = {isa = PBXBuildFile; fileRef = C00035AB295CBB5A00437B34 /* Pokemon.swift */; };
+		C00035B0295CBBED00437B34 /* GenericService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C00035AF295CBBED00437B34 /* GenericService.swift */; };
+		C00035B3295CBC3700437B34 /* PokemonService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C00035B2295CBC3700437B34 /* PokemonService.swift */; };
+		C00035B5295CCF4600437B34 /* PokemonImageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C00035B4295CCF4600437B34 /* PokemonImageService.swift */; };
 		C002E45628CE9F4700C44F2B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C002E45528CE9F4700C44F2B /* LoginViewController.swift */; };
 		C002E45828CE9F5C00C44F2B /* LoginStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C002E45728CE9F5C00C44F2B /* LoginStoryboard.storyboard */; };
 		C00FF5C028D7E712004F4151 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C00FF5BF28D7E712004F4151 /* RegisterViewController.swift */; };
@@ -24,7 +32,6 @@
 		C05654ED28CE6FA600230AB8 /* HomeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C05654EA28CE6FA600230AB8 /* HomeCollectionViewCell.swift */; };
 		C05FC6FE2944FE1E00187AF9 /* FavoritesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C05FC6FD2944FE1E00187AF9 /* FavoritesCollectionViewCell.swift */; };
 		C05FC7002944FE2400187AF9 /* favoritesCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C05FC6FF2944FE2400187AF9 /* favoritesCollectionViewCell.xib */; };
-		C076A375290DE5C60012746E /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = C076A374290DE5C60012746E /* FirebaseAuth */; };
 		C076A377290DE5F60012746E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C076A376290DE5F60012746E /* GoogleService-Info.plist */; };
 		C076A37A290DE8020012746E /* Register.swift in Sources */ = {isa = PBXBuildFile; fileRef = C076A379290DE8020012746E /* Register.swift */; };
 		C08AE85F28D3FD9100FCC976 /* AbilitiesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C08AE85D28D3FD9100FCC976 /* AbilitiesCollectionViewCell.swift */; };
@@ -52,6 +59,10 @@
 		3F923EC079D0872720E9FA68 /* Pods-Pokedex.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pokedex.release.xcconfig"; path = "Target Support Files/Pods-Pokedex/Pods-Pokedex.release.xcconfig"; sourceTree = "<group>"; };
 		6C69070747C61F4DC02A9EC3 /* Pods_Pokedex.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Pokedex.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BD41CED1E2A5A458278E849D /* Pods-Pokedex.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pokedex.debug.xcconfig"; path = "Target Support Files/Pods-Pokedex/Pods-Pokedex.debug.xcconfig"; sourceTree = "<group>"; };
+		C00035AB295CBB5A00437B34 /* Pokemon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pokemon.swift; sourceTree = "<group>"; };
+		C00035AF295CBBED00437B34 /* GenericService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericService.swift; sourceTree = "<group>"; };
+		C00035B2295CBC3700437B34 /* PokemonService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonService.swift; sourceTree = "<group>"; };
+		C00035B4295CCF4600437B34 /* PokemonImageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonImageService.swift; sourceTree = "<group>"; };
 		C002E45528CE9F4700C44F2B /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		C002E45728CE9F5C00C44F2B /* LoginStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LoginStoryboard.storyboard; sourceTree = "<group>"; };
 		C00FF5BF28D7E712004F4151 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
@@ -98,8 +109,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C00035A6295C8AAB00437B34 /* FirebaseDatabase in Frameworks */,
+				C00035A8295C8AAB00437B34 /* FirebaseFirestore in Frameworks */,
 				52B77539E4FEAA84BB2103DE /* Pods_Pokedex.framework in Frameworks */,
-				C076A375290DE5C60012746E /* FirebaseAuth in Frameworks */,
+				C00035AA295C8AAB00437B34 /* FirebaseStorage in Frameworks */,
+				C00035A4295C8AAB00437B34 /* FirebaseAuth in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -113,6 +127,24 @@
 				3F923EC079D0872720E9FA68 /* Pods-Pokedex.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		C00035AD295CBBAB00437B34 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				C00035AB295CBB5A00437B34 /* Pokemon.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		C00035AE295CBBD300437B34 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				C00035AF295CBBED00437B34 /* GenericService.swift */,
+				C00035B2295CBC3700437B34 /* PokemonService.swift */,
+				C00035B4295CCF4600437B34 /* PokemonImageService.swift */,
+			);
+			path = Service;
 			sourceTree = "<group>";
 		};
 		C002E45128CE9DE800C44F2B /* TabBar */ = {
@@ -266,6 +298,8 @@
 		C08C721E28C3D7E40007E7FE /* Pokedex */ = {
 			isa = PBXGroup;
 			children = (
+				C00035AE295CBBD300437B34 /* Service */,
+				C00035AD295CBBAB00437B34 /* Model */,
 				C0386AC5290DAA4A000DC945 /* Home */,
 				C052C0C5290DA33100AF7526 /* Favorites */,
 				C09807BA28D95801005DB2E2 /* Profile */,
@@ -349,7 +383,10 @@
 			);
 			name = Pokedex;
 			packageProductDependencies = (
-				C076A374290DE5C60012746E /* FirebaseAuth */,
+				C00035A3295C8AAB00437B34 /* FirebaseAuth */,
+				C00035A5295C8AAB00437B34 /* FirebaseDatabase */,
+				C00035A7295C8AAB00437B34 /* FirebaseFirestore */,
+				C00035A9295C8AAB00437B34 /* FirebaseStorage */,
 			);
 			productName = Pokedex;
 			productReference = C08C721C28C3D7E40007E7FE /* Pokedex.app */;
@@ -380,7 +417,7 @@
 			);
 			mainGroup = C08C721328C3D7E40007E7FE;
 			packageReferences = (
-				C076A373290DE5C60012746E /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				C00035A2295C8AAB00437B34 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 			);
 			productRefGroup = C08C721D28C3D7E40007E7FE /* Products */;
 			projectDirPath = "";
@@ -465,10 +502,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C00035AC295CBB5A00437B34 /* Pokemon.swift in Sources */,
+				C00035B5295CCF4600437B34 /* PokemonImageService.swift in Sources */,
 				C0404F4F28D65577007CD6CA /* AbilitiesTableViewCell.swift in Sources */,
 				C0C2D9EE28D28D1D00DE5CF9 /* LoadingViewController.swift in Sources */,
+				C00035B3295CBC3700437B34 /* PokemonService.swift in Sources */,
 				C002E45628CE9F4700C44F2B /* LoginViewController.swift in Sources */,
 				C05654ED28CE6FA600230AB8 /* HomeCollectionViewCell.swift in Sources */,
+				C00035B0295CBBED00437B34 /* GenericService.swift in Sources */,
 				C08AE85F28D3FD9100FCC976 /* AbilitiesCollectionViewCell.swift in Sources */,
 				C0DBA85E28D3FFCA00C7548F /* AboutCollectionViewCell.swift in Sources */,
 				C08C722428C3D7E40007E7FE /* MyTabBarConstroller.swift in Sources */,
@@ -700,9 +741,9 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		C076A373290DE5C60012746E /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+		C00035A2295C8AAB00437B34 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
 			requirement = {
 				kind = upToNextMajorVersion;
 				minimumVersion = 9.0.0;
@@ -711,10 +752,25 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		C076A374290DE5C60012746E /* FirebaseAuth */ = {
+		C00035A3295C8AAB00437B34 /* FirebaseAuth */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = C076A373290DE5C60012746E /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			package = C00035A2295C8AAB00437B34 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseAuth;
+		};
+		C00035A5295C8AAB00437B34 /* FirebaseDatabase */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C00035A2295C8AAB00437B34 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseDatabase;
+		};
+		C00035A7295C8AAB00437B34 /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C00035A2295C8AAB00437B34 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+		C00035A9295C8AAB00437B34 /* FirebaseStorage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C00035A2295C8AAB00437B34 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseStorage;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
