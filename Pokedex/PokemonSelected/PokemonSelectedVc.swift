@@ -19,6 +19,7 @@ class PokemonSelectedVc: UIViewController {
     @IBOutlet weak var pokemonTypeTwoLabel: UILabel!
     @IBOutlet weak var pokemonNumberLabel: UILabel!
     
+    var pokemonName: String = ""
     var pokemon: Pokemon?
     let service = PokemonService()
     let gradient = CAGradientLayer()
@@ -49,11 +50,14 @@ class PokemonSelectedVc: UIViewController {
     }
     
     func getPokemonDetails() {
-        service.getPokemons(pokemon: "pikachu") { result, failure in
+        service.getPokemons(pokemon: pokemonName) { result, failure in
             if let result {
                 self.pokemon = result
             } else {
                 print("COLOCAR ALERT - DEU RUIM")
+            }
+            DispatchQueue.main.async {
+                self.populateView()
             }
         }
     }
@@ -61,6 +65,20 @@ class PokemonSelectedVc: UIViewController {
     func populateView() {
         let url = URL(string: pokemon?.sprites.frontDefault ?? "") ?? URL(fileURLWithPath: "")
         pokemonImageView.af.setImage(withURL: url)
+        
+        namePokemonLabel.text = pokemon?.name
+        pokemonNumberLabel.text = "Nº\(pokemon?.id ?? 0)"
+        
+        getTypes()
+    }
+    
+    func getTypes() {
+        if pokemon?.types.count == 1 {
+            pokemonTypeOneLabel.text = pokemon?.types[0].type.name
+        } else {
+            pokemonTypeTwoLabel.text = pokemon?.types[1].type.name
+            pokemonTypeOneLabel.text = pokemon?.types[0].type.name
+        }
     }
     
     func configInfoCollectionView() {

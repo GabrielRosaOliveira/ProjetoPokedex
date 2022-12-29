@@ -9,16 +9,25 @@ import Foundation
 
 struct Pokemon: Codable {
     let name: String
+    let id: Int
+    let types: [TypeElement]
     let sprites: Sprites
     
     enum CodingKeys: String, CodingKey {
-        case name
+        case name, id
+        case types
         case sprites
     }
 }
 
+struct TypeElement: Codable {
+    let type: Species
+}
 
-
+struct Species: Codable {
+    let name: String
+}
+    
 struct Sprites: Codable {
     let frontDefault: String
     

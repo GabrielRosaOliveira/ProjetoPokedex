@@ -125,8 +125,9 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let storyboard = UIStoryboard(name: "pokemonSelected", bundle: nil)
-        let viewcontroler = storyboard.instantiateViewController(withIdentifier: "pokemon")
-        navigationController?.pushViewController(viewcontroler, animated: true)
+        let viewcontroler = storyboard.instantiateViewController(withIdentifier: "pokemon") as? PokemonSelectedVc
+        viewcontroler?.pokemonName = filterPokemon[indexPath.row].name
+        navigationController?.pushViewController(viewcontroler ?? UIViewController(), animated: true)
     }
 }
 

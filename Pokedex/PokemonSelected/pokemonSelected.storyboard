@@ -128,8 +128,8 @@
                                     <constraint firstItem="bKh-Ad-1ue" firstAttribute="top" secondItem="CJ4-9Y-qVh" secondAttribute="top" constant="66" id="yFy-5d-5z0"/>
                                 </constraints>
                             </view>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bubasauro" translatesAutoresizingMaskIntoConstraints="NO" id="IC3-T9-cyx">
-                                <rect key="frame" x="60" y="274" width="273" height="235"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="IC3-T9-cyx">
+                                <rect key="frame" x="10" y="274" width="373" height="235"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="235" id="xqL-WY-gjd"/>
                                 </constraints>
@@ -163,7 +163,7 @@
                         <viewLayoutGuide key="safeArea" id="Q1J-hB-kOf"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="Q1J-hB-kOf" firstAttribute="trailing" secondItem="IC3-T9-cyx" secondAttribute="trailing" constant="60" id="0Cg-5L-NRs"/>
+                            <constraint firstItem="Q1J-hB-kOf" firstAttribute="trailing" secondItem="IC3-T9-cyx" secondAttribute="trailing" constant="10" id="0Cg-5L-NRs"/>
                             <constraint firstItem="WgH-X6-wHS" firstAttribute="top" secondItem="Q1J-hB-kOf" secondAttribute="top" constant="120" id="1OD-hB-diH" customClass="NSLayoutHelper" customModule="LayoutHelper">
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="iPhoneSE">
@@ -178,7 +178,7 @@
                                 </userDefinedRuntimeAttributes>
                             </constraint>
                             <constraint firstItem="bWG-dW-4Xd" firstAttribute="leading" secondItem="Q1J-hB-kOf" secondAttribute="leading" constant="30" id="2CO-we-obg"/>
-                            <constraint firstItem="IC3-T9-cyx" firstAttribute="leading" secondItem="Q1J-hB-kOf" secondAttribute="leading" constant="60" id="5fl-QY-XXf"/>
+                            <constraint firstItem="IC3-T9-cyx" firstAttribute="leading" secondItem="Q1J-hB-kOf" secondAttribute="leading" constant="10" id="5fl-QY-XXf"/>
                             <constraint firstItem="WgH-X6-wHS" firstAttribute="leading" secondItem="Q1J-hB-kOf" secondAttribute="leading" id="7wJ-dr-wMY"/>
                             <constraint firstItem="GiE-bE-6Q3" firstAttribute="top" secondItem="Q1J-hB-kOf" secondAttribute="top" constant="131" id="EfL-uK-jiY" customClass="NSLayoutHelper" customModule="LayoutHelper">
                                 <userDefinedRuntimeAttributes>
@@ -205,7 +205,7 @@
                                         <real key="value" value="150"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="number" keyPath="iPhone12ProMax">
-                                        <real key="value" value="300"/>
+                                        <real key="value" value="330"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="number" keyPath="iPhone11Pro">
                                         <real key="value" value="175"/>
@@ -257,7 +257,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="bubasauro" width="475" height="475"/>
         <image name="chevron.backward" catalog="system" width="97" height="128"/>
         <image name="evaluation-empty-star-evaluation-infographic-icon-with-png-355165-removebg-preview 1" width="52" height="32"/>
         <image name="pokebolaFundo" width="427" height="411"/>
