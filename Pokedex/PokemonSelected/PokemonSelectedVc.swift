@@ -6,13 +6,21 @@
 //
 
 import UIKit
+import AlamofireImage
 
 class PokemonSelectedVc: UIViewController {
     
     @IBOutlet weak var topView: UIView!
     @IBOutlet weak var bottomView: UIView!
     @IBOutlet weak var infoCollectionView: UICollectionView!
+    @IBOutlet weak var namePokemonLabel: UILabel!
+    @IBOutlet weak var pokemonImageView: UIImageView!
+    @IBOutlet weak var pokemonTypeOneLabel: UILabel!
+    @IBOutlet weak var pokemonTypeTwoLabel: UILabel!
+    @IBOutlet weak var pokemonNumberLabel: UILabel!
     
+    var pokemon: Pokemon?
+    let service = PokemonService()
     let gradient = CAGradientLayer()
     
     override func viewDidLoad() {
@@ -23,6 +31,7 @@ class PokemonSelectedVc: UIViewController {
         infoCollectionView.register(AboutCollectionViewCell.nib(), forCellWithReuseIdentifier: AboutCollectionViewCell.identifier)
         infoCollectionView.register(AttributesCollectionViewCell.nib(), forCellWithReuseIdentifier: AttributesCollectionViewCell.identifier)
         infoCollectionView.register(AbilitiesCollectionViewCell.nib(), forCellWithReuseIdentifier: AbilitiesCollectionViewCell.identifier)
+        getPokemonDetails()
     }
     
     override func viewDidLayoutSubviews() {
@@ -37,6 +46,21 @@ class PokemonSelectedVc: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         self.tabBarController?.tabBar.isHidden = true
+    }
+    
+    func getPokemonDetails() {
+        service.getPokemons(pokemon: "pikachu") { result, failure in
+            if let result {
+                self.pokemon = result
+            } else {
+                print("COLOCAR ALERT - DEU RUIM")
+            }
+        }
+    }
+    
+    func populateView() {
+        let url = URL(string: pokemon?.sprites.frontDefault ?? "") ?? URL(fileURLWithPath: "")
+        pokemonImageView.af.setImage(withURL: url)
     }
     
     func configInfoCollectionView() {

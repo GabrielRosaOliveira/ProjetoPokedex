@@ -13,41 +13,17 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var profileButton: UIButton!
     
+    var pokemonNames: [String] = []
     let service = PokemonService()
-    var pokemon: Pokemon?
+    var pokemon: [Pokemon] = []
     var index: Int = 0
-    let imageService = PokemonImageService()
-    var pokemonDetail: Result?
-    
-    struct Pokedex {
-        let name: String
-        let imageName: String
-    }
+    let nameService = PokemonNameService()
     
     var isempty: Bool = false
     
-    let data: [Pokedex] = [ Pokedex(name: "Charmander", imageName: "imagem1"),
-                            Pokedex(name: "Lapras", imageName: "imagem2"),
-                            Pokedex(name: "Morcego", imageName: "imagem3"),
-                            Pokedex(name: "Bulbasaur", imageName: "imagem4"),
-                            Pokedex(name: "Pikachu", imageName: "imagem5"),
-                            Pokedex(name: "Charmander", imageName: "imagem1"),
-                            Pokedex(name: "Lapras", imageName: "imagem2"),
-                            Pokedex(name: "Morcego", imageName: "imagem3"),
-                            Pokedex(name: "Bulbasaur", imageName: "imagem4"),
-                            Pokedex(name: "Pikachu", imageName: "imagem5"),
-                            Pokedex(name: "Charmander", imageName: "imagem1"),
-                            Pokedex(name: "Lapras", imageName: "imagem2"),
-                            Pokedex(name: "Morcego", imageName: "imagem3"),
-                            Pokedex(name: "Bulbasaur", imageName: "imagem4"),
-                            Pokedex(name: "Pikachu", imageName: "imagem5"),
-                            Pokedex(name: "Charmander", imageName: "imagem1"),
-                            Pokedex(name: "Lapras", imageName: "imagem2"),
-                            Pokedex(name: "Morcego", imageName: "imagem3"),
-                            Pokedex(name: "Bulbasaur", imageName: "imagem4"),
-                            Pokedex(name: "Pikachu", imageName: "imagem5")]
+    var names: [String] = ["pikachu", "bulbasaur", "charmander", "squirtle", "pidgey", "meowth", "psyduck", "zubat", "rattata", "weedle", "vulpix", "growlithe", "poliwag", "abra", "machop", "tentacool", "slowpoke", "geodude", "seel", "grimer", "shellder", "krabby", "cubone", "voltorb", "tangela", "koffing", "horsea", "goldeen", "staryu", "ditto", "eevee", "porygon", "mew", "omanyte", "kabuto", "dratini", "metapod", "butterfree", "kakuna", "raticate", "sandslash", "nidorina", "nidorino", "jigglypuff", "gloom", "dugtrio", "weepinbell", "graveler", "haunter", "marowak", "starmie", "flareon"]
     
-    var filterPokemon: [Pokedex] = []
+    var filterPokemon: [Pokemon] = []
     
     var pokemonList: Bool {
         return self.filterPokemon.count == 0
@@ -55,44 +31,40 @@ class HomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.filterPokemon = data
         configCollectionView()
         profileButton.layer.cornerRadius = 25
         searchTextField.delegate = self
         getPokemonResquest()
-        getImagePokemon()
+        collectionView.showsVerticalScrollIndicator = false
     }
     
     func setSearchTextField(text: String) {
         if text.isEmpty {
-            self.filterPokemon = self.data
+            self.filterPokemon = self.pokemon
             isempty = true
         } else {
-            self.filterPokemon = self.data.filter({
-                return ($0.name).lowercased().contains(text.lowercased())
+            self.filterPokemon = self.pokemon.filter({
+                let test = ($0.name).lowercased().contains(text.lowercased())
+                print(test)
+                return test
             })
             isempty = false
         }
     }
     
-    func getImagePokemon() {
-        imageService.getPokemons(pokemon: pokemon?.results?[0].name ?? "") { result, failure in
-            if let result {
-                self.pokemonDetail = result
-                print(self.pokemonDetail)
-            } else {
-                print("deu ruim")
-            }
-        }
-    }
-    
     func getPokemonResquest() {
-        service.getPokemons() { result, failure in
-            if let result {
-                self.pokemon = result
-//                print(self.pokemon)
-            } else {
-                print("deu ruim")
+        for name in names {
+            service.getPokemons(pokemon: name) { result, failure in
+                if let result {
+                    self.pokemon.append(result)
+                } else {
+                    print("COLOCAR ALERT - DEU RUIM")
+                }
+                DispatchQueue.main.async {
+                    self.collectionView.reloadData()
+                    self.filterPokemon = self.pokemon
+                    print(self.filterPokemon)
+                }
             }
         }
     }
@@ -122,7 +94,7 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
         if pokemonList {
             return 1
         } else {
-            return pokemon?.results?.count ?? 0
+            return filterPokemon.count
         }
     }
     
@@ -135,20 +107,21 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
         }
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HomeCollectionViewCell.identifier, for: indexPath) as? HomeCollectionViewCell
-        cell?.namePokemonLabel.text = pokemon?.results?[indexPath.row].name
-//        cell?.iconImageView.image = UIImage(named: filterPokemon[indexPath.row].imageName)
+        cell?.setupCell(pokemon: filterPokemon[indexPath.row])
         cell?.backgroundColor = .clear
         index = indexPath.row
         return cell ?? UICollectionViewCell()
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: view.frame.size.width - 40, height: 60)
+        let size = view.frame.size.width / 2.1 - 10
+        return CGSize(width: size, height: size)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return 5
+        return 10
     }
+    
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let storyboard = UIStoryboard(name: "pokemonSelected", bundle: nil)

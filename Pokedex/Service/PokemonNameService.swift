@@ -7,13 +7,13 @@
 
 import Foundation
 
-protocol PokemonImageServiceProtocol: GenericService {
-    func getPokemons(pokemon: String,completion: @escaping completion<Result?>)
+protocol PokemonNameServiceProtocol: GenericService {
+    func getPokemonName(completion: @escaping completion<PokemonNames?>)
 }
 
-class PokemonImageService: PokemonImageServiceProtocol {
-    func getPokemons(pokemon: String,completion: @escaping completion<Result?>) {
-        let pokemonURL: String = "https://pokeapi.co/api/v2/pokemon/\(pokemon)"
+class PokemonNameService: PokemonNameServiceProtocol {
+    func getPokemonName(completion: @escaping completion<PokemonNames?>) {
+        let pokemonURL: String = "https://pokeapi.co/api/v2/generation/1/"
         
         guard let url: URL = URL(string: pokemonURL) else {
             return completion(nil, Error.errorDescription(message: "ERROR DE URL"))
@@ -35,7 +35,7 @@ class PokemonImageService: PokemonImageServiceProtocol {
             
             if response.statusCode == 200 {
                 do {
-                    let decodedData = try JSONDecoder().decode(Result.self, from: data)
+                    let decodedData = try JSONDecoder().decode(PokemonNames.self, from: data)
                      completion(decodedData, nil)
                 } catch {
                     completion(nil, Error.errorDescription(message: "Deu ruim no parse", error: error))

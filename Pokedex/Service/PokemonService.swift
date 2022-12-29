@@ -8,12 +8,12 @@
 import Foundation
 
 protocol PokemonServiceProtocol: GenericService {
-    func getPokemons(completion: @escaping completion<Pokemon?>)
+    func getPokemons(pokemon: String, completion: @escaping completion<Pokemon?>)
 }
 
 class PokemonService: PokemonServiceProtocol {
-    func getPokemons(completion: @escaping completion<Pokemon?>) {
-        let pokemonURL: String = "https://pokeapi.co/api/v2/pokemon/?offset=0&limit=151"
+    func getPokemons(pokemon: String, completion: @escaping completion<Pokemon?>) {
+        let pokemonURL: String = "https://pokeapi.co/api/v2/pokemon/\(pokemon)"
         
         guard let url: URL = URL(string: pokemonURL) else {
             return completion(nil, Error.errorDescription(message: "ERROR DE URL"))
