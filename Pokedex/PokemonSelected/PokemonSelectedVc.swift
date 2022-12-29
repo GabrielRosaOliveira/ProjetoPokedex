@@ -99,7 +99,6 @@ class PokemonSelectedVc: UIViewController {
         infoCollectionView.dataSource = self
         infoCollectionView.register(AboutCollectionViewCell.nib(), forCellWithReuseIdentifier: AboutCollectionViewCell.identifier)
         infoCollectionView.register(AttributesCollectionViewCell.nib(), forCellWithReuseIdentifier: AttributesCollectionViewCell.identifier)
-        infoCollectionView.register(AbilitiesCollectionViewCell.nib(), forCellWithReuseIdentifier: AbilitiesCollectionViewCell.identifier)
         infoCollectionView.register(SearchCollectionViewCell.nib(), forCellWithReuseIdentifier: SearchCollectionViewCell.identifier)
     }
     
@@ -146,12 +145,12 @@ extension PokemonSelectedVc: UICollectionViewDataSource {
         switch segmentedControl.selectedSegmentIndex {
         case 0:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: AboutCollectionViewCell.identifier, for: indexPath) as? AboutCollectionViewCell
-            print(pokemon.count)
             cell?.setupCell(pokemon: self.pokemon[0])
             infoCollectionView.reloadData()
             return cell ?? UICollectionViewCell()
         default:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: AttributesCollectionViewCell.identifier, for: indexPath) as? AttributesCollectionViewCell
+            cell?.setupCell(pokemon: pokemon[0])
             infoCollectionView.reloadData()
             return cell ?? UICollectionViewCell()
         }

@@ -119,10 +119,13 @@
             </constraints>
             <size key="customSize" width="355" height="145"/>
             <connections>
-                <outlet property="attacklabel" destination="xrq-5e-2TP" id="Ura-rE-zur"/>
+                <outlet property="attackProgress" destination="PNo-lZ-7Ul" id="X76-va-W7K"/>
+                <outlet property="attacklabel" destination="ZZd-TR-cJi" id="cCd-fz-WCL"/>
                 <outlet property="attributeTitleLabel" destination="W6e-kS-Nms" id="imP-Ze-eS5"/>
-                <outlet property="defenseLabel" destination="ryA-FQ-J1I" id="qSV-mu-iF0"/>
-                <outlet property="speedLabel" destination="mfN-47-ZUz" id="tNZ-N7-sDU"/>
+                <outlet property="defenseLabel" destination="tf0-yX-6Su" id="W7I-8D-CvO"/>
+                <outlet property="defenseProgress" destination="XP3-1m-Y0T" id="8u5-U9-2A1"/>
+                <outlet property="speedLabel" destination="Ntq-oL-fo7" id="6lj-MV-CdN"/>
+                <outlet property="speedProgress" destination="jT9-la-2xD" id="gRD-Dh-Vag"/>
             </connections>
             <point key="canvasLocation" x="152" y="1"/>
         </collectionViewCell>

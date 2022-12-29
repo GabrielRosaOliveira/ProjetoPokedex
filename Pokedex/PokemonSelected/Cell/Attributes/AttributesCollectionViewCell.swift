@@ -14,6 +14,12 @@ class AttributesCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var speedLabel: UILabel!
     @IBOutlet weak var attributeTitleLabel: UILabel!
     
+    @IBOutlet weak var attackProgress: UIProgressView!
+    @IBOutlet weak var defenseProgress: UIProgressView!
+    @IBOutlet weak var speedProgress: UIProgressView!
+    
+    
+    
     static let identifier: String = "AttributesCollectionViewCell"
     
     static func nib() -> UINib {
@@ -46,4 +52,26 @@ class AttributesCollectionViewCell: UICollectionViewCell {
         attributeTitleLabel.layer.shadowOpacity = 1.0
         attributeTitleLabel.layer.shadowOffset = CGSize(width: 0, height: 6.0)
     }
+    
+    func setupCell(pokemon: Pokemon) {
+        attacklabel.text = "\(pokemon.stats[1].baseStat)"
+        defenseLabel.text = "\(pokemon.stats[2].baseStat)"
+        speedLabel.text = "\(pokemon.stats[5].baseStat)"
+        attackProgress.progress = updateAttackProgressBar(pokemon: pokemon)
+        defenseProgress.progress = updateDefenseProgressBar(pokemon: pokemon)
+        speedProgress.progress = updateSpeedProgressBar(pokemon: pokemon)
+    }
+    
+    func updateAttackProgressBar(pokemon: Pokemon) -> Float {
+        return Float(pokemon.stats[1].baseStat) / 100
+    }
+    
+    func updateDefenseProgressBar(pokemon: Pokemon) -> Float {
+        return Float(pokemon.stats[2].baseStat) / 100
+    }
+    
+    func updateSpeedProgressBar(pokemon: Pokemon) -> Float {
+        return Float(pokemon.stats[5].baseStat) / 100
+    }
+    
 }
