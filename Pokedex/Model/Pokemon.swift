@@ -7,17 +7,39 @@
 
 import Foundation
 
-struct Pokemon: Codable {
+struct Pokemon {
     let name: String
     let id: Int
+    let height: Int
+    let weight: Int
+    let abilities: [Ability]
     let types: [TypeElement]
     let sprites: Sprites
-    
+}
+
+extension Pokemon: Codable {
     enum CodingKeys: String, CodingKey {
         case name, id
+        case height, weight
         case types
         case sprites
+        case abilities
     }
+    
+    init(from decoder: Decoder) throws {
+        let values = try decoder.container(keyedBy: CodingKeys.self)
+        self.name = try values.decodeIfPresent(String.self, forKey: .name) ?? ""
+        self.id = try values.decodeIfPresent(Int.self, forKey: .id) ?? 0
+        self.height = try values.decodeIfPresent(Int.self, forKey: .height) ?? 0
+        self.weight = try values.decodeIfPresent(Int.self, forKey: .weight) ?? 0
+        self.abilities = try values.decodeIfPresent([Ability].self, forKey: .abilities)!
+        self.types = try values.decodeIfPresent([TypeElement].self, forKey: .types)!
+        self.sprites = try values.decodeIfPresent(Sprites.self, forKey: .sprites)!
+    }
+}
+
+struct Ability: Codable {
+    let ability: Species
 }
 
 struct TypeElement: Codable {

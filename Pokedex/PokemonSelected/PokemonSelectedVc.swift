@@ -18,21 +18,23 @@ class PokemonSelectedVc: UIViewController {
     @IBOutlet weak var pokemonTypeOneLabel: UILabel!
     @IBOutlet weak var pokemonTypeTwoLabel: UILabel!
     @IBOutlet weak var pokemonNumberLabel: UILabel!
+    @IBOutlet weak var typeTwoView: UIView!
+    @IBOutlet weak var typeOneView: UIView!
+    
+    @IBOutlet weak var segmentedControl: UISegmentedControl!
     
     var pokemonName: String = ""
-    var pokemon: Pokemon?
+    var pokemon: [Pokemon] = []
     let service = PokemonService()
     let gradient = CAGradientLayer()
+    var isEmpty: Bool = true
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.configBottomView()
         self.setGradient()
-       configInfoCollectionView()
-        infoCollectionView.register(AboutCollectionViewCell.nib(), forCellWithReuseIdentifier: AboutCollectionViewCell.identifier)
-        infoCollectionView.register(AttributesCollectionViewCell.nib(), forCellWithReuseIdentifier: AttributesCollectionViewCell.identifier)
-        infoCollectionView.register(AbilitiesCollectionViewCell.nib(), forCellWithReuseIdentifier: AbilitiesCollectionViewCell.identifier)
-        getPokemonDetails()
+        configInfoCollectionView()
+        
     }
     
     override func viewDidLayoutSubviews() {
@@ -47,43 +49,58 @@ class PokemonSelectedVc: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         self.tabBarController?.tabBar.isHidden = true
+        getPokemonDetails()
     }
     
     func getPokemonDetails() {
         service.getPokemons(pokemon: pokemonName) { result, failure in
             if let result {
-                self.pokemon = result
+                self.pokemon.append(result)
+                print(self.pokemon)
             } else {
                 print("COLOCAR ALERT - DEU RUIM")
             }
             DispatchQueue.main.async {
+                self.isEmpty = false
+                self.infoCollectionView.reloadData()
                 self.populateView()
+                print(self.pokemon)
             }
         }
     }
     
     func populateView() {
-        let url = URL(string: pokemon?.sprites.frontDefault ?? "") ?? URL(fileURLWithPath: "")
+        let url = URL(string: pokemon[0].sprites.frontDefault) ?? URL(fileURLWithPath: "")
         pokemonImageView.af.setImage(withURL: url)
         
-        namePokemonLabel.text = pokemon?.name
-        pokemonNumberLabel.text = "Nº\(pokemon?.id ?? 0)"
-        
+        namePokemonLabel.text = pokemon[0].name.capitalized
+        pokemonNumberLabel.text = "Nº \(pokemon[0].id)"
         getTypes()
+        getTypeConstrainsts()
+    }
+    
+    func getTypeConstrainsts() {
+        if pokemon[0].types.count == 1 {
+            typeOneView.isHidden = true
+        }
     }
     
     func getTypes() {
-        if pokemon?.types.count == 1 {
-            pokemonTypeOneLabel.text = pokemon?.types[0].type.name
+        if pokemon[0].types.count == 1 {
+            pokemonTypeTwoLabel.text = pokemon[0].types[0].type.name
         } else {
-            pokemonTypeTwoLabel.text = pokemon?.types[1].type.name
-            pokemonTypeOneLabel.text = pokemon?.types[0].type.name
+            pokemonTypeOneLabel.text = pokemon[0].types[1].type.name
+            pokemonTypeTwoLabel.text = pokemon[0].types[0].type.name
         }
     }
     
     func configInfoCollectionView() {
         infoCollectionView.delegate = self
         infoCollectionView.dataSource = self
+        infoCollectionView.register(AboutCollectionViewCell.nib(), forCellWithReuseIdentifier: AboutCollectionViewCell.identifier)
+        infoCollectionView.register(AttributesCollectionViewCell.nib(), forCellWithReuseIdentifier: AttributesCollectionViewCell.identifier)
+        infoCollectionView.register(AbilitiesCollectionViewCell.nib(), forCellWithReuseIdentifier: AbilitiesCollectionViewCell.identifier)
+        infoCollectionView.register(SearchCollectionViewCell.nib(), forCellWithReuseIdentifier: SearchCollectionViewCell.identifier)
     }
     
     func setGradient() {
@@ -116,18 +133,26 @@ extension PokemonSelectedVc: UICollectionViewDelegate {
 extension PokemonSelectedVc: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 3
+        return 1
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        if indexPath.item == 0 {
+        
+        if isEmpty {
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: SearchCollectionViewCell.identifier, for: indexPath) as? SearchCollectionViewCell
+            return cell ?? UICollectionViewCell()
+        }
+        
+        switch segmentedControl.selectedSegmentIndex {
+        case 0:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: AboutCollectionViewCell.identifier, for: indexPath) as? AboutCollectionViewCell
+            print(pokemon.count)
+            cell?.setupCell(pokemon: self.pokemon[0])
+            infoCollectionView.reloadData()
             return cell ?? UICollectionViewCell()
-        } else if indexPath.item == 1 {
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: AbilitiesCollectionViewCell.identifier, for: indexPath) as? AbilitiesCollectionViewCell
-            return cell ?? UICollectionViewCell()
-        } else {
+        default:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: AttributesCollectionViewCell.identifier, for: indexPath) as? AttributesCollectionViewCell
+            infoCollectionView.reloadData()
             return cell ?? UICollectionViewCell()
         }
     }

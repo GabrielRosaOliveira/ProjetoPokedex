@@ -54,31 +54,33 @@
                                     <constraint firstAttribute="height" constant="328" id="mLY-OV-7h9"/>
                                 </constraints>
                             </imageView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CJ4-9Y-qVh">
-                                <rect key="frame" x="0.0" y="452" width="393" height="400"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vO1-YA-49j">
+                                <rect key="frame" x="20" y="179" width="100" height="30"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Planta" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bKh-Ad-1ue">
-                                        <rect key="frame" x="80" y="66" width="103" height="21"/>
-                                        <color key="backgroundColor" red="0.090867781643473575" green="0.66176067759292301" blue="0.014625156388728655" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="103" id="XZk-tL-agf"/>
-                                            <constraint firstAttribute="height" constant="21" id="akR-qQ-n7p"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
+                                        <rect key="frame" x="21.666666666666668" y="2" width="56.666666666666657" height="26"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="20"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Venenoso" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pOP-O8-6Cs">
-                                        <rect key="frame" x="210" y="66" width="103" height="21"/>
-                                        <color key="backgroundColor" red="0.81314018904737895" green="0.29468450680747105" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="21" id="KHg-ic-CMH"/>
-                                            <constraint firstAttribute="width" constant="103" id="V1l-WY-MuS"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
-                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.31613336835254946" green="0.91976243257522583" blue="0.81265494310142117" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="550-rG-Eqc"/>
+                                    <constraint firstAttribute="width" constant="100" id="7Yv-MF-9jH"/>
+                                    <constraint firstItem="bKh-Ad-1ue" firstAttribute="centerX" secondItem="vO1-YA-49j" secondAttribute="centerX" id="XQ2-mh-dhp"/>
+                                    <constraint firstItem="bKh-Ad-1ue" firstAttribute="centerY" secondItem="vO1-YA-49j" secondAttribute="centerY" id="drn-FK-D8H"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <integer key="value" value="15"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CJ4-9Y-qVh">
+                                <rect key="frame" x="0.0" y="452" width="393" height="400"/>
+                                <subviews>
                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="o4R-Ro-HrG">
                                         <rect key="frame" x="0.0" y="113" width="393" height="287"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -90,11 +92,19 @@
                                         </collectionViewFlowLayout>
                                         <cells/>
                                     </collectionView>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="6ud-Fi-tRc">
+                                        <rect key="frame" x="50" y="74" width="293" height="32"/>
+                                        <segments>
+                                            <segment title="About"/>
+                                            <segment title="Stats"/>
+                                        </segments>
+                                    </segmentedControl>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="6ud-Fi-tRc" secondAttribute="trailing" constant="50" id="57r-c6-G6Y"/>
+                                    <constraint firstItem="6ud-Fi-tRc" firstAttribute="leading" secondItem="CJ4-9Y-qVh" secondAttribute="leading" constant="50" id="71Y-Cc-4Gq"/>
                                     <constraint firstAttribute="trailing" secondItem="o4R-Ro-HrG" secondAttribute="trailing" id="7To-p7-Qxt"/>
-                                    <constraint firstItem="pOP-O8-6Cs" firstAttribute="top" secondItem="CJ4-9Y-qVh" secondAttribute="top" constant="66" id="7Wg-Um-BXN"/>
                                     <constraint firstItem="o4R-Ro-HrG" firstAttribute="leading" secondItem="CJ4-9Y-qVh" secondAttribute="leading" id="ING-34-K8e"/>
                                     <constraint firstAttribute="height" constant="400" id="JFq-HE-9ft" customClass="NSLayoutHelper" customModule="LayoutHelper">
                                         <userDefinedRuntimeAttributes>
@@ -109,26 +119,12 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </constraint>
-                                    <constraint firstAttribute="trailing" secondItem="pOP-O8-6Cs" secondAttribute="trailing" constant="80" id="Qs8-Ox-kFE" customClass="NSLayoutHelper" customModule="LayoutHelper">
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="iPhone12ProMax">
-                                                <real key="value" value="105"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                    </constraint>
+                                    <constraint firstItem="6ud-Fi-tRc" firstAttribute="top" secondItem="CJ4-9Y-qVh" secondAttribute="top" constant="74" id="bq0-l1-vwj"/>
                                     <constraint firstAttribute="bottom" secondItem="o4R-Ro-HrG" secondAttribute="bottom" id="ffK-PE-5gI"/>
-                                    <constraint firstItem="bKh-Ad-1ue" firstAttribute="leading" secondItem="CJ4-9Y-qVh" secondAttribute="leading" constant="80" id="vpe-Gq-0vX" customClass="NSLayoutHelper" customModule="LayoutHelper">
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="iPhone12ProMax">
-                                                <real key="value" value="105"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                    </constraint>
                                     <constraint firstItem="o4R-Ro-HrG" firstAttribute="top" secondItem="CJ4-9Y-qVh" secondAttribute="top" constant="113" id="whk-9e-KyU"/>
-                                    <constraint firstItem="bKh-Ad-1ue" firstAttribute="top" secondItem="CJ4-9Y-qVh" secondAttribute="top" constant="66" id="yFy-5d-5z0"/>
                                 </constraints>
                             </view>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="IC3-T9-cyx">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="IC3-T9-cyx">
                                 <rect key="frame" x="10" y="274" width="373" height="235"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="235" id="xqL-WY-gjd"/>
@@ -145,20 +141,41 @@
                                 <buttonConfiguration key="configuration" style="plain" image="evaluation-empty-star-evaluation-infographic-icon-with-png-355165-removebg-preview 1"/>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bulbasaur" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qxD-ml-ytI">
-                                <rect key="frame" x="10" y="120" width="373" height="49"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="49" id="AyG-kC-Si3"/>
-                                </constraints>
+                                <rect key="frame" x="20" y="120" width="164.33333333333334" height="49"/>
                                 <fontDescription key="fontDescription" name="KohinoorDevanagari-Semibold" family="Kohinoor Devanagari" pointSize="35"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nº 001" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GiE-bE-6Q3">
-                                <rect key="frame" x="167.33333333333334" y="190" width="58.666666666666657" height="28"/>
-                                <fontDescription key="fontDescription" name="KohinoorDevanagari-Regular" family="Kohinoor Devanagari" pointSize="20"/>
-                                <color key="textColor" red="0.19200724418964205" green="0.19337628191352912" blue="0.19748339508519031" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <rect key="frame" x="305" y="130.66666666666666" width="60" height="28"/>
+                                <fontDescription key="fontDescription" name="KohinoorDevanagari-Semibold" family="Kohinoor Devanagari" pointSize="20"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Soq-LP-XF4">
+                                <rect key="frame" x="20" y="219" width="100" height="30"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Venenoso" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pOP-O8-6Cs">
+                                        <rect key="frame" x="5.6666666666666643" y="2" width="88.666666666666686" height="26"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="20"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.45933252684865544" green="0.28618236134689196" blue="0.80987197160720825" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="X43-zL-NqH"/>
+                                    <constraint firstAttribute="width" constant="100" id="bEo-rN-bCf"/>
+                                    <constraint firstItem="pOP-O8-6Cs" firstAttribute="centerY" secondItem="Soq-LP-XF4" secondAttribute="centerY" id="wqh-f6-yyx"/>
+                                    <constraint firstItem="pOP-O8-6Cs" firstAttribute="centerX" secondItem="Soq-LP-XF4" secondAttribute="centerX" id="ytc-qT-Uyz"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <integer key="value" value="15"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Q1J-hB-kOf"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -180,20 +197,6 @@
                             <constraint firstItem="bWG-dW-4Xd" firstAttribute="leading" secondItem="Q1J-hB-kOf" secondAttribute="leading" constant="30" id="2CO-we-obg"/>
                             <constraint firstItem="IC3-T9-cyx" firstAttribute="leading" secondItem="Q1J-hB-kOf" secondAttribute="leading" constant="10" id="5fl-QY-XXf"/>
                             <constraint firstItem="WgH-X6-wHS" firstAttribute="leading" secondItem="Q1J-hB-kOf" secondAttribute="leading" id="7wJ-dr-wMY"/>
-                            <constraint firstItem="GiE-bE-6Q3" firstAttribute="top" secondItem="Q1J-hB-kOf" secondAttribute="top" constant="131" id="EfL-uK-jiY" customClass="NSLayoutHelper" customModule="LayoutHelper">
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="iPhone12ProMax">
-                                        <real key="value" value="180"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="iPhoneSE">
-                                        <real key="value" value="105"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="iPhoneSE2G">
-                                        <real key="value" value="105"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </constraint>
-                            <constraint firstItem="Q1J-hB-kOf" firstAttribute="trailing" secondItem="qxD-ml-ytI" secondAttribute="trailing" constant="10" id="Ely-BR-QLF"/>
                             <constraint firstItem="K7y-wS-Z1d" firstAttribute="leading" secondItem="xZc-em-SYW" secondAttribute="leading" id="F0d-ON-Id9"/>
                             <constraint firstItem="K7y-wS-Z1d" firstAttribute="top" secondItem="xZc-em-SYW" secondAttribute="top" id="H1r-MM-5US"/>
                             <constraint firstItem="IC3-T9-cyx" firstAttribute="top" secondItem="Q1J-hB-kOf" secondAttribute="top" constant="215" id="N8I-Io-lgn" customClass="NSLayoutHelper" customModule="LayoutHelper">
@@ -216,11 +219,15 @@
                                 </userDefinedRuntimeAttributes>
                             </constraint>
                             <constraint firstItem="CJ4-9Y-qVh" firstAttribute="leading" secondItem="xZc-em-SYW" secondAttribute="leading" id="PFz-mA-8gV"/>
+                            <constraint firstItem="vO1-YA-49j" firstAttribute="leading" secondItem="Q1J-hB-kOf" secondAttribute="leading" constant="20" id="SSa-Bb-z3C"/>
                             <constraint firstItem="WgH-X6-wHS" firstAttribute="trailing" secondItem="Q1J-hB-kOf" secondAttribute="trailing" id="TXd-2J-d0L"/>
                             <constraint firstAttribute="trailing" secondItem="CJ4-9Y-qVh" secondAttribute="trailing" id="WMy-qE-e7E"/>
+                            <constraint firstItem="GiE-bE-6Q3" firstAttribute="centerX" secondItem="50x-p5-15w" secondAttribute="centerX" id="WPL-X9-1eq"/>
                             <constraint firstItem="bWG-dW-4Xd" firstAttribute="top" secondItem="Q1J-hB-kOf" secondAttribute="top" constant="20" id="Wwd-Wh-Rir"/>
-                            <constraint firstItem="qxD-ml-ytI" firstAttribute="leading" secondItem="Q1J-hB-kOf" secondAttribute="leading" constant="10" id="cnf-3S-7PO"/>
-                            <constraint firstItem="GiE-bE-6Q3" firstAttribute="centerX" secondItem="xZc-em-SYW" secondAttribute="centerX" id="dDp-a0-0jn"/>
+                            <constraint firstItem="vO1-YA-49j" firstAttribute="top" secondItem="qxD-ml-ytI" secondAttribute="bottom" constant="10" id="XJg-3k-XWh"/>
+                            <constraint firstItem="Soq-LP-XF4" firstAttribute="leading" secondItem="Q1J-hB-kOf" secondAttribute="leading" constant="20" id="XUG-Sq-YU6"/>
+                            <constraint firstItem="Soq-LP-XF4" firstAttribute="top" secondItem="vO1-YA-49j" secondAttribute="bottom" constant="10" id="XwI-Xi-392"/>
+                            <constraint firstItem="qxD-ml-ytI" firstAttribute="leading" secondItem="Q1J-hB-kOf" secondAttribute="leading" constant="20" id="cnf-3S-7PO"/>
                             <constraint firstItem="qxD-ml-ytI" firstAttribute="top" secondItem="xZc-em-SYW" secondAttribute="top" constant="120" id="flS-Lp-c2h" customClass="NSLayoutHelper" customModule="LayoutHelper">
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="iPhone12ProMax">
@@ -236,6 +243,7 @@
                             </constraint>
                             <constraint firstItem="Q1J-hB-kOf" firstAttribute="trailing" secondItem="50x-p5-15w" secondAttribute="trailing" constant="20" id="mvQ-UV-9ak"/>
                             <constraint firstItem="50x-p5-15w" firstAttribute="top" secondItem="Q1J-hB-kOf" secondAttribute="top" constant="10" id="nyy-4G-VIc"/>
+                            <constraint firstItem="GiE-bE-6Q3" firstAttribute="centerY" secondItem="qxD-ml-ytI" secondAttribute="centerY" id="sOs-qr-EGZ"/>
                             <constraint firstAttribute="bottom" secondItem="CJ4-9Y-qVh" secondAttribute="bottom" id="tin-pz-f6J"/>
                             <constraint firstAttribute="trailing" secondItem="K7y-wS-Z1d" secondAttribute="trailing" id="zGu-ce-aFU"/>
                         </constraints>
@@ -248,12 +256,15 @@
                         <outlet property="pokemonNumberLabel" destination="GiE-bE-6Q3" id="6Rx-ts-tpl"/>
                         <outlet property="pokemonTypeOneLabel" destination="pOP-O8-6Cs" id="jU9-pF-PDD"/>
                         <outlet property="pokemonTypeTwoLabel" destination="bKh-Ad-1ue" id="XJc-jZ-5kY"/>
+                        <outlet property="segmentedControl" destination="6ud-Fi-tRc" id="eu0-t5-fac"/>
                         <outlet property="topView" destination="K7y-wS-Z1d" id="U7x-M3-GD8"/>
+                        <outlet property="typeOneView" destination="Soq-LP-XF4" id="11y-aD-8Ue"/>
+                        <outlet property="typeTwoView" destination="vO1-YA-49j" id="GBB-yG-DbG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XMS-cR-dL9" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="18.46153846153846" y="78.909952606635073"/>
+            <point key="canvasLocation" x="17.557251908396946" y="78.873239436619727"/>
         </scene>
     </scenes>
     <resources>

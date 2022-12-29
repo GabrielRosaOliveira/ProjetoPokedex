@@ -22,13 +22,17 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        emailTextField.delegate = self
-        passwordTextField.delegate = self
+        configTextFieldDelegate()
         corneBotoes()
         disabledButton()
         view.backgroundColor = UIColor(red: 118/255, green: 204/255, blue: 232/255, alpha: 1.0)
         self.auth = Auth.auth()
         eyeMagic()
+    }
+    
+    func configTextFieldDelegate() {
+        emailTextField.delegate = self
+        passwordTextField.delegate = self
     }
     
     func eyeMagic() {

@@ -16,7 +16,6 @@ class HomeViewController: UIViewController {
     var pokemonNames: [String] = []
     let service = PokemonService()
     var pokemon: [Pokemon] = []
-    var index: Int = 0
     let nameService = PokemonNameService()
     
     var isempty: Bool = false
@@ -63,7 +62,6 @@ class HomeViewController: UIViewController {
                 DispatchQueue.main.async {
                     self.collectionView.reloadData()
                     self.filterPokemon = self.pokemon
-                    print(self.filterPokemon)
                 }
             }
         }
@@ -109,7 +107,6 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HomeCollectionViewCell.identifier, for: indexPath) as? HomeCollectionViewCell
         cell?.setupCell(pokemon: filterPokemon[indexPath.row])
         cell?.backgroundColor = .clear
-        index = indexPath.row
         return cell ?? UICollectionViewCell()
     }
     
