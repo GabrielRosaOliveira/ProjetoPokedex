@@ -78,9 +78,7 @@ class ProfileViewController: UIViewController {
                     }
                 }
             } else {
-                let alertEditing = UIAlertController(title: "Atenção", message: "Tivemos um problema no servidor, tente novamente.", preferredStyle: UIAlertController.Style.alert)
-                alertEditing.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.destructive, handler: nil))
-                self.present(alertEditing,animated: true,completion: nil)
+                self.alert?.configAlert(title: "Atenção", message: "Tivemos um problema no servidor, tente novamente.")
             }
             
         }

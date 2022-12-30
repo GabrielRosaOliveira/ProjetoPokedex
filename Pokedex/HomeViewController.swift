@@ -19,6 +19,7 @@ class HomeViewController: UIViewController {
     let nameService = PokemonNameService()
     
     var isempty: Bool = false
+    var alert: Alert?
     
     var names: [String] = ["pikachu", "bulbasaur", "charmander", "squirtle", "pidgey", "meowth", "psyduck", "zubat", "rattata", "weedle", "vulpix", "growlithe", "poliwag", "abra", "machop", "tentacool", "slowpoke", "geodude", "seel", "grimer", "shellder", "krabby", "cubone", "voltorb", "tangela", "koffing", "horsea", "goldeen", "staryu", "ditto", "eevee", "porygon", "mew", "omanyte", "kabuto", "dratini", "metapod", "butterfree", "kakuna", "raticate", "sandslash", "nidorina", "nidorino", "jigglypuff", "gloom", "dugtrio", "weepinbell", "graveler", "haunter", "marowak", "starmie", "flareon"]
     
@@ -35,6 +36,7 @@ class HomeViewController: UIViewController {
         searchTextField.delegate = self
         getPokemonResquest()
         collectionView.showsVerticalScrollIndicator = false
+        alert = Alert(controller: self)
     }
     
     func setSearchTextField(text: String) {
@@ -57,7 +59,7 @@ class HomeViewController: UIViewController {
                 if let result {
                     self.pokemon.append(result)
                 } else {
-                    print("COLOCAR ALERT - DEU RUIM")
+                    self.alert?.configAlert(title: "Ops", message: "Tivemos um problema no servidor, tente novamente!")
                 }
                 DispatchQueue.main.async {
                     self.collectionView.reloadData()

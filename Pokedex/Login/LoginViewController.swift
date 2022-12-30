@@ -16,6 +16,7 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var registerButton: UIButton!
     
     var auth: Auth?
+    var alert: Alert?
     
     var eyeClicked = false
     let imageEye = UIImageView()
@@ -28,6 +29,7 @@ class LoginViewController: UIViewController {
         view.backgroundColor = UIColor(red: 118/255, green: 204/255, blue: 232/255, alpha: 1.0)
         self.auth = Auth.auth()
         eyeMagic()
+        alert = Alert(controller: self)
     }
     
     func configTextFieldDelegate() {
@@ -87,13 +89,6 @@ class LoginViewController: UIViewController {
         navigationController?.pushViewController(viewcontroler, animated: true)
     }
     
-    func alert(title: String, message: String) {
-        let alertController: UIAlertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        let ok: UIAlertAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
-        alertController.addAction(ok)
-        self.present(alertController, animated: true, completion: nil)
-    }
-    
     fileprivate func doLogin() {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let viewcontroler = storyboard.instantiateViewController(withIdentifier: "TabBar")
@@ -109,11 +104,12 @@ class LoginViewController: UIViewController {
         self.auth?.signIn(withEmail: email, password: password, completion: { (usuario, error) in
             
             if error != nil {
-                self.alert(title: "Atenção", message: "Dados incorretos, tente novamente")
+                
+                self.alert?.configAlert(title: "Atenção", message: "Dados incorretos, tente novamente")
                 print("dados incorretos")
             } else {
                 if usuario == nil {
-                    self.alert(title: "Atenção", message: "Tivemos um problema inesperado")
+                    self.alert?.configAlert(title: "Atenção", message: "Tivemos um problema inesperado")
                     print("problema")
                 } else {
                     self.doLogin()

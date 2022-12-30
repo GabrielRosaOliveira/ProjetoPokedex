@@ -28,6 +28,7 @@ class PokemonSelectedVc: UIViewController {
     let service = PokemonService()
     let gradient = CAGradientLayer()
     var isEmpty: Bool = true
+    var alert: Alert?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,7 +36,7 @@ class PokemonSelectedVc: UIViewController {
         self.setGradient()
         configInfoCollectionView()
         namePokemonLabel.layer.makeShadow(color: .black, x: 0, y: 2, blur: 4, spread: 0)
-        
+        alert = Alert(controller: self)
     }
     
     override func viewDidLayoutSubviews() {
@@ -59,7 +60,7 @@ class PokemonSelectedVc: UIViewController {
                 self.pokemon.append(result)
                 print(self.pokemon)
             } else {
-                print("COLOCAR ALERT - DEU RUIM")
+                self.alert?.configAlert(title: "Atenção", message: "Tivemos um problema no servidor, tente novamente.")
             }
             DispatchQueue.main.async {
                 self.isEmpty = false

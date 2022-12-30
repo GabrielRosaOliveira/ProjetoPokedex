@@ -22,6 +22,7 @@ class RegisterViewController: UIViewController {
     @IBOutlet weak var registerButton: UIButton!
     
     var auth: Auth?
+    var alert: Alert?
     
     let fireStore = Firestore.firestore()
     let storage = Storage.storage().reference()
@@ -45,7 +46,7 @@ class RegisterViewController: UIViewController {
         confirmPasswordTextField.delegate = self
         nicknameTextField.delegate = self
         registerButton.isEnabled = false
-        
+        alert = Alert(controller: self)
         cornerRadius()
         self.auth = Auth.auth()
         eyeMagic()
@@ -158,9 +159,7 @@ class RegisterViewController: UIViewController {
             if error != nil {
                 print("deu falaha")
             } else {
-                let alertEditing = UIAlertController(title: "Parabéns!!!", message: "Cadastro realizado com sucesso !!!", preferredStyle: UIAlertController.Style.alert)
-                alertEditing.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.destructive, handler: nil))
-                self.present(alertEditing,animated: true,completion: nil)
+                self.alert?.configAlert(title: "Parabéns!!!", message: "Cadastro realizado com sucesso !!!")
                 self.saveUserData(email: email, birthday: birthday, password: password, nickname: nickname)
             }
         })

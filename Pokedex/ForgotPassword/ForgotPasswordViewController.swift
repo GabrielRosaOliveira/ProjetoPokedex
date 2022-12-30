@@ -6,15 +6,22 @@
 //
 
 import UIKit
+import Firebase
 
 class ForgotPasswordViewController: UIViewController{
     
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var sentEmailButton: UIButton!
     
+    var auth: Auth?
+    var alert: Alert?
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         sentEmailButton.layer.cornerRadius = 15
+        auth = Auth.auth()
+        alert = Alert(controller: self)
     }
     
     @IBAction func tappedBackButton(_ sender: UIButton) {
@@ -23,10 +30,12 @@ class ForgotPasswordViewController: UIViewController{
     }
     
     @IBAction func tappedSendButton(_ sender: UIButton) {
-        if emailTextField.isEnabled{
-            let alertEditing = UIAlertController(title: "Atenção", message: "Enviamos um e-mail para \( emailTextField.text ?? ""), com instruções de como redefinir sua senha", preferredStyle: UIAlertController.Style.alert)
-            alertEditing.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
-            self.present(alertEditing,animated: true,completion: nil)
-        }
+        auth?.sendPasswordReset(withEmail: emailTextField.text ?? "", completion: { error in
+            if let error {
+                self.alert?.configAlert(title: "Atenção", message: "Não foi possivel enviar email, tente novamente!")
+            } else {
+                self.alert?.configAlert(title: "Sucesso", message: "Verifique sua caixa de mensagem/Spam em alguns instantes!")
+            }
+        })
     }
 }
