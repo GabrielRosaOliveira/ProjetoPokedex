@@ -85,7 +85,7 @@ class RegisterViewController: UIViewController {
         imageEye.isUserInteractionEnabled = true
         imageEye.addGestureRecognizer(tapGestureRecognizer)
         
-        passwordTextField.isSecureTextEntry = false
+        passwordTextField.isSecureTextEntry = true
     }
     
     @objc func imageTapped(tapGestureRecognizer:UITapGestureRecognizer) {
@@ -121,7 +121,7 @@ class RegisterViewController: UIViewController {
         imageEye2.isUserInteractionEnabled = true
         imageEye2.addGestureRecognizer(tapGestureRecognizer)
         
-        confirmPasswordTextField.isSecureTextEntry = false
+        confirmPasswordTextField.isSecureTextEntry = true
     }
     
     @objc func imageTapped2(tapGestureRecognizer:UITapGestureRecognizer) {

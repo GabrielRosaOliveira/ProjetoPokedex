@@ -138,7 +138,10 @@
                                 </constraints>
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" image="evaluation-empty-star-evaluation-infographic-icon-with-png-355165-removebg-preview 1"/>
+                                <buttonConfiguration key="configuration" style="plain" image="star" catalog="system"/>
+                                <connections>
+                                    <action selector="tappedStarButton:" destination="EfK-HS-OBD" eventType="touchUpInside" id="PKD-ke-0wx"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bulbasaur" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qxD-ml-ytI">
                                 <rect key="frame" x="20" y="120" width="164.33333333333334" height="49"/>
@@ -250,6 +253,7 @@
                     </view>
                     <connections>
                         <outlet property="bottomView" destination="CJ4-9Y-qVh" id="d2C-NZ-7dQ"/>
+                        <outlet property="favoriteButton" destination="50x-p5-15w" id="Cm7-d3-UdZ"/>
                         <outlet property="infoCollectionView" destination="o4R-Ro-HrG" id="Tnr-Ky-Yfn"/>
                         <outlet property="namePokemonLabel" destination="qxD-ml-ytI" id="tfm-6B-va2"/>
                         <outlet property="pokemonImageView" destination="IC3-T9-cyx" id="Xfg-Rl-ghw"/>
@@ -269,8 +273,8 @@
     </scenes>
     <resources>
         <image name="chevron.backward" catalog="system" width="97" height="128"/>
-        <image name="evaluation-empty-star-evaluation-infographic-icon-with-png-355165-removebg-preview 1" width="52" height="32"/>
         <image name="pokebolaFundo" width="427" height="411"/>
+        <image name="star" catalog="system" width="128" height="116"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import AlamofireImage
 
 class FavoritesCollectionViewCell: UICollectionViewCell {
     
@@ -60,5 +61,11 @@ class FavoritesCollectionViewCell: UICollectionViewCell {
         gradient.frame = cellBackgroundView.bounds
         
         cellBackgroundView.layer.addSublayer(gradient)
+    }
+    
+    func setupCell(pokemon: Pokemon) {
+        let url = URL(string: pokemon.sprites.frontDefault) ?? URL(fileURLWithPath: "")
+        pokemonImageView.af.setImage(withURL: url)
+        pokemonNameLabel.text = pokemon.name.capitalized
     }
 }

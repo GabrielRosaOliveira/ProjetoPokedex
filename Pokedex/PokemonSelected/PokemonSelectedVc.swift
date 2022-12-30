@@ -7,6 +7,9 @@
 
 import UIKit
 import AlamofireImage
+import FirebaseFirestore
+import FirebaseAuth
+import RealmSwift
 
 class PokemonSelectedVc: UIViewController {
     
@@ -22,7 +25,9 @@ class PokemonSelectedVc: UIViewController {
     @IBOutlet weak var typeOneView: UIView!
     
     @IBOutlet weak var segmentedControl: UISegmentedControl!
+    @IBOutlet weak var favoriteButton: UIButton!
     
+    let user = Auth.auth().currentUser
     var pokemonName: String = ""
     var pokemon: [Pokemon] = []
     let service = PokemonService()
@@ -30,6 +35,10 @@ class PokemonSelectedVc: UIViewController {
     var isEmpty: Bool = true
     var alert: Alert?
     var type: PokemomTypes?
+    var button = true
+    var favoritesPokemon: [String] = []
+    let fireStore = Firestore.firestore()
+    let realm = try! Realm()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,7 +52,6 @@ class PokemonSelectedVc: UIViewController {
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         gradient.frame = topView.bounds
-        
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -53,6 +61,42 @@ class PokemonSelectedVc: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         self.tabBarController?.tabBar.isHidden = true
         getPokemonDetails()
+    }
+    
+    @IBAction func tappedStarButton(_ sender: UIButton) {
+        if button {
+            favoriteButton.setImage(UIImage(systemName: "star.fill"), for: .normal) // FAVORITANDO
+            button = false
+            saveRealm(pokemon: namePokemonLabel.text ?? "")
+        } else {
+            favoriteButton.setImage(UIImage(systemName: "star"), for: .normal)
+            button = true
+            removePokemonFromFavorites(pokemon: namePokemonLabel.text ?? "")
+        }
+    }
+    
+    func saveRealm(pokemon: String) {
+        let newFavorite = Favorites()
+        newFavorite.name = pokemon
+        
+        do {
+            try realm.write {
+                realm.add(newFavorite)
+            }
+        } catch {
+            print("error Saving \(error)")
+        }
+    }
+    
+
+    func saveFovritesPokemons(pokemon: String) {
+        let dataPath = "favorites/\(user?.email ?? "")"
+        let dockRef = fireStore.document(dataPath)
+        dockRef.updateData(["pokemon": FieldValue.arrayUnion([pokemon])])
+    }
+    
+    func removePokemonFromFavorites(pokemon: String) {
+        fireStore.collection("favorites").document(user?.email ?? "").updateData(["pokemon": FieldValue.arrayRemove([pokemon])])
     }
     
     func getPokemonDetails() {

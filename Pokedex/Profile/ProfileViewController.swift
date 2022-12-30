@@ -66,7 +66,6 @@ class ProfileViewController: UIViewController {
                 if let snapshot {
                     DispatchQueue.main.async {
                         self.userData = snapshot.documents.map({ document in
-                            print(self.user?.email)
                             return Register(id: document.documentID,
                                             email: document["email"] as? String ?? "",
                                             birthday: document["birthday"] as? String ?? "",
@@ -105,7 +104,7 @@ class ProfileViewController: UIViewController {
     }
     
     @IBAction func tappedExitAccountButton(_ sender: UIButton) {
-        alert?.configAlert(title: "Atenção", message: "Você quer mesmo sair?", secondButton: false, completion: {
+        alert?.configAlert(title: "Atenção", message: "Você quer mesmo sair?", secondButton: true, completion: {
             let storyboard = UIStoryboard(name: "LoginStoryboard", bundle: nil)
             let viewcontroler = storyboard.instantiateViewController(withIdentifier: "LoginViewController")
             self.navigationController?.pushViewController(viewcontroler, animated: true)

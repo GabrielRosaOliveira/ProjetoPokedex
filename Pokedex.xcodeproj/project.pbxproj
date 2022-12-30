@@ -18,6 +18,9 @@
 		C00035B5295CCF4600437B34 /* PokemonNameService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C00035B4295CCF4600437B34 /* PokemonNameService.swift */; };
 		C002E45628CE9F4700C44F2B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C002E45528CE9F4700C44F2B /* LoginViewController.swift */; };
 		C002E45828CE9F5C00C44F2B /* LoginStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C002E45728CE9F5C00C44F2B /* LoginStoryboard.storyboard */; };
+		C0076FB0295F7E4C0090EED0 /* Favorites.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0076FAF295F7E4C0090EED0 /* Favorites.swift */; };
+		C0076FB3295F95EF0090EED0 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = C0076FB2295F95EF0090EED0 /* Realm */; };
+		C0076FB5295F95EF0090EED0 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = C0076FB4295F95EF0090EED0 /* RealmSwift */; };
 		C00FF5C028D7E712004F4151 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C00FF5BF28D7E712004F4151 /* RegisterViewController.swift */; };
 		C00FF5C228D7E71D004F4151 /* RegisterStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C00FF5C128D7E71D004F4151 /* RegisterStoryboard.storyboard */; };
 		C00FF5C528D7ECD5004F4151 /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C00FF5C428D7ECD5004F4151 /* ForgotPasswordViewController.swift */; };
@@ -64,6 +67,7 @@
 		C00035B4295CCF4600437B34 /* PokemonNameService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonNameService.swift; sourceTree = "<group>"; };
 		C002E45528CE9F4700C44F2B /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		C002E45728CE9F5C00C44F2B /* LoginStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LoginStoryboard.storyboard; sourceTree = "<group>"; };
+		C0076FAF295F7E4C0090EED0 /* Favorites.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Favorites.swift; sourceTree = "<group>"; };
 		C00FF5BF28D7E712004F4151 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		C00FF5C128D7E71D004F4151 /* RegisterStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RegisterStoryboard.storyboard; sourceTree = "<group>"; };
 		C00FF5C428D7ECD5004F4151 /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
@@ -106,6 +110,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C0076FB5295F95EF0090EED0 /* RealmSwift in Frameworks */,
+				C0076FB3295F95EF0090EED0 /* Realm in Frameworks */,
 				C00035A6295C8AAB00437B34 /* FirebaseDatabase in Frameworks */,
 				C00035A8295C8AAB00437B34 /* FirebaseFirestore in Frameworks */,
 				52B77539E4FEAA84BB2103DE /* Pods_Pokedex.framework in Frameworks */,
@@ -132,6 +138,7 @@
 			children = (
 				C00035AB295CBB5A00437B34 /* Pokemon.swift */,
 				C0AC5738295DDFC0004D1C1B /* PokemonNames.swift */,
+				C0076FAF295F7E4C0090EED0 /* Favorites.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -376,6 +383,8 @@
 				C00035A7295C8AAB00437B34 /* FirebaseFirestore */,
 				C00035A9295C8AAB00437B34 /* FirebaseStorage */,
 				C0AC573B295DF1F6004D1C1B /* AlamofireImage */,
+				C0076FB2295F95EF0090EED0 /* Realm */,
+				C0076FB4295F95EF0090EED0 /* RealmSwift */,
 			);
 			productName = Pokedex;
 			productReference = C08C721C28C3D7E40007E7FE /* Pokedex.app */;
@@ -408,6 +417,7 @@
 			packageReferences = (
 				C00035A2295C8AAB00437B34 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				C0AC573A295DF1F5004D1C1B /* XCRemoteSwiftPackageReference "AlamofireImage" */,
+				C0076FB1295F95EF0090EED0 /* XCRemoteSwiftPackageReference "realm-swift" */,
 			);
 			productRefGroup = C08C721D28C3D7E40007E7FE /* Products */;
 			projectDirPath = "";
@@ -498,6 +508,7 @@
 				C05654ED28CE6FA600230AB8 /* HomeCollectionViewCell.swift in Sources */,
 				C026EE35295F128B00656058 /* Alert.swift in Sources */,
 				C00035B0295CBBED00437B34 /* GenericService.swift in Sources */,
+				C0076FB0295F7E4C0090EED0 /* Favorites.swift in Sources */,
 				C0AC5739295DDFC0004D1C1B /* PokemonNames.swift in Sources */,
 				C0DBA85E28D3FFCA00C7548F /* AboutCollectionViewCell.swift in Sources */,
 				C08C722428C3D7E40007E7FE /* MyTabBarConstroller.swift in Sources */,
@@ -737,6 +748,14 @@
 				minimumVersion = 9.0.0;
 			};
 		};
+		C0076FB1295F95EF0090EED0 /* XCRemoteSwiftPackageReference "realm-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/realm-swift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.33.0;
+			};
+		};
 		C0AC573A295DF1F5004D1C1B /* XCRemoteSwiftPackageReference "AlamofireImage" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Alamofire/AlamofireImage.git";
@@ -767,6 +786,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = C00035A2295C8AAB00437B34 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseStorage;
+		};
+		C0076FB2295F95EF0090EED0 /* Realm */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C0076FB1295F95EF0090EED0 /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = Realm;
+		};
+		C0076FB4295F95EF0090EED0 /* RealmSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C0076FB1295F95EF0090EED0 /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = RealmSwift;
 		};
 		C0AC573B295DF1F6004D1C1B /* AlamofireImage */ = {
 			isa = XCSwiftPackageProductDependency;
