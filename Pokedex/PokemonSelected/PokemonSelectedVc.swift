@@ -29,6 +29,7 @@ class PokemonSelectedVc: UIViewController {
     let gradient = CAGradientLayer()
     var isEmpty: Bool = true
     var alert: Alert?
+    var type: PokemomTypes?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -60,7 +61,7 @@ class PokemonSelectedVc: UIViewController {
                 self.pokemon.append(result)
                 print(self.pokemon)
             } else {
-                self.alert?.configAlert(title: "Atenção", message: "Tivemos um problema no servidor, tente novamente.")
+                self.alert?.configAlert(title: "Atenção", message: "Tivemos um problema no servidor, tente novamente.", secondButton: false)
             }
             DispatchQueue.main.async {
                 self.isEmpty = false
@@ -87,12 +88,59 @@ class PokemonSelectedVc: UIViewController {
         }
     }
     
+    func getColorTypes(type: String) -> UIColor {
+        switch type {
+        case "bug":
+            return UIColor(red: 158/255, green: 197/255, blue: 61/255, alpha: 1.0)
+        case "dark":
+            return UIColor(red: 85/255, green: 84/255, blue: 100/255, alpha: 1.0)
+        case "dragon":
+            return UIColor(red: 0/255, green: 108/255, blue: 179/255, alpha: 1.0)
+        case "electric":
+            return UIColor(red: 253/255, green: 209/255, blue: 86/255, alpha: 1.0)
+        case "fairy":
+            return UIColor(red: 255/255, green: 204/255, blue: 240/255, alpha: 1.0)
+        case "fighting":
+            return UIColor(red: 227/255, green: 49/255, blue: 83/255, alpha: 1.0)
+        case "fire":
+            return UIColor(red: 255/255, green: 150/255, blue: 79/255, alpha: 1.0)
+        case "flying":
+            return UIColor(red: 138/255, green: 173/255, blue: 223/255, alpha: 1.0)
+        case "ghost":
+            return UIColor(red: 85/255, green: 104/255, blue: 182/255, alpha: 1.0)
+        case "grass":
+            return UIColor(red: 131/255, green: 220/255, blue: 168/255, alpha: 1.0)
+        case "ground":
+            return UIColor(red: 223/255, green: 116/255, blue: 77/255, alpha: 1.0)
+        case "ice":
+            return UIColor(red: 99/255, green: 210/255, blue: 198/255, alpha: 1.0)
+        case "normal":
+            return UIColor(red: 143/255, green: 149/255, blue: 150/255, alpha: 1.0)
+        case "poison":
+            return UIColor(red: 186/255, green: 87/255, blue: 196/255, alpha: 1.0)
+        case "psychic":
+            return UIColor(red: 255/255, green: 130/255, blue: 130/255, alpha: 1.0)
+        case "rock":
+            return UIColor(red: 202/255, green: 181/255, blue: 134/255, alpha: 1.0)
+        case "steel":
+            return UIColor(red: 53/255, green: 144/255, blue: 153/255, alpha: 1.0)
+        case "water":
+            return UIColor(red: 52/255, green: 156/255, blue: 211/255, alpha: 1.0)
+        default:
+            return UIColor(red: 52/255, green: 156/255, blue: 211/255, alpha: 1.0)
+        }
+    }
+    
     func getTypes() {
         if pokemon[0].types.count == 1 {
             pokemonTypeTwoLabel.text = pokemon[0].types[0].type.name
+            typeTwoView.backgroundColor = getColorTypes(type: pokemon[0].types[0].type.name)
+            print(pokemon[0].types[0].type.name)
         } else {
             pokemonTypeOneLabel.text = pokemon[0].types[1].type.name
             pokemonTypeTwoLabel.text = pokemon[0].types[0].type.name
+            typeOneView.backgroundColor = getColorTypes(type: pokemon[0].types[1].type.name)
+            typeTwoView.backgroundColor = getColorTypes(type: pokemon[0].types[0].type.name)
         }
     }
     
@@ -176,3 +224,4 @@ extension PokemonSelectedVc: UICollectionViewDelegateFlowLayout {
         return 5
     }
 }
+

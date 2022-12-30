@@ -35,6 +35,10 @@ class RegisterViewController: UIViewController {
     let imageEye2 = UIImageView()
     
     var datePicker = UIDatePicker()
+    var isPasswordEqual = false
+    
+    var equalPasswords = false
+    var isEmptyTextField = true
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -81,7 +85,7 @@ class RegisterViewController: UIViewController {
         imageEye.isUserInteractionEnabled = true
         imageEye.addGestureRecognizer(tapGestureRecognizer)
         
-        passwordTextField.isSecureTextEntry = true
+        passwordTextField.isSecureTextEntry = false
     }
     
     @objc func imageTapped(tapGestureRecognizer:UITapGestureRecognizer) {
@@ -117,7 +121,7 @@ class RegisterViewController: UIViewController {
         imageEye2.isUserInteractionEnabled = true
         imageEye2.addGestureRecognizer(tapGestureRecognizer)
         
-        confirmPasswordTextField.isSecureTextEntry = true
+        confirmPasswordTextField.isSecureTextEntry = false
     }
     
     @objc func imageTapped2(tapGestureRecognizer:UITapGestureRecognizer) {
@@ -159,12 +163,10 @@ class RegisterViewController: UIViewController {
             if error != nil {
                 print("deu falaha")
             } else {
-                self.alert?.configAlert(title: "Parabéns!!!", message: "Cadastro realizado com sucesso !!!")
+                self.alert?.configAlert(title: "Parabéns!!!", message: "Cadastro realizado com sucesso !!!", secondButton: false)
                 self.saveUserData(email: email, birthday: birthday, password: password, nickname: nickname)
             }
         })
-        
-        
     }
     
     func saveUserData(email: String, birthday: String, password: String, nickname: String) {
@@ -193,36 +195,6 @@ class RegisterViewController: UIViewController {
 
 extension RegisterViewController: UITextFieldDelegate {
     
-    func textFieldDidEndEditing(_ textField: UITextField) {
-        if textField.hasText {
-            textField.layer.borderColor = UIColor.lightGray.cgColor
-        }else {
-            textField.layer.borderColor = UIColor.red.cgColor
-        }
-        
-        if emailTextField.text == "" || birthdayTextField.text == "" || passwordTextField.text == "" || confirmPasswordTextField.text == "" || nicknameTextField.text == "" {
-            registerButton.isEnabled = false
-            
-        } else {
-            
-            if passwordTextField.text == confirmPasswordTextField.text {
-                passwordTextField.layer.borderColor = UIColor.green.cgColor
-                passwordTextField.layer.borderWidth = 1
-                confirmPasswordTextField.layer.borderWidth = 1
-                confirmPasswordTextField.layer.borderColor = UIColor.green.cgColor
-                registerButton.backgroundColor = UIColor(red: 29/255, green: 44/255, blue: 94/255, alpha: 1.0)
-                registerButton.isEnabled = true
-            } else {
-                passwordTextField.layer.borderColor = UIColor.red.cgColor
-                passwordTextField.layer.borderWidth = 1
-                confirmPasswordTextField.layer.borderWidth = 1
-                confirmPasswordTextField.layer.borderColor = UIColor.red.cgColor
-                registerButton.isEnabled = false
-            }
-            
-        }
-    }
-    
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         
         textField.resignFirstResponder()
@@ -242,12 +214,36 @@ extension RegisterViewController: UITextFieldDelegate {
         return true
     }
     
-    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        if (textField == birthdayTextField) {
-            return false
-        } else {
-            return true
+    func enableButton() {
+        if passwordTextField.isFirstResponder || confirmPasswordTextField.isFirstResponder {
+            if passwordTextField.text == confirmPasswordTextField.text {
+                equalPasswords = true
+                passwordTextField.layer.borderWidth = 0
+                confirmPasswordTextField.layer.borderWidth = 0
+            } else {
+                equalPasswords = false
+                passwordTextField.layer.borderColor = UIColor.red.cgColor
+                passwordTextField.layer.borderWidth = 1
+                confirmPasswordTextField.layer.borderWidth = 1
+                confirmPasswordTextField.layer.borderColor = UIColor.red.cgColor
+            }
         }
+        
+        if emailTextField.text == "" || birthdayTextField.text == "" || passwordTextField.text == "" || confirmPasswordTextField.text == "" || nicknameTextField.text == "" {
+            isEmptyTextField = true
+        } else {
+            isEmptyTextField = false
+        }
+        print(equalPasswords)
+        if equalPasswords == true && isEmptyTextField == false {
+            registerButton.isEnabled = true
+        } else {
+            registerButton.isEnabled = false
+        }
+    }
+    
+    func textFieldDidChangeSelection(_ textField: UITextField) {
+        enableButton()
     }
 }
 

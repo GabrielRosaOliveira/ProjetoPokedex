@@ -78,7 +78,7 @@ class ProfileViewController: UIViewController {
                     }
                 }
             } else {
-                self.alert?.configAlert(title: "Atenção", message: "Tivemos um problema no servidor, tente novamente.")
+                self.alert?.configAlert(title: "Atenção", message: "Tivemos um problema no servidor, tente novamente.", secondButton: false)
             }
             
         }
@@ -93,8 +93,19 @@ class ProfileViewController: UIViewController {
         hellLabel.text = "Olá,\(userData[index].nickname)"
     }
     
+    
+    @IBAction func tappedDeleteAccountButton(_ sender: UIButton) {
+        alert?.configAlert(title: "Atenção", message: "Você quer mesmo excluir sua conta ??", secondButton: true, completion: {
+            self.user?.delete()
+            print(self.navigationController?.viewControllers)
+            let storyboard = UIStoryboard(name: "LoginStoryboard", bundle: nil)
+            let viewcontroler = storyboard.instantiateViewController(withIdentifier: "LoginViewController")
+            self.navigationController?.pushViewController(viewcontroler, animated: true)
+        })
+    }
+    
     @IBAction func tappedExitAccountButton(_ sender: UIButton) {
-        alert?.configAlert(title: "Atenção", message: "Você quer mesmo sair?", completion: {
+        alert?.configAlert(title: "Atenção", message: "Você quer mesmo sair?", secondButton: false, completion: {
             let storyboard = UIStoryboard(name: "LoginStoryboard", bundle: nil)
             let viewcontroler = storyboard.instantiateViewController(withIdentifier: "LoginViewController")
             self.navigationController?.pushViewController(viewcontroler, animated: true)

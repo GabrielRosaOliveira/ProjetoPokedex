@@ -32,9 +32,9 @@ class ForgotPasswordViewController: UIViewController{
     @IBAction func tappedSendButton(_ sender: UIButton) {
         auth?.sendPasswordReset(withEmail: emailTextField.text ?? "", completion: { error in
             if let error {
-                self.alert?.configAlert(title: "Atenção", message: "Não foi possivel enviar email, tente novamente!")
+                self.alert?.configAlert(title: "Atenção", message: "Não foi possivel enviar email, tente novamente!", secondButton: false)
             } else {
-                self.alert?.configAlert(title: "Sucesso", message: "Verifique sua caixa de mensagem/Spam em alguns instantes!")
+                self.alert?.configAlert(title: "Sucesso", message: "Verifique sua caixa de mensagem/Spam em alguns instantes!", secondButton: false)
             }
         })
     }

@@ -15,16 +15,19 @@ class Alert {
         self.controller = controller
     }
     
-    func configAlert(title: String, message: String, completion:(() -> Void)? = nil) {
+    func configAlert(title: String, message: String, secondButton: Bool, completion:(() -> Void)? = nil) {
         let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        let cancelar = UIAlertAction(title: "Cancelar", style: .default) { action in
-            self.controller.dismiss(animated: true)
-        }
-        let ok = UIAlertAction(title: "Ok", style: .cancel) { action in
+    
+        let ok = UIAlertAction(title: "Ok", style: .default) { action in
             completion?()
         }
+        let cancel = UIAlertAction(title: "Cancel", style: .cancel) { action in
+            self.controller.dismiss(animated: true)
+        }
+        if secondButton {
+            alertController.addAction(cancel)
+        }
         alertController.addAction(ok)
-        alertController.addAction(cancelar)
         self.controller.present(alertController, animated: true, completion: nil)
         
     }

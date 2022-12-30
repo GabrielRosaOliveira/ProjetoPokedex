@@ -59,7 +59,7 @@ class HomeViewController: UIViewController {
                 if let result {
                     self.pokemon.append(result)
                 } else {
-                    self.alert?.configAlert(title: "Ops", message: "Tivemos um problema no servidor, tente novamente!")
+                    self.alert?.configAlert(title: "Ops", message: "Tivemos um problema no servidor, tente novamente!", secondButton: false)
                 }
                 DispatchQueue.main.async {
                     self.collectionView.reloadData()

@@ -23,6 +23,7 @@
 		C00FF5C528D7ECD5004F4151 /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C00FF5C428D7ECD5004F4151 /* ForgotPasswordViewController.swift */; };
 		C00FF5C728D7ECEE004F4151 /* ForgotPasswordStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C00FF5C628D7ECEE004F4151 /* ForgotPasswordStoryboard.storyboard */; };
 		C026EE35295F128B00656058 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = C026EE34295F128B00656058 /* Alert.swift */; };
+		C026EE37295F189B00656058 /* PokemonTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = C026EE36295F189B00656058 /* PokemonTypes.swift */; };
 		C0386AC4290DAA25000DC945 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0386AC2290DAA25000DC945 /* HomeViewController.swift */; };
 		C03B6FF128D3E56A00683717 /* PokemonSelectedVc.swift in Sources */ = {isa = PBXBuildFile; fileRef = C03B6FF028D3E56A00683717 /* PokemonSelectedVc.swift */; };
 		C03B6FF328D3E58500683717 /* pokemonSelected.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C03B6FF228D3E58500683717 /* pokemonSelected.storyboard */; };
@@ -68,6 +69,7 @@
 		C00FF5C428D7ECD5004F4151 /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
 		C00FF5C628D7ECEE004F4151 /* ForgotPasswordStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ForgotPasswordStoryboard.storyboard; sourceTree = "<group>"; };
 		C026EE34295F128B00656058 /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
+		C026EE36295F189B00656058 /* PokemonTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonTypes.swift; sourceTree = "<group>"; };
 		C0386AC1290DAA25000DC945 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		C0386AC2290DAA25000DC945 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		C03B6FF028D3E56A00683717 /* PokemonSelectedVc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonSelectedVc.swift; sourceTree = "<group>"; };
@@ -221,6 +223,7 @@
 			children = (
 				C03B6FF028D3E56A00683717 /* PokemonSelectedVc.swift */,
 				C03B6FF228D3E58500683717 /* pokemonSelected.storyboard */,
+				C026EE36295F189B00656058 /* PokemonTypes.swift */,
 				C035444328D3FA1300AA86A4 /* Cell */,
 			);
 			path = PokemonSelected;
@@ -506,6 +509,7 @@
 				C076A37A290DE8020012746E /* Register.swift in Sources */,
 				C00FF5C028D7E712004F4151 /* RegisterViewController.swift in Sources */,
 				C08C722028C3D7E40007E7FE /* AppDelegate.swift in Sources */,
+				C026EE37295F189B00656058 /* PokemonTypes.swift in Sources */,
 				C09807BC28D95814005DB2E2 /* ProfileViewController.swift in Sources */,
 				C00FF5C528D7ECD5004F4151 /* ForgotPasswordViewController.swift in Sources */,
 				C05FC6FE2944FE1E00187AF9 /* FavoritesCollectionViewCell.swift in Sources */,

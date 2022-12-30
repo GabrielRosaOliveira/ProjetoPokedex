@@ -105,11 +105,11 @@ class LoginViewController: UIViewController {
             
             if error != nil {
                 
-                self.alert?.configAlert(title: "Atenção", message: "Dados incorretos, tente novamente")
+                self.alert?.configAlert(title: "Atenção", message: "Dados incorretos, tente novamente", secondButton: false)
                 print("dados incorretos")
             } else {
                 if usuario == nil {
-                    self.alert?.configAlert(title: "Atenção", message: "Tivemos um problema inesperado")
+                    self.alert?.configAlert(title: "Atenção", message: "Tivemos um problema inesperado", secondButton: false)
                     print("problema")
                 } else {
                     self.doLogin()
