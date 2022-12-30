@@ -23,6 +23,7 @@ class HomeCollectionViewCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         configBackgroundView()
+        backGroundView.backgroundColor = UIColor(red: 174/255, green: 231/255, blue: 249/255, alpha: 1.0)
     }
     
     func configBackgroundView() {
@@ -38,7 +39,7 @@ class HomeCollectionViewCell: UICollectionViewCell {
     }
     
     func setupCell(pokemon: Pokemon) {
-        namePokemonLabel.text = pokemon.name
+        namePokemonLabel.text = pokemon.name.capitalized
         let url = URL(string: pokemon.sprites.frontDefault) ?? URL(fileURLWithPath: "")
         iconImageView.af.setImage(withURL: url)
     }

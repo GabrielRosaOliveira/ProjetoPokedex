@@ -21,50 +21,50 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Inc-dm-cJA">
                         <rect key="frame" x="0.0" y="0.0" width="359" height="177"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Species" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u3w-pU-MDb">
-                                <rect key="frame" x="30" y="20" width="61" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Species:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u3w-pU-MDb">
+                                <rect key="frame" x="50.000000000000007" y="21" width="64.666666666666686" height="24"/>
+                                <fontDescription key="fontDescription" name="KohinoorDevanagari-Semibold" family="Kohinoor Devanagari" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Height" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5gi-Ai-oew">
-                                <rect key="frame" x="30" y="61" width="51" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Height:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5gi-Ai-oew">
+                                <rect key="frame" x="50" y="65" width="58" height="24"/>
+                                <fontDescription key="fontDescription" name="KohinoorDevanagari-Semibold" family="Kohinoor Devanagari" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Weight" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wMc-4u-YeG">
-                                <rect key="frame" x="29.999999999999996" y="102" width="53.666666666666657" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Weight:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wMc-4u-YeG">
+                                <rect key="frame" x="50" y="109" width="62" height="24"/>
+                                <fontDescription key="fontDescription" name="KohinoorDevanagari-Semibold" family="Kohinoor Devanagari" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Abilities" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NQ4-p8-az7">
-                                <rect key="frame" x="30" y="143" width="60" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Abilities:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NQ4-p8-az7">
+                                <rect key="frame" x="50" y="153" width="70" height="24"/>
+                                <fontDescription key="fontDescription" name="KohinoorDevanagari-Semibold" family="Kohinoor Devanagari" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pikachu" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3sb-0c-SQD">
-                                <rect key="frame" x="131" y="20" width="60" height="21"/>
+                                <rect key="frame" x="150" y="22.666666666666671" width="60" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="30" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sGV-TF-hAh">
-                                <rect key="frame" x="131" y="61" width="21" height="21"/>
+                                <rect key="frame" x="150" y="66.666666666666671" width="21" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="200" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VY7-Jq-lz6">
-                                <rect key="frame" x="131" y="102" width="30.666666666666657" height="21"/>
+                                <rect key="frame" x="150" y="110.66666666666667" width="30.666666666666657" height="21.000000000000014"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Height" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EYH-7I-M1n">
-                                <rect key="frame" x="131" y="143" width="51" height="21"/>
+                                <rect key="frame" x="150" y="154.66666666666666" width="51" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -72,22 +72,22 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="EYH-7I-M1n" firstAttribute="top" secondItem="VY7-Jq-lz6" secondAttribute="bottom" constant="20" id="1r9-p0-X21"/>
-                            <constraint firstItem="3sb-0c-SQD" firstAttribute="leading" secondItem="Inc-dm-cJA" secondAttribute="leading" constant="131" id="7Qa-g9-q7z"/>
-                            <constraint firstItem="u3w-pU-MDb" firstAttribute="leading" secondItem="Inc-dm-cJA" secondAttribute="leading" constant="30" id="9t7-Ih-o3Y"/>
+                            <constraint firstItem="sGV-TF-hAh" firstAttribute="centerY" secondItem="5gi-Ai-oew" secondAttribute="centerY" id="47G-5V-7Hz"/>
+                            <constraint firstItem="3sb-0c-SQD" firstAttribute="centerY" secondItem="u3w-pU-MDb" secondAttribute="centerY" id="7Dm-4Y-y2B"/>
+                            <constraint firstItem="3sb-0c-SQD" firstAttribute="leading" secondItem="Inc-dm-cJA" secondAttribute="leading" constant="150" id="7Qa-g9-q7z"/>
+                            <constraint firstItem="u3w-pU-MDb" firstAttribute="leading" secondItem="Inc-dm-cJA" secondAttribute="leading" constant="50" id="9t7-Ih-o3Y"/>
                             <constraint firstItem="5gi-Ai-oew" firstAttribute="top" secondItem="u3w-pU-MDb" secondAttribute="bottom" constant="20" id="BIv-tZ-AuV"/>
-                            <constraint firstItem="3sb-0c-SQD" firstAttribute="top" secondItem="Inc-dm-cJA" secondAttribute="top" constant="20" id="CsW-lD-DOd"/>
-                            <constraint firstItem="sGV-TF-hAh" firstAttribute="leading" secondItem="Inc-dm-cJA" secondAttribute="leading" constant="131" id="Dhq-xc-8nl"/>
-                            <constraint firstItem="EYH-7I-M1n" firstAttribute="leading" secondItem="Inc-dm-cJA" secondAttribute="leading" constant="131" id="ETR-xy-np3"/>
-                            <constraint firstItem="NQ4-p8-az7" firstAttribute="leading" secondItem="Inc-dm-cJA" secondAttribute="leading" constant="30" id="OpN-Dx-fVX"/>
-                            <constraint firstItem="VY7-Jq-lz6" firstAttribute="leading" secondItem="Inc-dm-cJA" secondAttribute="leading" constant="131" id="Or4-bb-F4d"/>
-                            <constraint firstItem="u3w-pU-MDb" firstAttribute="top" secondItem="Inc-dm-cJA" secondAttribute="top" constant="20" id="a8h-Wk-Kad"/>
-                            <constraint firstItem="sGV-TF-hAh" firstAttribute="top" secondItem="3sb-0c-SQD" secondAttribute="bottom" constant="20" id="j4h-oY-Bar"/>
-                            <constraint firstItem="VY7-Jq-lz6" firstAttribute="top" secondItem="sGV-TF-hAh" secondAttribute="bottom" constant="20" id="k3d-aJ-Nws"/>
-                            <constraint firstItem="5gi-Ai-oew" firstAttribute="leading" secondItem="Inc-dm-cJA" secondAttribute="leading" constant="30" id="shv-oN-nV7"/>
+                            <constraint firstItem="sGV-TF-hAh" firstAttribute="leading" secondItem="Inc-dm-cJA" secondAttribute="leading" constant="150" id="Dhq-xc-8nl"/>
+                            <constraint firstItem="EYH-7I-M1n" firstAttribute="leading" secondItem="Inc-dm-cJA" secondAttribute="leading" constant="150" id="ETR-xy-np3"/>
+                            <constraint firstItem="NQ4-p8-az7" firstAttribute="leading" secondItem="Inc-dm-cJA" secondAttribute="leading" constant="50" id="OpN-Dx-fVX"/>
+                            <constraint firstItem="VY7-Jq-lz6" firstAttribute="leading" secondItem="Inc-dm-cJA" secondAttribute="leading" constant="150" id="Or4-bb-F4d"/>
+                            <constraint firstItem="EYH-7I-M1n" firstAttribute="centerY" secondItem="NQ4-p8-az7" secondAttribute="centerY" id="VyQ-rX-irT"/>
+                            <constraint firstItem="u3w-pU-MDb" firstAttribute="top" secondItem="Inc-dm-cJA" secondAttribute="top" constant="21" id="a8h-Wk-Kad"/>
+                            <constraint firstItem="VY7-Jq-lz6" firstAttribute="centerY" secondItem="wMc-4u-YeG" secondAttribute="centerY" id="gay-sw-87f"/>
+                            <constraint firstItem="5gi-Ai-oew" firstAttribute="leading" secondItem="Inc-dm-cJA" secondAttribute="leading" constant="50" id="shv-oN-nV7"/>
                             <constraint firstItem="NQ4-p8-az7" firstAttribute="top" secondItem="wMc-4u-YeG" secondAttribute="bottom" constant="20" id="tZf-Re-MaG"/>
                             <constraint firstItem="wMc-4u-YeG" firstAttribute="top" secondItem="5gi-Ai-oew" secondAttribute="bottom" constant="20" id="yB1-9S-EgP"/>
-                            <constraint firstItem="wMc-4u-YeG" firstAttribute="leading" secondItem="Inc-dm-cJA" secondAttribute="leading" constant="30" id="z0i-9E-UWp"/>
+                            <constraint firstItem="wMc-4u-YeG" firstAttribute="leading" secondItem="Inc-dm-cJA" secondAttribute="leading" constant="50" id="z0i-9E-UWp"/>
                         </constraints>
                     </view>
                 </subviews>

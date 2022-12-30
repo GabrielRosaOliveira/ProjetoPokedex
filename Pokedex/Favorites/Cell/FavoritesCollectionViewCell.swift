@@ -11,10 +11,7 @@ class FavoritesCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet var pokemonImageView: UIImageView!
     @IBOutlet var pokemonNameLabel: UILabel!
-    @IBOutlet var pokemonNumberLabel: UILabel!
     @IBOutlet var cellBackgroundView: UIView!
-    @IBOutlet var pokemonTypeImageView: UIImageView!
-    @IBOutlet var shadowView: UIView!
     
     static let identifier = "favoritesCollectionViewCell"
     
@@ -28,20 +25,11 @@ class FavoritesCollectionViewCell: UICollectionViewCell {
         super.awakeFromNib()
         initialConfig()
         shadowName()
-        shadowNumber()
         setGradient()
     }
     
     override func layoutSublayers(of layer: CALayer) {
         gradient.frame = cellBackgroundView.bounds
-    }
-    
-    func shadowNumber() {
-        pokemonNumberLabel.layer.shadowColor = UIColor.black.cgColor
-        pokemonNumberLabel.layer.shadowOffset = CGSize(width: 0, height: 0)
-        pokemonNumberLabel.layer.shadowOpacity = 0.8
-        pokemonNumberLabel.layer.shadowRadius = 15
-        pokemonNumberLabel.layer.makeShadow(color: .gray, x: 0, y: 4, blur: 4, spread: 0)
     }
     
     func shadowName() {
@@ -61,11 +49,6 @@ class FavoritesCollectionViewCell: UICollectionViewCell {
         layer.masksToBounds = false
         cellBackgroundView.layer.borderColor = UIColor.black.cgColor
         cellBackgroundView.clipsToBounds = true
-        
-        shadowView.clipsToBounds = true
-        shadowView.layer.cornerRadius = 55
-        shadowView.backgroundColor = .white
-        shadowView.layer.makeShadow(color: .darkGray, x: 0, y: 5, blur: 3, spread: 0)
     }
     
     func setGradient() {

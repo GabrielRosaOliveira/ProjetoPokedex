@@ -25,6 +25,7 @@ class FavoritesViewController: UIViewController {
         favoritesCollectionView.register(FavoritesCollectionViewCell.nib(), forCellWithReuseIdentifier: FavoritesCollectionViewCell.identifier)
         ConfigFavoritesCollectionView()
         cornerRadiusView()
+        favoritesCollectionView.showsVerticalScrollIndicator = false
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -80,6 +81,7 @@ extension FavoritesViewController: UICollectionViewDataSource {
 extension FavoritesViewController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: self.view.frame.size.width - 20, height: 120)
+        let size = view.frame.size.width / 2.1 - 10
+        return CGSize(width: size, height: size)
     }
 }

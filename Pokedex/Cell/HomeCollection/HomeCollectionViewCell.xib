@@ -28,14 +28,14 @@
                                 </constraints>
                             </imageView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.59265645996768779" green="0.93852535221222166" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="7u8-fe-iMk" firstAttribute="centerY" secondItem="skq-z7-7Pm" secondAttribute="centerY" id="Bjq-qB-eZT"/>
                             <constraint firstItem="7u8-fe-iMk" firstAttribute="centerX" secondItem="skq-z7-7Pm" secondAttribute="centerX" id="s7Q-9z-55k"/>
                         </constraints>
                     </view>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4d8-fA-75O">
-                        <rect key="frame" x="82" y="137" width="41.5" height="21"/>
+                        <rect key="frame" x="81.5" y="137" width="42" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>

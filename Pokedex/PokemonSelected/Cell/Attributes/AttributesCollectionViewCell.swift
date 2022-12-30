@@ -12,7 +12,6 @@ class AttributesCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var attacklabel: UILabel!
     @IBOutlet weak var defenseLabel: UILabel!
     @IBOutlet weak var speedLabel: UILabel!
-    @IBOutlet weak var attributeTitleLabel: UILabel!
     
     @IBOutlet weak var attackProgress: UIProgressView!
     @IBOutlet weak var defenseProgress: UIProgressView!
@@ -46,11 +45,6 @@ class AttributesCollectionViewCell: UICollectionViewCell {
         speedLabel.layer.shadowOffset = CGSize(width: 0, height: 0)
         speedLabel.layer.shadowOpacity = 0.8
         speedLabel.layer.makeShadow(color: .gray, x: 0, y: 4, blur: 4,spread: 0)
-        
-        attributeTitleLabel.layer.shadowColor = UIColor.gray.cgColor
-        attributeTitleLabel.layer.shadowRadius = 1.5
-        attributeTitleLabel.layer.shadowOpacity = 1.0
-        attributeTitleLabel.layer.shadowOffset = CGSize(width: 0, height: 6.0)
     }
     
     func setupCell(pokemon: Pokemon) {

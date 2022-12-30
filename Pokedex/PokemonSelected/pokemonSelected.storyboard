@@ -202,10 +202,10 @@
                             <constraint firstItem="IC3-T9-cyx" firstAttribute="top" secondItem="Q1J-hB-kOf" secondAttribute="top" constant="215" id="N8I-Io-lgn" customClass="NSLayoutHelper" customModule="LayoutHelper">
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="iPhoneSE">
-                                        <real key="value" value="150"/>
+                                        <real key="value" value="200"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="number" keyPath="iPhoneSE2G">
-                                        <real key="value" value="150"/>
+                                        <real key="value" value="200"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="number" keyPath="iPhone12ProMax">
                                         <real key="value" value="330"/>

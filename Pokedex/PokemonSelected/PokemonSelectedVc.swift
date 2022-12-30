@@ -34,6 +34,7 @@ class PokemonSelectedVc: UIViewController {
         self.configBottomView()
         self.setGradient()
         configInfoCollectionView()
+        namePokemonLabel.layer.makeShadow(color: .black, x: 0, y: 2, blur: 4, spread: 0)
         
     }
     
