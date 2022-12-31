@@ -39,6 +39,7 @@ class PokemonSelectedVc: UIViewController {
     var favoritesPokemon: [String] = []
     let fireStore = Firestore.firestore()
     let realm = try! Realm()
+    let newFavorite = Favorites2()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -67,7 +68,9 @@ class PokemonSelectedVc: UIViewController {
         if button {
             favoriteButton.setImage(UIImage(systemName: "star.fill"), for: .normal) // FAVORITANDO
             button = false
-            saveRealm(pokemon: namePokemonLabel.text ?? "")
+            let pokemon = FavoritePokemon2()
+            pokemon.name = namePokemonLabel.text?.lowercased() ?? ""
+            saveRealm(pokemon: pokemon)
         } else {
             favoriteButton.setImage(UIImage(systemName: "star"), for: .normal)
             button = true
@@ -75,13 +78,14 @@ class PokemonSelectedVc: UIViewController {
         }
     }
     
-    func saveRealm(pokemon: String) {
-        let newFavorite = Favorites()
-        newFavorite.name = pokemon
+    func saveRealm(pokemon: FavoritePokemon2) {
         
         do {
             try realm.write {
-                realm.add(newFavorite)
+                if newFavorite.favorites.isEmpty {
+                    realm.add(newFavorite)
+                }
+                newFavorite.favorites.append(pokemon)
             }
         } catch {
             print("error Saving \(error)")

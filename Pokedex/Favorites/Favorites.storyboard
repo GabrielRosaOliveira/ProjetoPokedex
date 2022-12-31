@@ -12,7 +12,7 @@
         <!--Favoritos-->
         <scene sceneID="hEh-Hl-P9Y">
             <objects>
-                <viewController storyboardIdentifier="FavoritesViewController" id="nCr-J5-Vqz" customClass="FavoritesViewController" customModule="Pokedex" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="FavoritesPokemonViewController" id="nCr-J5-Vqz" customClass="FavoritesPokemonViewController" customModule="Pokedex" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="axv-Sf-WwV">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -63,9 +63,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Favoritos" image="favoritos" id="rD2-uy-gp4"/>
                     <connections>
-                        <outlet property="favoritesCollectionView" destination="JeD-aU-e5Q" id="9qo-f2-9nG"/>
-                        <outlet property="favoritesLabel" destination="5cc-A7-f4c" id="Nt5-62-Ysp"/>
-                        <outlet property="favoritesView" destination="foa-MM-MaP" id="v3q-6r-TGk"/>
+                        <outlet property="collectionView" destination="JeD-aU-e5Q" id="Tly-Vh-9g4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rHd-6Q-yT1" sceneMemberID="firstResponder"/>

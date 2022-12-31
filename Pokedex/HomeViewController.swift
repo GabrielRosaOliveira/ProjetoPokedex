@@ -6,8 +6,9 @@
 //
 
 import UIKit
+import RealmSwift
 
-class HomeViewController: UIViewController {
+class HomeViewController: BaseViewController {
     
     @IBOutlet weak var searchTextField: UITextField!
     @IBOutlet weak var collectionView: UICollectionView!
@@ -17,7 +18,6 @@ class HomeViewController: UIViewController {
     let service = PokemonService()
     var pokemon: [Pokemon] = []
     let nameService = PokemonNameService()
-    
     var isempty: Bool = false
     var alert: Alert?
     
@@ -37,8 +37,9 @@ class HomeViewController: UIViewController {
         getPokemonResquest()
         collectionView.showsVerticalScrollIndicator = false
         alert = Alert(controller: self)
+//        getFavoritesPokemon()
     }
-    
+
     func setSearchTextField(text: String) {
         if text.isEmpty {
             self.filterPokemon = self.pokemon
@@ -52,6 +53,8 @@ class HomeViewController: UIViewController {
             isempty = false
         }
     }
+    
+    
     
     func getPokemonResquest() {
         for name in names {

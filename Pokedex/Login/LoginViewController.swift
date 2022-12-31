@@ -8,7 +8,7 @@
 import UIKit
 import Firebase
 
-class LoginViewController: UIViewController {
+class LoginViewController: BaseViewController {
     
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
@@ -17,6 +17,7 @@ class LoginViewController: UIViewController {
     
     var auth: Auth?
     var alert: Alert?
+    var favorites: [String] = []
     
     var eyeClicked = false
     let imageEye = UIImageView()
@@ -30,6 +31,7 @@ class LoginViewController: UIViewController {
         self.auth = Auth.auth()
         eyeMagic()
         alert = Alert(controller: self)
+        getFavoritesPokemon()
     }
     
     func configTextFieldDelegate() {
@@ -91,9 +93,19 @@ class LoginViewController: UIViewController {
     
     fileprivate func doLogin() {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let viewcontroler = storyboard.instantiateViewController(withIdentifier: "TabBar")
-        self.navigationController?.pushViewController(viewcontroler, animated: true)
+        let viewcontroler = storyboard.instantiateViewController(withIdentifier: "TabBar") as? MyTabBarConstroller
+        viewcontroler?.str = self.favorites
+        print(self.favorites)
+        self.navigationController?.pushViewController(viewcontroler ?? UIViewController(), animated: true)
         print("login feito com sucesso")
+    }
+    
+    func getFavoritesPokemon() {
+        let favorites = realm.objects(FavoritePokemon2.self)
+        
+        for favorite in favorites {
+            self.favorites.append(favorite.name)
+        }
     }
     
     @IBAction func didTapLoginButton(_ sender: UIButton) {

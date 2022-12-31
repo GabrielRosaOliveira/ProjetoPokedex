@@ -8,9 +8,10 @@
 import Foundation
 import RealmSwift
 
+class Favorites2: Object {
+    let favorites = List<FavoritePokemon2>()
+}
 
-
-class Favorites: Object {
+class FavoritePokemon2: Object {
     @objc dynamic var name: String = ""
-    let favorites = List<String>()
 }

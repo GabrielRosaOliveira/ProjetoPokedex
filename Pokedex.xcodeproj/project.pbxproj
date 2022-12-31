@@ -30,11 +30,12 @@
 		C0386AC4290DAA25000DC945 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0386AC2290DAA25000DC945 /* HomeViewController.swift */; };
 		C03B6FF128D3E56A00683717 /* PokemonSelectedVc.swift in Sources */ = {isa = PBXBuildFile; fileRef = C03B6FF028D3E56A00683717 /* PokemonSelectedVc.swift */; };
 		C03B6FF328D3E58500683717 /* pokemonSelected.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C03B6FF228D3E58500683717 /* pokemonSelected.storyboard */; };
-		C052C0C4290DA31C00AF7526 /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C052C0C0290DA31C00AF7526 /* FavoritesViewController.swift */; };
 		C05654EB28CE6FA600230AB8 /* HomeCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C05654E828CE6FA600230AB8 /* HomeCollectionViewCell.xib */; };
 		C05654ED28CE6FA600230AB8 /* HomeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C05654EA28CE6FA600230AB8 /* HomeCollectionViewCell.swift */; };
 		C05FC6FE2944FE1E00187AF9 /* FavoritesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C05FC6FD2944FE1E00187AF9 /* FavoritesCollectionViewCell.swift */; };
 		C05FC7002944FE2400187AF9 /* favoritesCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C05FC6FF2944FE2400187AF9 /* favoritesCollectionViewCell.xib */; };
+		C0661E0A2960692A003BF66F /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0661E092960692A003BF66F /* BaseViewController.swift */; };
+		C0661E0C29608D99003BF66F /* FavoritesPokemonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0661E0B29608D99003BF66F /* FavoritesPokemonViewController.swift */; };
 		C076A377290DE5F60012746E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C076A376290DE5F60012746E /* GoogleService-Info.plist */; };
 		C076A37A290DE8020012746E /* Register.swift in Sources */ = {isa = PBXBuildFile; fileRef = C076A379290DE8020012746E /* Register.swift */; };
 		C08C722028C3D7E40007E7FE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C08C721F28C3D7E40007E7FE /* AppDelegate.swift */; };
@@ -78,11 +79,12 @@
 		C0386AC2290DAA25000DC945 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		C03B6FF028D3E56A00683717 /* PokemonSelectedVc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonSelectedVc.swift; sourceTree = "<group>"; };
 		C03B6FF228D3E58500683717 /* pokemonSelected.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = pokemonSelected.storyboard; sourceTree = "<group>"; };
-		C052C0C0290DA31C00AF7526 /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
 		C05654E828CE6FA600230AB8 /* HomeCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeCollectionViewCell.xib; sourceTree = "<group>"; };
 		C05654EA28CE6FA600230AB8 /* HomeCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeCollectionViewCell.swift; sourceTree = "<group>"; };
 		C05FC6FD2944FE1E00187AF9 /* FavoritesCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoritesCollectionViewCell.swift; sourceTree = "<group>"; };
 		C05FC6FF2944FE2400187AF9 /* favoritesCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = favoritesCollectionViewCell.xib; path = ../../../../Desktop/Cell/favoritesCollectionViewCell.xib; sourceTree = "<group>"; };
+		C0661E092960692A003BF66F /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		C0661E0B29608D99003BF66F /* FavoritesPokemonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesPokemonViewController.swift; sourceTree = "<group>"; };
 		C076A376290DE5F60012746E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		C076A379290DE8020012746E /* Register.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Register.swift; sourceTree = "<group>"; };
 		C08C721C28C3D7E40007E7FE /* Pokedex.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pokedex.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -240,8 +242,8 @@
 			isa = PBXGroup;
 			children = (
 				C052C0C6290DA34000AF7526 /* Cell */,
-				C052C0C0290DA31C00AF7526 /* FavoritesViewController.swift */,
 				C0E1701A290DD0FF009E7A2C /* Favorites.storyboard */,
+				C0661E0B29608D99003BF66F /* FavoritesPokemonViewController.swift */,
 			);
 			path = Favorites;
 			sourceTree = "<group>";
@@ -293,6 +295,7 @@
 		C08C721E28C3D7E40007E7FE /* Pokedex */ = {
 			isa = PBXGroup;
 			children = (
+				C0661E092960692A003BF66F /* BaseViewController.swift */,
 				C026EE33295F127E00656058 /* Alert */,
 				C00035AE295CBBD300437B34 /* Service */,
 				C00035AD295CBBAB00437B34 /* Model */,
@@ -509,14 +512,15 @@
 				C026EE35295F128B00656058 /* Alert.swift in Sources */,
 				C00035B0295CBBED00437B34 /* GenericService.swift in Sources */,
 				C0076FB0295F7E4C0090EED0 /* Favorites.swift in Sources */,
+				C0661E0C29608D99003BF66F /* FavoritesPokemonViewController.swift in Sources */,
 				C0AC5739295DDFC0004D1C1B /* PokemonNames.swift in Sources */,
 				C0DBA85E28D3FFCA00C7548F /* AboutCollectionViewCell.swift in Sources */,
 				C08C722428C3D7E40007E7FE /* MyTabBarConstroller.swift in Sources */,
 				C03B6FF128D3E56A00683717 /* PokemonSelectedVc.swift in Sources */,
+				C0661E0A2960692A003BF66F /* BaseViewController.swift in Sources */,
 				C0BFBB54290F55940096A993 /* SearchCollectionViewCell.swift in Sources */,
 				C0386AC4290DAA25000DC945 /* HomeViewController.swift in Sources */,
 				C0DBA86328D4008300C7548F /* AttributesCollectionViewCell.swift in Sources */,
-				C052C0C4290DA31C00AF7526 /* FavoritesViewController.swift in Sources */,
 				C076A37A290DE8020012746E /* Register.swift in Sources */,
 				C00FF5C028D7E712004F4151 /* RegisterViewController.swift in Sources */,
 				C08C722028C3D7E40007E7FE /* AppDelegate.swift in Sources */,

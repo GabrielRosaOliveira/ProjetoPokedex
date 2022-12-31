@@ -26,7 +26,7 @@ class FavoritesCollectionViewCell: UICollectionViewCell {
         super.awakeFromNib()
         initialConfig()
         shadowName()
-        setGradient()
+//        setGradient()
     }
     
     override func layoutSublayers(of layer: CALayer) {

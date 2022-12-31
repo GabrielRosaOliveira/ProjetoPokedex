@@ -8,7 +8,17 @@
 import UIKit
 
 class MyTabBarConstroller: UITabBarController {
-
+    
+    var str: [String]? {
+        didSet {
+            if let vc1 = self.viewControllers?[1] as? FavoritesPokemonViewController {
+                vc1.pokemonNames = str ?? []
+            } else {
+                print("DEU RUIM")
+            }
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         configTabBar()
