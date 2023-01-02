@@ -26,7 +26,6 @@ class ProfileViewController: UIViewController {
     var userId: String = ""
     let user = Auth.auth().currentUser
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         configBackgroundView()
@@ -36,8 +35,6 @@ class ProfileViewController: UIViewController {
         birthdayTextField.text = register?.birthday
         nicknameTextField.text = register?.nickname
         editPasswordTextField.text = register?.password
-        
-        
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -59,7 +56,7 @@ class ProfileViewController: UIViewController {
         return index
     }
     
-//    buscando dados do usuario no fireBase
+    //    buscando dados do usuario no fireBase
     func getUserData() {
         fireStore.collection("user").getDocuments { snapshot, error in
             if error == nil {
@@ -71,7 +68,7 @@ class ProfileViewController: UIViewController {
                                             birthday: document["birthday"] as? String ?? "",
                                             password: document["password"] as? String ?? "",
                                             nickname: document["nickname"] as? String ?? "")
-                           
+                            
                         })
                         self.populateUserData(index: self.getIndex(email: self.user?.email ?? ""))
                     }
@@ -79,12 +76,10 @@ class ProfileViewController: UIViewController {
             } else {
                 self.alert?.configAlert(title: "Atenção", message: "Tivemos um problema no servidor, tente novamente.", secondButton: false)
             }
-            
         }
     }
     
     func populateUserData(index: Int) {
-        
         emailTextField.text = userData[index].email
         birthdayTextField.text = userData[index].birthday
         editPasswordTextField.text = userData[index].password
@@ -92,11 +87,9 @@ class ProfileViewController: UIViewController {
         hellLabel.text = "Olá,\(userData[index].nickname)"
     }
     
-    
     @IBAction func tappedDeleteAccountButton(_ sender: UIButton) {
         alert?.configAlert(title: "Atenção", message: "Você quer mesmo excluir sua conta ??", secondButton: true, completion: {
             self.user?.delete()
-            print(self.navigationController?.viewControllers)
             let storyboard = UIStoryboard(name: "LoginStoryboard", bundle: nil)
             let viewcontroler = storyboard.instantiateViewController(withIdentifier: "LoginViewController")
             self.navigationController?.pushViewController(viewcontroler, animated: true)

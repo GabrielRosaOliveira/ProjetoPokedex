@@ -37,9 +37,8 @@ class HomeViewController: BaseViewController {
         getPokemonResquest()
         collectionView.showsVerticalScrollIndicator = false
         alert = Alert(controller: self)
-//        getFavoritesPokemon()
     }
-
+    
     func setSearchTextField(text: String) {
         if text.isEmpty {
             self.filterPokemon = self.pokemon
@@ -53,8 +52,6 @@ class HomeViewController: BaseViewController {
             isempty = false
         }
     }
-    
-    
     
     func getPokemonResquest() {
         for name in names {
@@ -87,7 +84,6 @@ class HomeViewController: BaseViewController {
         let storyboard = UIStoryboard(name: "profileStoryboard", bundle: nil)
         let viewcontroler = storyboard.instantiateViewController(withIdentifier: "profile")
         navigationController?.pushViewController(viewcontroler, animated: true)
-        
     }
 }
 
@@ -123,7 +119,6 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 10
     }
-    
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let storyboard = UIStoryboard(name: "pokemonSelected", bundle: nil)

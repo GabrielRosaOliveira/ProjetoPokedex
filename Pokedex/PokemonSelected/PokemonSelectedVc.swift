@@ -38,8 +38,6 @@ class PokemonSelectedVc: UIViewController {
     var button = true
     var favoritesPokemon: [String] = []
     let fireStore = Firestore.firestore()
-    let realm = try! Realm()
-    let newFavorite = Favorites2()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,6 +46,7 @@ class PokemonSelectedVc: UIViewController {
         configInfoCollectionView()
         namePokemonLabel.layer.makeShadow(color: .black, x: 0, y: 2, blur: 4, spread: 0)
         alert = Alert(controller: self)
+        creatCollection()
     }
     
     override func viewDidLayoutSubviews() {
@@ -68,31 +67,25 @@ class PokemonSelectedVc: UIViewController {
         if button {
             favoriteButton.setImage(UIImage(systemName: "star.fill"), for: .normal) // FAVORITANDO
             button = false
-            let pokemon = FavoritePokemon2()
-            pokemon.name = namePokemonLabel.text?.lowercased() ?? ""
-            saveRealm(pokemon: pokemon)
+            saveFovritesPokemons(pokemon: namePokemonLabel.text?.lowercased() ?? "")
         } else {
             favoriteButton.setImage(UIImage(systemName: "star"), for: .normal)
             button = true
-            removePokemonFromFavorites(pokemon: namePokemonLabel.text ?? "")
+            removePokemonFromFavorites(pokemon: namePokemonLabel.text?.lowercased() ?? "")
         }
     }
     
-    func saveRealm(pokemon: FavoritePokemon2) {
-        
-        do {
-            try realm.write {
-                if newFavorite.favorites.isEmpty {
-                    realm.add(newFavorite)
-                }
-                newFavorite.favorites.append(pokemon)
+    func creatCollection() {
+        let dataPath = "favorites/\(user?.email ?? "")"
+        let dockRef = fireStore.document(dataPath)
+        dockRef.getDocument { document, error in
+            let a = document?.exists
+            if a == false {
+                dockRef.setData(["pokemon": []])
             }
-        } catch {
-            print("error Saving \(error)")
         }
     }
     
-
     func saveFovritesPokemons(pokemon: String) {
         let dataPath = "favorites/\(user?.email ?? "")"
         let dockRef = fireStore.document(dataPath)

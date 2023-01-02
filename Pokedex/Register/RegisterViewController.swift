@@ -27,7 +27,6 @@ class RegisterViewController: UIViewController {
     let fireStore = Firestore.firestore()
     let storage = Storage.storage().reference()
     
-    
     var eyeClicked = false
     let imageEye = UIImageView()
     
@@ -116,7 +115,6 @@ class RegisterViewController: UIViewController {
         confirmPasswordTextField.rightView = contentView
         confirmPasswordTextField.rightViewMode = .always
         
-        
         let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(imageTapped2(tapGestureRecognizer:)))
         imageEye2.isUserInteractionEnabled = true
         imageEye2.addGestureRecognizer(tapGestureRecognizer)
@@ -125,9 +123,7 @@ class RegisterViewController: UIViewController {
     }
     
     @objc func imageTapped2(tapGestureRecognizer:UITapGestureRecognizer) {
-        
         let tappedImage = tapGestureRecognizer.view as! UIImageView
-        
         if eyeClicked2 {
             eyeClicked2 = false
             tappedImage.image = UIImage(systemName: "eye.fill")
@@ -150,7 +146,6 @@ class RegisterViewController: UIViewController {
     }
     
     @IBAction func tappedRegisterButton(_ sender: UIButton) {
-        
         let login = UIStoryboard(name: "LoginStoryboard", bundle: nil).instantiateViewController(withIdentifier: "LoginViewController")
         navigationController?.pushViewController(login, animated: true)
         let user = Auth.auth().currentUser
@@ -170,7 +165,6 @@ class RegisterViewController: UIViewController {
     }
     
     func saveUserData(email: String, birthday: String, password: String, nickname: String) {
-        
         let dataPath = "user/\(UUID().uuidString)"
         let docRef = fireStore.document(dataPath)
         docRef.setData([
@@ -194,7 +188,6 @@ class RegisterViewController: UIViewController {
 }
 
 extension RegisterViewController: UITextFieldDelegate {
-    
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         
         textField.resignFirstResponder()

@@ -16,7 +16,6 @@ class ForgotPasswordViewController: UIViewController{
     var auth: Auth?
     var alert: Alert?
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         sentEmailButton.layer.cornerRadius = 15

@@ -7,6 +7,7 @@
 
 import UIKit
 import Firebase
+import FirebaseFirestore
 
 class LoginViewController: BaseViewController {
     
@@ -15,9 +16,12 @@ class LoginViewController: BaseViewController {
     @IBOutlet weak var goButton: UIButton!
     @IBOutlet weak var registerButton: UIButton!
     
+    let user = Auth.auth().currentUser
+    let fireStore = Firestore.firestore()
     var auth: Auth?
     var alert: Alert?
     var favorites: [String] = []
+    var pokemons: [Favorites] = []
     
     var eyeClicked = false
     let imageEye = UIImageView()
@@ -100,11 +104,33 @@ class LoginViewController: BaseViewController {
         print("login feito com sucesso")
     }
     
+    func test() {
+        for pokemon in pokemons[0].pokemon {
+            favorites.append(pokemon)
+        }
+    }
+    
+    func getIndex(email: String) -> Int {
+        let index = pokemons.firstIndex { $0.email == email } ?? 0
+        print(index)
+        return index
+    }
+    
     func getFavoritesPokemon() {
-        let favorites = realm.objects(FavoritePokemon2.self)
-        
-        for favorite in favorites {
-            self.favorites.append(favorite.name)
+        fireStore.collection("favorites").getDocuments { snapshot, error in
+            if error == nil {
+                if let snapshot {
+                    DispatchQueue.main.async {
+                        self.pokemons = snapshot.documents.map({ document in
+                            print(self.pokemons)
+                            return Favorites(pokemon: document["pokemon"] as? [String] ?? [])
+                        })
+
+                    }
+                }
+            } else {
+                self.alert?.configAlert(title: "Atenção", message: "Tivemos um problema no servidor, tente novamente.", secondButton: false)
+            }
         }
     }
     

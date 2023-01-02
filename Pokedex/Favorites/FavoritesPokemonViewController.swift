@@ -26,11 +26,14 @@ class FavoritesPokemonViewController: UIViewController {
         super.viewDidLoad()
         alert = Alert(controller: self)
         getPokemonResquest()
+        configCollectionView()
+    }
+    
+    func configCollectionView() {
         collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.register(FavoritesCollectionViewCell.nib(), forCellWithReuseIdentifier: FavoritesCollectionViewCell.identifier)
     }
-    
     
     func getPokemonResquest() {
         print(pokemonNames)
@@ -47,7 +50,6 @@ class FavoritesPokemonViewController: UIViewController {
             }
         }
     }
-
 }
 
 extension FavoritesPokemonViewController: UICollectionViewDataSource {
