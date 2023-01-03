@@ -12,29 +12,26 @@ import FirebaseAuth
 class ProfileViewController: UIViewController {
     
     @IBOutlet weak var hellLabel: UILabel!
+    @IBOutlet weak var editButton: UIButton!
     @IBOutlet weak var backgroundView: UIView!
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var birthdayTextField: UITextField!
     @IBOutlet weak var nicknameTextField: UITextField!
-    @IBOutlet weak var editPasswordTextField: UITextField!
     @IBOutlet weak var exitButton: UIButton!
     
     var alert: Alert?
-    var register: Register?
     let fireStore = Firestore.firestore()
     var userData: [Register] = []
     var userId: String = ""
     let user = Auth.auth().currentUser
+    var isEditingProfile: Bool = true
+    
+    //MARK: - Life Cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        configBackgroundView()
+        initialConfig()
         alert = Alert(controller: self)
-        
-        emailTextField.text = register?.email
-        birthdayTextField.text = register?.birthday
-        nicknameTextField.text = register?.nickname
-        editPasswordTextField.text = register?.password
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -46,13 +43,37 @@ class ProfileViewController: UIViewController {
         getUserData()
     }
     
+    //MARK: - Actions
+    
     @IBAction func backButton(_ sender: UIButton) {
         navigationController?.popViewController(animated: true)
     }
     
+    @IBAction func tappedEditButton(_ sender: UIButton) {
+        updateUserData()
+    }
+    
+    @IBAction func tappedDeleteAccountButton(_ sender: UIButton) {
+        alert?.configAlert(title: "Atenção", message: "Você quer mesmo excluir sua conta ??", secondButton: true, completion: {
+            self.user?.delete()
+            let storyboard = UIStoryboard(name: "LoginStoryboard", bundle: nil)
+            let viewcontroler = storyboard.instantiateViewController(withIdentifier: "LoginViewController")
+            self.navigationController?.pushViewController(viewcontroler, animated: true)
+        })
+    }
+    
+    @IBAction func tappedExitAccountButton(_ sender: UIButton) {
+        alert?.configAlert(title: "Atenção", message: "Você quer mesmo sair?", secondButton: true, completion: {
+            let storyboard = UIStoryboard(name: "LoginStoryboard", bundle: nil)
+            let viewcontroler = storyboard.instantiateViewController(withIdentifier: "LoginViewController")
+            self.navigationController?.pushViewController(viewcontroler, animated: true)
+        })
+    }
+    
+    //MARK: - Firebase
+    
     func getIndex(email: String) -> Int {
         let index = userData.firstIndex { $0.email == email } ?? 0
-        print(index)
         return index
     }
     
@@ -82,95 +103,65 @@ class ProfileViewController: UIViewController {
     func populateUserData(index: Int) {
         emailTextField.text = userData[index].email
         birthdayTextField.text = userData[index].birthday
-        editPasswordTextField.text = userData[index].password
         nicknameTextField.text = userData[index].nickname
-        hellLabel.text = "Olá,\(userData[index].nickname)"
+        hellLabel.text = "Olá, \(userData[index].nickname.capitalized)"
     }
     
-    @IBAction func tappedDeleteAccountButton(_ sender: UIButton) {
-        alert?.configAlert(title: "Atenção", message: "Você quer mesmo excluir sua conta ??", secondButton: true, completion: {
-            self.user?.delete()
-            let storyboard = UIStoryboard(name: "LoginStoryboard", bundle: nil)
-            let viewcontroler = storyboard.instantiateViewController(withIdentifier: "LoginViewController")
-            self.navigationController?.pushViewController(viewcontroler, animated: true)
-        })
+    func updateDataFromFirebase() {
+        let dataPath = "user/\(user?.uid ?? "")"
+        let dockRef = fireStore.document(dataPath)
+        dockRef.updateData([
+            "birthday": birthdayTextField.text ?? "",
+            "nickname": nicknameTextField.text ?? ""
+        ])
     }
     
-    @IBAction func tappedExitAccountButton(_ sender: UIButton) {
-        alert?.configAlert(title: "Atenção", message: "Você quer mesmo sair?", secondButton: true, completion: {
-            let storyboard = UIStoryboard(name: "LoginStoryboard", bundle: nil)
-            let viewcontroler = storyboard.instantiateViewController(withIdentifier: "LoginViewController")
-            self.navigationController?.pushViewController(viewcontroler, animated: true)
-        })
-    }
-    
-    @IBAction func tappedEditingNicknameTextField(_ sender: UITextField) {
-        if nicknameTextField.isEnabled{
-            let alertEditing = UIAlertController(title: "Atenção", message: "Você quer mesmo alterar seu apelido?", preferredStyle: UIAlertController.Style.alert)
-            alertEditing.addAction(UIAlertAction(title: "Sim", style: UIAlertAction.Style.destructive, handler: nil))
-            alertEditing.addAction(UIAlertAction(title: "Cancelar", style: UIAlertAction.Style.cancel, handler: nil))
-            self.present(alertEditing,animated: true,completion: nil)
+    func updateUserData() {
+        if isEditingProfile {
+            editButton.setTitle("Salvar", for: .normal)
+            
+            birthdayTextField.layer.cornerRadius = 5
+            birthdayTextField.layer.borderWidth = 1.0
+            birthdayTextField.layer.borderColor = UIColor.black.cgColor
+            birthdayTextField.isUserInteractionEnabled = true
+            birthdayTextField.borderStyle = .roundedRect
+            
+            nicknameTextField.layer.cornerRadius = 5
+            nicknameTextField.layer.borderWidth = 1.0
+            nicknameTextField.layer.borderColor = UIColor.black.cgColor
+            nicknameTextField.isUserInteractionEnabled = true
+            nicknameTextField.borderStyle = .roundedRect
+            
+            isEditingProfile = false
+        } else {
+            editButton.setTitle("Editar", for: .normal)
+            initialConfig()
+            isEditingProfile = true
+            updateDataFromFirebase()
         }
     }
     
-    @IBAction func tappedEditBirthdayTextField(_ sender: UITextField) {
-        if birthdayTextField.isEnabled{
-            let alertEditing = UIAlertController(title: "Atenção", message: "Você quer mesmo alterar sua data de nascimento?", preferredStyle: UIAlertController.Style.alert)
-            alertEditing.addAction(UIAlertAction(title: "Sim", style: UIAlertAction.Style.destructive, handler: nil))
-            alertEditing.addAction(UIAlertAction(title: "Cancelar", style: UIAlertAction.Style.cancel, handler: nil))
-            self.present(alertEditing,animated: true,completion: nil)
-        }
-    }
-    
-    @IBAction func tappedEditEmailAddressTextField(_ sender: UITextField) {
-        if emailTextField.isEnabled{
-            let alertEditing = UIAlertController(title: "Atenção", message: "Você quer mesmo alterar seu endereço de e-mail?", preferredStyle: UIAlertController.Style.alert)
-            alertEditing.addAction(UIAlertAction(title: "Sim", style: UIAlertAction.Style.destructive, handler: nil))
-            alertEditing.addAction(UIAlertAction(title: "Cancelar", style: UIAlertAction.Style.cancel, handler: nil))
-            self.present(alertEditing,animated: true,completion: nil)
-        }
-    }
-    
-    @IBAction func tappedChangePasswordTextField(_ sender: UITextField) {
-        if editPasswordTextField.isEnabled{
-            let alertEditing = UIAlertController(title: "Atenção", message: "Você quer mesmo alterar sua senha?", preferredStyle: UIAlertController.Style.alert)
-            alertEditing.addAction(UIAlertAction(title: "Sim", style: UIAlertAction.Style.destructive, handler: nil))
-            alertEditing.addAction(UIAlertAction(title: "Cancelar", style: UIAlertAction.Style.cancel, handler: nil))
-            self.present(alertEditing,animated: true,completion: nil)
-        }
-    }
-    
-    func configBackgroundView(){
+    func initialConfig(){
         backgroundView.layer.cornerRadius = 50
         backgroundView.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMinXMinYCorner]
         backgroundView.layer.borderWidth = 1.5
         backgroundView.layer.borderColor = UIColor.black.cgColor
         
-        nicknameTextField.layer.cornerRadius = 10
-        nicknameTextField.layer.borderWidth = 1.0
-        nicknameTextField.layer.borderColor = UIColor.black.cgColor
-        nicknameTextField.borderStyle = .roundedRect
-        nicknameTextField.backgroundColor = .clear
-        
-        emailTextField.layer.cornerRadius = 10
-        emailTextField.layer.borderWidth = 1.0
-        emailTextField.layer.borderColor = UIColor.black.cgColor
-        emailTextField.borderStyle = .roundedRect
+        emailTextField.layer.borderWidth = 0
+        emailTextField.borderStyle = .none
         emailTextField.backgroundColor = .clear
+        emailTextField.isUserInteractionEnabled = false
         
-        birthdayTextField.layer.cornerRadius = 10
-        birthdayTextField.layer.borderWidth = 1.0
-        birthdayTextField.layer.borderColor = UIColor.black.cgColor
-        birthdayTextField.borderStyle = .roundedRect
+        birthdayTextField.layer.borderWidth = 0
+        birthdayTextField.borderStyle = .none
         birthdayTextField.backgroundColor = .clear
+        birthdayTextField.isUserInteractionEnabled = false
         
-        editPasswordTextField.layer.cornerRadius = 10
-        editPasswordTextField.layer.borderWidth = 1.0
-        editPasswordTextField.layer.borderColor = UIColor.black.cgColor
-        editPasswordTextField.borderStyle = .roundedRect
-        editPasswordTextField.backgroundColor = .clear
+        nicknameTextField.layer.borderWidth = 0
+        nicknameTextField.borderStyle = .none
+        nicknameTextField.backgroundColor = .clear
+        nicknameTextField.isUserInteractionEnabled = false
         
         exitButton.layer.cornerRadius = 10
-        
     }
 }

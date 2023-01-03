@@ -23,7 +23,8 @@ class HomeCollectionViewCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         configBackgroundView()
-        backGroundView.backgroundColor = UIColor(red: 174/255, green: 231/255, blue: 249/255, alpha: 1.0)
+        backGroundView.backgroundColor = UIColor(red: 92/255, green: 210/255, blue: 237/255, alpha: 1.0)
+        
     }
     
     func configBackgroundView() {

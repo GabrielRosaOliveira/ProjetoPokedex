@@ -9,7 +9,6 @@ import UIKit
 import AlamofireImage
 import FirebaseFirestore
 import FirebaseAuth
-import RealmSwift
 
 class PokemonSelectedVc: UIViewController {
     
@@ -38,6 +37,7 @@ class PokemonSelectedVc: UIViewController {
     var button = true
     var favoritesPokemon: [String] = []
     let fireStore = Firestore.firestore()
+    var isFavorite: Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -61,6 +61,7 @@ class PokemonSelectedVc: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         self.tabBarController?.tabBar.isHidden = true
         getPokemonDetails()
+        favoriteButton(isFavorite)
     }
     
     @IBAction func tappedStarButton(_ sender: UIButton) {
@@ -75,13 +76,23 @@ class PokemonSelectedVc: UIViewController {
         }
     }
     
+    func favoriteButton(_ isFavorite: Bool) {
+        if isFavorite {
+            favoriteButton.setImage(UIImage(systemName: "star.fill"), for: .normal)
+            button = false
+        }
+    }
+    
     func creatCollection() {
         let dataPath = "favorites/\(user?.email ?? "")"
         let dockRef = fireStore.document(dataPath)
         dockRef.getDocument { document, error in
             let a = document?.exists
             if a == false {
-                dockRef.setData(["pokemon": []])
+                dockRef.setData([
+                    "pokemon": [],
+                    "email": self.user?.email ?? ""
+                ])
             }
         }
     }
@@ -100,7 +111,6 @@ class PokemonSelectedVc: UIViewController {
         service.getPokemons(pokemon: pokemonName) { result, failure in
             if let result {
                 self.pokemon.append(result)
-                print(self.pokemon)
             } else {
                 self.alert?.configAlert(title: "Atenção", message: "Tivemos um problema no servidor, tente novamente.", secondButton: false)
             }
@@ -108,7 +118,6 @@ class PokemonSelectedVc: UIViewController {
                 self.isEmpty = false
                 self.infoCollectionView.reloadData()
                 self.populateView()
-                print(self.pokemon)
             }
         }
     }
@@ -176,7 +185,6 @@ class PokemonSelectedVc: UIViewController {
         if pokemon[0].types.count == 1 {
             pokemonTypeTwoLabel.text = pokemon[0].types[0].type.name
             typeTwoView.backgroundColor = getColorTypes(type: pokemon[0].types[0].type.name)
-            print(pokemon[0].types[0].type.name)
         } else {
             pokemonTypeOneLabel.text = pokemon[0].types[1].type.name
             pokemonTypeTwoLabel.text = pokemon[0].types[0].type.name

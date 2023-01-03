@@ -8,8 +8,9 @@
 import UIKit
 import Firebase
 import FirebaseFirestore
+import FirebaseAuth
 
-class LoginViewController: BaseViewController {
+class LoginViewController: UIViewController {
     
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
@@ -20,9 +21,6 @@ class LoginViewController: BaseViewController {
     let fireStore = Firestore.firestore()
     var auth: Auth?
     var alert: Alert?
-    var favorites: [String] = []
-    var pokemons: [Favorites] = []
-    
     var eyeClicked = false
     let imageEye = UIImageView()
     
@@ -35,7 +33,6 @@ class LoginViewController: BaseViewController {
         self.auth = Auth.auth()
         eyeMagic()
         alert = Alert(controller: self)
-        getFavoritesPokemon()
     }
     
     func configTextFieldDelegate() {
@@ -98,40 +95,7 @@ class LoginViewController: BaseViewController {
     fileprivate func doLogin() {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let viewcontroler = storyboard.instantiateViewController(withIdentifier: "TabBar") as? MyTabBarConstroller
-        viewcontroler?.str = self.favorites
-        print(self.favorites)
         self.navigationController?.pushViewController(viewcontroler ?? UIViewController(), animated: true)
-        print("login feito com sucesso")
-    }
-    
-    func test() {
-        for pokemon in pokemons[0].pokemon {
-            favorites.append(pokemon)
-        }
-    }
-    
-    func getIndex(email: String) -> Int {
-        let index = pokemons.firstIndex { $0.email == email } ?? 0
-        print(index)
-        return index
-    }
-    
-    func getFavoritesPokemon() {
-        fireStore.collection("favorites").getDocuments { snapshot, error in
-            if error == nil {
-                if let snapshot {
-                    DispatchQueue.main.async {
-                        self.pokemons = snapshot.documents.map({ document in
-                            print(self.pokemons)
-                            return Favorites(pokemon: document["pokemon"] as? [String] ?? [])
-                        })
-
-                    }
-                }
-            } else {
-                self.alert?.configAlert(title: "Atenção", message: "Tivemos um problema no servidor, tente novamente.", secondButton: false)
-            }
-        }
     }
     
     @IBAction func didTapLoginButton(_ sender: UIButton) {
@@ -144,11 +108,9 @@ class LoginViewController: BaseViewController {
             if error != nil {
                 
                 self.alert?.configAlert(title: "Atenção", message: "Dados incorretos, tente novamente", secondButton: false)
-                print("dados incorretos")
             } else {
                 if usuario == nil {
                     self.alert?.configAlert(title: "Atenção", message: "Tivemos um problema inesperado", secondButton: false)
-                    print("problema")
                 } else {
                     self.doLogin()
                 }

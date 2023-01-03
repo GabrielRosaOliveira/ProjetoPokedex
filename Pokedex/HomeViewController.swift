@@ -6,13 +6,19 @@
 //
 
 import UIKit
-import RealmSwift
+import FirebaseFirestore
+import FirebaseAuth
 
-class HomeViewController: BaseViewController {
+class HomeViewController: UIViewController {
     
     @IBOutlet weak var searchTextField: UITextField!
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var profileButton: UIButton!
+    @IBOutlet weak var loadingView: UIView!
+    @IBOutlet weak var spinner: UIActivityIndicatorView!
+    @IBOutlet var backGroundView: UIView!
+    
+    
     
     var pokemonNames: [String] = []
     let service = PokemonService()
@@ -20,6 +26,11 @@ class HomeViewController: BaseViewController {
     let nameService = PokemonNameService()
     var isempty: Bool = false
     var alert: Alert?
+    let fireStore = Firestore.firestore()
+    var pokemons: [Favorites] = []
+    var favorites: [String] = []
+    let user = Auth.auth().currentUser
+    var userHasFavoritesYet = true
     
     var names: [String] = ["pikachu", "bulbasaur", "charmander", "squirtle", "pidgey", "meowth", "psyduck", "zubat", "rattata", "weedle", "vulpix", "growlithe", "poliwag", "abra", "machop", "tentacool", "slowpoke", "geodude", "seel", "grimer", "shellder", "krabby", "cubone", "voltorb", "tangela", "koffing", "horsea", "goldeen", "staryu", "ditto", "eevee", "porygon", "mew", "omanyte", "kabuto", "dratini", "metapod", "butterfree", "kakuna", "raticate", "sandslash", "nidorina", "nidorino", "jigglypuff", "gloom", "dugtrio", "weepinbell", "graveler", "haunter", "marowak", "starmie", "flareon"]
     
@@ -34,9 +45,37 @@ class HomeViewController: BaseViewController {
         configCollectionView()
         profileButton.layer.cornerRadius = 25
         searchTextField.delegate = self
-        getPokemonResquest()
         collectionView.showsVerticalScrollIndicator = false
         alert = Alert(controller: self)
+        backGroundView.backgroundColor = UIColor(red: 221/255, green: 221/255, blue: 221/255, alpha: 1.0)
+        collectionView.backgroundColor = UIColor(red: 221/255, green: 221/255, blue: 221/255, alpha: 1.0)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        navigationController?.isNavigationBarHidden = true
+        pokemon = []
+        favorites = []
+        userHasFavoritesYet = true
+        getFavoritesPokemon()
+        getPokemonResquest()
+        resetSearchTextFiels()
+        startLoading()
+    }
+    
+    func startLoading() {
+        spinner.startAnimating()
+        spinner.isHidden = false
+        loadingView.isHidden = false
+    }
+    
+    func stopLoading() {
+        spinner.stopAnimating()
+        spinner.isHidden = true
+        loadingView.isHidden = true
+    }
+    
+    func resetSearchTextFiels() {
+        searchTextField.text = ""
     }
     
     func setSearchTextField(text: String) {
@@ -46,7 +85,6 @@ class HomeViewController: BaseViewController {
         } else {
             self.filterPokemon = self.pokemon.filter({
                 let test = ($0.name).lowercased().contains(text.lowercased())
-                print(test)
                 return test
             })
             isempty = false
@@ -61,10 +99,48 @@ class HomeViewController: BaseViewController {
                 } else {
                     self.alert?.configAlert(title: "Ops", message: "Tivemos um problema no servidor, tente novamente!", secondButton: false)
                 }
-                DispatchQueue.main.async {
+                
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
                     self.collectionView.reloadData()
                     self.filterPokemon = self.pokemon
+                    self.stopLoading()
                 }
+            }
+        }
+    }
+    
+    func test(index: Int) {
+        if userHasFavoritesYet == true {
+            for pokemon in pokemons[index].pokemon {
+                favorites.append(pokemon)
+            }
+        }
+    }
+    
+    func getIndex(email: String) -> Int {
+        let index = pokemons.firstIndex { $0.email == email }
+        
+        if index == nil {
+            userHasFavoritesYet = false
+        }
+        return index ?? 1
+    }
+    
+    func getFavoritesPokemon() {
+        fireStore.collection("favorites").order(by: "pokemon", descending: true).getDocuments { snapshot, error in
+            if error == nil {
+                if let snapshot {
+                    DispatchQueue.main.async {
+                        self.pokemons = snapshot.documents.map({ document in
+                            return Favorites(pokemon: document["pokemon"] as? [String] ?? [],
+                                             email: document["email"] as? String ?? ""
+                            )
+                        })
+                        self.test(index: self.getIndex(email: self.user?.email ?? ""))
+                    }
+                }
+            } else {
+                self.alert?.configAlert(title: "Atenção", message: "Tivemos um problema no servidor, tente novamente.", secondButton: false)
             }
         }
     }
@@ -76,8 +152,12 @@ class HomeViewController: BaseViewController {
         collectionView.register(SearchCollectionViewCell.nib(), forCellWithReuseIdentifier: SearchCollectionViewCell.identifier)
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        navigationController?.isNavigationBarHidden = true
+    func disableCollectionInteraction() {
+        if  pokemonList {
+            collectionView.isUserInteractionEnabled = false
+        } else {
+            collectionView.isUserInteractionEnabled = true
+        }
     }
     
     @IBAction func tappedProfileButton(_ sender: UIButton) {
@@ -98,6 +178,8 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
+        disableCollectionInteraction()
         
         if pokemonList {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: SearchCollectionViewCell.identifier, for: indexPath) as? SearchCollectionViewCell
@@ -124,6 +206,10 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
         let storyboard = UIStoryboard(name: "pokemonSelected", bundle: nil)
         let viewcontroler = storyboard.instantiateViewController(withIdentifier: "pokemon") as? PokemonSelectedVc
         viewcontroler?.pokemonName = filterPokemon[indexPath.row].name
+        
+        if favorites.contains(filterPokemon[indexPath.row].name) {
+            viewcontroler?.isFavorite = true
+        }
         navigationController?.pushViewController(viewcontroler ?? UIViewController(), animated: true)
     }
 }

@@ -39,6 +39,8 @@ class RegisterViewController: UIViewController {
     var equalPasswords = false
     var isEmptyTextField = true
     
+    let user = Auth.auth().currentUser
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         bottomView()
@@ -148,7 +150,6 @@ class RegisterViewController: UIViewController {
     @IBAction func tappedRegisterButton(_ sender: UIButton) {
         let login = UIStoryboard(name: "LoginStoryboard", bundle: nil).instantiateViewController(withIdentifier: "LoginViewController")
         navigationController?.pushViewController(login, animated: true)
-        let user = Auth.auth().currentUser
         let email: String = emailTextField.text ?? ""
         let password: String = passwordTextField.text ?? ""
         let birthday: String = birthdayTextField.text ?? ""
@@ -156,21 +157,21 @@ class RegisterViewController: UIViewController {
         
         self.auth?.createUser(withEmail: email, password: password, completion: { (result, error)  in
             if error != nil {
-                print("deu falaha")
+                self.alert?.configAlert(title: "Ops", message: "Tivemos um erro ao criar a sua conta. Tente novamente!", secondButton: false)
             } else {
                 self.alert?.configAlert(title: "Parabéns!!!", message: "Cadastro realizado com sucesso !!!", secondButton: false)
-                self.saveUserData(email: email, birthday: birthday, password: password, nickname: nickname)
+                self.saveUserData(email: email, birthday: birthday, nickname: nickname, id: result?.user.uid ?? "")
             }
         })
     }
     
-    func saveUserData(email: String, birthday: String, password: String, nickname: String) {
-        let dataPath = "user/\(UUID().uuidString)"
+    func saveUserData(email: String, birthday: String, nickname: String, id: String) {
+        let dataPath = "user/\(id)"
+        print("USER \(user?.uid ?? "")")
         let docRef = fireStore.document(dataPath)
         docRef.setData([
             "email": email,
             "birthday": birthday,
-            "password": password,
             "nickname": nickname
         ])
     }
@@ -227,7 +228,6 @@ extension RegisterViewController: UITextFieldDelegate {
         } else {
             isEmptyTextField = false
         }
-        print(equalPasswords)
         if equalPasswords == true && isEmptyTextField == false {
             registerButton.isEnabled = true
         } else {

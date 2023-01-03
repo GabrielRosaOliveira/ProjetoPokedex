@@ -10,4 +10,5 @@ import Foundation
 
 struct Favorites {
     var pokemon: [String]
+    var email: String
 }

@@ -14,7 +14,7 @@ class FavoritesCollectionViewCell: UICollectionViewCell {
     @IBOutlet var pokemonNameLabel: UILabel!
     @IBOutlet var cellBackgroundView: UIView!
     
-    static let identifier = "favoritesCollectionViewCell"
+    static let identifier = "FavoritesCollectionViewCell"
     
     static func nib() -> UINib {
         return UINib(nibName: self.identifier, bundle: nil)
@@ -25,19 +25,23 @@ class FavoritesCollectionViewCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         initialConfig()
-        shadowName()
+        configBackgroundView()
     }
     
     override func layoutSublayers(of layer: CALayer) {
         gradient.frame = cellBackgroundView.bounds
     }
     
-    func shadowName() {
-        pokemonNameLabel.layer.shadowColor = UIColor.black.cgColor
-        pokemonNameLabel.layer.shadowOffset = CGSize(width: 0, height: 0)
-        pokemonNameLabel.layer.shadowOpacity = 0.8
-        pokemonNameLabel.layer.shadowRadius = 15
-        pokemonNameLabel.layer.makeShadow(color: .gray, x: 0, y: 4, blur: 4, spread: 0)
+    func configBackgroundView() {
+        pokemonNameLabel.layer.makeShadow(color: .black, x: 0, y: 2, blur: 4, spread: 0)
+        pokemonImageView.layer.makeShadow(color: .black, x: 0, y: 2, blur: 4, spread: 0)
+        contentView.backgroundColor = .clear
+        cellBackgroundView?.layer.cornerRadius = 25
+        layer.masksToBounds = true
+        cellBackgroundView?.backgroundColor = .white
+        cellBackgroundView?.layer.borderWidth = 0.5
+        cellBackgroundView?.layer.borderColor = UIColor.black.cgColor
+        cellBackgroundView?.layer.makeShadow(color: .black, x: 0, y: 3, blur: 4, spread: 0)
     }
     
     func initialConfig() {

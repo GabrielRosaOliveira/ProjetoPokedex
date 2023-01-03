@@ -12,7 +12,7 @@
         <!--Home-->
         <scene sceneID="MWE-Ag-gTb">
             <objects>
-                <viewController id="sFq-Tg-sVi" customClass="HomeViewController" customModule="Pokedex" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HomeViewController" id="sFq-Tg-sVi" customClass="HomeViewController" customModule="Pokedex" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8lZ-a0-9y7">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -47,32 +47,53 @@
                                     <action selector="tappedProfileButton:" destination="sFq-Tg-sVi" eventType="touchUpInside" id="gNg-io-wal"/>
                                 </connections>
                             </button>
+                            <view alpha="0.90000000000000002" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ggi-aH-R0Z">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <subviews>
+                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="YGU-Gj-4TN">
+                                        <rect key="frame" x="188.5" y="429.5" width="37" height="37"/>
+                                        <color key="color" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </activityIndicatorView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="YGU-Gj-4TN" firstAttribute="centerX" secondItem="ggi-aH-R0Z" secondAttribute="centerX" id="XX6-Ru-EPU"/>
+                                    <constraint firstItem="YGU-Gj-4TN" firstAttribute="centerY" secondItem="ggi-aH-R0Z" secondAttribute="centerY" id="Yev-K9-em8"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="DkK-wa-gnF"/>
                         <color key="backgroundColor" systemColor="systemCyanColor"/>
                         <constraints>
+                            <constraint firstItem="ggi-aH-R0Z" firstAttribute="leading" secondItem="DkK-wa-gnF" secondAttribute="leading" id="261-vW-oEC"/>
                             <constraint firstItem="8pd-RD-IIF" firstAttribute="top" secondItem="DkK-wa-gnF" secondAttribute="top" constant="15" id="3ZZ-fm-WGS"/>
                             <constraint firstItem="ZAr-zg-R2B" firstAttribute="leading" secondItem="8pd-RD-IIF" secondAttribute="trailing" constant="22" id="9Gw-OJ-v6a"/>
+                            <constraint firstItem="DkK-wa-gnF" firstAttribute="trailing" secondItem="ggi-aH-R0Z" secondAttribute="trailing" id="JOG-cd-WnF"/>
                             <constraint firstItem="iEh-2R-FaO" firstAttribute="top" secondItem="ZAr-zg-R2B" secondAttribute="bottom" constant="12" id="PKB-h1-E3n"/>
                             <constraint firstItem="DkK-wa-gnF" firstAttribute="bottom" secondItem="iEh-2R-FaO" secondAttribute="bottom" constant="36" id="dJu-lg-6ud"/>
                             <constraint firstItem="iEh-2R-FaO" firstAttribute="leading" secondItem="DkK-wa-gnF" secondAttribute="leading" constant="10" id="jDi-KI-mBo"/>
                             <constraint firstItem="8pd-RD-IIF" firstAttribute="leading" secondItem="DkK-wa-gnF" secondAttribute="leading" constant="35" id="qHj-KL-bLc"/>
+                            <constraint firstAttribute="bottom" secondItem="ggi-aH-R0Z" secondAttribute="bottom" id="qZP-Ad-MIb"/>
                             <constraint firstItem="DkK-wa-gnF" firstAttribute="trailing" secondItem="ZAr-zg-R2B" secondAttribute="trailing" constant="36" id="qcb-aC-rkM"/>
                             <constraint firstItem="DkK-wa-gnF" firstAttribute="trailing" secondItem="iEh-2R-FaO" secondAttribute="trailing" constant="10" id="sEd-HA-iDG"/>
                             <constraint firstItem="ZAr-zg-R2B" firstAttribute="centerY" secondItem="8pd-RD-IIF" secondAttribute="centerY" id="vDv-Kx-dQu"/>
+                            <constraint firstItem="ggi-aH-R0Z" firstAttribute="top" secondItem="8lZ-a0-9y7" secondAttribute="top" id="vrn-jZ-Tga"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Home" image="BotaoHome" id="6w1-Uf-iKU"/>
                     <navigationItem key="navigationItem" id="CDU-PY-s8c"/>
                     <connections>
+                        <outlet property="backGroundView" destination="8lZ-a0-9y7" id="QiN-SI-xzM"/>
                         <outlet property="collectionView" destination="iEh-2R-FaO" id="aGe-1c-tVM"/>
+                        <outlet property="loadingView" destination="ggi-aH-R0Z" id="ykq-1q-PCH"/>
                         <outlet property="profileButton" destination="ZAr-zg-R2B" id="Iys-2Q-GiB"/>
                         <outlet property="searchTextField" destination="8pd-RD-IIF" id="Ux5-yg-JJG"/>
+                        <outlet property="spinner" destination="YGU-Gj-4TN" id="CBK-iU-C9l"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BCm-sS-cgN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1412" y="485"/>
+            <point key="canvasLocation" x="1410.144927536232" y="484.82142857142856"/>
         </scene>
         <!--FavoritesPokemonViewController-->
         <scene sceneID="8bE-LY-4O9">

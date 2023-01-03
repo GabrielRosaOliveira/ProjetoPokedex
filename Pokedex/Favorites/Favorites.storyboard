@@ -48,14 +48,32 @@
                                 <color key="shadowColor" systemColor="tintColor"/>
                                 <size key="shadowOffset" width="2" height="0.0"/>
                             </label>
+                            <view alpha="0.90000000000000002" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f5F-pH-Z6a">
+                                <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                                <subviews>
+                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="cJD-al-gdj">
+                                        <rect key="frame" x="176.66666666666666" y="403.66666666666669" width="37" height="37"/>
+                                        <color key="color" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </activityIndicatorView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="cJD-al-gdj" firstAttribute="centerY" secondItem="f5F-pH-Z6a" secondAttribute="centerY" id="edu-8g-Pj1"/>
+                                    <constraint firstItem="cJD-al-gdj" firstAttribute="centerX" secondItem="f5F-pH-Z6a" secondAttribute="centerX" id="y6q-U2-Edr"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="te4-3d-yPy"/>
                         <color key="backgroundColor" systemColor="systemCyanColor"/>
                         <constraints>
+                            <constraint firstItem="f5F-pH-Z6a" firstAttribute="leading" secondItem="te4-3d-yPy" secondAttribute="leading" id="1IL-6a-2SS"/>
+                            <constraint firstAttribute="bottom" secondItem="f5F-pH-Z6a" secondAttribute="bottom" id="275-g1-wP4"/>
                             <constraint firstItem="5cc-A7-f4c" firstAttribute="top" secondItem="te4-3d-yPy" secondAttribute="top" constant="20" id="EZW-df-JQy"/>
                             <constraint firstItem="5cc-A7-f4c" firstAttribute="leading" secondItem="te4-3d-yPy" secondAttribute="leading" constant="115" id="Okm-4k-3xz"/>
                             <constraint firstItem="foa-MM-MaP" firstAttribute="top" secondItem="te4-3d-yPy" secondAttribute="top" constant="70" id="Ujm-ZL-WIv"/>
                             <constraint firstItem="te4-3d-yPy" firstAttribute="trailing" secondItem="5cc-A7-f4c" secondAttribute="trailing" constant="115" id="bLw-YI-14M"/>
+                            <constraint firstItem="f5F-pH-Z6a" firstAttribute="top" secondItem="axv-Sf-WwV" secondAttribute="top" id="ibG-YD-q8X"/>
+                            <constraint firstItem="te4-3d-yPy" firstAttribute="trailing" secondItem="f5F-pH-Z6a" secondAttribute="trailing" id="jBQ-9d-rbr"/>
                             <constraint firstItem="foa-MM-MaP" firstAttribute="leading" secondItem="te4-3d-yPy" secondAttribute="leading" id="nmB-yi-ZGG"/>
                             <constraint firstAttribute="bottom" secondItem="foa-MM-MaP" secondAttribute="bottom" constant="10" id="oel-5f-Ejx"/>
                             <constraint firstItem="foa-MM-MaP" firstAttribute="trailing" secondItem="te4-3d-yPy" secondAttribute="trailing" id="r6g-ag-uix"/>
@@ -64,11 +82,13 @@
                     <tabBarItem key="tabBarItem" title="Favoritos" image="favoritos" id="rD2-uy-gp4"/>
                     <connections>
                         <outlet property="collectionView" destination="JeD-aU-e5Q" id="Tly-Vh-9g4"/>
+                        <outlet property="loadingView" destination="f5F-pH-Z6a" id="y5j-cj-IQW"/>
+                        <outlet property="spinner" destination="cJD-al-gdj" id="ja2-Zi-o9L"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rHd-6Q-yT1" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-465" y="70"/>
+            <point key="canvasLocation" x="-1548" y="78"/>
         </scene>
     </scenes>
     <resources>
