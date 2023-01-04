@@ -58,7 +58,7 @@
                 <outlet property="pokemonImageView" destination="U1O-Em-8Od" id="3ai-G3-3wc"/>
                 <outlet property="pokemonNameLabel" destination="HZK-sd-Bf3" id="nCZ-yv-SgJ"/>
             </connections>
-            <point key="canvasLocation" x="337" y="68"/>
+            <point key="canvasLocation" x="160" y="24"/>
         </collectionViewCell>
     </objects>
 </document>

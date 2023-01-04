@@ -18,8 +18,6 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var spinner: UIActivityIndicatorView!
     @IBOutlet var backGroundView: UIView!
     
-    
-    
     var pokemonNames: [String] = []
     let service = PokemonService()
     var pokemon: [Pokemon] = []
@@ -128,20 +126,20 @@ class HomeViewController: UIViewController {
     }
     
     func getFavoritesPokemon() {
-        fireStore.collection("favorites").order(by: "pokemon", descending: true).getDocuments { snapshot, error in
+        fireStore.collection(HomeTexts.firebaseCollection.rawValue).getDocuments { snapshot, error in
             if error == nil {
                 if let snapshot {
                     DispatchQueue.main.async {
                         self.pokemons = snapshot.documents.map({ document in
-                            return Favorites(pokemon: document["pokemon"] as? [String] ?? [],
-                                             email: document["email"] as? String ?? ""
+                            return Favorites(pokemon: document[HomeTexts.pokemonDocument.rawValue] as? [String] ?? [],
+                                             email: document[HomeTexts.emailDocument.rawValue] as? String ?? ""
                             )
                         })
                         self.test(index: self.getIndex(email: self.user?.email ?? ""))
                     }
                 }
             } else {
-                self.alert?.configAlert(title: "Atenção", message: "Tivemos um problema no servidor, tente novamente.", secondButton: false)
+                self.alert?.configAlert(title: AlertTexts.errorTitle.rawValue, message: AlertTexts.errorMessage.rawValue, secondButton: false)
             }
         }
     }
@@ -163,8 +161,8 @@ class HomeViewController: UIViewController {
     }
     
     @IBAction func tappedProfileButton(_ sender: UIButton) {
-        let storyboard = UIStoryboard(name: "profileStoryboard", bundle: nil)
-        let viewcontroler = storyboard.instantiateViewController(withIdentifier: "profile")
+        let storyboard = UIStoryboard(name: HomeTexts.profileStoryBoard.rawValue, bundle: nil)
+        let viewcontroler = storyboard.instantiateViewController(withIdentifier: HomeTexts.profileIdentifier.rawValue )
         navigationController?.pushViewController(viewcontroler, animated: true)
     }
 }
@@ -216,8 +214,8 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let storyboard = UIStoryboard(name: "pokemonSelected", bundle: nil)
-        let viewcontroler = storyboard.instantiateViewController(withIdentifier: "pokemon") as? PokemonSelectedVc
+        let storyboard = UIStoryboard(name: HomeTexts.pokemonSelectedStoryboard.rawValue, bundle: nil)
+        let viewcontroler = storyboard.instantiateViewController(withIdentifier: HomeTexts.pokemonSelectedIdentifier.rawValue) as? PokemonSelectedVc
         viewcontroler?.pokemonName = filterPokemon[indexPath.row].name
         
         if favorites.contains(filterPokemon[indexPath.row].name) {

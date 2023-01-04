@@ -19,7 +19,7 @@ class AttributesCollectionViewCell: UICollectionViewCell {
     
     
     
-    static let identifier: String = "AttributesCollectionViewCell"
+    static let identifier: String = PokemonSelectedTexts.attirbutesIdentifier.rawValue
     
     static func nib() -> UINib {
         return UINib(nibName: self.identifier, bundle: nil)

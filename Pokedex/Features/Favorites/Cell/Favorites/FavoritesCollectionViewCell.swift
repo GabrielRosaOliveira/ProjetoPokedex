@@ -14,7 +14,7 @@ class FavoritesCollectionViewCell: UICollectionViewCell {
     @IBOutlet var pokemonNameLabel: UILabel!
     @IBOutlet var cellBackgroundView: UIView!
     
-    static let identifier = "FavoritesCollectionViewCell"
+    static let identifier = FavoritesTexts.favoritesIdentifier.rawValue
     
     static func nib() -> UINib {
         return UINib(nibName: self.identifier, bundle: nil)

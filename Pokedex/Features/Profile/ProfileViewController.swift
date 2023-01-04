@@ -54,18 +54,18 @@ class ProfileViewController: UIViewController {
     }
     
     @IBAction func tappedDeleteAccountButton(_ sender: UIButton) {
-        alert?.configAlert(title: "Atenção", message: "Você quer mesmo excluir sua conta ??", secondButton: true, completion: {
+        alert?.configAlert(title: AlertTexts.errorTitle.rawValue, message: AlertTexts.TitleDeletedAccount.rawValue, secondButton: true, completion: {
             self.user?.delete()
-            let storyboard = UIStoryboard(name: "LoginStoryboard", bundle: nil)
-            let viewcontroler = storyboard.instantiateViewController(withIdentifier: "LoginViewController")
+            let storyboard = UIStoryboard(name: ProfileTexts.loginStoryboard.rawValue, bundle: nil)
+            let viewcontroler = storyboard.instantiateViewController(withIdentifier: ProfileTexts.loginIdentifier.rawValue)
             self.navigationController?.pushViewController(viewcontroler, animated: true)
         })
     }
     
     @IBAction func tappedExitAccountButton(_ sender: UIButton) {
-        alert?.configAlert(title: "Atenção", message: "Você quer mesmo sair?", secondButton: true, completion: {
-            let storyboard = UIStoryboard(name: "LoginStoryboard", bundle: nil)
-            let viewcontroler = storyboard.instantiateViewController(withIdentifier: "LoginViewController")
+        alert?.configAlert(title: AlertTexts.errorTitle.rawValue, message: AlertTexts.titleExitAccount.rawValue, secondButton: true, completion: {
+            let storyboard = UIStoryboard(name: ProfileTexts.loginStoryboard.rawValue, bundle: nil)
+            let viewcontroler = storyboard.instantiateViewController(withIdentifier: ProfileTexts.loginIdentifier.rawValue)
             self.navigationController?.pushViewController(viewcontroler, animated: true)
         })
     }
@@ -79,7 +79,7 @@ class ProfileViewController: UIViewController {
     
     //    buscando dados do usuario no fireBase
     func getUserData() {
-        fireStore.collection("user").getDocuments { snapshot, error in
+        fireStore.collection(ProfileTexts.userCollection.rawValue).getDocuments { snapshot, error in
             if error == nil {
                 if let snapshot {
                     DispatchQueue.main.async {

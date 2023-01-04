@@ -12,7 +12,7 @@ class SearchCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var pokemonFaliedLabel: UILabel!
     @IBOutlet weak var backGroundView: UIView!
     
-    static let identifier: String = "SearchCollectionViewCell"
+    static let identifier: String = HomeTexts.searchIdentifier.rawValue
     
     static func nib() -> UINib {
         return UINib(nibName: identifier, bundle: nil)

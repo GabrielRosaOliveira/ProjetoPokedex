@@ -79,13 +79,13 @@ class FavoritesPokemonViewController: UIViewController {
     }
     
     func getFavoritesPokemon() {
-        fireStore.collection("favorites").order(by: "pokemon", descending: true).getDocuments { snapshot, error in
+        fireStore.collection(FavoritesTexts.firebaseCollection.rawValue).getDocuments { snapshot, error in
             if error == nil {
                 if let snapshot {
                     DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
                         self.pokemons = snapshot.documents.map({ document in
-                            return Favorites(pokemon: document["pokemon"] as? [String] ?? [],
-                                             email: document["email"] as? String ?? ""
+                            return Favorites(pokemon: document[FavoritesTexts.pokemonDocument.rawValue] as? [String] ?? [],
+                                             email: document[FavoritesTexts.emailDocument.rawValue] as? String ?? ""
                             )
                         })
                         self.test(index: self.getIndex(email: self.user?.email ?? ""))
@@ -95,7 +95,7 @@ class FavoritesPokemonViewController: UIViewController {
                     }
                 }
             } else {
-                self.alert?.configAlert(title: "Atenção", message: "Tivemos um problema no servidor, tente novamente.", secondButton: false)
+                self.alert?.configAlert(title: AlertTexts.errorTitle.rawValue, message: AlertTexts.errorMessage.rawValue, secondButton: false)
             }
         }
     }
@@ -107,7 +107,7 @@ class FavoritesPokemonViewController: UIViewController {
                 if let result {
                     self.pokemon.append(result)
                 } else {
-                    self.alert?.configAlert(title: "Ops", message: "Tivemos um problema no servidor, tente novamente!", secondButton: false)
+                    self.alert?.configAlert(title: AlertTexts.errorTitle.rawValue, message: AlertTexts.errorMessage.rawValue, secondButton: false)
                 }
                 DispatchQueue.main.async {
                     self.collectionView.reloadData()
@@ -157,8 +157,8 @@ extension FavoritesPokemonViewController: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let storyboard = UIStoryboard(name: "pokemonSelected", bundle: nil)
-        let viewcontroler = storyboard.instantiateViewController(withIdentifier: "pokemon") as? PokemonSelectedVc
+        let storyboard = UIStoryboard(name: FavoritesTexts.pokemonStoryboard.rawValue , bundle: nil)
+        let viewcontroler = storyboard.instantiateViewController(withIdentifier: FavoritesTexts.pokemonSelectedIdentifier.rawValue) as? PokemonSelectedVc
         viewcontroler?.pokemonName = pokemon[indexPath.row].name
         viewcontroler?.isFavorite = true
         navigationController?.pushViewController(viewcontroler ?? UIViewController(), animated: true)

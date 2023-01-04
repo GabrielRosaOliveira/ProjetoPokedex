@@ -14,7 +14,7 @@ class HomeCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var iconImageView: UIImageView!
     @IBOutlet weak var namePokemonLabel: UILabel!
     
-    static let identifier: String = "HomeCollectionViewCell"
+    static let identifier: String = HomeTexts.homeIdentifier.rawValue
     
     static func nib() -> UINib {
         return UINib(nibName: self.identifier, bundle: nil)
