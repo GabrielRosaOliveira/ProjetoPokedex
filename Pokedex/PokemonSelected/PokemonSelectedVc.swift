@@ -22,7 +22,6 @@ class PokemonSelectedVc: UIViewController {
     @IBOutlet weak var pokemonNumberLabel: UILabel!
     @IBOutlet weak var typeTwoView: UIView!
     @IBOutlet weak var typeOneView: UIView!
-    
     @IBOutlet weak var segmentedControl: UISegmentedControl!
     @IBOutlet weak var favoriteButton: UIButton!
     
@@ -34,7 +33,7 @@ class PokemonSelectedVc: UIViewController {
     var isEmpty: Bool = true
     var alert: Alert?
     var type: PokemomTypes?
-    var button = true
+    var isFavoriteFulfilled = true
     var favoritesPokemon: [String] = []
     let fireStore = Firestore.firestore()
     var isFavorite: Bool = false
@@ -47,6 +46,7 @@ class PokemonSelectedVc: UIViewController {
         namePokemonLabel.layer.makeShadow(color: .black, x: 0, y: 2, blur: 4, spread: 0)
         alert = Alert(controller: self)
         creatCollection()
+        
     }
     
     override func viewDidLayoutSubviews() {
@@ -65,13 +65,14 @@ class PokemonSelectedVc: UIViewController {
     }
     
     @IBAction func tappedStarButton(_ sender: UIButton) {
-        if button {
+        if isFavoriteFulfilled {
             favoriteButton.setImage(UIImage(systemName: "star.fill"), for: .normal) // FAVORITANDO
-            button = false
+            isFavoriteFulfilled = false
+            favoriteButton.configuration?.baseForegroundColor = UIColor.yellow
             saveFovritesPokemons(pokemon: namePokemonLabel.text?.lowercased() ?? "")
         } else {
             favoriteButton.setImage(UIImage(systemName: "star"), for: .normal)
-            button = true
+            isFavoriteFulfilled = true
             removePokemonFromFavorites(pokemon: namePokemonLabel.text?.lowercased() ?? "")
         }
     }
@@ -79,7 +80,8 @@ class PokemonSelectedVc: UIViewController {
     func favoriteButton(_ isFavorite: Bool) {
         if isFavorite {
             favoriteButton.setImage(UIImage(systemName: "star.fill"), for: .normal)
-            button = false
+            favoriteButton.configuration?.baseForegroundColor = UIColor.yellow
+            isFavoriteFulfilled = false
         }
     }
     
@@ -202,8 +204,8 @@ class PokemonSelectedVc: UIViewController {
     }
     
     func setGradient() {
-        gradient.colors = [ UIColor(red: 173/255, green: 236/255, blue: 150/255, alpha: 1.0).cgColor,
-                            UIColor(red: 203/255, green: 144/255, blue: 197/255, alpha: 1.0).cgColor]
+        gradient.colors = [ UIColor(red: 255/255, green: 0/255, blue: 0/255, alpha: 1.0).cgColor,
+                            UIColor(red: 255/255, green: 255/255, blue: 255/255, alpha: 1.0).cgColor]
         gradient.startPoint = CGPoint(x: 0.5, y: 0.0)
         gradient.endPoint = CGPoint(x: 0.5, y: 1.0)
         gradient.locations = [NSNumber(floatLiteral: 0.0), NSNumber(floatLiteral: 1.0)]
