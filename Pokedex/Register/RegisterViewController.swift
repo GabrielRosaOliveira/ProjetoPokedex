@@ -167,7 +167,6 @@ class RegisterViewController: UIViewController {
     
     func saveUserData(email: String, birthday: String, nickname: String, id: String) {
         let dataPath = "user/\(id)"
-        print("USER \(user?.uid ?? "")")
         let docRef = fireStore.document(dataPath)
         docRef.setData([
             "email": email,

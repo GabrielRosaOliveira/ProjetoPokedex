@@ -17,7 +17,7 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var loadingView: UIView!
     @IBOutlet weak var spinner: UIActivityIndicatorView!
     @IBOutlet var backGroundView: UIView!
-    
+    @IBOutlet weak var gradientView: UIView!
     
     
     var pokemonNames: [String] = []
@@ -33,6 +33,7 @@ class HomeViewController: UIViewController {
     let user = Auth.auth().currentUser
     var userHasFavoritesYet = true
     var isError: Bool = false
+    let gradient = CAGradientLayer()
     
     var names: [String] = []
     
@@ -49,8 +50,8 @@ class HomeViewController: UIViewController {
         searchTextField.delegate = self
         collectionView.showsVerticalScrollIndicator = false
         alert = Alert(controller: self)
-        backGroundView.backgroundColor = UIColor(red: 221/255, green: 221/255, blue: 221/255, alpha: 1.0)
-        collectionView.backgroundColor = UIColor(red: 221/255, green: 221/255, blue: 221/255, alpha: 1.0)
+        collectionView.backgroundColor = .clear
+        setGradient()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -62,6 +63,12 @@ class HomeViewController: UIViewController {
         getPokemonRequest2()
         resetSearchTextFiels()
         startLoading()
+//        isError = true  Forçar o erro na apresentação
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        gradient.frame = gradientView.bounds
     }
     
     func startLoading() {
@@ -121,7 +128,6 @@ class HomeViewController: UIViewController {
             
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
                 self.collectionView.reloadData()
-                print(self.names)
                 self.getPokemonRequest()
                 self.getPokemonNames()
                 self.stopLoading()
@@ -169,6 +175,17 @@ class HomeViewController: UIViewController {
                 self.alert?.configAlert(title: "Atenção", message: "Tivemos um problema no servidor, tente novamente.", secondButton: false)
             }
         }
+    }
+    
+    func setGradient() {
+        gradient.colors = [ UIColor(red: 255/255, green: 0/255, blue: 0/255, alpha: 1.0).cgColor,
+                            UIColor(red: 255/255, green: 255/255, blue: 255/255, alpha: 1.0).cgColor]
+        gradient.startPoint = CGPoint(x: 0.5, y: 0.0)
+        gradient.endPoint = CGPoint(x: 0.5, y: 1.0)
+        gradient.locations = [NSNumber(floatLiteral: 0.0), NSNumber(floatLiteral: 1.0)]
+        gradient.shouldRasterize = true
+        
+        gradientView.layer.addSublayer(gradient)
     }
     
     func configCollectionView() {

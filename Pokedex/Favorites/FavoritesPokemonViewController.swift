@@ -11,12 +11,12 @@ import FirebaseAuth
 
 class FavoritesPokemonViewController: UIViewController {
 
+    @IBOutlet var gradientView: UIView!
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var spinner: UIActivityIndicatorView!
     @IBOutlet weak var loadingView: UIView!
     
     let fireStore = Firestore.firestore()
-    
     let user = Auth.auth().currentUser
     let service = PokemonService()
     var pokemon: [Pokemon] = []
@@ -26,10 +26,12 @@ class FavoritesPokemonViewController: UIViewController {
     var favorites: [String] = []
     var userHasFavoritesYet = true
     var isError = false
+    let gradient = CAGradientLayer()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         alert = Alert(controller: self)
+        setGradient()
         configCollectionView()
     }
     
@@ -39,6 +41,22 @@ class FavoritesPokemonViewController: UIViewController {
         userHasFavoritesYet = true
         getFavoritesPokemon()
         startLoading()
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        gradient.frame = gradientView.bounds
+    }
+    
+    func setGradient() {
+        gradient.colors = [ UIColor(red: 255/255, green: 0/255, blue: 0/255, alpha: 1.0).cgColor,
+                            UIColor(red: 255/255, green: 255/255, blue: 255/255, alpha: 1.0).cgColor]
+        gradient.startPoint = CGPoint(x: 0.5, y: 0.0)
+        gradient.endPoint = CGPoint(x: 0.5, y: 1.0)
+        gradient.locations = [NSNumber(floatLiteral: 0.0), NSNumber(floatLiteral: 1.0)]
+        gradient.shouldRasterize = true
+        
+        gradientView.layer.addSublayer(gradient)
     }
     
     func startLoading() {
@@ -59,6 +77,7 @@ class FavoritesPokemonViewController: UIViewController {
         collectionView.register(FavoritesCollectionViewCell.nib(), forCellWithReuseIdentifier: FavoritesCollectionViewCell.identifier)
         collectionView.register(EmptyCollectionViewCell.nib(), forCellWithReuseIdentifier: EmptyCollectionViewCell.identifier)
         collectionView.register(ErrorCollectionViewCell.nib(), forCellWithReuseIdentifier: ErrorCollectionViewCell.identifier)
+        collectionView.showsVerticalScrollIndicator = false
     }
     
     func test(index: Int) {

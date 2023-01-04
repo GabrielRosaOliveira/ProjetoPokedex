@@ -22,12 +22,12 @@
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nenhum favorito foi adicionado" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A7f-wg-XV1">
                                 <rect key="frame" x="10" y="10" width="292" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" red="0.5474519175" green="0.83142414239999995" blue="0.95929333120000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="A7f-wg-XV1" secondAttribute="trailing" constant="10" id="7fz-ZI-heq"/>
                             <constraint firstItem="A7f-wg-XV1" firstAttribute="leading" secondItem="DUV-RA-YgQ" secondAttribute="leading" constant="10" id="A8v-Bi-VOO"/>

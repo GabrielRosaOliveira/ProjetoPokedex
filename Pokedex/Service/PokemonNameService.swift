@@ -39,7 +39,6 @@ class PokemonNameService: PokemonNameServiceProtocol {
                      completion(decodedData, nil)
                 } catch {
                     completion(nil, Error.errorDescription(message: "Deu ruim no parse", error: error))
-                    print(error)
                 }
             } else {
                 completion(nil, Error.errorDescription(message: "Deu ruim", error: error))

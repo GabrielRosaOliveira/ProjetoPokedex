@@ -17,6 +17,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hkG-n6-X6d">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="iEh-2R-FaO">
                                 <rect key="frame" x="10" y="117" width="394" height="660"/>
                                 <color key="backgroundColor" systemColor="systemCyanColor"/>
@@ -70,12 +74,16 @@
                             <constraint firstItem="ZAr-zg-R2B" firstAttribute="leading" secondItem="8pd-RD-IIF" secondAttribute="trailing" constant="22" id="9Gw-OJ-v6a"/>
                             <constraint firstItem="DkK-wa-gnF" firstAttribute="trailing" secondItem="ggi-aH-R0Z" secondAttribute="trailing" id="JOG-cd-WnF"/>
                             <constraint firstItem="iEh-2R-FaO" firstAttribute="top" secondItem="ZAr-zg-R2B" secondAttribute="bottom" constant="12" id="PKB-h1-E3n"/>
+                            <constraint firstAttribute="bottom" secondItem="hkG-n6-X6d" secondAttribute="bottom" id="VvD-z1-EwC"/>
                             <constraint firstItem="DkK-wa-gnF" firstAttribute="bottom" secondItem="iEh-2R-FaO" secondAttribute="bottom" constant="36" id="dJu-lg-6ud"/>
+                            <constraint firstItem="hkG-n6-X6d" firstAttribute="trailing" secondItem="DkK-wa-gnF" secondAttribute="trailing" id="fj2-HB-gnx"/>
+                            <constraint firstItem="hkG-n6-X6d" firstAttribute="leading" secondItem="DkK-wa-gnF" secondAttribute="leading" id="g9s-6A-7kr"/>
                             <constraint firstItem="iEh-2R-FaO" firstAttribute="leading" secondItem="DkK-wa-gnF" secondAttribute="leading" constant="10" id="jDi-KI-mBo"/>
                             <constraint firstItem="8pd-RD-IIF" firstAttribute="leading" secondItem="DkK-wa-gnF" secondAttribute="leading" constant="35" id="qHj-KL-bLc"/>
                             <constraint firstAttribute="bottom" secondItem="ggi-aH-R0Z" secondAttribute="bottom" id="qZP-Ad-MIb"/>
                             <constraint firstItem="DkK-wa-gnF" firstAttribute="trailing" secondItem="ZAr-zg-R2B" secondAttribute="trailing" constant="36" id="qcb-aC-rkM"/>
                             <constraint firstItem="DkK-wa-gnF" firstAttribute="trailing" secondItem="iEh-2R-FaO" secondAttribute="trailing" constant="10" id="sEd-HA-iDG"/>
+                            <constraint firstItem="hkG-n6-X6d" firstAttribute="top" secondItem="8lZ-a0-9y7" secondAttribute="top" id="sXQ-ci-shL"/>
                             <constraint firstItem="ZAr-zg-R2B" firstAttribute="centerY" secondItem="8pd-RD-IIF" secondAttribute="centerY" id="vDv-Kx-dQu"/>
                             <constraint firstItem="ggi-aH-R0Z" firstAttribute="top" secondItem="8lZ-a0-9y7" secondAttribute="top" id="vrn-jZ-Tga"/>
                         </constraints>
@@ -85,6 +93,7 @@
                     <connections>
                         <outlet property="backGroundView" destination="8lZ-a0-9y7" id="QiN-SI-xzM"/>
                         <outlet property="collectionView" destination="iEh-2R-FaO" id="aGe-1c-tVM"/>
+                        <outlet property="gradientView" destination="hkG-n6-X6d" id="zXJ-dz-4Jn"/>
                         <outlet property="loadingView" destination="ggi-aH-R0Z" id="ykq-1q-PCH"/>
                         <outlet property="profileButton" destination="ZAr-zg-R2B" id="Iys-2Q-GiB"/>
                         <outlet property="searchTextField" destination="8pd-RD-IIF" id="Ux5-yg-JJG"/>
@@ -137,6 +146,9 @@
     <resources>
         <image name="BotaoHome" width="48" height="45"/>
         <image name="Perfil" width="26" height="27"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemCyanColor">
             <color red="0.19607843137254902" green="0.67843137254901964" blue="0.90196078431372551" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
