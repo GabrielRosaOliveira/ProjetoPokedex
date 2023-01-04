@@ -31,6 +31,7 @@ class HomeViewController: UIViewController {
     var favorites: [String] = []
     let user = Auth.auth().currentUser
     var userHasFavoritesYet = true
+    var isError: Bool = false
     
     var names: [String] = ["pikachu", "bulbasaur", "charmander", "squirtle", "pidgey", "meowth", "psyduck", "zubat", "rattata", "weedle", "vulpix", "growlithe", "poliwag", "abra", "machop", "tentacool", "slowpoke", "geodude", "seel", "grimer", "shellder", "krabby", "cubone", "voltorb", "tangela", "koffing", "horsea", "goldeen", "staryu", "ditto", "eevee", "porygon", "mew", "omanyte", "kabuto", "dratini", "metapod", "butterfree", "kakuna", "raticate", "sandslash", "nidorina", "nidorino", "jigglypuff", "gloom", "dugtrio", "weepinbell", "graveler", "haunter", "marowak", "starmie", "flareon"]
     
@@ -97,7 +98,7 @@ class HomeViewController: UIViewController {
                 if let result {
                     self.pokemon.append(result)
                 } else {
-                    self.alert?.configAlert(title: "Ops", message: "Tivemos um problema no servidor, tente novamente!", secondButton: false)
+                    self.isError = true
                 }
                 
                 DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
@@ -150,6 +151,7 @@ class HomeViewController: UIViewController {
         collectionView.dataSource = self
         collectionView.register(HomeCollectionViewCell.nib(), forCellWithReuseIdentifier: HomeCollectionViewCell.identifier)
         collectionView.register(SearchCollectionViewCell.nib(), forCellWithReuseIdentifier: SearchCollectionViewCell.identifier)
+        collectionView.register(ErrorCollectionViewCell.nib(), forCellWithReuseIdentifier: ErrorCollectionViewCell.identifier)
     }
     
     func disableCollectionInteraction() {
@@ -170,7 +172,7 @@ class HomeViewController: UIViewController {
 extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        if pokemonList {
+        if pokemonList || isError {
             return 1
         } else {
             return filterPokemon.count
@@ -180,6 +182,13 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         disableCollectionInteraction()
+        
+        if isError {
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ErrorCollectionViewCell.identifier, for: indexPath) as? ErrorCollectionViewCell
+            cell?.backgroundColor = .clear
+            cell?.delegate(delegate: self)
+            return cell ?? UICollectionViewCell()
+        }
         
         if pokemonList {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: SearchCollectionViewCell.identifier, for: indexPath) as? SearchCollectionViewCell
@@ -194,6 +203,10 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        if isError {
+            return CGSize(width: view.frame.size.width - 30, height: 300)
+        }
+        
         let size = view.frame.size.width / 2.1 - 10
         return CGSize(width: size, height: size)
     }
@@ -223,5 +236,14 @@ extension HomeViewController: UITextFieldDelegate {
             collectionView.reloadData()
         }
         return true
+    }
+}
+
+extension HomeViewController: ErrorCollectionViewCellProtocol {
+    func actionTryAgainButton() {
+        getFavoritesPokemon()
+        getPokemonResquest()
+        isError = false
+        startLoading()
     }
 }

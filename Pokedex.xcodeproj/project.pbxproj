@@ -57,6 +57,8 @@
 		C0DBA86328D4008300C7548F /* AttributesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0DBA86128D4008300C7548F /* AttributesCollectionViewCell.swift */; };
 		C0DBA86428D4008300C7548F /* AttributesCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C0DBA86228D4008300C7548F /* AttributesCollectionViewCell.xib */; };
 		C0E1701B290DD100009E7A2C /* Favorites.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C0E1701A290DD0FF009E7A2C /* Favorites.storyboard */; };
+		C0E3361C2964F86700839F47 /* ErrorCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E3361A2964F86700839F47 /* ErrorCollectionViewCell.swift */; };
+		C0E3361D2964F86700839F47 /* ErrorCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C0E3361B2964F86700839F47 /* ErrorCollectionViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -107,6 +109,8 @@
 		C0DBA86128D4008300C7548F /* AttributesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttributesCollectionViewCell.swift; sourceTree = "<group>"; };
 		C0DBA86228D4008300C7548F /* AttributesCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AttributesCollectionViewCell.xib; sourceTree = "<group>"; };
 		C0E1701A290DD0FF009E7A2C /* Favorites.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Favorites.storyboard; sourceTree = "<group>"; };
+		C0E3361A2964F86700839F47 /* ErrorCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorCollectionViewCell.swift; sourceTree = "<group>"; };
+		C0E3361B2964F86700839F47 /* ErrorCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ErrorCollectionViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -315,6 +319,7 @@
 		C08C721E28C3D7E40007E7FE /* Pokedex */ = {
 			isa = PBXGroup;
 			children = (
+				C0E336152964F2F900839F47 /* Error */,
 				C026EE33295F127E00656058 /* Alert */,
 				C00035AE295CBBD300437B34 /* Service */,
 				C00035AD295CBBAB00437B34 /* Model */,
@@ -371,6 +376,15 @@
 				C0DBA86228D4008300C7548F /* AttributesCollectionViewCell.xib */,
 			);
 			path = Attributes;
+			sourceTree = "<group>";
+		};
+		C0E336152964F2F900839F47 /* Error */ = {
+			isa = PBXGroup;
+			children = (
+				C0E3361A2964F86700839F47 /* ErrorCollectionViewCell.swift */,
+				C0E3361B2964F86700839F47 /* ErrorCollectionViewCell.xib */,
+			);
+			path = Error;
 			sourceTree = "<group>";
 		};
 		C6B429CDD8A93AE8BC0901B4 /* Frameworks */ = {
@@ -461,6 +475,7 @@
 				C00FF5C228D7E71D004F4151 /* RegisterStoryboard.storyboard in Resources */,
 				C09807BE28D9582C005DB2E2 /* profileStoryboard.storyboard in Resources */,
 				C002E45828CE9F5C00C44F2B /* LoginStoryboard.storyboard in Resources */,
+				C0E3361D2964F86700839F47 /* ErrorCollectionViewCell.xib in Resources */,
 				C03B6FF328D3E58500683717 /* pokemonSelected.storyboard in Resources */,
 				C0971284290DCD5300B07C74 /* Main.storyboard in Resources */,
 				C08C722928C3D7E60007E7FE /* Assets.xcassets in Resources */,
@@ -539,6 +554,7 @@
 				C08C722428C3D7E40007E7FE /* MyTabBarConstroller.swift in Sources */,
 				C03B6FF128D3E56A00683717 /* PokemonSelectedVc.swift in Sources */,
 				C0BFBB54290F55940096A993 /* SearchCollectionViewCell.swift in Sources */,
+				C0E3361C2964F86700839F47 /* ErrorCollectionViewCell.swift in Sources */,
 				C0386AC4290DAA25000DC945 /* HomeViewController.swift in Sources */,
 				C0DBA86328D4008300C7548F /* AttributesCollectionViewCell.swift in Sources */,
 				C076A37A290DE8020012746E /* Register.swift in Sources */,

@@ -25,6 +25,7 @@ class FavoritesPokemonViewController: UIViewController {
     var pokemons: [Favorites] = []
     var favorites: [String] = []
     var userHasFavoritesYet = true
+    var isError = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -57,6 +58,7 @@ class FavoritesPokemonViewController: UIViewController {
         collectionView.dataSource = self
         collectionView.register(FavoritesCollectionViewCell.nib(), forCellWithReuseIdentifier: FavoritesCollectionViewCell.identifier)
         collectionView.register(EmptyCollectionViewCell.nib(), forCellWithReuseIdentifier: EmptyCollectionViewCell.identifier)
+        collectionView.register(ErrorCollectionViewCell.nib(), forCellWithReuseIdentifier: ErrorCollectionViewCell.identifier)
     }
     
     func test(index: Int) {
@@ -125,7 +127,7 @@ class FavoritesPokemonViewController: UIViewController {
 
 extension FavoritesPokemonViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        if favorites.count == 0 {
+        if favorites.count == 0 || isError {
             return 1
         } else {
             return pokemon.count
@@ -135,6 +137,13 @@ extension FavoritesPokemonViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         disableCollectionInteraction()
+        
+        if isError {
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ErrorCollectionViewCell.identifier, for: indexPath) as? ErrorCollectionViewCell
+            cell?.backgroundColor = .clear
+            cell?.delegate(delegate: self)
+            return cell ?? UICollectionViewCell()
+        }
         
         if favorites.count == 0 {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: EmptyCollectionViewCell.identifier, for: indexPath) as? EmptyCollectionViewCell
@@ -159,8 +168,22 @@ extension FavoritesPokemonViewController: UICollectionViewDataSource {
 extension FavoritesPokemonViewController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        if isError {
+            return CGSize(width: view.frame.size.width - 30, height: 300)
+        }
+        
         let size = view.frame.size.width / 2.1 - 10
         return CGSize(width: size, height: size)
     }
 }
 
+extension FavoritesPokemonViewController: ErrorCollectionViewCellProtocol {
+    func actionTryAgainButton() {
+        pokemon = []
+        favorites = []
+        getFavoritesPokemon()
+        getPokemonResquest()
+        isError = false
+        startLoading()
+    }
+}
