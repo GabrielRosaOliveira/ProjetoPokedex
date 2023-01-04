@@ -62,6 +62,22 @@ struct Species: Codable {
 }
 
 struct Sprites: Codable {
+    let other: Other
+    
+    enum CodingKeys: String, CodingKey {
+        case other
+    }
+}
+
+struct Other: Codable {
+    let home: Home
+    
+    enum CodingKeys: String, CodingKey {
+        case home
+    }
+}
+
+struct Home: Codable {
     let frontDefault: String
     
     enum CodingKeys: String, CodingKey {

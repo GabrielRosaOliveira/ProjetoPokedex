@@ -21,17 +21,17 @@
                         <rect key="frame" x="5" y="5" width="195" height="168"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="U1O-Em-8Od">
-                                <rect key="frame" x="-2.5" y="-16" width="200" height="200"/>
+                                <rect key="frame" x="32" y="0.0" width="130" height="130"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="200" id="UIa-Ei-1Pk"/>
-                                    <constraint firstAttribute="width" constant="200" id="Vql-D0-JqR"/>
+                                    <constraint firstAttribute="height" constant="130" id="UIa-Ei-1Pk"/>
+                                    <constraint firstAttribute="width" constant="130" id="Vql-D0-JqR"/>
                                 </constraints>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.59265646000000005" green="0.9385253522" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="U1O-Em-8Od" firstAttribute="centerX" secondItem="ye2-7q-q4G" secondAttribute="centerX" id="0fl-Gx-rQE"/>
-                            <constraint firstItem="U1O-Em-8Od" firstAttribute="centerY" secondItem="ye2-7q-q4G" secondAttribute="centerY" id="94E-K0-7i5"/>
+                            <constraint firstItem="U1O-Em-8Od" firstAttribute="centerY" secondItem="ye2-7q-q4G" secondAttribute="centerY" constant="-19" id="94E-K0-7i5"/>
                         </constraints>
                     </view>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HZK-sd-Bf3">
@@ -58,7 +58,7 @@
                 <outlet property="pokemonImageView" destination="U1O-Em-8Od" id="3ai-G3-3wc"/>
                 <outlet property="pokemonNameLabel" destination="HZK-sd-Bf3" id="nCZ-yv-SgJ"/>
             </connections>
-            <point key="canvasLocation" x="337" y="68"/>
+            <point key="canvasLocation" x="-31" y="13"/>
         </collectionViewCell>
     </objects>
 </document>

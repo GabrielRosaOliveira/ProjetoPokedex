@@ -23,6 +23,7 @@ class HomeViewController: UIViewController {
     var pokemonNames: [String] = []
     let service = PokemonService()
     var pokemon: [Pokemon] = []
+    var generationOne: [GenerationOne] = []
     let nameService = PokemonNameService()
     var isempty: Bool = false
     var alert: Alert?
@@ -33,10 +34,10 @@ class HomeViewController: UIViewController {
     var userHasFavoritesYet = true
     var isError: Bool = false
     
-    var names: [String] = ["pikachu", "bulbasaur", "charmander", "squirtle", "pidgey", "meowth", "psyduck", "zubat", "rattata", "weedle", "vulpix", "growlithe", "poliwag", "abra", "machop", "tentacool", "slowpoke", "geodude", "seel", "grimer", "shellder", "krabby", "cubone", "voltorb", "tangela", "koffing", "horsea", "goldeen", "staryu", "ditto", "eevee", "porygon", "mew", "omanyte", "kabuto", "dratini", "metapod", "butterfree", "kakuna", "raticate", "sandslash", "nidorina", "nidorino", "jigglypuff", "gloom", "dugtrio", "weepinbell", "graveler", "haunter", "marowak", "starmie", "flareon"]
+    var names: [String] = []
     
     var filterPokemon: [Pokemon] = []
-    
+    var filterPokemon2: [GenerationOne] = []
     var pokemonList: Bool {
         return self.filterPokemon.count == 0
     }
@@ -58,7 +59,7 @@ class HomeViewController: UIViewController {
         favorites = []
         userHasFavoritesYet = true
         getFavoritesPokemon()
-        getPokemonResquest()
+        getPokemonRequest2()
         resetSearchTextFiels()
         startLoading()
     }
@@ -92,9 +93,9 @@ class HomeViewController: UIViewController {
         }
     }
     
-    func getPokemonResquest() {
-        for name in names {
-            service.getPokemons(pokemon: name) { result, failure in
+    func getPokemonRequest() {
+        for pokemon in generationOne[0].pokemonSpecies {
+            service.getPokemons(pokemon: pokemon.name) { result, failure in
                 if let result {
                     self.pokemon.append(result)
                 } else {
@@ -107,6 +108,30 @@ class HomeViewController: UIViewController {
                     self.stopLoading()
                 }
             }
+        }
+    }
+    
+    func getPokemonRequest2() {
+        nameService.getPokemonName { result, failure in
+            if let result {
+                self.generationOne.append(result)
+            } else {
+                self.isError = true
+            }
+            
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
+                self.collectionView.reloadData()
+                print(self.names)
+                self.getPokemonRequest()
+                self.getPokemonNames()
+                self.stopLoading()
+            }
+        }
+    }
+    
+    func getPokemonNames() {
+        for pokemon in generationOne[0].pokemonSpecies {
+            names.append(pokemon.name)
         }
     }
     
@@ -242,7 +267,7 @@ extension HomeViewController: UITextFieldDelegate {
 extension HomeViewController: ErrorCollectionViewCellProtocol {
     func actionTryAgainButton() {
         getFavoritesPokemon()
-        getPokemonResquest()
+        getPokemonRequest2()
         isError = false
         startLoading()
     }

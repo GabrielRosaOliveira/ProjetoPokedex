@@ -21,7 +21,6 @@ class SearchCollectionViewCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         configoBackGroundView()
-        backGroundView.backgroundColor = .systemCyan
     }
     
     func setupCell(nameFalied: String) {

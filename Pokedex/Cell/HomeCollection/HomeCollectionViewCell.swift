@@ -41,7 +41,7 @@ class HomeCollectionViewCell: UICollectionViewCell {
     
     func setupCell(pokemon: Pokemon) {
         namePokemonLabel.text = pokemon.name.capitalized
-        let url = URL(string: pokemon.sprites.frontDefault) ?? URL(fileURLWithPath: "")
+        let url = URL(string: pokemon.sprites.other.home.frontDefault) ?? URL(fileURLWithPath: "")
         iconImageView.af.setImage(withURL: url)
     }
 }

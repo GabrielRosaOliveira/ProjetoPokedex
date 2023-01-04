@@ -8,11 +8,11 @@
 import Foundation
 
 protocol PokemonNameServiceProtocol: GenericService {
-    func getPokemonName(completion: @escaping completion<PokemonNames?>)
+    func getPokemonName(completion: @escaping completion<GenerationOne?>)
 }
 
 class PokemonNameService: PokemonNameServiceProtocol {
-    func getPokemonName(completion: @escaping completion<PokemonNames?>) {
+    func getPokemonName(completion: @escaping completion<GenerationOne?>) {
         let pokemonURL: String = "https://pokeapi.co/api/v2/generation/1/"
         
         guard let url: URL = URL(string: pokemonURL) else {
@@ -35,7 +35,7 @@ class PokemonNameService: PokemonNameServiceProtocol {
             
             if response.statusCode == 200 {
                 do {
-                    let decodedData = try JSONDecoder().decode(PokemonNames.self, from: data)
+                    let decodedData = try JSONDecoder().decode(GenerationOne.self, from: data)
                      completion(decodedData, nil)
                 } catch {
                     completion(nil, Error.errorDescription(message: "Deu ruim no parse", error: error))

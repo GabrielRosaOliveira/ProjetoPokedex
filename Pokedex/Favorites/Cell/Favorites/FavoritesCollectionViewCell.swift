@@ -67,7 +67,7 @@ class FavoritesCollectionViewCell: UICollectionViewCell {
     }
     
     func setupCell(pokemon: Pokemon) {
-        let url = URL(string: pokemon.sprites.frontDefault) ?? URL(fileURLWithPath: "")
+        let url = URL(string: pokemon.sprites.other.home.frontDefault) ?? URL(fileURLWithPath: "")
         pokemonImageView.af.setImage(withURL: url)
         pokemonNameLabel.text = pokemon.name.capitalized
     }

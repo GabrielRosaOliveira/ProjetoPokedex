@@ -21,16 +21,16 @@
                         <rect key="frame" x="5" y="5" width="195" height="168"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="7u8-fe-iMk">
-                                <rect key="frame" x="-2.5" y="-16" width="200" height="200"/>
+                                <rect key="frame" x="32.5" y="0.0" width="130" height="130"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="200" id="bwP-mJ-Tq2"/>
-                                    <constraint firstAttribute="width" constant="200" id="nEP-Sx-UFL"/>
+                                    <constraint firstAttribute="height" constant="130" id="bwP-mJ-Tq2"/>
+                                    <constraint firstAttribute="width" constant="130" id="nEP-Sx-UFL"/>
                                 </constraints>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.59265645996768779" green="0.93852535221222166" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
-                            <constraint firstItem="7u8-fe-iMk" firstAttribute="centerY" secondItem="skq-z7-7Pm" secondAttribute="centerY" id="Bjq-qB-eZT"/>
+                            <constraint firstItem="7u8-fe-iMk" firstAttribute="centerY" secondItem="skq-z7-7Pm" secondAttribute="centerY" constant="-19" id="Bjq-qB-eZT"/>
                             <constraint firstItem="7u8-fe-iMk" firstAttribute="centerX" secondItem="skq-z7-7Pm" secondAttribute="centerX" id="s7Q-9z-55k"/>
                         </constraints>
                     </view>
@@ -58,7 +58,7 @@
                 <outlet property="iconImageView" destination="7u8-fe-iMk" id="jrn-Ai-Voe"/>
                 <outlet property="namePokemonLabel" destination="4d8-fA-75O" id="Clr-lg-JXh"/>
             </connections>
-            <point key="canvasLocation" x="-22.463768115942031" y="34.151785714285715"/>
+            <point key="canvasLocation" x="-141" y="23"/>
         </collectionViewCell>
     </objects>
 </document>

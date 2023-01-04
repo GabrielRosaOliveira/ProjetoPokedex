@@ -24,6 +24,8 @@
 		C0076FB0295F7E4C0090EED0 /* Favorites.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0076FAF295F7E4C0090EED0 /* Favorites.swift */; };
 		C0076FB3295F95EF0090EED0 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = C0076FB2295F95EF0090EED0 /* Realm */; };
 		C0076FB5295F95EF0090EED0 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = C0076FB4295F95EF0090EED0 /* RealmSwift */; };
+		C00E086D2965B90900A40915 /* UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C00E086C2965B90900A40915 /* UIImageView.swift */; };
+		C00E086F2965E53900A40915 /* GenerationOne.swift in Sources */ = {isa = PBXBuildFile; fileRef = C00E086E2965E53900A40915 /* GenerationOne.swift */; };
 		C00FF5C028D7E712004F4151 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C00FF5BF28D7E712004F4151 /* RegisterViewController.swift */; };
 		C00FF5C228D7E71D004F4151 /* RegisterStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C00FF5C128D7E71D004F4151 /* RegisterStoryboard.storyboard */; };
 		C00FF5C528D7ECD5004F4151 /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C00FF5C428D7ECD5004F4151 /* ForgotPasswordViewController.swift */; };
@@ -75,6 +77,8 @@
 		C002E45528CE9F4700C44F2B /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		C002E45728CE9F5C00C44F2B /* LoginStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LoginStoryboard.storyboard; sourceTree = "<group>"; };
 		C0076FAF295F7E4C0090EED0 /* Favorites.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Favorites.swift; sourceTree = "<group>"; };
+		C00E086C2965B90900A40915 /* UIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageView.swift; sourceTree = "<group>"; };
+		C00E086E2965E53900A40915 /* GenerationOne.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenerationOne.swift; sourceTree = "<group>"; };
 		C00FF5BF28D7E712004F4151 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		C00FF5C128D7E71D004F4151 /* RegisterStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RegisterStoryboard.storyboard; sourceTree = "<group>"; };
 		C00FF5C428D7ECD5004F4151 /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
@@ -165,6 +169,7 @@
 				C00035AB295CBB5A00437B34 /* Pokemon.swift */,
 				C0AC5738295DDFC0004D1C1B /* PokemonNames.swift */,
 				C0076FAF295F7E4C0090EED0 /* Favorites.swift */,
+				C00E086E2965E53900A40915 /* GenerationOne.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -203,6 +208,14 @@
 				C002E45728CE9F5C00C44F2B /* LoginStoryboard.storyboard */,
 			);
 			path = Login;
+			sourceTree = "<group>";
+		};
+		C00E086B2965B8BB00A40915 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				C00E086C2965B90900A40915 /* UIImageView.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 		C00FF5BE28D7E6FC004F4151 /* Register */ = {
@@ -319,6 +332,7 @@
 		C08C721E28C3D7E40007E7FE /* Pokedex */ = {
 			isa = PBXGroup;
 			children = (
+				C00E086B2965B8BB00A40915 /* Extension */,
 				C0E336152964F2F900839F47 /* Error */,
 				C026EE33295F127E00656058 /* Alert */,
 				C00035AE295CBBD300437B34 /* Service */,
@@ -542,6 +556,7 @@
 				C00035B5295CCF4600437B34 /* PokemonNameService.swift in Sources */,
 				C0C2D9EE28D28D1D00DE5CF9 /* LoadingViewController.swift in Sources */,
 				C00035B3295CBC3700437B34 /* PokemonService.swift in Sources */,
+				C00E086D2965B90900A40915 /* UIImageView.swift in Sources */,
 				C002E45628CE9F4700C44F2B /* LoginViewController.swift in Sources */,
 				C05654ED28CE6FA600230AB8 /* HomeCollectionViewCell.swift in Sources */,
 				C026EE35295F128B00656058 /* Alert.swift in Sources */,
@@ -562,6 +577,7 @@
 				C08C722028C3D7E40007E7FE /* AppDelegate.swift in Sources */,
 				C026EE37295F189B00656058 /* PokemonTypes.swift in Sources */,
 				C09807BC28D95814005DB2E2 /* ProfileViewController.swift in Sources */,
+				C00E086F2965E53900A40915 /* GenerationOne.swift in Sources */,
 				C00FF5C528D7ECD5004F4151 /* ForgotPasswordViewController.swift in Sources */,
 				C05FC6FE2944FE1E00187AF9 /* FavoritesCollectionViewCell.swift in Sources */,
 				C08C722228C3D7E40007E7FE /* SceneDelegate.swift in Sources */,
