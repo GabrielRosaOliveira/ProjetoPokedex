@@ -148,7 +148,7 @@ class RegisterViewController: UIViewController {
     }
     
     @IBAction func tappedRegisterButton(_ sender: UIButton) {
-        let login = UIStoryboard(name: "LoginStoryboard", bundle: nil).instantiateViewController(withIdentifier: "LoginViewController")
+        let login = UIStoryboard(name: RegisterTexts.loginStoryboard.rawValue, bundle: nil).instantiateViewController(withIdentifier: RegisterTexts.loginIdentifier.rawValue)
         navigationController?.pushViewController(login, animated: true)
         let email: String = emailTextField.text ?? ""
         let password: String = passwordTextField.text ?? ""
@@ -157,9 +157,9 @@ class RegisterViewController: UIViewController {
         
         self.auth?.createUser(withEmail: email, password: password, completion: { (result, error)  in
             if error != nil {
-                self.alert?.configAlert(title: "Ops", message: "Tivemos um erro ao criar a sua conta. Tente novamente!", secondButton: false)
+                self.alert?.configAlert(title: AlertTexts.errorTitle.rawValue, message: AlertTexts.errorMessage.rawValue, secondButton: false)
             } else {
-                self.alert?.configAlert(title: "Parabéns!!!", message: "Cadastro realizado com sucesso !!!", secondButton: false)
+                self.alert?.configAlert(title: AlertTexts.titleSucceeded.rawValue, message: AlertTexts.registerSucceeded.rawValue, secondButton: false)
                 self.saveUserData(email: email, birthday: birthday, nickname: nickname, id: result?.user.uid ?? "")
             }
         })
@@ -170,9 +170,9 @@ class RegisterViewController: UIViewController {
         print("USER \(user?.uid ?? "")")
         let docRef = fireStore.document(dataPath)
         docRef.setData([
-            "email": email,
-            "birthday": birthday,
-            "nickname": nickname
+            RegisterTexts.emailDocument.rawValue: email,
+            RegisterTexts.birthdayDocument.rawValue: birthday,
+            RegisterTexts.nicknameDocument.rawValue: nickname
         ])
     }
     
@@ -252,8 +252,8 @@ extension RegisterViewController: UIPickerViewDelegate {
             toolbar.isTranslucent = true
             toolbar.sizeToFit()
             datePicker.preferredDatePickerStyle = .wheels
-            let okButton = UIBarButtonItem(title: "OK", style: .plain, target: self, action: #selector(self.buttonOK))
-            let cancelButton = UIBarButtonItem(title: "Cancel", style: .plain, target: self, action: #selector(self.buttonCancel))
+            let okButton = UIBarButtonItem(title: AlertTexts.okButton.rawValue, style: .plain, target: self, action: #selector(self.buttonOK))
+            let cancelButton = UIBarButtonItem(title: AlertTexts.cancelButton.rawValue, style: .plain, target: self, action: #selector(self.buttonCancel))
             let spaceButton = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
             toolbar.setItems([cancelButton, spaceButton, okButton], animated: false)
             toolbar.isUserInteractionEnabled = true

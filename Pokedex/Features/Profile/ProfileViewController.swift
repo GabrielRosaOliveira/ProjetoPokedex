@@ -85,17 +85,17 @@ class ProfileViewController: UIViewController {
                     DispatchQueue.main.async {
                         self.userData = snapshot.documents.map({ document in
                             return Register(id: document.documentID,
-                                            email: document["email"] as? String ?? "",
-                                            birthday: document["birthday"] as? String ?? "",
-                                            password: document["password"] as? String ?? "",
-                                            nickname: document["nickname"] as? String ?? "")
+                                            email: document[ProfileTexts.emailDocument.rawValue] as? String ?? "",
+                                            birthday: document[ProfileTexts.birthdayDocument.rawValue] as? String ?? "",
+                                            password: document[ProfileTexts.passwordDocument.rawValue] as? String ?? "",
+                                            nickname: document[ProfileTexts.nicknameDocument.rawValue] as? String ?? "")
                             
                         })
                         self.populateUserData(index: self.getIndex(email: self.user?.email ?? ""))
                     }
                 }
             } else {
-                self.alert?.configAlert(title: "Atenção", message: "Tivemos um problema no servidor, tente novamente.", secondButton: false)
+                self.alert?.configAlert(title: AlertTexts.errorTitle.rawValue, message: AlertTexts.errorMessage.rawValue, secondButton: false)
             }
         }
     }
@@ -104,15 +104,15 @@ class ProfileViewController: UIViewController {
         emailTextField.text = userData[index].email
         birthdayTextField.text = userData[index].birthday
         nicknameTextField.text = userData[index].nickname
-        hellLabel.text = "Olá, \(userData[index].nickname.capitalized)"
+        hellLabel.text = "Olá, \(userData[index].nickname.capitalized)!"
     }
     
     func updateDataFromFirebase() {
         let dataPath = "user/\(user?.uid ?? "")"
         let dockRef = fireStore.document(dataPath)
         dockRef.updateData([
-            "birthday": birthdayTextField.text ?? "",
-            "nickname": nicknameTextField.text ?? ""
+            ProfileTexts.birthdayDocument.rawValue: birthdayTextField.text ?? "",
+            ProfileTexts.nicknameDocument.rawValue: nicknameTextField.text ?? ""
         ])
     }
     

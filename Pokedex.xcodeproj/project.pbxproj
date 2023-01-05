@@ -60,6 +60,8 @@
 		C0DBA86328D4008300C7548F /* AttributesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0DBA86128D4008300C7548F /* AttributesCollectionViewCell.swift */; };
 		C0DBA86428D4008300C7548F /* AttributesCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C0DBA86228D4008300C7548F /* AttributesCollectionViewCell.xib */; };
 		C0E1701B290DD100009E7A2C /* Favorites.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C0E1701A290DD0FF009E7A2C /* Favorites.storyboard */; };
+		C0E1D16E296710600045EC32 /* RegisterTexts.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E1D16D296710600045EC32 /* RegisterTexts.swift */; };
+		C0E1D171296717D60045EC32 /* LoginTexts.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E1D170296717D60045EC32 /* LoginTexts.swift */; };
 		C0E3361C2964F86700839F47 /* ErrorCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E3361A2964F86700839F47 /* ErrorCollectionViewCell.swift */; };
 		C0E3361D2964F86700839F47 /* ErrorCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C0E3361B2964F86700839F47 /* ErrorCollectionViewCell.xib */; };
 /* End PBXBuildFile section */
@@ -117,6 +119,8 @@
 		C0DBA86128D4008300C7548F /* AttributesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttributesCollectionViewCell.swift; sourceTree = "<group>"; };
 		C0DBA86228D4008300C7548F /* AttributesCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AttributesCollectionViewCell.xib; sourceTree = "<group>"; };
 		C0E1701A290DD0FF009E7A2C /* Favorites.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Favorites.storyboard; sourceTree = "<group>"; };
+		C0E1D16D296710600045EC32 /* RegisterTexts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterTexts.swift; sourceTree = "<group>"; };
+		C0E1D170296717D60045EC32 /* LoginTexts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginTexts.swift; sourceTree = "<group>"; };
 		C0E3361A2964F86700839F47 /* ErrorCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorCollectionViewCell.swift; sourceTree = "<group>"; };
 		C0E3361B2964F86700839F47 /* ErrorCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ErrorCollectionViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -207,6 +211,7 @@
 			children = (
 				C002E45528CE9F4700C44F2B /* LoginViewController.swift */,
 				C002E45728CE9F5C00C44F2B /* LoginStoryboard.storyboard */,
+				C0E1D170296717D60045EC32 /* LoginTexts.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -233,6 +238,7 @@
 				C076A378290DE7E00012746E /* Model */,
 				C00FF5BF28D7E712004F4151 /* RegisterViewController.swift */,
 				C00FF5C128D7E71D004F4151 /* RegisterStoryboard.storyboard */,
+				C0E1D16D296710600045EC32 /* RegisterTexts.swift */,
 			);
 			path = Register;
 			sourceTree = "<group>";
@@ -572,10 +578,12 @@
 				C00E086A2965B4FC00A40915 /* ProfileTexts.swift in Sources */,
 				C00FF5C028D7E712004F4151 /* RegisterViewController.swift in Sources */,
 				C08C722028C3D7E40007E7FE /* AppDelegate.swift in Sources */,
+				C0E1D16E296710600045EC32 /* RegisterTexts.swift in Sources */,
 				C026EE37295F189B00656058 /* PokemonTypes.swift in Sources */,
 				C09807BC28D95814005DB2E2 /* ProfileViewController.swift in Sources */,
 				C00FF5C528D7ECD5004F4151 /* ForgotPasswordViewController.swift in Sources */,
 				C00E08612965A87F00A40915 /* FavoritesTexts.swift in Sources */,
+				C0E1D171296717D60045EC32 /* LoginTexts.swift in Sources */,
 				C05FC6FE2944FE1E00187AF9 /* FavoritesCollectionViewCell.swift in Sources */,
 				C08C722228C3D7E40007E7FE /* SceneDelegate.swift in Sources */,
 				C00E085D2965A3C000A40915 /* HomeTexts.swift in Sources */,

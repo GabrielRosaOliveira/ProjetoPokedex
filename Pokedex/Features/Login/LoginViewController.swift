@@ -81,20 +81,20 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func didtapRegisterButton(_ sender: UIButton) {
-        let storyboard = UIStoryboard(name: "RegisterStoryboard", bundle: nil)
-        let viewcontroler = storyboard.instantiateViewController(withIdentifier: "Cadastro")
+        let storyboard = UIStoryboard(name: LoginTexts.registerStoryboard.rawValue, bundle: nil)
+        let viewcontroler = storyboard.instantiateViewController(withIdentifier: LoginTexts.registerIdentifier.rawValue)
         navigationController?.pushViewController(viewcontroler, animated: true)
     }
     
     @IBAction func didtapForgotPasswordButton(_ sender: UIButton) {
-        let storyboard = UIStoryboard(name: "ForgotPasswordStoryboard", bundle: nil)
-        let viewcontroler = storyboard.instantiateViewController(withIdentifier: "esqueceuSenha")
+        let storyboard = UIStoryboard(name: LoginTexts.forgotStoryboard.rawValue, bundle: nil)
+        let viewcontroler = storyboard.instantiateViewController(withIdentifier: LoginTexts.forgotIdentifier.rawValue)
         navigationController?.pushViewController(viewcontroler, animated: true)
     }
     
     fileprivate func doLogin() {
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let viewcontroler = storyboard.instantiateViewController(withIdentifier: "TabBar") as? MyTabBarConstroller
+        let storyboard = UIStoryboard(name: LoginTexts.mainStoryboard.rawValue, bundle: nil)
+        let viewcontroler = storyboard.instantiateViewController(withIdentifier: LoginTexts.tabBarIdentifier.rawValue) as? MyTabBarConstroller
         self.navigationController?.pushViewController(viewcontroler ?? UIViewController(), animated: true)
     }
     
@@ -107,10 +107,10 @@ class LoginViewController: UIViewController {
             
             if error != nil {
                 
-                self.alert?.configAlert(title: "Atenção", message: "Dados incorretos, tente novamente", secondButton: false)
+                self.alert?.configAlert(title: AlertTexts.errorTitle.rawValue, message: AlertTexts.dataIncorrect.rawValue, secondButton: false)
             } else {
                 if usuario == nil {
-                    self.alert?.configAlert(title: "Atenção", message: "Tivemos um problema inesperado", secondButton: false)
+                    self.alert?.configAlert(title: AlertTexts.errorTitle.rawValue, message: AlertTexts.problemUnexpected.rawValue, secondButton: false)
                 } else {
                     self.doLogin()
                 }
