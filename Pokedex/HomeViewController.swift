@@ -52,6 +52,8 @@ class HomeViewController: UIViewController {
         alert = Alert(controller: self)
         collectionView.backgroundColor = .clear
         setGradient()
+        startLoading()
+        getPokemonRequestName()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -60,9 +62,9 @@ class HomeViewController: UIViewController {
         favorites = []
         userHasFavoritesYet = true
         getFavoritesPokemon()
-        getPokemonRequestName()
+        
         resetSearchTextFiels()
-        startLoading()
+        
 //        isError = true  Forçar o erro na apresentação
     }
     
