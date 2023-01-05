@@ -30,8 +30,8 @@ class RegisterViewController: UIViewController {
     var eyeClicked = false
     let imageEye = UIImageView()
     
-    var eyeClicked2 = false
-    let imageEye2 = UIImageView()
+    var eyeClickedConfirm = false
+    let imageEyeConfirm = UIImageView()
     
     var datePicker = UIDatePicker()
     var isPasswordEqual = false
@@ -41,6 +41,7 @@ class RegisterViewController: UIViewController {
     
     let user = Auth.auth().currentUser
     
+    //MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         bottomView()
@@ -55,16 +56,40 @@ class RegisterViewController: UIViewController {
         cornerRadius()
         self.auth = Auth.auth()
         eyeMagic()
-        eyeMagic2()
+        eyeMagicConfirm()
     }
     
+    //MARK: - Actions
+    @IBAction func tappedBackButton(_ sender: UIButton) {
+        navigationController?.popViewController(animated: true)
+    }
+    
+    @IBAction func tappedRegisterButton(_ sender: UIButton) {
+        let login = UIStoryboard(name: RegisterTexts.loginStoryboard.rawValue, bundle: nil).instantiateViewController(withIdentifier: RegisterTexts.loginIdentifier.rawValue)
+        navigationController?.pushViewController(login, animated: true)
+        let email: String = emailTextField.text ?? ""
+        let password: String = passwordTextField.text ?? ""
+        let birthday: String = birthdayTextField.text ?? ""
+        let nickname: String = nicknameTextField.text ?? ""
+        
+        self.auth?.createUser(withEmail: email, password: password, completion: { (result, error)  in
+            if error != nil {
+                self.alert?.configAlert(title: AlertTexts.errorTitle.rawValue, message: AlertTexts.registerError.rawValue, secondButton: false)
+            } else {
+                self.alert?.configAlert(title: AlertTexts.succeeded.rawValue, message: AlertTexts.registerSucceeded.rawValue, secondButton: false)
+                self.saveUserData(email: email, birthday: birthday, nickname: nickname, id: result?.user.uid ?? "")
+            }
+        })
+    }
+    
+    //MARK: - Metodos
     @objc func buttonCancel() {
         birthdayTextField.resignFirstResponder()
     }
     
     @objc func buttonOK() {
         let dateFormatted = DateFormatter()
-        dateFormatted.dateFormat = "dd/MM/yyyy"
+        dateFormatted.dateFormat = RegisterTexts.formatDate.rawValue
         birthdayTextField.text = dateFormatted.string(from: datePicker.date as Date)
         buttonCancel()
     }
@@ -104,34 +129,34 @@ class RegisterViewController: UIViewController {
         }
     }
     
-    func eyeMagic2() {
-        imageEye2.image = UIImage(systemName: "eye.slash")
+    func eyeMagicConfirm() {
+        imageEyeConfirm.image = UIImage(systemName: "eye.slash")
         
         let contentView = UIView()
-        contentView.addSubview(imageEye2)
+        contentView.addSubview(imageEyeConfirm)
         
         contentView.frame = CGRect(x: 0, y: 0, width: UIImage(systemName: "eye.slash")!.size.width, height: UIImage(systemName: "eye.slash")!.size.height)
         
-        imageEye2.frame = CGRect(x: -10, y: 0, width: UIImage(systemName: "eye.slash")!.size.width, height: UIImage(systemName: "eye.slash")!.size.height)
+        imageEyeConfirm.frame = CGRect(x: -10, y: 0, width: UIImage(systemName: "eye.slash")!.size.width, height: UIImage(systemName: "eye.slash")!.size.height)
         
         confirmPasswordTextField.rightView = contentView
         confirmPasswordTextField.rightViewMode = .always
         
         let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(imageTapped2(tapGestureRecognizer:)))
-        imageEye2.isUserInteractionEnabled = true
-        imageEye2.addGestureRecognizer(tapGestureRecognizer)
+        imageEyeConfirm.isUserInteractionEnabled = true
+        imageEyeConfirm.addGestureRecognizer(tapGestureRecognizer)
         
         confirmPasswordTextField.isSecureTextEntry = true
     }
     
     @objc func imageTapped2(tapGestureRecognizer:UITapGestureRecognizer) {
         let tappedImage = tapGestureRecognizer.view as! UIImageView
-        if eyeClicked2 {
-            eyeClicked2 = false
+        if eyeClickedConfirm {
+            eyeClickedConfirm = false
             tappedImage.image = UIImage(systemName: "eye.fill")
             confirmPasswordTextField.isSecureTextEntry = false
         } else {
-            eyeClicked2 = true
+            eyeClickedConfirm = true
             tappedImage.image = UIImage(systemName: "eye.slash")
             confirmPasswordTextField.isSecureTextEntry = true
         }
@@ -143,35 +168,13 @@ class RegisterViewController: UIViewController {
         backGroundView.backgroundColor = UIColor(red: 118/255, green: 204/255, blue: 232/255, alpha: 1.0)
     }
     
-    @IBAction func tappedBackButton(_ sender: UIButton) {
-        navigationController?.popViewController(animated: true)
-    }
-    
-    @IBAction func tappedRegisterButton(_ sender: UIButton) {
-        let login = UIStoryboard(name: "LoginStoryboard", bundle: nil).instantiateViewController(withIdentifier: "LoginViewController")
-        navigationController?.pushViewController(login, animated: true)
-        let email: String = emailTextField.text ?? ""
-        let password: String = passwordTextField.text ?? ""
-        let birthday: String = birthdayTextField.text ?? ""
-        let nickname: String = nicknameTextField.text ?? ""
-        
-        self.auth?.createUser(withEmail: email, password: password, completion: { (result, error)  in
-            if error != nil {
-                self.alert?.configAlert(title: "Ops", message: "Tivemos um erro ao criar a sua conta. Tente novamente!", secondButton: false)
-            } else {
-                self.alert?.configAlert(title: "Parabéns!!!", message: "Cadastro realizado com sucesso !!!", secondButton: false)
-                self.saveUserData(email: email, birthday: birthday, nickname: nickname, id: result?.user.uid ?? "")
-            }
-        })
-    }
-    
     func saveUserData(email: String, birthday: String, nickname: String, id: String) {
         let dataPath = "user/\(id)"
         let docRef = fireStore.document(dataPath)
         docRef.setData([
-            "email": email,
-            "birthday": birthday,
-            "nickname": nickname
+            RegisterTexts.emailDocument.rawValue: email,
+            RegisterTexts.birthdayDocument.rawValue: birthday,
+            RegisterTexts.nicknameDocument.rawValue: nickname
         ])
     }
     

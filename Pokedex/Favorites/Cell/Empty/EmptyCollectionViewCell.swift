@@ -12,7 +12,7 @@ class EmptyCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var pokemonFaliedLabel: UILabel!
     @IBOutlet weak var backGroundView: UIView!
     
-    static let identifier: String = "EmptyCollectionViewCell"
+    static let identifier: String = FavoritesTexts.EmptyIdentifier.rawValue
     
     static func nib() -> UINib {
         return UINib(nibName: identifier, bundle: nil)

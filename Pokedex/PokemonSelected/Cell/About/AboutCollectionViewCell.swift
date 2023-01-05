@@ -14,7 +14,7 @@ class AboutCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var weightLabel: UILabel!
     @IBOutlet weak var abilitiesLabel: UILabel!
     
-    static let identifier: String = "AboutCollectionViewCell"
+    static let identifier: String = PokemonSelectedTexts.aboutIdentifier.rawValue
     
     static func nib()-> UINib {
         return UINib(nibName: self.identifier, bundle: nil)

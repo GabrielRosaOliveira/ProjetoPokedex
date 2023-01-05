@@ -24,6 +24,7 @@ class LoginViewController: UIViewController {
     var eyeClicked = false
     let imageEye = UIImageView()
     
+    //MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         configTextFieldDelegate()
@@ -35,6 +36,45 @@ class LoginViewController: UIViewController {
         alert = Alert(controller: self)
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        navigationController?.isNavigationBarHidden = true
+        self.tabBarController?.tabBar.isHidden = true
+    }
+    
+    //MARK: - Actions
+    @IBAction func didtapRegisterButton(_ sender: UIButton) {
+        let storyboard = UIStoryboard(name: LoginTexts.registerStoryboard.rawValue, bundle: nil)
+        let viewcontroler = storyboard.instantiateViewController(withIdentifier: LoginTexts.registerIdentifier.rawValue)
+        navigationController?.pushViewController(viewcontroler, animated: true)
+    }
+    
+    @IBAction func didtapForgotPasswordButton(_ sender: UIButton) {
+        let storyboard = UIStoryboard(name: LoginTexts.forgotStoryboard.rawValue, bundle: nil)
+        let viewcontroler = storyboard.instantiateViewController(withIdentifier: LoginTexts.forgotIdentifier.rawValue)
+        navigationController?.pushViewController(viewcontroler, animated: true)
+    }
+    
+    @IBAction func didTapLoginButton(_ sender: UIButton) {
+        
+        let email: String = emailTextField.text ?? ""
+        let password: String = passwordTextField.text ?? ""
+        
+        self.auth?.signIn(withEmail: email, password: password, completion: { (usuario, error) in
+            
+            if error != nil {
+                
+                self.alert?.configAlert(title: AlertTexts.errorTitle.rawValue, message: "Dados incorretos, tente novamente", secondButton: false)
+            } else {
+                if usuario == nil {
+                    self.alert?.configAlert(title: AlertTexts.errorTitle.rawValue, message: AlertTexts.problemUnexpected.rawValue, secondButton: false)
+                } else {
+                    self.doLogin()
+                }
+            }
+        })
+    }
+    
+    //MARK: - Metodos
     func configTextFieldDelegate() {
         emailTextField.delegate = self
         passwordTextField.delegate = self
@@ -74,50 +114,7 @@ class LoginViewController: UIViewController {
             passwordTextField.isSecureTextEntry = true
         }
     }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        navigationController?.isNavigationBarHidden = true
-        self.tabBarController?.tabBar.isHidden = true
-    }
-    
-    @IBAction func didtapRegisterButton(_ sender: UIButton) {
-        let storyboard = UIStoryboard(name: "RegisterStoryboard", bundle: nil)
-        let viewcontroler = storyboard.instantiateViewController(withIdentifier: "Cadastro")
-        navigationController?.pushViewController(viewcontroler, animated: true)
-    }
-    
-    @IBAction func didtapForgotPasswordButton(_ sender: UIButton) {
-        let storyboard = UIStoryboard(name: "ForgotPasswordStoryboard", bundle: nil)
-        let viewcontroler = storyboard.instantiateViewController(withIdentifier: "esqueceuSenha")
-        navigationController?.pushViewController(viewcontroler, animated: true)
-    }
-    
-    fileprivate func doLogin() {
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let viewcontroler = storyboard.instantiateViewController(withIdentifier: "TabBar") as? MyTabBarConstroller
-        self.navigationController?.pushViewController(viewcontroler ?? UIViewController(), animated: true)
-    }
-    
-    @IBAction func didTapLoginButton(_ sender: UIButton) {
         
-        let email: String = emailTextField.text ?? ""
-        let password: String = passwordTextField.text ?? ""
-        
-        self.auth?.signIn(withEmail: email, password: password, completion: { (usuario, error) in
-            
-            if error != nil {
-                
-                self.alert?.configAlert(title: "Atenção", message: "Dados incorretos, tente novamente", secondButton: false)
-            } else {
-                if usuario == nil {
-                    self.alert?.configAlert(title: "Atenção", message: "Tivemos um problema inesperado", secondButton: false)
-                } else {
-                    self.doLogin()
-                }
-            }
-        })
-    }
-    
     func disabledButton() {
         if emailTextField.text == "" || passwordTextField.text == "" {
             goButton.isEnabled = false
@@ -126,6 +123,12 @@ class LoginViewController: UIViewController {
             goButton.isEnabled = true
             goButton.backgroundColor = UIColor(red: 29/255, green: 44/255, blue: 94/255, alpha: 1.0)
         }
+    }
+    
+    fileprivate func doLogin() {
+        let storyboard = UIStoryboard(name: LoginTexts.mainStoryboard.rawValue, bundle: nil)
+        let viewcontroler = storyboard.instantiateViewController(withIdentifier: LoginTexts.tabBarIdentifier.rawValue) as? MyTabBarConstroller
+        self.navigationController?.pushViewController(viewcontroler ?? UIViewController(), animated: true)
     }
 }
 

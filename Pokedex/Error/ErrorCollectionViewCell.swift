@@ -18,7 +18,7 @@ class ErrorCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var pikachuBadButton: UIImageView!
     @IBOutlet weak var backGroundView: UIView!
     
-    static let identifier: String = "ErrorCollectionViewCell"
+    static let identifier: String = ErrorTexts.identifier.rawValue
     weak var delegate: ErrorCollectionViewCellProtocol?
     
     func delegate(delegate: ErrorCollectionViewCellProtocol?) {
@@ -35,7 +35,7 @@ class ErrorCollectionViewCell: UICollectionViewCell {
     }
     
     func configLayout() {
-        pikachuBadButton.image = UIImage(named: "pikachuBad")
+        pikachuBadButton.image = UIImage(named: ErrorTexts.imageView.rawValue)
         tryAgainButton.layer.cornerRadius = 10
         tryAgainButton.layer.borderColor = UIColor.black.cgColor
         tryAgainButton.layer.borderWidth = 1

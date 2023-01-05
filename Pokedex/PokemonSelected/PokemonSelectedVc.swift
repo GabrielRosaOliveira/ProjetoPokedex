@@ -39,6 +39,7 @@ class PokemonSelectedVc: UIViewController {
     var isFavorite: Bool = false
     var imageService = PokemonNameService()
     
+    //MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         self.configBottomView()
@@ -65,6 +66,7 @@ class PokemonSelectedVc: UIViewController {
         favoriteButton(isFavorite)
     }
     
+    //MARK: - Actions
     @IBAction func tappedStarButton(_ sender: UIButton) {
         if isFavoriteFulfilled {
             favoriteButton.setImage(UIImage(systemName: "star.fill"), for: .normal) // FAVORITANDO
@@ -78,6 +80,11 @@ class PokemonSelectedVc: UIViewController {
         }
     }
     
+    @IBAction func backButton(_ sender: UIButton) {
+        navigationController?.popViewController(animated: true)
+    }
+    
+    //MARK: - Metodos
     func favoriteButton(_ isFavorite: Bool) {
         if isFavorite {
             favoriteButton.setImage(UIImage(systemName: "star.fill"), for: .normal)
@@ -93,8 +100,8 @@ class PokemonSelectedVc: UIViewController {
             let a = document?.exists
             if a == false {
                 dockRef.setData([
-                    "pokemon": [],
-                    "email": self.user?.email ?? ""
+                    PokemonSelectedTexts.pokemonDocument.rawValue: [],
+                    PokemonSelectedTexts.emailDocument.rawValue: self.user?.email ?? ""
                 ])
             }
         }
@@ -103,11 +110,11 @@ class PokemonSelectedVc: UIViewController {
     func saveFovritesPokemons(pokemon: String) {
         let dataPath = "favorites/\(user?.email ?? "")"
         let dockRef = fireStore.document(dataPath)
-        dockRef.updateData(["pokemon": FieldValue.arrayUnion([pokemon])])
+        dockRef.updateData([PokemonSelectedTexts.pokemonDocument.rawValue: FieldValue.arrayUnion([pokemon])])
     }
     
     func removePokemonFromFavorites(pokemon: String) {
-        fireStore.collection("favorites").document(user?.email ?? "").updateData(["pokemon": FieldValue.arrayRemove([pokemon])])
+        fireStore.collection(PokemonSelectedTexts.favoritesCollection.rawValue).document(user?.email ?? "").updateData([PokemonSelectedTexts.pokemonDocument.rawValue: FieldValue.arrayRemove([pokemon])])
     }
     
     func getPokemonDetails() {
@@ -115,7 +122,7 @@ class PokemonSelectedVc: UIViewController {
             if let result {
                 self.pokemon.append(result)
             } else {
-                self.alert?.configAlert(title: "Atenção", message: "Tivemos um problema no servidor, tente novamente.", secondButton: false)
+                self.alert?.configAlert(title: AlertTexts.errorTitle.rawValue, message: AlertTexts.errorMessage.rawValue, secondButton: false)
             }
             DispatchQueue.main.async {
                 self.isEmpty = false
@@ -230,10 +237,6 @@ class PokemonSelectedVc: UIViewController {
         bottomView.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMinXMinYCorner]
         bottomView.layer.borderWidth = 2.0
         bottomView.layer.borderColor = UIColor.black.cgColor
-    }
-    
-    @IBAction func backButton(_ sender: UIButton) {
-        navigationController?.popViewController(animated: true)
     }
 }
 
