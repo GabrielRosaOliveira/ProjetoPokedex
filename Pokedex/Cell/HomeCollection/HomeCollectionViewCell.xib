@@ -35,7 +35,7 @@
                         </constraints>
                     </view>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4d8-fA-75O">
-                        <rect key="frame" x="81.5" y="137" width="42" height="21"/>
+                        <rect key="frame" x="81.5" y="142" width="42" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -50,7 +50,7 @@
                 <constraint firstAttribute="bottom" secondItem="skq-z7-7Pm" secondAttribute="bottom" constant="5" id="Qoc-Pw-arH"/>
                 <constraint firstItem="4d8-fA-75O" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="XDA-Nu-0c0"/>
                 <constraint firstItem="skq-z7-7Pm" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="5" id="YtH-RN-gEp"/>
-                <constraint firstAttribute="bottom" secondItem="4d8-fA-75O" secondAttribute="bottom" constant="20" id="yp9-HL-ib5"/>
+                <constraint firstAttribute="bottom" secondItem="4d8-fA-75O" secondAttribute="bottom" constant="15" id="yp9-HL-ib5"/>
             </constraints>
             <size key="customSize" width="205" height="178"/>
             <connections>

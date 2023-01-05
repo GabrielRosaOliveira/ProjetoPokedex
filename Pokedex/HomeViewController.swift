@@ -60,7 +60,7 @@ class HomeViewController: UIViewController {
         favorites = []
         userHasFavoritesYet = true
         getFavoritesPokemon()
-        getPokemonRequest2()
+        getPokemonRequestName()
         resetSearchTextFiels()
         startLoading()
 //        isError = true  Forçar o erro na apresentação
@@ -108,7 +108,7 @@ class HomeViewController: UIViewController {
                 } else {
                     self.isError = true
                 }
-                
+
                 DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
                     self.collectionView.reloadData()
                     self.filterPokemon = self.pokemon
@@ -118,14 +118,14 @@ class HomeViewController: UIViewController {
         }
     }
     
-    func getPokemonRequest2() {
+    func getPokemonRequestName() {
         nameService.getPokemonName { result, failure in
             if let result {
                 self.generationOne.append(result)
             } else {
                 self.isError = true
             }
-            
+
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
                 self.collectionView.reloadData()
                 self.getPokemonRequest()
@@ -284,7 +284,7 @@ extension HomeViewController: UITextFieldDelegate {
 extension HomeViewController: ErrorCollectionViewCellProtocol {
     func actionTryAgainButton() {
         getFavoritesPokemon()
-        getPokemonRequest2()
+        getPokemonRequestName()
         isError = false
         startLoading()
     }
