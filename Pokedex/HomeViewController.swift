@@ -114,6 +114,7 @@ class HomeViewController: UIViewController {
         for pokemon in generationOne[0].pokemonSpecies {
             service.getPokemons(pokemon: pokemon.name) { result, failure in
                 if let result {
+                    self.pokemon.sort(by: { $0.id < $1.id })
                     self.pokemon.append(result)
                 } else {
                     self.isError = true
