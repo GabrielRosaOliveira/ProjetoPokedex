@@ -104,7 +104,7 @@ class ProfileViewController: UIViewController {
         emailTextField.text = userData[index].email
         birthdayTextField.text = userData[index].birthday
         nicknameTextField.text = userData[index].nickname
-        hellLabel.text = "Olá, \(userData[index].nickname.capitalized)"
+        hellLabel.text = "Olá, \(userData[index].nickname.capitalized)!"
     }
     
     func updateDataFromFirebase() {
